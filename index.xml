@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology blog by xiexiaojun</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Technology blog by xiexiaojun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 May 2019 16:01:23 +0800</lastBuildDate>
+    
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>git 使用帮助文档</title>
+      <link>http://localhost:1313/post/githelp/</link>
+      <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/githelp/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;git-命令&#34;&gt;git 命令&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;建立一个分支&lt;br /&gt;
+&lt;code&gt;git branch &amp;lt;项目名字 feature/test&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;然后检查分支是否创建成功&lt;br /&gt;
+&lt;code&gt;git branch （q,退出）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;切换到新分支&lt;br /&gt;
+&lt;code&gt;git checkout &amp;lt;项目名字 feature/test&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看当前所有的更改情况&lt;br /&gt;
+&lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看具体的变动&lt;br /&gt;
+&lt;code&gt;git diff &amp;lt;文件名&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看commit历史&lt;br /&gt;
+&lt;code&gt;git log&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;回滚&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git log
+    
+//如commit 05d1d38601df7d4acd5b09d30d3bab516bf91b0f，回退到该commit
+//一般选取commit号的前6位就可以了
+git reset --hard 05d1d3
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;将改动提交到新分支上&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add . 
+    
+git commit -m &amp;quot;tmp&amp;quot;
+    
+git push &amp;lt;origin feature/xxx&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;合并分支 （ezmr）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch &amp;lt; uat/garencieres &amp;gt;
+ git branch &amp;lt; 目标分支&amp;gt;
+git merge &amp;lt;feature/garencieres 自己要合并的分支&amp;gt;
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新分支&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote update
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;删除分支&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; git branch -d &amp;lt;项目名字 feature/test&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;拉取分支最新的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git pull origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      
+        <description>&lt;p&gt;Contact to me:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://hospital.xxjwxc.cn/postcardserver/file/qrcode/oUq8a0eTRg8qaCLf_AaYuIXS63wk.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Personal blog:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/xie1xiao1jun&#34;&gt;csdn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hospital.xxjwxc.cn/postcardserver/file/qrcode/oUq8a0eTRg8qaCLf_AaYuIXS63wk.jpg&#34;&gt;find me&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/xie1xiao1jun&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>
