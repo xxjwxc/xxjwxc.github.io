@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Technology blog by xiexiaojun</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://xie1xiao1jun.github.io/tags/</link>
     <description>Recent content in Tags on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 01 May 2019 16:01:23 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xie1xiao1jun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>git</title>
-      <link>http://localhost:1313/tags/git/</link>
+      <link>https://xie1xiao1jun.github.io/tags/git/</link>
       <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/git/</guid>
+      <guid>https://xie1xiao1jun.github.io/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>help</title>
-      <link>http://localhost:1313/tags/help/</link>
+      <link>https://xie1xiao1jun.github.io/tags/help/</link>
       <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/help/</guid>
+      <guid>https://xie1xiao1jun.github.io/tags/help/</guid>
       <description></description>
     </item>
     
     <item>
       <title>min</title>
-      <link>http://localhost:1313/tags/min/</link>
+      <link>https://xie1xiao1jun.github.io/tags/min/</link>
       <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/min/</guid>
+      <guid>https://xie1xiao1jun.github.io/tags/min/</guid>
       <description></description>
     </item>
     
