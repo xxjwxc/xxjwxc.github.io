@@ -6,86 +6,15 @@
     <description>Recent content on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 May 2019 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 May 2019 16:01:23 +0800</lastBuildDate>
     
         <atom:link href="https://xie1xiao1jun.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>git 使用帮助文档</title>
-      <link>https://xie1xiao1jun.github.io/post/githelp/</link>
-      <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
-      
-      <guid>https://xie1xiao1jun.github.io/post/githelp/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;git-命令&#34;&gt;git 命令&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;建立一个分支&lt;br /&gt;
-&lt;code&gt;git branch &amp;lt;项目名字 feature/test&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;然后检查分支是否创建成功&lt;br /&gt;
-&lt;code&gt;git branch （q,退出）&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;切换到新分支&lt;br /&gt;
-&lt;code&gt;git checkout &amp;lt;项目名字 feature/test&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;查看当前所有的更改情况&lt;br /&gt;
-&lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;查看具体的变动&lt;br /&gt;
-&lt;code&gt;git diff &amp;lt;文件名&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;查看commit历史&lt;br /&gt;
-&lt;code&gt;git log&lt;/code&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;回滚&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git log
-    
-//如commit 05d1d38601df7d4acd5b09d30d3bab516bf91b0f，回退到该commit
-//一般选取commit号的前6位就可以了
-git reset --hard 05d1d3
-    
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;将改动提交到新分支上&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git add . 
-    
-git commit -m &amp;quot;tmp&amp;quot;
-    
-git push &amp;lt;origin feature/xxx&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;合并分支 （ezmr）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git branch &amp;lt; uat/garencieres &amp;gt;
- git branch &amp;lt; 目标分支&amp;gt;
-git merge &amp;lt;feature/garencieres 自己要合并的分支&amp;gt;
-    
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;更新分支&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git remote update
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;删除分支&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; git branch -d &amp;lt;项目名字 feature/test&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;拉取分支最新的&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git pull origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-      
-    </item>
-    
-    <item>
       <title>大驼峰转换工具</title>
       <link>https://xie1xiao1jun.github.io/post/bigcamel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
       
       <guid>https://xie1xiao1jun.github.io/post/bigcamel/</guid>
       
@@ -245,6 +174,77 @@ OauthIDAPI&lt;/p&gt;
 &lt;p&gt;5:传送门：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun/public/tree/master/mybigcamel&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>git 使用帮助文档</title>
+      <link>https://xie1xiao1jun.github.io/post/githelp/</link>
+      <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
+      
+      <guid>https://xie1xiao1jun.github.io/post/githelp/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;git-命令&#34;&gt;git 命令&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;建立一个分支&lt;br /&gt;
+&lt;code&gt;git branch &amp;lt;项目名字 feature/test&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;然后检查分支是否创建成功&lt;br /&gt;
+&lt;code&gt;git branch （q,退出）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;切换到新分支&lt;br /&gt;
+&lt;code&gt;git checkout &amp;lt;项目名字 feature/test&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看当前所有的更改情况&lt;br /&gt;
+&lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看具体的变动&lt;br /&gt;
+&lt;code&gt;git diff &amp;lt;文件名&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看commit历史&lt;br /&gt;
+&lt;code&gt;git log&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;回滚&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git log
+    
+//如commit 05d1d38601df7d4acd5b09d30d3bab516bf91b0f，回退到该commit
+//一般选取commit号的前6位就可以了
+git reset --hard 05d1d3
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;将改动提交到新分支上&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add . 
+    
+git commit -m &amp;quot;tmp&amp;quot;
+    
+git push &amp;lt;origin feature/xxx&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;合并分支 （ezmr）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch &amp;lt; uat/garencieres &amp;gt;
+ git branch &amp;lt; 目标分支&amp;gt;
+git merge &amp;lt;feature/garencieres 自己要合并的分支&amp;gt;
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新分支&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote update
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;删除分支&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; git branch -d &amp;lt;项目名字 feature/test&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;拉取分支最新的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git pull origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
       
     </item>

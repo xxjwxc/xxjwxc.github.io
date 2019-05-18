@@ -6,10 +6,19 @@
     <description>Recent content in 工具 on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 May 2019 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 May 2019 16:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://xie1xiao1jun.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>大驼峰转换工具</title>
+      <link>https://xie1xiao1jun.github.io/post/bigcamel/</link>
+      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
+      
+      <guid>https://xie1xiao1jun.github.io/post/bigcamel/</guid>
+      <description>git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 &amp;quot;ACL&amp;quot;, &amp;quot;API&amp;quot;, &amp;quot;ASCII&amp;quot;, &amp;quot;CPU&amp;quot;,</description>
+    </item>
     
     <item>
       <title>git 使用帮助文档</title>
@@ -18,15 +27,6 @@
       
       <guid>https://xie1xiao1jun.github.io/post/githelp/</guid>
       <description>git 命令 建立一个分支 git branch &amp;lt;项目名字 feature/test&amp;gt; 然后检查分支是否创建成功 git branch （q,退出） 切换到新分支 git checkout &amp;lt;项目名字 feature/test&amp;gt; 查看当前所有的更改情况 git status</description>
-    </item>
-    
-    <item>
-      <title>大驼峰转换工具</title>
-      <link>https://xie1xiao1jun.github.io/post/bigcamel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://xie1xiao1jun.github.io/post/bigcamel/</guid>
-      <description>git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 &amp;quot;ACL&amp;quot;, &amp;quot;API&amp;quot;, &amp;quot;ASCII&amp;quot;, &amp;quot;CPU&amp;quot;,</description>
     </item>
     
   </channel>

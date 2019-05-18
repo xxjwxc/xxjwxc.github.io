@@ -2,14 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xie1xiao1jun.github.io/post/githelp/</loc>
-    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
+    <loc>https://xie1xiao1jun.github.io/post/bigcamel/</loc>
+    <lastmod>2019-05-18T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xie1xiao1jun.github.io/post/bigcamel/</loc>
+    <loc>https://xie1xiao1jun.github.io/post/githelp/</loc>
+    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,25 +24,49 @@
   
   <url>
     <loc>https://xie1xiao1jun.github.io/categories/</loc>
-    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
+    <lastmod>2019-05-18T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xie1xiao1jun.github.io/post/</loc>
-    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
+    <lastmod>2019-05-18T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xie1xiao1jun.github.io/tags/</loc>
-    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
+    <lastmod>2019-05-18T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xie1xiao1jun.github.io/</loc>
-    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
+    <lastmod>2019-05-18T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xie1xiao1jun.github.io/tags/golang/</loc>
+    <lastmod>2019-05-18T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xie1xiao1jun.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2019-05-18T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xie1xiao1jun.github.io/tags/%E8%BD%AC%E6%8D%A2/</loc>
+    <lastmod>2019-05-18T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xie1xiao1jun.github.io/tags/%E9%A9%BC%E5%B3%B0/</loc>
+    <lastmod>2019-05-18T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -60,27 +85,6 @@
   <url>
     <loc>https://xie1xiao1jun.github.io/tags/min/</loc>
     <lastmod>2019-05-01T16:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xie1xiao1jun.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xie1xiao1jun.github.io/tags/golang/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xie1xiao1jun.github.io/tags/%E8%BD%AC%E6%8D%A2/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xie1xiao1jun.github.io/tags/%E9%A9%BC%E5%B3%B0/</loc>
     <priority>0</priority>
   </url>
   
