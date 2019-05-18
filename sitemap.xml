@@ -10,7 +10,6 @@
   
   <url>
     <loc>https://xie1xiao1jun.github.io/post/bigcamel/</loc>
-    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -53,12 +52,6 @@
   </url>
   
   <url>
-    <loc>https://xie1xiao1jun.github.io/tags/golang/</loc>
-    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://xie1xiao1jun.github.io/tags/help/</loc>
     <lastmod>2019-05-01T16:01:23+08:00</lastmod>
     <priority>0</priority>
@@ -77,14 +70,17 @@
   </url>
   
   <url>
+    <loc>https://xie1xiao1jun.github.io/tags/golang/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xie1xiao1jun.github.io/tags/%E8%BD%AC%E6%8D%A2/</loc>
-    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xie1xiao1jun.github.io/tags/%E9%A9%BC%E5%B3%B0/</loc>
-    <lastmod>2019-05-01T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
