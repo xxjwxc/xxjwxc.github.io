@@ -83,6 +83,173 @@ git merge &amp;lt;feature/garencieres 自己要合并的分支&amp;gt;
     </item>
     
     <item>
+      <title>大驼峰转换工具</title>
+      <link>https://xie1xiao1jun.github.io/post/bigcamel/</link>
+      <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
+      
+      <guid>https://xie1xiao1jun.github.io/post/bigcamel/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;git-命令&#34;&gt;git 命令&lt;/h2&gt;
+
+&lt;h1 id=&#34;大驼峰转换工具&#34;&gt;大驼峰转换工具&lt;/h1&gt;
+
+&lt;p&gt;法则
+基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写&lt;/p&gt;
+
+&lt;p&gt;大驼峰到网络标准json串自动转换&lt;/p&gt;
+
+&lt;p&gt;带有特殊字符特殊处理：如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;ACL&amp;quot;, &amp;quot;API&amp;quot;, &amp;quot;ASCII&amp;quot;, &amp;quot;CPU&amp;quot;, &amp;quot;CSS&amp;quot;, &amp;quot;DNS&amp;quot;, &amp;quot;EOF&amp;quot;, &amp;quot;GUID&amp;quot;, &amp;quot;HTML&amp;quot;, &amp;quot;HTTP&amp;quot;, &amp;quot;HTTPS&amp;quot;, &amp;quot;ID&amp;quot;, &amp;quot;IP&amp;quot;, &amp;quot;JSON&amp;quot;, &amp;quot;LHS&amp;quot;, &amp;quot;QPS&amp;quot;, &amp;quot;RAM&amp;quot;, &amp;quot;RHS&amp;quot;, &amp;quot;RPC&amp;quot;, &amp;quot;SLA&amp;quot;, &amp;quot;SMTP&amp;quot;, &amp;quot;SQL&amp;quot;, &amp;quot;SSH&amp;quot;, &amp;quot;TCP&amp;quot;, &amp;quot;TLS&amp;quot;, &amp;quot;TTL&amp;quot;, &amp;quot;UDP&amp;quot;, &amp;quot;UI&amp;quot;, &amp;quot;UID&amp;quot;, &amp;quot;UUID&amp;quot;, &amp;quot;URI&amp;quot;, &amp;quot;URL&amp;quot;, &amp;quot;UTF8&amp;quot;, &amp;quot;VM&amp;quot;, &amp;quot;XML&amp;quot;, &amp;quot;XMPP&amp;quot;, &amp;quot;XSRF&amp;quot;, &amp;quot;XSS&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以下采用golang实现&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;数据初始化：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;// Copied from golint
+var commonInitialisms = []string{&amp;quot;ACL&amp;quot;, &amp;quot;API&amp;quot;, &amp;quot;ASCII&amp;quot;, &amp;quot;CPU&amp;quot;, &amp;quot;CSS&amp;quot;, &amp;quot;DNS&amp;quot;, &amp;quot;EOF&amp;quot;, &amp;quot;GUID&amp;quot;, &amp;quot;HTML&amp;quot;, &amp;quot;HTTP&amp;quot;, &amp;quot;HTTPS&amp;quot;, &amp;quot;ID&amp;quot;, &amp;quot;IP&amp;quot;, &amp;quot;JSON&amp;quot;, &amp;quot;LHS&amp;quot;, &amp;quot;QPS&amp;quot;, &amp;quot;RAM&amp;quot;, &amp;quot;RHS&amp;quot;, &amp;quot;RPC&amp;quot;, &amp;quot;SLA&amp;quot;, &amp;quot;SMTP&amp;quot;, &amp;quot;SQL&amp;quot;, &amp;quot;SSH&amp;quot;, &amp;quot;TCP&amp;quot;, &amp;quot;TLS&amp;quot;, &amp;quot;TTL&amp;quot;, &amp;quot;UDP&amp;quot;, &amp;quot;UI&amp;quot;, &amp;quot;UID&amp;quot;, &amp;quot;UUID&amp;quot;, &amp;quot;URI&amp;quot;, &amp;quot;URL&amp;quot;, &amp;quot;UTF8&amp;quot;, &amp;quot;VM&amp;quot;, &amp;quot;XML&amp;quot;, &amp;quot;XMPP&amp;quot;, &amp;quot;XSRF&amp;quot;, &amp;quot;XSS&amp;quot;}
+var commonInitialismsReplacer *strings.Replacer
+var uncommonInitialismsReplacer *strings.Replacer
+
+func init() {
+	var commonInitialismsForReplacer []string
+	var uncommonInitialismsForReplacer []string
+	for _, initialism := range commonInitialisms {
+		commonInitialismsForReplacer = append(commonInitialismsForReplacer, initialism, strings.Title(strings.ToLower(initialism)))
+		uncommonInitialismsForReplacer = append(uncommonInitialismsForReplacer, strings.Title(strings.ToLower(initialism)), initialism)
+	}
+	commonInitialismsReplacer = strings.NewReplacer(commonInitialismsForReplacer...)
+	uncommonInitialismsReplacer = strings.NewReplacer(uncommonInitialismsForReplacer...)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;转换大驼峰函数：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;/*
+	转换为大驼峰命名法则
+	首字母大写，“_” 忽略后大写
+*/
+func Marshal(name string) string {
+	if name == &amp;quot;&amp;quot; {
+		return &amp;quot;&amp;quot;
+	}
+
+	temp := strings.Split(name, &amp;quot;_&amp;quot;)
+	var s string
+	for _, v := range temp {
+		vv := []rune(v)
+		if len(vv) &amp;gt; 0 {
+			if bool(vv[0] &amp;gt;= &#39;a&#39; &amp;amp;&amp;amp; vv[0] &amp;lt;= &#39;z&#39;) { //首字母大写
+				vv[0] -= 32
+			}
+			s += string(vv)
+		}
+	}
+
+	s = uncommonInitialismsReplacer.Replace(s)
+	//smap.Set(name, s)
+	return s
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;回退函数&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;/*
+  回退网络模式
+*/
+func UnMarshal(name string) string {
+	const (
+		lower = false
+		upper = true
+	)
+
+	if name == &amp;quot;&amp;quot; {
+		return &amp;quot;&amp;quot;
+	}
+
+	var (
+		value                                    = commonInitialismsReplacer.Replace(name)
+		buf                                      = bytes.NewBufferString(&amp;quot;&amp;quot;)
+		lastCase, currCase, nextCase, nextNumber bool
+	)
+
+	for i, v := range value[:len(value)-1] {
+		nextCase = bool(value[i+1] &amp;gt;= &#39;A&#39; &amp;amp;&amp;amp; value[i+1] &amp;lt;= &#39;Z&#39;)
+		nextNumber = bool(value[i+1] &amp;gt;= &#39;0&#39; &amp;amp;&amp;amp; value[i+1] &amp;lt;= &#39;9&#39;)
+
+		if i &amp;gt; 0 {
+			if currCase == upper {
+				if lastCase == upper &amp;amp;&amp;amp; (nextCase == upper || nextNumber == upper) {
+					buf.WriteRune(v)
+				} else {
+					if value[i-1] != &#39;_&#39; &amp;amp;&amp;amp; value[i+1] != &#39;_&#39; {
+						buf.WriteRune(&#39;_&#39;)
+					}
+					buf.WriteRune(v)
+				}
+			} else {
+				buf.WriteRune(v)
+				if i == len(value)-2 &amp;amp;&amp;amp; (nextCase == upper &amp;amp;&amp;amp; nextNumber == lower) {
+					buf.WriteRune(&#39;_&#39;)
+				}
+			}
+		} else {
+			currCase = upper
+			buf.WriteRune(v)
+		}
+		lastCase = currCase
+		currCase = nextCase
+	}
+
+	buf.WriteByte(value[len(value)-1])
+
+	s := strings.ToLower(buf.String())
+	return s
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;测试：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;func Test_cache(t *testing.T) {
+	SS := &amp;quot;OauthIDAPI&amp;quot;
+
+	tmp0 := UnMarshal(SS)
+	fmt.Println(tmp0)
+	tmp1 := Marshal(tmp0)
+	fmt.Println(tmp1)
+
+	if SS != tmp1 {
+		fmt.Println(&amp;quot;false.&amp;quot;)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输入:
+OauthIDAPI
+输出：
+oauth_id_api
+OauthIDAPI&lt;/p&gt;
+
+&lt;p&gt;5:传送门：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun/public/tree/master/mybigcamel&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://xie1xiao1jun.github.io/about/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0800</pubDate>
