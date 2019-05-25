@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 May 2019 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 May 2019 14:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://xie1xiao1jun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,27 @@
     <item>
       <title>golang</title>
       <link>https://xie1xiao1jun.github.io/tags/golang/</link>
-      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
+      <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
       
       <guid>https://xie1xiao1jun.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log</title>
+      <link>https://xie1xiao1jun.github.io/tags/log/</link>
+      <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
+      
+      <guid>https://xie1xiao1jun.github.io/tags/log/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>日志</title>
+      <link>https://xie1xiao1jun.github.io/tags/%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
+      
+      <guid>https://xie1xiao1jun.github.io/tags/%E6%97%A5%E5%BF%97/</guid>
       <description></description>
     </item>
     

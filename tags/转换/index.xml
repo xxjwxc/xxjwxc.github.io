@@ -17,7 +17,7 @@
       <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
       
       <guid>https://xie1xiao1jun.github.io/post/bigcamel/</guid>
-      <description>git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 &amp;quot;ACL&amp;quot;, &amp;quot;API&amp;quot;, &amp;quot;ASCII&amp;quot;, &amp;quot;CPU&amp;quot;,</description>
+      <description>git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 1 &amp;#34;ACL&amp;#34;, &amp;#34;API&amp;#34;, &amp;#34;ASCII&amp;#34;,</description>
     </item>
     
   </channel>

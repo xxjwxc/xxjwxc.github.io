@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="xiexiaojun" />
-  <meta name="description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 &amp;quot;ACL&amp;quot;, &amp;quot;API&amp;quot;, &amp;quot;ASCII&amp;quot;, &amp;quot;CPU&amp;quot;," />
+  <meta name="description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 1 &amp;#34;ACL&amp;#34;, &amp;#34;API&amp;#34;, &amp;#34;ASCII&amp;#34;," />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.55.4" />
+<meta name="generator" content="Hugo 0.55.6" />
 
 
 <link rel="canonical" href="https://xie1xiao1jun.github.io/post/bigcamel/" />
@@ -58,26 +58,26 @@
 
 
 <meta property="og:title" content="大驼峰转换工具" />
-<meta property="og:description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 &quot;ACL&quot;, &quot;API&quot;, &quot;ASCII&quot;, &quot;CPU&quot;," />
+<meta property="og:description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 1 &#34;ACL&#34;, &#34;API&#34;, &#34;ASCII&#34;," />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xie1xiao1jun.github.io/post/bigcamel/" />
 <meta property="article:published_time" content="2019-05-18T16:01:23&#43;08:00"/>
 <meta property="article:modified_time" content="2019-05-18T16:01:23&#43;08:00"/>
 
 <meta itemprop="name" content="大驼峰转换工具">
-<meta itemprop="description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 &quot;ACL&quot;, &quot;API&quot;, &quot;ASCII&quot;, &quot;CPU&quot;,">
+<meta itemprop="description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 1 &#34;ACL&#34;, &#34;API&#34;, &#34;ASCII&#34;,">
 
 
 <meta itemprop="datePublished" content="2019-05-18T16:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-18T16:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="506">
+<meta itemprop="wordCount" content="611">
 
 
 
 <meta itemprop="keywords" content="golang,驼峰,转换," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="大驼峰转换工具"/>
-<meta name="twitter:description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 &quot;ACL&quot;, &quot;API&quot;, &quot;ASCII&quot;, &quot;CPU&quot;,"/>
+<meta name="twitter:description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 1 &#34;ACL&#34;, &#34;API&#34;, &#34;ASCII&#34;,"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -138,6 +138,25 @@
           
           
             <a class="menu-item-link" href="https://xie1xiao1jun.github.io/about/">About</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.csdn.net/xie1xiao1jun" rel="noopener" target="_blank">
+              external-link
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
           
         
       </li>
@@ -276,6 +295,29 @@
 
       </li>
     
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.csdn.net/xie1xiao1jun" rel="noopener" target="_blank">
+              external-link
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
     
   </ul>
 </nav>
@@ -297,9 +339,11 @@
         </time>
         <div class="post-category">
             <a href="https://xie1xiao1jun.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
+            <a href="https://xie1xiao1jun.github.io/categories/go/"> go </a>
             
           </div>
-        
+        <span class="more-meta"> 约 611 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
         
@@ -344,141 +388,260 @@
 <p>大驼峰到网络标准json串自动转换</p>
 
 <p>带有特殊字符特殊处理：如下</p>
-
-<pre><code>&quot;ACL&quot;, &quot;API&quot;, &quot;ASCII&quot;, &quot;CPU&quot;, &quot;CSS&quot;, &quot;DNS&quot;, &quot;EOF&quot;, &quot;GUID&quot;, &quot;HTML&quot;, &quot;HTTP&quot;, &quot;HTTPS&quot;, &quot;ID&quot;, &quot;IP&quot;, &quot;JSON&quot;, &quot;LHS&quot;, &quot;QPS&quot;, &quot;RAM&quot;, &quot;RHS&quot;, &quot;RPC&quot;, &quot;SLA&quot;, &quot;SMTP&quot;, &quot;SQL&quot;, &quot;SSH&quot;, &quot;TCP&quot;, &quot;TLS&quot;, &quot;TTL&quot;, &quot;UDP&quot;, &quot;UI&quot;, &quot;UID&quot;, &quot;UUID&quot;, &quot;URI&quot;, &quot;URL&quot;, &quot;UTF8&quot;, &quot;VM&quot;, &quot;XML&quot;, &quot;XMPP&quot;, &quot;XSRF&quot;, &quot;XSS&quot;
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&#34;ACL&#34;, &#34;API&#34;, &#34;ASCII&#34;, &#34;CPU&#34;, &#34;CSS&#34;, &#34;DNS&#34;, &#34;EOF&#34;, &#34;GUID&#34;, &#34;HTML&#34;, &#34;HTTP&#34;, &#34;HTTPS&#34;, &#34;ID&#34;, &#34;IP&#34;, &#34;JSON&#34;, &#34;LHS&#34;, &#34;QPS&#34;, &#34;RAM&#34;, &#34;RHS&#34;, &#34;RPC&#34;, &#34;SLA&#34;, &#34;SMTP&#34;, &#34;SQL&#34;, &#34;SSH&#34;, &#34;TCP&#34;, &#34;TLS&#34;, &#34;TTL&#34;, &#34;UDP&#34;, &#34;UI&#34;, &#34;UID&#34;, &#34;UUID&#34;, &#34;URI&#34;, &#34;URL&#34;, &#34;UTF8&#34;, &#34;VM&#34;, &#34;XML&#34;, &#34;XMPP&#34;, &#34;XSRF&#34;, &#34;XSS&#34;</pre></td></tr></table>
+</div>
+</div>
 <p>以下采用golang实现</p>
 
 <ol>
 <li>数据初始化：</li>
 </ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Copied from golint
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">commonInitialisms</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;ACL&#34;</span><span class="p">,</span> <span class="s">&#34;API&#34;</span><span class="p">,</span> <span class="s">&#34;ASCII&#34;</span><span class="p">,</span> <span class="s">&#34;CPU&#34;</span><span class="p">,</span> <span class="s">&#34;CSS&#34;</span><span class="p">,</span> <span class="s">&#34;DNS&#34;</span><span class="p">,</span> <span class="s">&#34;EOF&#34;</span><span class="p">,</span> <span class="s">&#34;GUID&#34;</span><span class="p">,</span> <span class="s">&#34;HTML&#34;</span><span class="p">,</span> <span class="s">&#34;HTTP&#34;</span><span class="p">,</span> <span class="s">&#34;HTTPS&#34;</span><span class="p">,</span> <span class="s">&#34;ID&#34;</span><span class="p">,</span> <span class="s">&#34;IP&#34;</span><span class="p">,</span> <span class="s">&#34;JSON&#34;</span><span class="p">,</span> <span class="s">&#34;LHS&#34;</span><span class="p">,</span> <span class="s">&#34;QPS&#34;</span><span class="p">,</span> <span class="s">&#34;RAM&#34;</span><span class="p">,</span> <span class="s">&#34;RHS&#34;</span><span class="p">,</span> <span class="s">&#34;RPC&#34;</span><span class="p">,</span> <span class="s">&#34;SLA&#34;</span><span class="p">,</span> <span class="s">&#34;SMTP&#34;</span><span class="p">,</span> <span class="s">&#34;SQL&#34;</span><span class="p">,</span> <span class="s">&#34;SSH&#34;</span><span class="p">,</span> <span class="s">&#34;TCP&#34;</span><span class="p">,</span> <span class="s">&#34;TLS&#34;</span><span class="p">,</span> <span class="s">&#34;TTL&#34;</span><span class="p">,</span> <span class="s">&#34;UDP&#34;</span><span class="p">,</span> <span class="s">&#34;UI&#34;</span><span class="p">,</span> <span class="s">&#34;UID&#34;</span><span class="p">,</span> <span class="s">&#34;UUID&#34;</span><span class="p">,</span> <span class="s">&#34;URI&#34;</span><span class="p">,</span> <span class="s">&#34;URL&#34;</span><span class="p">,</span> <span class="s">&#34;UTF8&#34;</span><span class="p">,</span> <span class="s">&#34;VM&#34;</span><span class="p">,</span> <span class="s">&#34;XML&#34;</span><span class="p">,</span> <span class="s">&#34;XMPP&#34;</span><span class="p">,</span> <span class="s">&#34;XSRF&#34;</span><span class="p">,</span> <span class="s">&#34;XSS&#34;</span><span class="p">}</span>
+<span class="kd">var</span> <span class="nx">commonInitialismsReplacer</span> <span class="o">*</span><span class="nx">strings</span><span class="p">.</span><span class="nx">Replacer</span>
+<span class="kd">var</span> <span class="nx">uncommonInitialismsReplacer</span> <span class="o">*</span><span class="nx">strings</span><span class="p">.</span><span class="nx">Replacer</span>
 
-<pre><code>// Copied from golint
-var commonInitialisms = []string{&quot;ACL&quot;, &quot;API&quot;, &quot;ASCII&quot;, &quot;CPU&quot;, &quot;CSS&quot;, &quot;DNS&quot;, &quot;EOF&quot;, &quot;GUID&quot;, &quot;HTML&quot;, &quot;HTTP&quot;, &quot;HTTPS&quot;, &quot;ID&quot;, &quot;IP&quot;, &quot;JSON&quot;, &quot;LHS&quot;, &quot;QPS&quot;, &quot;RAM&quot;, &quot;RHS&quot;, &quot;RPC&quot;, &quot;SLA&quot;, &quot;SMTP&quot;, &quot;SQL&quot;, &quot;SSH&quot;, &quot;TCP&quot;, &quot;TLS&quot;, &quot;TTL&quot;, &quot;UDP&quot;, &quot;UI&quot;, &quot;UID&quot;, &quot;UUID&quot;, &quot;URI&quot;, &quot;URL&quot;, &quot;UTF8&quot;, &quot;VM&quot;, &quot;XML&quot;, &quot;XMPP&quot;, &quot;XSRF&quot;, &quot;XSS&quot;}
-var commonInitialismsReplacer *strings.Replacer
-var uncommonInitialismsReplacer *strings.Replacer
-
-func init() {
-	var commonInitialismsForReplacer []string
-	var uncommonInitialismsForReplacer []string
-	for _, initialism := range commonInitialisms {
-		commonInitialismsForReplacer = append(commonInitialismsForReplacer, initialism, strings.Title(strings.ToLower(initialism)))
-		uncommonInitialismsForReplacer = append(uncommonInitialismsForReplacer, strings.Title(strings.ToLower(initialism)), initialism)
-	}
-	commonInitialismsReplacer = strings.NewReplacer(commonInitialismsForReplacer...)
-	uncommonInitialismsReplacer = strings.NewReplacer(uncommonInitialismsForReplacer...)
-}
-</code></pre>
-
+<span class="kd">func</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">commonInitialismsForReplacer</span> <span class="p">[]</span><span class="kt">string</span>
+	<span class="kd">var</span> <span class="nx">uncommonInitialismsForReplacer</span> <span class="p">[]</span><span class="kt">string</span>
+	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">initialism</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">commonInitialisms</span> <span class="p">{</span>
+		<span class="nx">commonInitialismsForReplacer</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">commonInitialismsForReplacer</span><span class="p">,</span> <span class="nx">initialism</span><span class="p">,</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Title</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">ToLower</span><span class="p">(</span><span class="nx">initialism</span><span class="p">)))</span>
+		<span class="nx">uncommonInitialismsForReplacer</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">uncommonInitialismsForReplacer</span><span class="p">,</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Title</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">ToLower</span><span class="p">(</span><span class="nx">initialism</span><span class="p">)),</span> <span class="nx">initialism</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">commonInitialismsReplacer</span> <span class="p">=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">NewReplacer</span><span class="p">(</span><span class="nx">commonInitialismsForReplacer</span><span class="o">...</span><span class="p">)</span>
+	<span class="nx">uncommonInitialismsReplacer</span> <span class="p">=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">NewReplacer</span><span class="p">(</span><span class="nx">uncommonInitialismsForReplacer</span><span class="o">...</span><span class="p">)</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <ol>
 <li>转换大驼峰函数：</li>
 </ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="cm">/*
+</span><span class="cm">	转换为大驼峰命名法则
+</span><span class="cm">	首字母大写，“_” 忽略后大写
+</span><span class="cm">*/</span>
+<span class="kd">func</span> <span class="nf">Marshal</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">name</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s">&#34;&#34;</span>
+	<span class="p">}</span>
 
-<pre><code>/*
-	转换为大驼峰命名法则
-	首字母大写，“_” 忽略后大写
-*/
-func Marshal(name string) string {
-	if name == &quot;&quot; {
-		return &quot;&quot;
-	}
+	<span class="nx">temp</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="s">&#34;_&#34;</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="nx">s</span> <span class="kt">string</span>
+	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">temp</span> <span class="p">{</span>
+		<span class="nx">vv</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">vv</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="nb">bool</span><span class="p">(</span><span class="nx">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="sc">&#39;a&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//首字母大写
+</span><span class="c1"></span>				<span class="nx">vv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">32</span>
+			<span class="p">}</span>
+			<span class="nx">s</span> <span class="o">+=</span> <span class="nb">string</span><span class="p">(</span><span class="nx">vv</span><span class="p">)</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
 
-	temp := strings.Split(name, &quot;_&quot;)
-	var s string
-	for _, v := range temp {
-		vv := []rune(v)
-		if len(vv) &gt; 0 {
-			if bool(vv[0] &gt;= 'a' &amp;&amp; vv[0] &lt;= 'z') { //首字母大写
-				vv[0] -= 32
-			}
-			s += string(vv)
-		}
-	}
-
-	s = uncommonInitialismsReplacer.Replace(s)
-	//smap.Set(name, s)
-	return s
-}
-</code></pre>
-
+	<span class="nx">s</span> <span class="p">=</span> <span class="nx">uncommonInitialismsReplacer</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+	<span class="c1">//smap.Set(name, s)
+</span><span class="c1"></span>	<span class="k">return</span> <span class="nx">s</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <ol>
 <li>回退函数</li>
 </ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="cm">/*
+</span><span class="cm">  回退网络模式
+</span><span class="cm">*/</span>
+<span class="kd">func</span> <span class="nf">UnMarshal</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+	<span class="kd">const</span> <span class="p">(</span>
+		<span class="nx">lower</span> <span class="p">=</span> <span class="kc">false</span>
+		<span class="nx">upper</span> <span class="p">=</span> <span class="kc">true</span>
+	<span class="p">)</span>
 
-<pre><code>/*
-  回退网络模式
-*/
-func UnMarshal(name string) string {
-	const (
-		lower = false
-		upper = true
-	)
+	<span class="k">if</span> <span class="nx">name</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s">&#34;&#34;</span>
+	<span class="p">}</span>
 
-	if name == &quot;&quot; {
-		return &quot;&quot;
-	}
+	<span class="kd">var</span> <span class="p">(</span>
+		<span class="nx">value</span>                                    <span class="p">=</span> <span class="nx">commonInitialismsReplacer</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+		<span class="nx">buf</span>                                      <span class="p">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nf">NewBufferString</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">)</span>
+		<span class="nx">lastCase</span><span class="p">,</span> <span class="nx">currCase</span><span class="p">,</span> <span class="nx">nextCase</span><span class="p">,</span> <span class="nx">nextNumber</span> <span class="kt">bool</span>
+	<span class="p">)</span>
 
-	var (
-		value                                    = commonInitialismsReplacer.Replace(name)
-		buf                                      = bytes.NewBufferString(&quot;&quot;)
-		lastCase, currCase, nextCase, nextNumber bool
-	)
+	<span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">value</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">{</span>
+		<span class="nx">nextCase</span> <span class="p">=</span> <span class="nb">bool</span><span class="p">(</span><span class="nx">value</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="sc">&#39;A&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="sc">&#39;Z&#39;</span><span class="p">)</span>
+		<span class="nx">nextNumber</span> <span class="p">=</span> <span class="nb">bool</span><span class="p">(</span><span class="nx">value</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="sc">&#39;0&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span>
 
-	for i, v := range value[:len(value)-1] {
-		nextCase = bool(value[i+1] &gt;= 'A' &amp;&amp; value[i+1] &lt;= 'Z')
-		nextNumber = bool(value[i+1] &gt;= '0' &amp;&amp; value[i+1] &lt;= '9')
+		<span class="k">if</span> <span class="nx">i</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="nx">currCase</span> <span class="o">==</span> <span class="nx">upper</span> <span class="p">{</span>
+				<span class="k">if</span> <span class="nx">lastCase</span> <span class="o">==</span> <span class="nx">upper</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">nextCase</span> <span class="o">==</span> <span class="nx">upper</span> <span class="o">||</span> <span class="nx">nextNumber</span> <span class="o">==</span> <span class="nx">upper</span><span class="p">)</span> <span class="p">{</span>
+					<span class="nx">buf</span><span class="p">.</span><span class="nf">WriteRune</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+				<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+					<span class="k">if</span> <span class="nx">value</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;_&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;_&#39;</span> <span class="p">{</span>
+						<span class="nx">buf</span><span class="p">.</span><span class="nf">WriteRune</span><span class="p">(</span><span class="sc">&#39;_&#39;</span><span class="p">)</span>
+					<span class="p">}</span>
+					<span class="nx">buf</span><span class="p">.</span><span class="nf">WriteRune</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+				<span class="nx">buf</span><span class="p">.</span><span class="nf">WriteRune</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+				<span class="k">if</span> <span class="nx">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">nextCase</span> <span class="o">==</span> <span class="nx">upper</span> <span class="o">&amp;&amp;</span> <span class="nx">nextNumber</span> <span class="o">==</span> <span class="nx">lower</span><span class="p">)</span> <span class="p">{</span>
+					<span class="nx">buf</span><span class="p">.</span><span class="nf">WriteRune</span><span class="p">(</span><span class="sc">&#39;_&#39;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="nx">currCase</span> <span class="p">=</span> <span class="nx">upper</span>
+			<span class="nx">buf</span><span class="p">.</span><span class="nf">WriteRune</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+		<span class="p">}</span>
+		<span class="nx">lastCase</span> <span class="p">=</span> <span class="nx">currCase</span>
+		<span class="nx">currCase</span> <span class="p">=</span> <span class="nx">nextCase</span>
+	<span class="p">}</span>
 
-		if i &gt; 0 {
-			if currCase == upper {
-				if lastCase == upper &amp;&amp; (nextCase == upper || nextNumber == upper) {
-					buf.WriteRune(v)
-				} else {
-					if value[i-1] != '_' &amp;&amp; value[i+1] != '_' {
-						buf.WriteRune('_')
-					}
-					buf.WriteRune(v)
-				}
-			} else {
-				buf.WriteRune(v)
-				if i == len(value)-2 &amp;&amp; (nextCase == upper &amp;&amp; nextNumber == lower) {
-					buf.WriteRune('_')
-				}
-			}
-		} else {
-			currCase = upper
-			buf.WriteRune(v)
-		}
-		lastCase = currCase
-		currCase = nextCase
-	}
+	<span class="nx">buf</span><span class="p">.</span><span class="nf">WriteByte</span><span class="p">(</span><span class="nx">value</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
-	buf.WriteByte(value[len(value)-1])
-
-	s := strings.ToLower(buf.String())
-	return s
-}
-
-</code></pre>
-
+	<span class="nx">s</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">ToLower</span><span class="p">(</span><span class="nx">buf</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
+	<span class="k">return</span> <span class="nx">s</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <ol>
 <li>测试：</li>
 </ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">Test_cache</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">SS</span> <span class="o">:=</span> <span class="s">&#34;OauthIDAPI&#34;</span>
 
-<pre><code>func Test_cache(t *testing.T) {
-	SS := &quot;OauthIDAPI&quot;
+	<span class="nx">tmp0</span> <span class="o">:=</span> <span class="nf">UnMarshal</span><span class="p">(</span><span class="nx">SS</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">tmp0</span><span class="p">)</span>
+	<span class="nx">tmp1</span> <span class="o">:=</span> <span class="nf">Marshal</span><span class="p">(</span><span class="nx">tmp0</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">tmp1</span><span class="p">)</span>
 
-	tmp0 := UnMarshal(SS)
-	fmt.Println(tmp0)
-	tmp1 := Marshal(tmp0)
-	fmt.Println(tmp1)
-
-	if SS != tmp1 {
-		fmt.Println(&quot;false.&quot;)
-	}
-}
-</code></pre>
-
+	<span class="k">if</span> <span class="nx">SS</span> <span class="o">!=</span> <span class="nx">tmp1</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;false.&#34;</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>输入:
 OauthIDAPI
 输出：
@@ -541,6 +704,19 @@ OauthIDAPI</p>
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/loglistdef/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">日志系统设计</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
           <a class="next" href="/post/githelp/">
             <span class="next-text nav-default">git 使用帮助文档</span>
