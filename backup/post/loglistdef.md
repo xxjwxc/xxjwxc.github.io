@@ -21,6 +21,9 @@ mathjax: true    # 打开 mathjax
 
 
 #日志系统说明
+先来传送门:
+
+[代码传送门](https://github.com/xie1xiao1jun/esLog)
 
 
 - 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。
@@ -84,7 +87,74 @@ rpc SearchLog(SearchLogReq) returns (SearchLogResp);
 
 ![图片描述](/image/tapd_20332201_base64_1555911779_3.png)
 
+
+
+
+6、逻辑及代码调用说明：
+
+业务逻辑调用：
+
+``` go
+//------ 日志记录 ------
+var oploger logerlogic.OpLogerTuple //创建一个三元组日志类型
+for _, v := range list {//添加多个日志
+	oploger.AddOne(oplogger.EOpType_EOpSTokin,"service", username, sku,"操作补拍", "", oplogger.ELogLevel_EOperate)
+}
+//发送日志
+logerlogic.OnAddLogOplogger(ctx, &oploger)
+```
+
+
+6、逻辑及代码调用说明：
+
+日志写入调用：
+
+```go
+eslist := tools.ConvertRe2ESLog(req.Info)
+for _, v := range eslist {
+	tmp = append(tmp, v)
+}
+
+//批量添加
+b := es.GetClient().BulkAdd(config.Config.ElasticSearch.Index,
+	config.Config.ElasticSearch.Index, "", tmp)
+```
+
+
+日志写入调用：
+
+```go
+eslist := tools.ConvertRe2ESLog(req.Info)
+for _, v := range eslist {
+	tmp = append(tmp, v)
+}
+
+//批量添加
+b := es.GetClient().BulkAdd(config.Config.ElasticSearch.Index,
+		config.Config.ElasticSearch.Index, "", tmp)
+```
+
+
+日志搜索：
+
+```go
+
+//精确搜索
+term := make(map[string]interface{})
+...
+//模糊匹配
+match := make(map[string]interface{})
+...
+//时间段搜索
+timeCase := make(map[string]es.CaseSection)
+...
+
+eslist := tools.Search(term, match, timeCase, req.Page, req.Limit)
+```
+
+
+
 说明：以接口解耦，具体业务根据不同需求实现接口实现。主要用来对数据分流。
 
-
+[传送门](https://github.com/xie1xiao1jun/esLog)
 

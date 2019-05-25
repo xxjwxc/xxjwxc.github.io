@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="xiexiaojun" />
-  <meta name="description" content="#日志系统说明 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主要建设在oplogge" />
+  <meta name="description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -58,26 +58,26 @@
 
 
 <meta property="og:title" content="日志系统设计" />
-<meta property="og:description" content="#日志系统说明 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主要建设在oplogge" />
+<meta property="og:description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xie1xiao1jun.github.io/post/loglistdef/" />
 <meta property="article:published_time" content="2019-05-25T14:01:23&#43;08:00"/>
 <meta property="article:modified_time" content="2019-05-25T14:01:23&#43;08:00"/>
 
 <meta itemprop="name" content="日志系统设计">
-<meta itemprop="description" content="#日志系统说明 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主要建设在oplogge">
+<meta itemprop="description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主">
 
 
 <meta itemprop="datePublished" content="2019-05-25T14:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-25T14:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="607">
+<meta itemprop="wordCount" content="866">
 
 
 
 <meta itemprop="keywords" content="golang,日志,log," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="日志系统设计"/>
-<meta name="twitter:description" content="#日志系统说明 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主要建设在oplogge"/>
+<meta name="twitter:description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -341,7 +341,7 @@
             <a href="https://xie1xiao1jun.github.io/categories/%E8%AE%BE%E8%AE%A1/"> 设计 </a>
             
           </div>
-        <span class="more-meta"> 约 607 字 </span>
+        <span class="more-meta"> 约 866 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -367,7 +367,10 @@
 
     
     <div class="post-content">
-      <p>#日志系统说明</p>
+      <p>#日志系统说明
+先来传送门:</p>
+
+<p><a href="https://github.com/xie1xiao1jun/esLog">代码传送门</a></p>
 
 <ul>
 <li><p>1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。</p></li>
@@ -445,7 +448,109 @@
 
 <p><img src="/image/tapd_20332201_base64_1555911779_3.png" alt="图片描述" /></p>
 
+<p>6、逻辑及代码调用说明：</p>
+
+<p>业务逻辑调用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//------ 日志记录 ------
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">oploger</span> <span class="nx">logerlogic</span><span class="p">.</span><span class="nx">OpLogerTuple</span> <span class="c1">//创建一个三元组日志类型
+</span><span class="c1"></span><span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">list</span> <span class="p">{</span><span class="c1">//添加多个日志
+</span><span class="c1"></span>	<span class="nx">oploger</span><span class="p">.</span><span class="nf">AddOne</span><span class="p">(</span><span class="nx">oplogger</span><span class="p">.</span><span class="nx">EOpType_EOpSTokin</span><span class="p">,</span><span class="s">&#34;service&#34;</span><span class="p">,</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">sku</span><span class="p">,</span><span class="s">&#34;操作补拍&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nx">oplogger</span><span class="p">.</span><span class="nx">ELogLevel_EOperate</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">//发送日志
+</span><span class="c1"></span><span class="nx">logerlogic</span><span class="p">.</span><span class="nf">OnAddLogOplogger</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">oploger</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>6、逻辑及代码调用说明：</p>
+
+<p>日志写入调用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">eslist</span> <span class="o">:=</span> <span class="nx">tools</span><span class="p">.</span><span class="nf">ConvertRe2ESLog</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">Info</span><span class="p">)</span>
+<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">eslist</span> <span class="p">{</span>
+	<span class="nx">tmp</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tmp</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">//批量添加
+</span><span class="c1"></span><span class="nx">b</span> <span class="o">:=</span> <span class="nx">es</span><span class="p">.</span><span class="nf">GetClient</span><span class="p">().</span><span class="nf">BulkAdd</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">.</span><span class="nx">Index</span><span class="p">,</span>
+	<span class="nx">config</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">.</span><span class="nx">Index</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nx">tmp</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>日志写入调用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">eslist</span> <span class="o">:=</span> <span class="nx">tools</span><span class="p">.</span><span class="nf">ConvertRe2ESLog</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">Info</span><span class="p">)</span>
+<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">eslist</span> <span class="p">{</span>
+	<span class="nx">tmp</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tmp</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">//批量添加
+</span><span class="c1"></span><span class="nx">b</span> <span class="o">:=</span> <span class="nx">es</span><span class="p">.</span><span class="nf">GetClient</span><span class="p">().</span><span class="nf">BulkAdd</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">.</span><span class="nx">Index</span><span class="p">,</span>
+		<span class="nx">config</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">.</span><span class="nx">Index</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nx">tmp</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>日志搜索：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//精确搜索
+</span><span class="c1"></span><span class="nx">term</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+<span class="o">...</span>
+<span class="c1">//模糊匹配
+</span><span class="c1"></span><span class="nx">match</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+<span class="o">...</span>
+<span class="c1">//时间段搜索
+</span><span class="c1"></span><span class="nx">timeCase</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">es</span><span class="p">.</span><span class="nx">CaseSection</span><span class="p">)</span>
+<span class="o">...</span>
+
+<span class="nx">eslist</span> <span class="o">:=</span> <span class="nx">tools</span><span class="p">.</span><span class="nf">Search</span><span class="p">(</span><span class="nx">term</span><span class="p">,</span> <span class="nx">match</span><span class="p">,</span> <span class="nx">timeCase</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">Page</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">Limit</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>说明：以接口解耦，具体业务根据不同需求实现接口实现。主要用来对数据分流。</p>
+
+<p><a href="https://github.com/xie1xiao1jun/esLog">传送门</a></p>
 
     </div>
 
