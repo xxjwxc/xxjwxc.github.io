@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-05-25T14:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-25T14:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="866">
+<meta itemprop="wordCount" content="780">
 
 
 
@@ -341,7 +341,7 @@
             <a href="https://xie1xiao1jun.github.io/categories/%E8%AE%BE%E8%AE%A1/"> 设计 </a>
             
           </div>
-        <span class="more-meta"> 约 866 字 </span>
+        <span class="more-meta"> 约 780 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -385,31 +385,6 @@
 <p>以下为时序图：</p>
 
 <p><img src="/image/tapd_20332201_base64_1555911442_70.png" alt="图片描述" /></p>
-
-<ul>
-<li>4、需要重写的接口如下：</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"> <span class="c1">//! 本地物流服务
-</span><span class="c1"></span><span class="nx">service</span> <span class="nx">Logger</span> <span class="p">{</span>
-<span class="nx">rpc</span> <span class="nf">Operate</span><span class="p">(</span><span class="nx">Operation</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">common</span><span class="p">.</span><span class="nx">Empty</span><span class="p">);</span>
-<span class="c1">//MultiOperate 批量插入操作日志
-</span><span class="c1"></span><span class="nx">rpc</span> <span class="nf">MultiOperate</span><span class="p">(</span><span class="nx">Operations</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">common</span><span class="p">.</span><span class="nx">Empty</span><span class="p">);</span>
-<span class="nx">rpc</span> <span class="nf">SearchLog</span><span class="p">(</span><span class="nx">SearchLogReq</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">SearchLogResp</span><span class="p">);</span>
-<span class="p">}</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>说明：为了兼容性，不修改接口调用参数及返回值内容。只修改内部实现细节。</p>
 
 <ul>
 <li>5、新日志系统的数据格式说明：</li>

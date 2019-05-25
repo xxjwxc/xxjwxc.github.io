@@ -38,19 +38,6 @@ mathjax: true    # 打开 mathjax
 
 ![图片描述](/image/tapd_20332201_base64_1555911442_70.png)
 
-- 4、需要重写的接口如下：
-
-``` go
- //! 本地物流服务
-service Logger {
-rpc Operate(Operation) returns (common.Empty);
-//MultiOperate 批量插入操作日志
-rpc MultiOperate(Operations) returns (common.Empty);
-rpc SearchLog(SearchLogReq) returns (SearchLogResp);
-}
-```
-
-说明：为了兼容性，不修改接口调用参数及返回值内容。只修改内部实现细节。
 
 - 5、新日志系统的数据格式说明：
 
