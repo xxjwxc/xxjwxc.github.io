@@ -205,7 +205,19 @@ type UserInfoTbl struct {
 }
 ```
 
-1. 下一步计划
+## 6. 提供一个windows 可视化工具
+
+![图片描述](/image/gormt/1.png)
+
+![图片描述](/image/gormt/2.jpg)
+
+![图片描述](/image/gormt/3.jpg)
+
+![图片描述](/image/gormt/4.jpg)
+
+[下载地址](https://github.com/xie1xiao1jun/gormt/releases/download/v1.0.0.1/v1.0.zip)
+
+7. 下一步计划
 
 - 加入外键支持(ForeignKey)
 
