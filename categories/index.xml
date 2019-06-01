@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 May 2019 14:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2019 14:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://xie1xiao1jun.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>工具</title>
+      <link>https://xie1xiao1jun.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sat, 01 Jun 2019 14:01:23 +0800</pubDate>
+      
+      <guid>https://xie1xiao1jun.github.io/categories/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>设计</title>
@@ -26,15 +35,6 @@
       <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
       
       <guid>https://xie1xiao1jun.github.io/categories/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>工具</title>
-      <link>https://xie1xiao1jun.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
-      
-      <guid>https://xie1xiao1jun.github.io/categories/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
