@@ -234,5 +234,5 @@ Dropped 18 nodes (cum <= 0.28kB)
 
 - 打开图片查看信息
 
-![2](/images/pprof2.png)
+![2](/image/pprof2.png)
 ----------
