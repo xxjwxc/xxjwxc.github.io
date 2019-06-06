@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-06-07T03:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-07T03:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="804">
+<meta itemprop="wordCount" content="782">
 
 
 
@@ -341,7 +341,7 @@
             <a href="https://xie1xiao1jun.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 804 字 </span>
+        <span class="more-meta"> 约 782 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -488,7 +488,7 @@
 </div>
 </div>
 <ul>
-<li>直接访问<a href="http://localhost:11181/即可查看信息">http://localhost:11181/即可查看信息</a></li>
+<li>直接访问 <a href="http://localhost:11181/">http://localhost:11181/</a> 即可查看信息</li>
 </ul>
 
 <p><img src="/image/pprof1.jpg" alt="1" /></p>
@@ -671,7 +671,7 @@ heap_main_13712_2019_06_07_02_50_56.prof</li>
 <h3 id="命令工具">命令工具</h3>
 
 <ol>
-<li>go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof</li>
+<li><code>go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof</code></li>
 </ol>
 
 <p>进入pprof 内部 可以使用 top 10等命令来查看过滤信息，exit退出</p>
@@ -692,7 +692,7 @@ Entering interactive mode (type &#34;help&#34; for commands, &#34;o&#34; for opt
 </div>
 </div>
 <ol>
-<li>go tool pprof &ndash;text ./main ./heap_main_13712_2019_06_07_02_50_56.prof</li>
+<li><code>go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof</code></li>
 </ol>
 
 <h2 id="查看各个函数-方法的内存消耗排名">查看各个函数/方法的内存消耗排名</h2>
@@ -763,7 +763,7 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
 </div>
 </div>
 <ol>
-<li>go tool pprof &ndash;dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof &gt; heap.gv</li>
+<li><code>go tool pprof --dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof &gt; heap.gv</code></li>
 </ol>
 
 <p>生成可以在graphviz里面看的gv文件</p>
@@ -771,9 +771,10 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
 <hr />
 
 <ol>
-<li>通过3的gv文件直接生成图片
-dot -T png heap.gv&gt;heap.png</li>
+<li>通过3的gv文件直接生成图片</li>
 </ol>
+
+<p><code>dot -T png heap.gv&gt;heap.png</code></p>
 
 <ul>
 <li>打开图片查看信息</li>

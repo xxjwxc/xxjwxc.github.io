@@ -126,7 +126,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;直接访问&lt;a href=&#34;http://localhost:11181/即可查看信息&#34;&gt;http://localhost:11181/即可查看信息&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;直接访问 &lt;a href=&#34;http://localhost:11181/&#34;&gt;http://localhost:11181/&lt;/a&gt; 即可查看信息&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/pprof1.jpg&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;
@@ -309,7 +309,7 @@ heap_main_13712_2019_06_07_02_50_56.prof&lt;/li&gt;
 &lt;h3 id=&#34;命令工具&#34;&gt;命令工具&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;进入pprof 内部 可以使用 top 10等命令来查看过滤信息，exit退出&lt;/p&gt;
@@ -330,7 +330,7 @@ Entering interactive mode (type &amp;#34;help&amp;#34; for commands, &amp;#34;o&
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;ol&gt;
-&lt;li&gt;go tool pprof &amp;ndash;text ./main ./heap_main_13712_2019_06_07_02_50_56.prof&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;查看各个函数-方法的内存消耗排名&#34;&gt;查看各个函数/方法的内存消耗排名&lt;/h2&gt;
@@ -401,7 +401,7 @@ Dropped 18 nodes (cum &amp;lt;= 0.28kB)
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;ol&gt;
-&lt;li&gt;go tool pprof &amp;ndash;dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof &amp;gt; heap.gv&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;go tool pprof --dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof &amp;gt; heap.gv&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;生成可以在graphviz里面看的gv文件&lt;/p&gt;
@@ -409,9 +409,10 @@ Dropped 18 nodes (cum &amp;lt;= 0.28kB)
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li&gt;通过3的gv文件直接生成图片
-dot -T png heap.gv&amp;gt;heap.png&lt;/li&gt;
+&lt;li&gt;通过3的gv文件直接生成图片&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;dot -T png heap.gv&amp;gt;heap.png&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;打开图片查看信息&lt;/li&gt;

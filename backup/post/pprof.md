@@ -73,7 +73,7 @@ func main() {
 	http.ListenAndServe(":11181", nil)
 }
 ```
-- 直接访问http://localhost:11181/即可查看信息
+- 直接访问 http://localhost:11181/ 即可查看信息
 
 ![1](/image/pprof1.jpg)
 
@@ -173,7 +173,7 @@ go run
 
 ### 命令工具
 
-1. go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof
+1. ```go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```
 
 进入pprof 内部 可以使用 top 10等命令来查看过滤信息，exit退出
 
@@ -184,7 +184,7 @@ Type: inuse_space
 Entering interactive mode (type "help" for commands, "o" for options)
 (pprof)
 ```
-2. go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof
+2. ```go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof```
 
 查看各个函数/方法的内存消耗排名
 ------
@@ -221,7 +221,7 @@ Dropped 18 nodes (cum <= 0.28kB)
          0     0% 98.55%        2kB  3.61%  runtime.startm
          0     0% 98.55%     0.80kB  1.45%  sync.(*Once).Do
 ```
-3. go tool pprof --dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof > heap.gv
+3. ```go tool pprof --dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof > heap.gv```
 
 
 生成可以在graphviz里面看的gv文件
@@ -229,7 +229,8 @@ Dropped 18 nodes (cum <= 0.28kB)
 ------
 
 4. 通过3的gv文件直接生成图片
-dot -T png heap.gv>heap.png
+
+```dot -T png heap.gv>heap.png```
 
 - 打开图片查看信息
 
