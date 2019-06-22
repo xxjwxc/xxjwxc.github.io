@@ -6,17 +6,35 @@
     <description>Recent content in Tags on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 07 Jun 2019 03:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jun 2019 21:01:00 +0800</lastBuildDate>
     
 	<atom:link href="https://xie1xiao1jun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>gin</title>
+      <link>https://xie1xiao1jun.github.io/tags/gin/</link>
+      <pubDate>Sat, 22 Jun 2019 21:01:00 +0800</pubDate>
+      
+      <guid>https://xie1xiao1jun.github.io/tags/gin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>golang</title>
       <link>https://xie1xiao1jun.github.io/tags/golang/</link>
-      <pubDate>Fri, 07 Jun 2019 03:01:23 +0800</pubDate>
+      <pubDate>Sat, 22 Jun 2019 21:01:00 +0800</pubDate>
       
       <guid>https://xie1xiao1jun.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具</title>
+      <link>https://xie1xiao1jun.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sat, 22 Jun 2019 21:01:00 +0800</pubDate>
+      
+      <guid>https://xie1xiao1jun.github.io/tags/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
@@ -26,15 +44,6 @@
       <pubDate>Fri, 07 Jun 2019 03:01:23 +0800</pubDate>
       
       <guid>https://xie1xiao1jun.github.io/tags/pprof/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>工具</title>
-      <link>https://xie1xiao1jun.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Fri, 07 Jun 2019 03:01:23 +0800</pubDate>
-      
-      <guid>https://xie1xiao1jun.github.io/tags/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
