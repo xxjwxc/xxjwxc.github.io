@@ -2,120 +2,120 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Technology blog by xiexiaojun</title>
-    <link>https://xie1xiao1jun.github.io/tags/</link>
+    <link>https://xxjwxc.github.io/tags/</link>
     <description>Recent content in Tags on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 22 Jun 2019 21:01:00 +0800</lastBuildDate>
     
-	<atom:link href="https://xie1xiao1jun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>gin</title>
-      <link>https://xie1xiao1jun.github.io/tags/gin/</link>
+      <link>https://xxjwxc.github.io/tags/gin/</link>
       <pubDate>Sat, 22 Jun 2019 21:01:00 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/gin/</guid>
+      <guid>https://xxjwxc.github.io/tags/gin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>https://xie1xiao1jun.github.io/tags/golang/</link>
+      <link>https://xxjwxc.github.io/tags/golang/</link>
       <pubDate>Sat, 22 Jun 2019 21:01:00 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/golang/</guid>
+      <guid>https://xxjwxc.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>工具</title>
-      <link>https://xie1xiao1jun.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
+      <link>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Sat, 22 Jun 2019 21:01:00 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pprof</title>
-      <link>https://xie1xiao1jun.github.io/tags/pprof/</link>
+      <link>https://xxjwxc.github.io/tags/pprof/</link>
       <pubDate>Fri, 07 Jun 2019 03:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/pprof/</guid>
+      <guid>https://xxjwxc.github.io/tags/pprof/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gorm</title>
-      <link>https://xie1xiao1jun.github.io/tags/gorm/</link>
+      <link>https://xxjwxc.github.io/tags/gorm/</link>
       <pubDate>Sat, 01 Jun 2019 14:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/gorm/</guid>
+      <guid>https://xxjwxc.github.io/tags/gorm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>log</title>
-      <link>https://xie1xiao1jun.github.io/tags/log/</link>
+      <link>https://xxjwxc.github.io/tags/log/</link>
       <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/log/</guid>
+      <guid>https://xxjwxc.github.io/tags/log/</guid>
       <description></description>
     </item>
     
     <item>
       <title>日志</title>
-      <link>https://xie1xiao1jun.github.io/tags/%E6%97%A5%E5%BF%97/</link>
+      <link>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</link>
       <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/%E6%97%A5%E5%BF%97/</guid>
+      <guid>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</guid>
       <description></description>
     </item>
     
     <item>
       <title>转换</title>
-      <link>https://xie1xiao1jun.github.io/tags/%E8%BD%AC%E6%8D%A2/</link>
+      <link>https://xxjwxc.github.io/tags/%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/%E8%BD%AC%E6%8D%A2/</guid>
+      <guid>https://xxjwxc.github.io/tags/%E8%BD%AC%E6%8D%A2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>驼峰</title>
-      <link>https://xie1xiao1jun.github.io/tags/%E9%A9%BC%E5%B3%B0/</link>
+      <link>https://xxjwxc.github.io/tags/%E9%A9%BC%E5%B3%B0/</link>
       <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/%E9%A9%BC%E5%B3%B0/</guid>
+      <guid>https://xxjwxc.github.io/tags/%E9%A9%BC%E5%B3%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://xie1xiao1jun.github.io/tags/git/</link>
+      <link>https://xxjwxc.github.io/tags/git/</link>
       <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/git/</guid>
+      <guid>https://xxjwxc.github.io/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>help</title>
-      <link>https://xie1xiao1jun.github.io/tags/help/</link>
+      <link>https://xxjwxc.github.io/tags/help/</link>
       <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/help/</guid>
+      <guid>https://xxjwxc.github.io/tags/help/</guid>
       <description></description>
     </item>
     
     <item>
       <title>min</title>
-      <link>https://xie1xiao1jun.github.io/tags/min/</link>
+      <link>https://xxjwxc.github.io/tags/min/</link>
       <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/tags/min/</guid>
+      <guid>https://xxjwxc.github.io/tags/min/</guid>
       <description></description>
     </item>
     

@@ -19,7 +19,7 @@ mathjax: true    # 打开 mathjax
 
 ---
 
-# [gorm-tools](https://github.com/xie1xiao1jun/gorm-tools)
+# [gorm-tools](https://github.com/xxjwxc/gorm-tools)
 ### gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签
 
 --------
@@ -215,11 +215,11 @@ type UserInfoTbl struct {
 
 ![图片描述](/image/gormt/4.jpg)
 
-[下载地址](https://github.com/xie1xiao1jun/gormt/releases/download/v1.0.0.1/v1.0.zip)
+[下载地址](https://github.com/xxjwxc/gormt/releases/download/v1.0.0.1/v1.0.zip)
 
 7. 下一步计划
 
 - 加入外键支持(ForeignKey)
 
-- ###### [传送门](https://github.com/xie1xiao1jun/gorm-tools)
+- ###### [传送门](https://github.com/xxjwxc/gorm-tools)
 

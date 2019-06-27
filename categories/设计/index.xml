@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>设计 on Technology blog by xiexiaojun</title>
-    <link>https://xie1xiao1jun.github.io/categories/%E8%AE%BE%E8%AE%A1/</link>
+    <link>https://xxjwxc.github.io/categories/%E8%AE%BE%E8%AE%A1/</link>
     <description>Recent content in 设计 on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 25 May 2019 14:01:23 +0800</lastBuildDate>
     
-	<atom:link href="https://xie1xiao1jun.github.io/categories/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xxjwxc.github.io/categories/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>日志系统设计</title>
-      <link>https://xie1xiao1jun.github.io/post/loglistdef/</link>
+      <link>https://xxjwxc.github.io/post/loglistdef/</link>
       <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/loglistdef/</guid>
+      <guid>https://xxjwxc.github.io/post/loglistdef/</guid>
       <description>#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pprof on Technology blog by xiexiaojun</title>
-    <link>https://xie1xiao1jun.github.io/tags/pprof/</link>
+    <link>https://xxjwxc.github.io/tags/pprof/</link>
     <description>Recent content in pprof on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 07 Jun 2019 03:01:23 +0800</lastBuildDate>
     
-	<atom:link href="https://xie1xiao1jun.github.io/tags/pprof/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xxjwxc.github.io/tags/pprof/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>golang内存泄露分析</title>
-      <link>https://xie1xiao1jun.github.io/post/pprof/</link>
+      <link>https://xxjwxc.github.io/post/pprof/</link>
       <pubDate>Fri, 07 Jun 2019 03:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/pprof/</guid>
+      <guid>https://xxjwxc.github.io/post/pprof/</guid>
       <description>golang内存泄露工具检查 安装工具 brew install graphviz （生成图片时候要用到dot） 使用pprof工具实现 简单使用场景 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18</description>
     </item>
     

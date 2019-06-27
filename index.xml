@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technology blog by xiexiaojun</title>
-    <link>https://xie1xiao1jun.github.io/</link>
+    <link>https://xxjwxc.github.io/</link>
     <description>Recent content on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 22 Jun 2019 21:01:00 +0800</lastBuildDate>
     
-        <atom:link href="https://xie1xiao1jun.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://xxjwxc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>go gin 参数自动绑定工具</title>
-      <link>https://xie1xiao1jun.github.io/post/ginrpc/</link>
+      <link>https://xxjwxc.github.io/post/ginrpc/</link>
       <pubDate>Sat, 22 Jun 2019 21:01:00 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/ginrpc/</guid>
+      <guid>https://xxjwxc.github.io/post/ginrpc/</guid>
       
         <description>
 
@@ -131,7 +131,7 @@
 &lt;pre class=&#34;chroma&#34;&gt;  curl &amp;#39;http://127.0.0.1:8080/test4&amp;#39; -H &amp;#39;Content-Type: application/json&amp;#39; -d &amp;#39;{&amp;#34;access_token&amp;#34;:&amp;#34;111&amp;#34;, &amp;#34;user_name&amp;#34;:&amp;#34;222&amp;#34;, &amp;#34;password&amp;#34;:&amp;#34;333&amp;#34;}&amp;#39;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun/ginrpc&#34;&gt;传送门&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xxjwxc/ginrpc&#34;&gt;传送门&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;如果你喜欢,请&amp;rsquo;star&amp;rsquo;&lt;/p&gt;
 </description>
@@ -140,10 +140,10 @@
     
     <item>
       <title>golang内存泄露分析</title>
-      <link>https://xie1xiao1jun.github.io/post/pprof/</link>
+      <link>https://xxjwxc.github.io/post/pprof/</link>
       <pubDate>Fri, 07 Jun 2019 03:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/pprof/</guid>
+      <guid>https://xxjwxc.github.io/post/pprof/</guid>
       
         <description>
 
@@ -256,7 +256,7 @@
 &lt;li&gt;直接访问 &lt;a href=&#34;http://localhost:11181/&#34;&gt;http://localhost:11181/&lt;/a&gt; 即可查看信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/pprof1.jpg&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/pprof1.jpg&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;具体详细分析数据&#34;&gt;具体详细分析数据&lt;/h2&gt;
 
@@ -545,21 +545,21 @@ Dropped 18 nodes (cum &amp;lt;= 0.28kB)
 &lt;li&gt;打开图片查看信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;2-image-pprof2-png&#34;&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/pprof2.png&#34; alt=&#34;2&#34; /&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;2-image-pprof2-png&#34;&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/pprof2.png&#34; alt=&#34;2&#34; /&gt;&lt;/h2&gt;
 </description>
       
     </item>
     
     <item>
       <title>gorm mysql数据库转换工具</title>
-      <link>https://xie1xiao1jun.github.io/post/gormtools/</link>
+      <link>https://xxjwxc.github.io/post/gormtools/</link>
       <pubDate>Sat, 01 Jun 2019 14:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/gormtools/</guid>
+      <guid>https://xxjwxc.github.io/post/gormtools/</guid>
       
         <description>
 
-&lt;h1 id=&#34;gorm-tools-https-github-com-xie1xiao1jun-gorm-tools&#34;&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun/gorm-tools&#34;&gt;gorm-tools&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;gorm-tools-https-github-com-xxjwxc-gorm-tools&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gorm-tools&#34;&gt;gorm-tools&lt;/a&gt;&lt;/h1&gt;
 
 &lt;h3 id=&#34;gorm-mysql数据库转-struct-工具-可以将mysql数据库自动生成golang-sturct结构-带大驼峰命名规则-带json标签&#34;&gt;gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签&lt;/h3&gt;
 
@@ -903,15 +903,15 @@ type UserInfoTbl struct {
 &lt;/div&gt;
 &lt;h2 id=&#34;6-提供一个windows-可视化工具&#34;&gt;6. 提供一个windows 可视化工具&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/gormt/1.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/gormt/1.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/gormt/2.jpg&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/gormt/2.jpg&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/gormt/3.jpg&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/gormt/3.jpg&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/gormt/4.jpg&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/gormt/4.jpg&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun/gormt/releases/download/v1.0.0.1/v1.0.zip&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt/releases/download/v1.0.0.1/v1.0.zip&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;下一步计划&lt;/li&gt;
@@ -920,7 +920,7 @@ type UserInfoTbl struct {
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;加入外键支持(ForeignKey)&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;h6 id=&#34;传送门-https-github-com-xie1xiao1jun-gorm-tools&#34;&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun/gorm-tools&#34;&gt;传送门&lt;/a&gt;&lt;/h6&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h6 id=&#34;传送门-https-github-com-xxjwxc-gorm-tools&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gorm-tools&#34;&gt;传送门&lt;/a&gt;&lt;/h6&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       
@@ -928,15 +928,15 @@ type UserInfoTbl struct {
     
     <item>
       <title>日志系统设计</title>
-      <link>https://xie1xiao1jun.github.io/post/loglistdef/</link>
+      <link>https://xxjwxc.github.io/post/loglistdef/</link>
       <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/loglistdef/</guid>
+      <guid>https://xxjwxc.github.io/post/loglistdef/</guid>
       
         <description>&lt;p&gt;#日志系统说明
 先来传送门:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun/esLog&#34;&gt;代码传送门&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xxjwxc/esLog&#34;&gt;代码传送门&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。&lt;/p&gt;&lt;/li&gt;
@@ -946,11 +946,11 @@ type UserInfoTbl struct {
 &lt;li&gt;&lt;p&gt;3、以下为主要设计原理图：&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/tapd_20332201_base64_1555911551_22.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/tapd_20332201_base64_1555911551_22.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;以下为时序图：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/tapd_20332201_base64_1555911442_70.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/tapd_20332201_base64_1555911442_70.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;5、新日志系统的数据格式说明：&lt;/li&gt;
@@ -958,11 +958,11 @@ type UserInfoTbl struct {
 
 &lt;p&gt;根据日志基本形态结合实际需求，列出一下思维导图&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/tapd_personalword_1120122431001000641_base64_1555902612_27.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/tapd_personalword_1120122431001000641_base64_1555902612_27.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;以下归类列出数据列。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/tapd_20332201_base64_1558766987_99.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/tapd_20332201_base64_1558766987_99.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;说明：&lt;/p&gt;
 
@@ -987,9 +987,9 @@ type UserInfoTbl struct {
 以下为接口实现及逻辑：&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/tapd_20332201_base64_1555911779_3.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/tapd_20332201_base64_1555911779_3.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xie1xiao1jun.github.io/image/tapd_20332201_base64_1558790436_67.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/tapd_20332201_base64_1558790436_67.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;6、逻辑及代码调用说明：&lt;/p&gt;
 
@@ -1093,17 +1093,17 @@ type UserInfoTbl struct {
 &lt;/div&gt;
 &lt;p&gt;说明：以接口解耦，具体业务根据不同需求实现接口实现。主要用来对数据分流。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun/esLog&#34;&gt;传送门&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xxjwxc/esLog&#34;&gt;传送门&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
     
     <item>
       <title>大驼峰转换工具</title>
-      <link>https://xie1xiao1jun.github.io/post/bigcamel/</link>
+      <link>https://xxjwxc.github.io/post/bigcamel/</link>
       <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/bigcamel/</guid>
+      <guid>https://xxjwxc.github.io/post/bigcamel/</guid>
       
         <description>
 
@@ -1379,17 +1379,17 @@ OauthIDAPI&lt;/p&gt;
 
 &lt;p&gt;5:传送门：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun/public/tree/master/mybigcamel&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xxjwxc/public/tree/master/mybigcamel&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
     
     <item>
       <title>git 使用帮助文档</title>
-      <link>https://xie1xiao1jun.github.io/post/githelp/</link>
+      <link>https://xxjwxc.github.io/post/githelp/</link>
       <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/githelp/</guid>
+      <guid>https://xxjwxc.github.io/post/githelp/</guid>
       
         <description>
 
@@ -1499,10 +1499,10 @@ git merge &amp;lt;feature/garencieres 自己要合并的分支&amp;gt;
     
     <item>
       <title>About</title>
-      <link>https://xie1xiao1jun.github.io/about/</link>
+      <link>https://xxjwxc.github.io/about/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/about/</guid>
+      <guid>https://xxjwxc.github.io/about/</guid>
       
         <description>&lt;p&gt;Contact to me:&lt;/p&gt;
 
@@ -1512,11 +1512,11 @@ git merge &amp;lt;feature/garencieres 自己要合并的分支&amp;gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/xie1xiao1jun&#34;&gt;csdn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/xie1xiao1jun&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/xxjwxc&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://hospital.xxjwxc.cn/postcardserver/file/qrcode/oUq8a0eTRg8qaCLf_AaYuIXS63wk.jpg&#34;&gt;find me&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/xie1xiao1jun&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/xxjwxc&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
       
     </item>

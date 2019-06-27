@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Technology blog by xiexiaojun</title>
-    <link>https://xie1xiao1jun.github.io/post/</link>
+    <link>https://xxjwxc.github.io/post/</link>
     <description>Recent content in Posts on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 22 Jun 2019 21:01:00 +0800</lastBuildDate>
     
-	<atom:link href="https://xie1xiao1jun.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xxjwxc.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>go gin 参数自动绑定工具</title>
-      <link>https://xie1xiao1jun.github.io/post/ginrpc/</link>
+      <link>https://xxjwxc.github.io/post/ginrpc/</link>
       <pubDate>Sat, 22 Jun 2019 21:01:00 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/ginrpc/</guid>
+      <guid>https://xxjwxc.github.io/post/ginrpc/</guid>
       <description>golang gin 参数自动绑定工具 基于 go-gin 的 json restful 风格的golang基础库 自带请求参数过滤及绑定实现 代码注册简单且支持多种注册方式 1、 目录结构说明 ginrpc/base/common.go 基础库 ginrpc/base/api/context.go 自</description>
     </item>
     
     <item>
       <title>golang内存泄露分析</title>
-      <link>https://xie1xiao1jun.github.io/post/pprof/</link>
+      <link>https://xxjwxc.github.io/post/pprof/</link>
       <pubDate>Fri, 07 Jun 2019 03:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/pprof/</guid>
+      <guid>https://xxjwxc.github.io/post/pprof/</guid>
       <description>golang内存泄露工具检查 安装工具 brew install graphviz （生成图片时候要用到dot） 使用pprof工具实现 简单使用场景 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18</description>
     </item>
     
     <item>
       <title>gorm mysql数据库转换工具</title>
-      <link>https://xie1xiao1jun.github.io/post/gormtools/</link>
+      <link>https://xxjwxc.github.io/post/gormtools/</link>
       <pubDate>Sat, 01 Jun 2019 14:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/gormtools/</guid>
+      <guid>https://xxjwxc.github.io/post/gormtools/</guid>
       <description>gorm-tools gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签 1. 通过当前目录co</description>
     </item>
     
     <item>
       <title>日志系统设计</title>
-      <link>https://xie1xiao1jun.github.io/post/loglistdef/</link>
+      <link>https://xxjwxc.github.io/post/loglistdef/</link>
       <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/loglistdef/</guid>
+      <guid>https://xxjwxc.github.io/post/loglistdef/</guid>
       <description>#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主</description>
     </item>
     
     <item>
       <title>大驼峰转换工具</title>
-      <link>https://xie1xiao1jun.github.io/post/bigcamel/</link>
+      <link>https://xxjwxc.github.io/post/bigcamel/</link>
       <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/bigcamel/</guid>
+      <guid>https://xxjwxc.github.io/post/bigcamel/</guid>
       <description>git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 1 &amp;#34;ACL&amp;#34;, &amp;#34;API&amp;#34;, &amp;#34;ASCII&amp;#34;,</description>
     </item>
     
     <item>
       <title>git 使用帮助文档</title>
-      <link>https://xie1xiao1jun.github.io/post/githelp/</link>
+      <link>https://xxjwxc.github.io/post/githelp/</link>
       <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/githelp/</guid>
+      <guid>https://xxjwxc.github.io/post/githelp/</guid>
       <description>git 命令 建立一个分支 git branch &amp;lt;项目名字 feature/test&amp;gt; 然后检查分支是否创建成功 git branch （q,退出） 切换到新分支 git checkout &amp;lt;项目名字 feature/test&amp;gt; 查看当前所有的更改情况 git status</description>
     </item>
     

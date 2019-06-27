@@ -23,7 +23,7 @@ mathjax: true    # 打开 mathjax
 #日志系统说明
 先来传送门:
 
-[代码传送门](https://github.com/xie1xiao1jun/esLog)
+[代码传送门](https://github.com/xxjwxc/esLog)
 
 
 - 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。
@@ -145,5 +145,5 @@ eslist := tools.Search(term, match, timeCase, req.Page, req.Limit)
 
 说明：以接口解耦，具体业务根据不同需求实现接口实现。主要用来对数据分流。
 
-[传送门](https://github.com/xie1xiao1jun/esLog)
+[传送门](https://github.com/xxjwxc/esLog)
 

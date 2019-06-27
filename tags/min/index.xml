@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>min on Technology blog by xiexiaojun</title>
-    <link>https://xie1xiao1jun.github.io/tags/min/</link>
+    <link>https://xxjwxc.github.io/tags/min/</link>
     <description>Recent content in min on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 01 May 2019 16:01:23 +0800</lastBuildDate>
     
-	<atom:link href="https://xie1xiao1jun.github.io/tags/min/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xxjwxc.github.io/tags/min/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>git 使用帮助文档</title>
-      <link>https://xie1xiao1jun.github.io/post/githelp/</link>
+      <link>https://xxjwxc.github.io/post/githelp/</link>
       <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
       
-      <guid>https://xie1xiao1jun.github.io/post/githelp/</guid>
+      <guid>https://xxjwxc.github.io/post/githelp/</guid>
       <description>git 命令 建立一个分支 git branch &amp;lt;项目名字 feature/test&amp;gt; 然后检查分支是否创建成功 git branch （q,退出） 切换到新分支 git checkout &amp;lt;项目名字 feature/test&amp;gt; 查看当前所有的更改情况 git status</description>
     </item>
     
