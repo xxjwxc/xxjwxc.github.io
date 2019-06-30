@@ -559,7 +559,7 @@ Dropped 18 nodes (cum &amp;lt;= 0.28kB)
       
         <description>
 
-&lt;h1 id=&#34;gorm-tools-https-github-com-xxjwxc-gorm-tools&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gorm-tools&#34;&gt;gorm-tools&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;gorm-tools-https-github-com-xxjwxc-gormt&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt&#34;&gt;gorm-tools&lt;/a&gt;&lt;/h1&gt;
 
 &lt;h3 id=&#34;gorm-mysql数据库转-struct-工具-可以将mysql数据库自动生成golang-sturct结构-带大驼峰命名规则-带json标签&#34;&gt;gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签&lt;/h3&gt;
 

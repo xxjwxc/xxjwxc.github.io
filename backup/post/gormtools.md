@@ -19,7 +19,7 @@ mathjax: true    # 打开 mathjax
 
 ---
 
-# [gorm-tools](https://github.com/xxjwxc/gorm-tools)
+# [gorm-tools](https://github.com/xxjwxc/gormt)
 ### gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签
 
 --------
