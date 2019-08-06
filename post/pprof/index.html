@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/pprof/" />
@@ -61,16 +61,15 @@
 <meta property="og:description" content="golang内存泄露工具检查 安装工具 brew install graphviz （生成图片时候要用到dot） 使用pprof工具实现 简单使用场景 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xxjwxc.github.io/post/pprof/" />
-<meta property="article:published_time" content="2019-06-07T03:01:23&#43;08:00"/>
-<meta property="article:modified_time" content="2019-06-07T03:01:23&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-06-07T03:01:23+08:00" />
+<meta property="article:modified_time" content="2019-06-07T03:01:23+08:00" />
 <meta itemprop="name" content="golang内存泄露分析">
 <meta itemprop="description" content="golang内存泄露工具检查 安装工具 brew install graphviz （生成图片时候要用到dot） 使用pprof工具实现 简单使用场景 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18">
 
 
 <meta itemprop="datePublished" content="2019-06-07T03:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-07T03:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="782">
+<meta itemprop="wordCount" content="760">
 
 
 
@@ -341,7 +340,7 @@
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 782 字 </span>
+        <span class="more-meta"> 约 760 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -370,7 +369,6 @@
 <ul>
 <li><a href="#命令工具">命令工具</a></li>
 </ul></li>
-<li><a href="#查看各个函数-方法的内存消耗排名">查看各个函数/方法的内存消耗排名</a></li>
 <li><a href="#2-image-pprof2-png"><img src="/image/pprof2.png" alt="2" /></a></li>
 </ul></li>
 </ul>
@@ -395,8 +393,7 @@
 </ol>
 
 <ul>
-<li>简单使用场景</li>
-</ul>
+<li><p>简单使用场景</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
@@ -486,9 +483,9 @@
 	<span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:11181&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>直接访问 <a href="http://localhost:11181/">http://localhost:11181/</a> 即可查看信息</li>
+</div></li>
+
+<li><p>直接访问 <a href="http://localhost:11181/">http://localhost:11181/</a> 即可查看信息</p></li>
 </ul>
 
 <p><img src="/image/pprof1.jpg" alt="1" /></p>
@@ -496,8 +493,7 @@
 <h2 id="具体详细分析数据">具体详细分析数据</h2>
 
 <ul>
-<li>demo 依然是上边的程序 改造一下</li>
-</ul>
+<li><p>demo 依然是上边的程序 改造一下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
@@ -651,7 +647,9 @@
 	<span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:11181&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div>
+</div></li>
+</ul>
+
 <p>记得：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -671,66 +669,36 @@ heap_main_13712_2019_06_07_02_50_56.prof</li>
 <h3 id="命令工具">命令工具</h3>
 
 <ol>
-<li><code>go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof</code></li>
+<li><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```" data-lang="go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```" data-lang="go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```">进入pprof 内部 可以使用 top 10等命令来查看过滤信息，exit退出</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 
-<p>进入pprof 内部 可以使用 top 10等命令来查看过滤信息，exit退出</p>
+<p>$ go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof
+File: main
+Type: inuse_space
+Entering interactive mode (type &ldquo;help&rdquo; for commands, &ldquo;o&rdquo; for options)
+(pprof)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">$ go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof
-File: main
-Type: inuse_space
-Entering interactive mode (type &#34;help&#34; for commands, &#34;o&#34; for options)
-(pprof)</pre></td></tr></table>
-</div>
-</div>
-<ol>
-<li><code>go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof</code></li>
-</ol>
+<pre class="chroma">2. ```go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof```
 
-<h2 id="查看各个函数-方法的内存消耗排名">查看各个函数/方法的内存消耗排名</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof
+查看各个函数/方法的内存消耗排名
+------</pre></td></tr></table>
+</div>
+</div>
+<p>$ go tool pprof &ndash;text ./main ./heap_main_13712_2019_06_07_02_50_56.prof
 File: main
 Type: inuse_space
 Showing nodes accounting for 54.55kB, 98.55% of 55.35kB total
@@ -759,22 +727,30 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
          0     0% 98.55%    41.12kB 74.30%  runtime.newproc1
          0     0% 98.55%    43.75kB 79.04%  runtime.startTheWorldWithSema
          0     0% 98.55%        2kB  3.61%  runtime.startm
-         0     0% 98.55%     0.80kB  1.45%  sync.(*Once).Do</pre></td></tr></table>
+         0     0% 98.55%     0.80kB  1.45%  sync.(*Once).Do</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">3. ```go tool pprof --dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof &gt; heap.gv```
+
+
+生成可以在graphviz里面看的gv文件
+
+------
+
+4. 通过3的gv文件直接生成图片</pre></td></tr></table>
 </div>
 </div>
-<ol>
-<li><code>go tool pprof --dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof &gt; heap.gv</code></li>
-</ol>
-
-<p>生成可以在graphviz里面看的gv文件</p>
-
-<hr />
-
-<ol>
-<li>通过3的gv文件直接生成图片</li>
-</ol>
-
-<p><code>dot -T png heap.gv&gt;heap.png</code></p>
+<p>dot -T png heap.gv&gt;heap.png```</p>
 
 <ul>
 <li>打开图片查看信息</li>

@@ -160,8 +160,7 @@
 &lt;/ol&gt;
 
 &lt;ul&gt;
-&lt;li&gt;简单使用场景&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;简单使用场景&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -251,9 +250,9 @@
 	&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ListenAndServe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;:11181&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;直接访问 &lt;a href=&#34;http://localhost:11181/&#34;&gt;http://localhost:11181/&lt;/a&gt; 即可查看信息&lt;/li&gt;
+&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;直接访问 &lt;a href=&#34;http://localhost:11181/&#34;&gt;http://localhost:11181/&lt;/a&gt; 即可查看信息&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/pprof1.jpg&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;
@@ -261,8 +260,7 @@
 &lt;h2 id=&#34;具体详细分析数据&#34;&gt;具体详细分析数据&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;demo 依然是上边的程序 改造一下&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;demo 依然是上边的程序 改造一下&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -416,7 +414,9 @@
 	&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ListenAndServe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;:11181&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;记得：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -436,66 +436,36 @@ heap_main_13712_2019_06_07_02_50_56.prof&lt;/li&gt;
 &lt;h3 id=&#34;命令工具&#34;&gt;命令工具&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```&#34; data-lang=&#34;go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```&#34; data-lang=&#34;go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```&#34;&gt;进入pprof 内部 可以使用 top 10等命令来查看过滤信息，exit退出&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;进入pprof 内部 可以使用 top 10等命令来查看过滤信息，exit退出&lt;/p&gt;
+&lt;p&gt;$ go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof
+File: main
+Type: inuse_space
+Entering interactive mode (type &amp;ldquo;help&amp;rdquo; for commands, &amp;ldquo;o&amp;rdquo; for options)
+(pprof)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;$ go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof
-File: main
-Type: inuse_space
-Entering interactive mode (type &amp;#34;help&amp;#34; for commands, &amp;#34;o&amp;#34; for options)
-(pprof)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;pre class=&#34;chroma&#34;&gt;2. ```go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof```
 
-&lt;h2 id=&#34;查看各个函数-方法的内存消耗排名&#34;&gt;查看各个函数/方法的内存消耗排名&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;$ go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof
+查看各个函数/方法的内存消耗排名
+------&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;$ go tool pprof &amp;ndash;text ./main ./heap_main_13712_2019_06_07_02_50_56.prof
 File: main
 Type: inuse_space
 Showing nodes accounting for 54.55kB, 98.55% of 55.35kB total
@@ -524,22 +494,30 @@ Dropped 18 nodes (cum &amp;lt;= 0.28kB)
          0     0% 98.55%    41.12kB 74.30%  runtime.newproc1
          0     0% 98.55%    43.75kB 79.04%  runtime.startTheWorldWithSema
          0     0% 98.55%        2kB  3.61%  runtime.startm
-         0     0% 98.55%     0.80kB  1.45%  sync.(*Once).Do&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+         0     0% 98.55%     0.80kB  1.45%  sync.(*Once).Do&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;3. ```go tool pprof --dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof &amp;gt; heap.gv```
+
+
+生成可以在graphviz里面看的gv文件
+
+------
+
+4. 通过3的gv文件直接生成图片&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;go tool pprof --dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof &amp;gt; heap.gv&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;生成可以在graphviz里面看的gv文件&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li&gt;通过3的gv文件直接生成图片&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;code&gt;dot -T png heap.gv&amp;gt;heap.png&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;dot -T png heap.gv&amp;gt;heap.png```&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;打开图片查看信息&lt;/li&gt;
@@ -1128,8 +1106,7 @@ type UserInfoTbl struct {
 &lt;p&gt;以下采用golang实现&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;数据初始化：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;数据初始化：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1165,10 +1142,9 @@ type UserInfoTbl struct {
 	&lt;span class=&#34;nx&#34;&gt;uncommonInitialismsReplacer&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;strings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;NewReplacer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;uncommonInitialismsForReplacer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;转换大驼峰函数：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;转换大驼峰函数：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1224,10 +1200,9 @@ type UserInfoTbl struct {
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;回退函数&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;回退函数&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1285,7 +1260,7 @@ type UserInfoTbl struct {
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  回退网络模式
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;回退网络模式
 &lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
 &lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;UnMarshal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 	&lt;span class=&#34;kd&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
@@ -1337,10 +1312,9 @@ type UserInfoTbl struct {
 	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;测试：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;测试：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1370,7 +1344,9 @@ type UserInfoTbl struct {
 	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
 &lt;p&gt;输入:
 OauthIDAPI
 输出：
