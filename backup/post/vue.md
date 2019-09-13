@@ -23,7 +23,10 @@ mathjax: true    # 打开 mathjax
 
 - 配置脚本在 [vue_install.sh](/image/vue_install.sh)
 
+以下展示 shell内容的详细信息。
+
 ```sh
+
 #!/bin/bash -v
 #set -v 
 
