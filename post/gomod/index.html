@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Technology blog by xiexiaojun</title>
+  <title>go mod相关配置及说明 - Technology blog by xiexiaojun</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,9 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xxj" />
-  <meta name="description" content="Hugo theme jane example site." />
+<meta name="author" content="xiexiaojun" />
+  <meta name="description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@" />
+
   <meta name="keywords" content="Hugo, theme, jane" />
 
 
@@ -34,8 +35,7 @@
 <meta name="generator" content="Hugo 0.57.2" />
 
 
-<link rel="canonical" href="https://xxjwxc.github.io/" />
-<link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://xxjwxc.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Technology blog by xiexiaojun" />
+<link rel="canonical" href="https://xxjwxc.github.io/post/gomod/" />
 
 
 
@@ -57,18 +57,26 @@
 
 
 
-<meta property="og:title" content="Technology blog by xiexiaojun" />
-<meta property="og:description" content="Hugo theme jane example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://xxjwxc.github.io/" />
+<meta property="og:title" content="go mod相关配置及说明" />
+<meta property="og:description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xxjwxc.github.io/post/gomod/" />
+<meta property="article:published_time" content="2019-09-13T16:16:40+08:00" />
+<meta property="article:modified_time" content="2019-09-13T16:16:40+08:00" />
+<meta itemprop="name" content="go mod相关配置及说明">
+<meta itemprop="description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@">
 
-<meta property="og:updated_time" content="2019-09-13T16:16:40+08:00" />
-<meta itemprop="name" content="Technology blog by xiexiaojun">
-<meta itemprop="description" content="Hugo theme jane example site.">
 
+<meta itemprop="datePublished" content="2019-09-13T16:16:40&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-13T16:16:40&#43;08:00" />
+<meta itemprop="wordCount" content="263">
+
+
+
+<meta itemprop="keywords" content="golang,mod,配置," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Technology blog by xiexiaojun"/>
-<meta name="twitter:description" content="Hugo theme jane example site."/>
+<meta name="twitter:title" content="go mod相关配置及说明"/>
+<meta name="twitter:description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -231,7 +239,7 @@
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -319,187 +327,277 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-  <section id="posts" class="posts">
+          <article class="post bg-white">
     
-    
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    <header class="post-header">
+      <h1 class="post-title">go mod相关配置及说明</h1>
       
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
+      <div class="post-meta">
+        <time datetime="2019-09-13" class="post-time">
+          2019-09-13
+        </time>
+        <div class="post-category">
+            <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
+            
+          </div>
+        <span class="more-meta"> 约 263 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
 
-        </span>
-      
-      <a class="post-link" href="/post/gomod/">go mod相关配置及说明</a>
-    </h1>
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
     
-    <div class="post-meta">
-      <time datetime="2019-09-13" class="post-time">
-        2019-09-13
-      </time>
-      <div class="post-category">
-          <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#golang-modules-的最新命令说明">golang Modules 的最新命令说明</a>
+<ul>
+<li>
+<ul>
+<li><a href="#创建一个新的模块">创建一个新的模块</a></li>
+</ul></li>
+<li><a href="#列出当前模块所有依赖项">列出当前模块所有依赖项</a>
+<ul>
+<li><a href="#清除依赖项">清除依赖项</a></li>
+<li><a href="#清理本地缓存">清理本地缓存</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#实战">实战</a></li>
+<li><a href="#喜欢请给星-https-github-com-xxjwxc"><a href="https://github.com/xxjwxc">喜欢请给星</a></a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="golang-modules-的最新命令说明">golang Modules 的最新命令说明</h2>
+
+<h4 id="创建一个新的模块">创建一个新的模块</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go mod init [本项目mod名]</pre></td></tr></table>
+</div>
+</div>
+<h3 id="列出当前模块所有依赖项">列出当前模块所有依赖项</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go get -u github.com/xxjwxc/public@[版本号,保持最新请使用latest 或者 master]</pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li><p>说明 go get -u 来保持最新，测试下来需要等待几分钟才同步的下来。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go get -u github.com/xxjwxc/public@master</pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
+<h4 id="清除依赖项">清除依赖项</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go mod tidy</pre></td></tr></table>
+</div>
+</div>
+<h4 id="清理本地缓存">清理本地缓存</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go clean -modcache </pre></td></tr></table>
+</div>
+</div>
+<h2 id="实战">实战</h2>
+
+<ul>
+<li>添加一个库保持最新[github.com/xxjwxc/public] 使用MakeFile 及 go:generate 实现</li>
+</ul>
+
+<ol>
+<li><p>添加 gogenerate.go</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="o">//</span><span class="k">go</span><span class="p">:</span><span class="nx">generate</span> <span class="nx">make</span> <span class="nx">gen</span></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>添加 MakeFile</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">regen:
+	go clean -modcache #清理本地缓存
+gen:
+	go get -u github.com/xxjwxc/public@master # 保持最新
+	go mod tidy</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go generate &amp; go build ./main.go
+
+or
+
+make gen</pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<p><a href="https://mp.weixin.qq.com/s/v-NdYEJBgKbiKsdoQaRsQg">参考链接</a></p>
+
+<h2 id="喜欢请给星-https-github-com-xxjwxc"><a href="https://github.com/xxjwxc">喜欢请给星</a></h2>
+
+<hr />
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">xiexiaojun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-09-13</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/image/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/image/ali.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://xxjwxc.github.io/tags/golang/">golang</a>
+          <a href="https://xxjwxc.github.io/tags/mod/">mod</a>
+          <a href="https://xxjwxc.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
           
         </div>
-      <span class="more-meta"> 约 263 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@
-    </div>
-    <div class="read-more">
-      <a href="/post/gomod/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
 
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
       
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/vue/">
+            <span class="next-text nav-default">vue环境配置及vscode调试</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
 </svg>
 
-        </span>
-      
-      <a class="post-link" href="/post/vue/">vue环境配置及vscode调试</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2019-09-12" class="post-time">
-        2019-09-12
-      </time>
-      <div class="post-category">
-          <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
-          
-        </div>
-      <span class="more-meta"> 约 562 字 </span>
-      <span class="more-meta"> 预计阅读 2 分钟 </span>
-      
-      
-      
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xxjwxc/xxjwxc.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
     </div>
-  </header>
   
-  <div class="post-content">
+
+  
+
+  
+
+  
+  
     
-    <div class="post-summary">
-      mac安装 vue开发环境 本教程关于vue 在vscode 中的调试及开发。使用mac系统完成配置。 配置脚本在 vue_install.sh 以下展示 shell内容的详细信息。
-    </div>
-    <div class="read-more">
-      <a href="/post/vue/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
-
-        </span>
-      
-      <a class="post-link" href="/post/ginrpc/">go gin 参数自动绑定工具</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2019-06-22" class="post-time">
-        2019-06-22
-      </time>
-      <div class="post-category">
-          <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
-          
-        </div>
-      <span class="more-meta"> 约 401 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      golang gin 参数自动绑定工具 基于 go-gin 的 json restful 风格的golang基础库 自带请求参数过滤及绑定实现 代码注册简单且支持多种注册方式 1、 目录结构说明 ginrpc/base/common.go 基础库 ginrpc/base/api/context.go 自
-    </div>
-    <div class="read-more">
-      <a href="/post/ginrpc/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-  </section>
-
-  
-  
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
-      
-      <li  class="active" >
-        <a href="/">1</a>
-      </li>
-      
-      <li >
-        <a href="/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/page/3/">3</a>
-      </li>
-      
-    </ul>
-  </nav>
-
-  
-  
-
-
 
 
 
@@ -599,6 +697,13 @@
 
 <script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
 
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 
