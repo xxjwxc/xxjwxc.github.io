@@ -6,10 +6,153 @@
     <description>Recent content on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 22 Jun 2019 21:01:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Sep 2019 11:48:31 +0800</lastBuildDate>
     
         <atom:link href="https://xxjwxc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vue环境配置及vscode调试</title>
+      <link>https://xxjwxc.github.io/post/vue/</link>
+      <pubDate>Thu, 12 Sep 2019 11:48:31 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/vue/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;mac安装-vue开发环境&#34;&gt;mac安装 vue开发环境&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;配置脚本在 &lt;a href=&#34;https://xxjwxc.github.io/image/vue_install.sh&#34;&gt;vue_install.sh&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash -v
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;#set -v&lt;/span&gt; 
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;vrew 版本.&amp;#34;&lt;/span&gt;
+brew -v 
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;安装node.js&amp;#34;&lt;/span&gt;
+brew install nodejs
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;查看node 版本&amp;#34;&lt;/span&gt;
+node -v
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;获取nodejs模块安装目录访问权限 （必须执行）&amp;#34;&lt;/span&gt;
+sudo chmod -R &lt;span class=&#34;m&#34;&gt;777&lt;/span&gt; /usr/local/lib/node_modules/
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;安装 淘宝镜像 （cnpm）&amp;#34;&lt;/span&gt;
+npm install -g cnpm --registry&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://registry.npm.taobao.org
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;安装webpack&amp;#34;&lt;/span&gt;
+sudo cnpm install webpack-dev-server -g 
+sudo cnpm install webpack -g
+sudo cnpm install webpack-dev-server -g 
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;安装vue脚手架&amp;#34;&lt;/span&gt;
+sudo cnpm install -g vue-cli
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;到目的目录&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ./src
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;安装项目依赖&amp;#34;&lt;/span&gt;
+cnpm install
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;安装 vue 路由模块vue-router和网络请求模块vue-resource&amp;#34;&lt;/span&gt;
+cnpm install vue-router vue-resource --save
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;启动项目：在项目目录中使用,npm run dev 或 cnpm run dev&amp;#34;&lt;/span&gt;
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;报错可能需要执行(npm install 或 npm install -g @vue/cli@latest)&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;详细请见注解&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;vscode-vue-调试-chrome-浏览器&#34;&gt;vscode vue 调试 (chrome 浏览器)&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装chrome 到系统软件目录(必须系统软件目录))&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;vscode 搜索chrome debug插件
+&lt;img src=&#34;https://xxjwxc.github.io/image/vue1.png&#34; alt=&#34;2&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;配置debug信息
+&lt;img src=&#34;https://xxjwxc.github.io/image/vue2.png&#34; alt=&#34;3&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;配置调试信息
+&lt;img src=&#34;https://xxjwxc.github.io/image/vue3.png&#34; alt=&#34;3&#34; /&gt;
+注意：这里需要配置的url需要与&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;demo 端口需要一一映射
+&lt;img src=&#34;https://xxjwxc.github.io/image/vue4.png&#34; alt=&#34;4&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;调试开始&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;启动vue项目&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;npm run dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;启动 vscode 调试&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/vue5.jpg&#34; alt=&#34;5&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>go gin 参数自动绑定工具</title>
@@ -537,7 +680,7 @@ Dropped 18 nodes (cum &amp;lt;= 0.28kB)
       
         <description>
 
-&lt;h1 id=&#34;gorm-tools-https-github-com-xxjwxc-gormt&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt&#34;&gt;gorm-tools&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;gorm-tools-https-github-com-xxjwxc-gorm-tools&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gorm-tools&#34;&gt;gorm-tools&lt;/a&gt;&lt;/h1&gt;
 
 &lt;h3 id=&#34;gorm-mysql数据库转-struct-工具-可以将mysql数据库自动生成golang-sturct结构-带大驼峰命名规则-带json标签&#34;&gt;gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签&lt;/h3&gt;
 
