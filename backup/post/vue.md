@@ -100,4 +100,10 @@ echo "报错可能需要执行(npm install 或 npm install -g @vue/cli@latest)"
 
 ![5](/image/vue5.jpg)
 
+
+5. 打包发布
+
+```
+npm run build:prod
+```
 ----------
