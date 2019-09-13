@@ -21,6 +21,8 @@ mathjax: true    # 打开 mathjax
 
 ## mac安装 vue开发环境
 
+- 本教程关于vue 在vscode 中的调试及开发。使用mac系统完成配置。
+
 - 配置脚本在 [vue_install.sh](/image/vue_install.sh)
 
 以下展示 shell内容的详细信息。

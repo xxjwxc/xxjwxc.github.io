@@ -23,7 +23,9 @@
 &lt;h2 id=&#34;mac安装-vue开发环境&#34;&gt;mac安装 vue开发环境&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;配置脚本在 &lt;a href=&#34;https://xxjwxc.github.io/image/vue_install.sh&#34;&gt;vue_install.sh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;本教程关于vue 在vscode 中的调试及开发。使用mac系统完成配置。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;配置脚本在 &lt;a href=&#34;https://xxjwxc.github.io/image/vue_install.sh&#34;&gt;vue_install.sh&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;以下展示 shell内容的详细信息。&lt;/p&gt;
