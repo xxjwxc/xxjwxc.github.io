@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>归档 - Technology blog by xiexiaojun</title>
+  <title>golang工作池库 workerpool - Technology blog by xiexiaojun</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,9 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xxj" />
-  <meta name="description" content="Hugo theme jane example site." />
+<meta name="author" content="xiexiaojun" />
+  <meta name="description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队" />
+
   <meta name="keywords" content="Hugo, theme, jane" />
 
 
@@ -34,8 +35,7 @@
 <meta name="generator" content="Hugo 0.57.2" />
 
 
-<link rel="canonical" href="https://xxjwxc.github.io/post/" />
-<link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/post/index.xml%20https://xxjwxc.github.io/post/index.xml%7d" rel="alternate" type="application/rss+xml" title="Technology blog by xiexiaojun" />
+<link rel="canonical" href="https://xxjwxc.github.io/post/gowp/" />
 
 
 
@@ -57,18 +57,26 @@
 
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Hugo theme jane example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/" />
+<meta property="og:title" content="golang工作池库 workerpool" />
+<meta property="og:description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xxjwxc.github.io/post/gowp/" />
+<meta property="article:published_time" content="2019-09-15T11:48:31+08:00" />
+<meta property="article:modified_time" content="2019-09-15T11:48:31+08:00" />
+<meta itemprop="name" content="golang工作池库 workerpool">
+<meta itemprop="description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队">
 
-<meta property="og:updated_time" content="2019-09-15T11:48:31+08:00" />
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Hugo theme jane example site.">
 
+<meta itemprop="datePublished" content="2019-09-15T11:48:31&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-15T11:48:31&#43;08:00" />
+<meta itemprop="wordCount" content="554">
+
+
+
+<meta itemprop="keywords" content="vue,工具,debug," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Hugo theme jane example site."/>
+<meta name="twitter:title" content="golang工作池库 workerpool"/>
+<meta name="twitter:description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -242,7 +250,7 @@
 
       </li>
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -319,90 +327,356 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="archive" class="archive">
+          <article class="post bg-white">
     
-      <div class="collection-title">
-        <h2 class="archive-year">2019</h2>
+    <header class="post-header">
+      <h1 class="post-title">golang工作池库 workerpool</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-09-15" class="post-time">
+          2019-09-15
+        </time>
+        <div class="post-category">
+            <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
+            
+          </div>
+        <span class="more-meta"> 约 554 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
       </div>
+    </header>
 
-    <div class="archive-post">
-      <time datetime="2019-06-22" class="archive-post-time">
-        2019-06-22
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/ginrpc/" class="archive-post-link">
-          go gin 参数自动绑定工具
-        </a>
-      </span>
-    </div>
     
-
-    <div class="archive-post">
-      <time datetime="2019-06-07" class="archive-post-time">
-        2019-06-07
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/pprof/" class="archive-post-link">
-          golang内存泄露分析
-        </a>
-      </span>
-    </div>
     
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#gowp-https-github-com-xxjwxc-gowp"><a href="https://github.com/xxjwxc/gowp">gowp</a></a></li>
+<li><a href="#golang-worker-pool-线程池-工作池">golang worker pool ,线程池 , 工作池</a>
+<ul>
+<li><a href="#支持最大任务数-放到工作池里面-并等待全部完成">支持最大任务数, 放到工作池里面 并等待全部完成</a></li>
+<li><a href="#支持错误返回">支持错误返回</a></li>
+<li><a href="#支持判断是否完成-非阻塞">支持判断是否完成 (非阻塞)</a></li>
+<li><a href="#支持同步等待结果">支持同步等待结果</a></li>
+</ul></li>
+<li><a href="#代码地址-gowp-https-github-com-xxjwxc-gowp">代码地址 <a href="https://github.com/xxjwxc/gowp">gowp</a></a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
 
-    <div class="archive-post">
-      <time datetime="2019-06-01" class="archive-post-time">
-        2019-06-01
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/gormtools/" class="archive-post-link">
-          gorm mysql数据库转换工具
-        </a>
-      </span>
-    </div></section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
+    
+    <div class="post-content">
       
-      <li >
-        <a href="/post/">1</a>
-      </li>
+
+<h2 id="gowp-https-github-com-xxjwxc-gowp"><a href="https://github.com/xxjwxc/gowp">gowp</a></h2>
+
+<h2 id="golang-worker-pool-线程池-工作池">golang worker pool ,线程池 , 工作池</h2>
+
+<ul>
+<li>并发限制goroutine池。</li>
+<li>限制任务执行的并发性，而不是排队的任务数。</li>
+<li>无论排队多少任务，都不会阻止提交任务。</li>
+
+<li><p>通过队列支持</p></li>
+
+<li><p>golang 工作池公共库</p></li>
+</ul>
+
+<h3 id="支持最大任务数-放到工作池里面-并等待全部完成">支持最大任务数, 放到工作池里面 并等待全部完成</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">	wp := workerpool.New(10)             //设置最大线程数
+	for i := 0; i &lt; 20; i++ { //开启20个请求
+		ii := i
+		wp.Do(func() error {
+			for j := 0; j &lt; 10; j++ { //每次打印0-10的值
+				fmt.Println(fmt.Sprintf(&#34;%v-&gt;\t%v&#34;, ii, j))
+				time.Sleep(1 * time.Second)
+			}
+			//time.Sleep(1 * time.Second)
+			return nil
+		})
+	}
+
+	wp.Wait()
+	fmt.Println(&#34;down&#34;)</pre></td></tr></table>
+</div>
+</div>
+<h3 id="支持错误返回">支持错误返回</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">	wp := workerpool.New(10)             //设置最大线程数
+	for i := 0; i &lt; 20; i++ { //开启20个请求
+		ii := i
+		wp.Do(func() error {
+			for j := 0; j &lt; 10; j++ { //每次打印0-10的值
+				fmt.Println(fmt.Sprintf(&#34;%v-&gt;\t%v&#34;, ii, j))
+				if ii == 1 {
+					return errors.Cause(errors.New(&#34;my test err&#34;)) //有err 立即返回
+				}
+				time.Sleep(1 * time.Second)
+			}
+
+			return nil
+		})
+	}
+
+	err := wp.Wait()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(&#34;down&#34;)</pre></td></tr></table>
+</div>
+</div>
+<h3 id="支持判断是否完成-非阻塞">支持判断是否完成 (非阻塞)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">	wp := workerpool.New(5)              //设置最大线程数
+	for i := 0; i &lt; 10; i++ { //开启20个请求
+		//	ii := i
+		wp.Do(func() error {
+			for j := 0; j &lt; 5; j++ { //每次打印0-10的值
+				//fmt.Println(fmt.Sprintf(&#34;%v-&gt;\t%v&#34;, ii, j))
+				time.Sleep(1 * time.Second)
+			}
+			return nil
+		})
+
+		fmt.Println(wp.IsDone())
+	}
+	wp.Wait()
+	fmt.Println(wp.IsDone())
+	fmt.Println(&#34;down&#34;)</pre></td></tr></table>
+</div>
+</div>
+<h3 id="支持同步等待结果">支持同步等待结果</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">	wp := workerpool.New(5)              //设置最大线程数
+	for i := 0; i &lt; 10; i++ { //开启20个请求
+		ii := i
+		wp.DoWait(func() error {
+			for j := 0; j &lt; 5; j++ { //每次打印0-10的值
+				fmt.Println(fmt.Sprintf(&#34;%v-&gt;\t%v&#34;, ii, j))
+				// if ii == 1 {
+				// 	return errors.New(&#34;my test err&#34;)
+				// }
+				time.Sleep(1 * time.Second)
+			}
+
+			return nil
+			//time.Sleep(1 * time.Second)
+			//return errors.New(&#34;my test err&#34;)
+		})
+	}
+
+	err := wp.Wait()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(&#34;down&#34;)
+	</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h2 id="代码地址-gowp-https-github-com-xxjwxc-gowp">代码地址 <a href="https://github.com/xxjwxc/gowp">gowp</a></h2>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">xiexiaojun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-09-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/image/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/image/ali.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://xxjwxc.github.io/tags/vue/">vue</a>
+          <a href="https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+          <a href="https://xxjwxc.github.io/tags/debug/">debug</a>
+          
+        </div>
+
       
-      <li  class="active" >
-        <a href="/post/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/3/">3</a>
-      </li>
-      
-    </ul>
-  </nav>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/gomod/">
+            <span class="next-text nav-default">go mod相关配置及说明</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
 
+  
+  
 
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xxjwxc/xxjwxc.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+  
+
+  
+
+  
+
+  
+  
+    
 
 
 
@@ -502,6 +776,13 @@
 
 <script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
 
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 

@@ -6,10 +6,19 @@
     <description>Recent content in 工具 on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Sep 2019 11:48:31 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Sep 2019 11:48:31 +0800</lastBuildDate>
     
 	<atom:link href="https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>golang工作池库 workerpool</title>
+      <link>https://xxjwxc.github.io/post/gowp/</link>
+      <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/gowp/</guid>
+      <description>gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队</description>
+    </item>
     
     <item>
       <title>vue环境配置及vscode调试</title>

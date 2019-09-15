@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xxjwxc.github.io/post/gowp/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xxjwxc.github.io/post/gomod/</loc>
     <lastmod>2019-09-13T16:16:40+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -66,7 +73,56 @@
   
   <url>
     <loc>https://xxjwxc.github.io/categories/</loc>
-    <lastmod>2019-09-13T16:16:40+08:00</lastmod>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/debug/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/post/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/vue/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -86,57 +142,8 @@
   </url>
   
   <url>
-    <loc>https://xxjwxc.github.io/post/</loc>
-    <lastmod>2019-09-13T16:16:40+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/tags/</loc>
-    <lastmod>2019-09-13T16:16:40+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/</loc>
-    <lastmod>2019-09-13T16:16:40+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2019-09-13T16:16:40+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xxjwxc.github.io/tags/%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2019-09-13T16:16:40+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/tags/debug/</loc>
-    <lastmod>2019-09-12T11:48:31+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/tags/vue/</loc>
-    <lastmod>2019-09-12T11:48:31+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2019-09-12T11:48:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
