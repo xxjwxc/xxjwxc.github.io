@@ -30,6 +30,16 @@ mathjax: true    # 打开 mathjax
 
 ### 支持最大任务数, 放到工作池里面 并等待全部完成
 ```
+package main
+
+import (
+	"fmt"
+	"time"
+
+	"github.com/xxjwxc/gowp/workerpool"
+)
+
+func main() {
 	wp := workerpool.New(10)             //设置最大线程数
 	for i := 0; i < 20; i++ { //开启20个请求
 		ii := i
@@ -45,10 +55,21 @@ mathjax: true    # 打开 mathjax
 
 	wp.Wait()
 	fmt.Println("down")
+}
 ```
 
 ### 支持错误返回
 ```
+package main
+
+import (
+	"fmt"
+	"time"
+
+	"github.com/xxjwxc/gowp/workerpool"
+)
+
+func main() {
 	wp := workerpool.New(10)             //设置最大线程数
 	for i := 0; i < 20; i++ { //开启20个请求
 		ii := i
@@ -70,11 +91,22 @@ mathjax: true    # 打开 mathjax
 		fmt.Println(err)
 	}
 	fmt.Println("down")
+	}
 ```
 
 ### 支持判断是否完成 (非阻塞)
 
 ```
+package main
+
+import (
+	"fmt"
+	"time"
+
+	"github.com/xxjwxc/gowp/workerpool"
+)
+
+func main() {
 	wp := workerpool.New(5)              //设置最大线程数
 	for i := 0; i < 10; i++ { //开启20个请求
 		//	ii := i
@@ -91,11 +123,22 @@ mathjax: true    # 打开 mathjax
 	wp.Wait()
 	fmt.Println(wp.IsDone())
 	fmt.Println("down")
+}
 ```
 
 ### 支持同步等待结果
 
 ```
+package main
+
+import (
+	"fmt"
+	"time"
+
+	"github.com/xxjwxc/gowp/workerpool"
+)
+
+func main() {
 	wp := workerpool.New(5)              //设置最大线程数
 	for i := 0; i < 10; i++ { //开启20个请求
 		ii := i
@@ -119,8 +162,9 @@ mathjax: true    # 打开 mathjax
 		fmt.Println(err)
 	}
 	fmt.Println("down")
-	
+}
 ```
+
 ----------
 
 ## 代码地址 [gowp](https://github.com/xxjwxc/gowp)

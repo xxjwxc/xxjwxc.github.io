@@ -69,7 +69,7 @@
 
 <meta itemprop="datePublished" content="2019-09-15T11:48:31&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-15T11:48:31&#43;08:00" />
-<meta itemprop="wordCount" content="554">
+<meta itemprop="wordCount" content="645">
 
 
 
@@ -340,7 +340,7 @@
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 554 字 </span>
+        <span class="more-meta"> 约 645 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -415,23 +415,45 @@
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">	wp := workerpool.New(10)             //设置最大线程数
-	for i := 0; i &lt; 20; i++ { //开启20个请求
-		ii := i
-		wp.Do(func() error {
-			for j := 0; j &lt; 10; j++ { //每次打印0-10的值
-				fmt.Println(fmt.Sprintf(&#34;%v-&gt;\t%v&#34;, ii, j))
-				time.Sleep(1 * time.Second)
-			}
-			//time.Sleep(1 * time.Second)
-			return nil
-		})
-	}
+<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
 
-	wp.Wait()
-	fmt.Println(&#34;down&#34;)</pre></td></tr></table>
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;time&#34;</span>
+
+	<span class="s">&#34;github.com/xxjwxc/gowp/workerpool&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">wp</span> <span class="o">:=</span> <span class="nx">workerpool</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>             <span class="c1">//设置最大线程数
+</span><span class="c1"></span>	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//开启20个请求
+</span><span class="c1"></span>		<span class="nx">ii</span> <span class="o">:=</span> <span class="nx">i</span>
+		<span class="nx">wp</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="kd">func</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+			<span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//每次打印0-10的值
+</span><span class="c1"></span>				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%v-&gt;\t%v&#34;</span><span class="p">,</span> <span class="nx">ii</span><span class="p">,</span> <span class="nx">j</span><span class="p">))</span>
+				<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+			<span class="p">}</span>
+			<span class="c1">//time.Sleep(1 * time.Second)
+</span><span class="c1"></span>			<span class="k">return</span> <span class="kc">nil</span>
+		<span class="p">})</span>
+	<span class="p">}</span>
+
+	<span class="nx">wp</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
+<span class="p">}</span></pre></td></tr></table>
 </div>
 </div>
 <h3 id="支持错误返回">支持错误返回</h3>
@@ -458,29 +480,51 @@
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">	wp := workerpool.New(10)             //设置最大线程数
-	for i := 0; i &lt; 20; i++ { //开启20个请求
-		ii := i
-		wp.Do(func() error {
-			for j := 0; j &lt; 10; j++ { //每次打印0-10的值
-				fmt.Println(fmt.Sprintf(&#34;%v-&gt;\t%v&#34;, ii, j))
-				if ii == 1 {
-					return errors.Cause(errors.New(&#34;my test err&#34;)) //有err 立即返回
-				}
-				time.Sleep(1 * time.Second)
-			}
+<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
 
-			return nil
-		})
-	}
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;time&#34;</span>
 
-	err := wp.Wait()
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(&#34;down&#34;)</pre></td></tr></table>
+	<span class="s">&#34;github.com/xxjwxc/gowp/workerpool&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">wp</span> <span class="o">:=</span> <span class="nx">workerpool</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>             <span class="c1">//设置最大线程数
+</span><span class="c1"></span>	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//开启20个请求
+</span><span class="c1"></span>		<span class="nx">ii</span> <span class="o">:=</span> <span class="nx">i</span>
+		<span class="nx">wp</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="kd">func</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+			<span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//每次打印0-10的值
+</span><span class="c1"></span>				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%v-&gt;\t%v&#34;</span><span class="p">,</span> <span class="nx">ii</span><span class="p">,</span> <span class="nx">j</span><span class="p">))</span>
+				<span class="k">if</span> <span class="nx">ii</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+					<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">Cause</span><span class="p">(</span><span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;my test err&#34;</span><span class="p">))</span> <span class="c1">//有err 立即返回
+</span><span class="c1"></span>				<span class="p">}</span>
+				<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+			<span class="p">}</span>
+
+			<span class="k">return</span> <span class="kc">nil</span>
+		<span class="p">})</span>
+	<span class="p">}</span>
+
+	<span class="nx">err</span> <span class="o">:=</span> <span class="nx">wp</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
+	<span class="p">}</span></pre></td></tr></table>
 </div>
 </div>
 <h3 id="支持判断是否完成-非阻塞">支持判断是否完成 (非阻塞)</h3>
@@ -502,24 +546,46 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">	wp := workerpool.New(5)              //设置最大线程数
-	for i := 0; i &lt; 10; i++ { //开启20个请求
-		//	ii := i
-		wp.Do(func() error {
-			for j := 0; j &lt; 5; j++ { //每次打印0-10的值
-				//fmt.Println(fmt.Sprintf(&#34;%v-&gt;\t%v&#34;, ii, j))
-				time.Sleep(1 * time.Second)
-			}
-			return nil
-		})
+<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
 
-		fmt.Println(wp.IsDone())
-	}
-	wp.Wait()
-	fmt.Println(wp.IsDone())
-	fmt.Println(&#34;down&#34;)</pre></td></tr></table>
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;time&#34;</span>
+
+	<span class="s">&#34;github.com/xxjwxc/gowp/workerpool&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">wp</span> <span class="o">:=</span> <span class="nx">workerpool</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>              <span class="c1">//设置最大线程数
+</span><span class="c1"></span>	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//开启20个请求
+</span><span class="c1"></span>		<span class="c1">//	ii := i
+</span><span class="c1"></span>		<span class="nx">wp</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="kd">func</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+			<span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//每次打印0-10的值
+</span><span class="c1"></span>				<span class="c1">//fmt.Println(fmt.Sprintf(&#34;%v-&gt;\t%v&#34;, ii, j))
+</span><span class="c1"></span>				<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+			<span class="p">}</span>
+			<span class="k">return</span> <span class="kc">nil</span>
+		<span class="p">})</span>
+
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">wp</span><span class="p">.</span><span class="nf">IsDone</span><span class="p">())</span>
+	<span class="p">}</span>
+	<span class="nx">wp</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">wp</span><span class="p">.</span><span class="nf">IsDone</span><span class="p">())</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
+<span class="p">}</span></pre></td></tr></table>
 </div>
 </div>
 <h3 id="支持同步等待结果">支持同步等待结果</h3>
@@ -549,32 +615,52 @@
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">	wp := workerpool.New(5)              //设置最大线程数
-	for i := 0; i &lt; 10; i++ { //开启20个请求
-		ii := i
-		wp.DoWait(func() error {
-			for j := 0; j &lt; 5; j++ { //每次打印0-10的值
-				fmt.Println(fmt.Sprintf(&#34;%v-&gt;\t%v&#34;, ii, j))
-				// if ii == 1 {
-				// 	return errors.New(&#34;my test err&#34;)
-				// }
-				time.Sleep(1 * time.Second)
-			}
+<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
 
-			return nil
-			//time.Sleep(1 * time.Second)
-			//return errors.New(&#34;my test err&#34;)
-		})
-	}
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;time&#34;</span>
 
-	err := wp.Wait()
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(&#34;down&#34;)
-	</pre></td></tr></table>
+	<span class="s">&#34;github.com/xxjwxc/gowp/workerpool&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">wp</span> <span class="o">:=</span> <span class="nx">workerpool</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>              <span class="c1">//设置最大线程数
+</span><span class="c1"></span>	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//开启20个请求
+</span><span class="c1"></span>		<span class="nx">ii</span> <span class="o">:=</span> <span class="nx">i</span>
+		<span class="nx">wp</span><span class="p">.</span><span class="nf">DoWait</span><span class="p">(</span><span class="kd">func</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+			<span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//每次打印0-10的值
+</span><span class="c1"></span>				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%v-&gt;\t%v&#34;</span><span class="p">,</span> <span class="nx">ii</span><span class="p">,</span> <span class="nx">j</span><span class="p">))</span>
+				<span class="c1">// if ii == 1 {
+</span><span class="c1"></span>				<span class="c1">// 	return errors.New(&#34;my test err&#34;)
+</span><span class="c1"></span>				<span class="c1">// }
+</span><span class="c1"></span>				<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+			<span class="p">}</span>
+
+			<span class="k">return</span> <span class="kc">nil</span>
+			<span class="c1">//time.Sleep(1 * time.Second)
+</span><span class="c1"></span>			<span class="c1">//return errors.New(&#34;my test err&#34;)
+</span><span class="c1"></span>		<span class="p">})</span>
+	<span class="p">}</span>
+
+	<span class="nx">err</span> <span class="o">:=</span> <span class="nx">wp</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
+<span class="p">}</span></pre></td></tr></table>
 </div>
 </div>
 <hr />
