@@ -1,0 +1,2953 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Uber Go 风格指南中文版 - Technology blog by xiexiaojun</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="xiexiaojun" />
+  <meta name="description" content="uber_go_guide_cn BadGood ```go BAD CODE GOES HERE ``` ```go GOOD CODE GOES HERE ``` ~~~ (You need the empty lines between the and code samples for it to be treated as Markdown.) If you need to add labels or descriptions below the code samples, add another row before the line. ~~~ DESCRIBE BAD CODE DESCRIBE GOOD CODE ~~~ -- Uber Go语言编码规范 Ub" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.57.2" />
+
+
+<link rel="canonical" href="https://xxjwxc.github.io/post/uber_go_guide_cn/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Uber Go 风格指南中文版" />
+<meta property="og:description" content="uber_go_guide_cn BadGood ```go BAD CODE GOES HERE ``` ```go GOOD CODE GOES HERE ``` ~~~ (You need the empty lines between the and code samples for it to be treated as Markdown.) If you need to add labels or descriptions below the code samples, add another row before the line. ~~~ DESCRIBE BAD CODE DESCRIBE GOOD CODE ~~~ -- Uber Go语言编码规范 Ub" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xxjwxc.github.io/post/uber_go_guide_cn/" />
+<meta property="article:published_time" content="2019-10-13T21:10:31+08:00" />
+<meta property="article:modified_time" content="2019-10-13T21:10:31+08:00" />
+<meta itemprop="name" content="Uber Go 风格指南中文版">
+<meta itemprop="description" content="uber_go_guide_cn BadGood ```go BAD CODE GOES HERE ``` ```go GOOD CODE GOES HERE ``` ~~~ (You need the empty lines between the and code samples for it to be treated as Markdown.) If you need to add labels or descriptions below the code samples, add another row before the line. ~~~ DESCRIBE BAD CODE DESCRIBE GOOD CODE ~~~ -- Uber Go语言编码规范 Ub">
+
+
+<meta itemprop="datePublished" content="2019-10-13T21:10:31&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-13T21:10:31&#43;08:00" />
+<meta itemprop="wordCount" content="8339">
+
+
+
+<meta itemprop="keywords" content="guide,翻译,golang," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Uber Go 风格指南中文版"/>
+<meta name="twitter:description" content="uber_go_guide_cn BadGood ```go BAD CODE GOES HERE ``` ```go GOOD CODE GOES HERE ``` ~~~ (You need the empty lines between the and code samples for it to be treated as Markdown.) If you need to add labels or descriptions below the code samples, add another row before the line. ~~~ DESCRIBE BAD CODE DESCRIBE GOOD CODE ~~~ -- Uber Go语言编码规范 Ub"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">xxj</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xxjwxc.github.io/">home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xxjwxc.github.io/post/">文档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xxjwxc.github.io/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xxjwxc.github.io/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xxjwxc.github.io/about/">About</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.csdn.net/xie1xiao1jun" rel="noopener" target="_blank">
+              external-link
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      xxj
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xxjwxc.github.io/">home</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xxjwxc.github.io/post/">文档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xxjwxc.github.io/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xxjwxc.github.io/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xxjwxc.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.csdn.net/xie1xiao1jun" rel="noopener" target="_blank">
+              external-link
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Uber Go 风格指南中文版</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-10-13" class="post-time">
+          2019-10-13
+        </time>
+        <div class="post-category">
+            <a href="https://xxjwxc.github.io/categories/%E7%BF%BB%E8%AF%91/"> 翻译 </a>
+            
+          </div>
+        <span class="more-meta"> 约 8339 字 </span>
+          <span class="more-meta"> 预计阅读 17 分钟 </span>
+
+        
+        
+          <span id="busuanzi_container_page_pv">
+            | 阅读 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#uber-go-guide-cn-https-github-com-xxjwxc-uber-go-guide-cn"><a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></a></li>
+<li><a href="#uber-go语言编码规范">Uber Go语言编码规范</a>
+<ul>
+<li><a href="#目录">目录</a></li>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#指导原则">指导原则</a>
+<ul>
+<li><a href="#指向interface的指针">指向interface的指针</a></li>
+<li><a href="#接收器-receiver-与接口">接收器(receiver)与接口</a></li>
+<li><a href="#零值mutex是有效的">零值Mutex是有效的</a></li>
+<li><a href="#在边界处拷贝slices和maps">在边界处拷贝Slices和Maps</a>
+<ul>
+<li><a href="#接收slices和maps">接收Slices和Maps</a></li>
+<li><a href="#返回slices或maps">返回slices或maps</a></li>
+</ul></li>
+<li><a href="#使用defer做清理">使用defer做清理</a></li>
+<li><a href="#channel的size要么是1-要么是无缓冲的">Channel的size要么是1，要么是无缓冲的</a></li>
+<li><a href="#枚举从1开始">枚举从1开始</a></li>
+<li><a href="#错误类型">错误类型</a></li>
+<li><a href="#错误包装-error-wrapping">错误包装(Error Wrapping)</a></li>
+<li><a href="#处理类型断言失败">处理类型断言失败</a></li>
+<li><a href="#不要panic">不要panic</a></li>
+<li><a href="#使用go-uber-org-atomic">使用go.uber.org/atomic</a></li>
+</ul></li>
+<li><a href="#性能">性能</a>
+<ul>
+<li><a href="#优先使用strconv而不是fmt">优先使用strconv而不是fmt</a></li>
+<li><a href="#避免字符串到字节的转换">避免字符串到字节的转换</a></li>
+</ul></li>
+<li><a href="#规范">规范</a>
+<ul>
+<li><a href="#相似的声明放在一组">相似的声明放在一组</a></li>
+<li><a href="#import组内的包导入顺序">import组内的包导入顺序</a></li>
+<li><a href="#包名">包名</a></li>
+<li><a href="#函数名">函数名</a></li>
+<li><a href="#导入别名">导入别名</a></li>
+<li><a href="#函数分组与顺序">函数分组与顺序</a></li>
+<li><a href="#减少嵌套">减少嵌套</a></li>
+<li><a href="#不必要的else">不必要的else</a></li>
+<li><a href="#顶层变量声明">顶层变量声明</a></li>
+<li><a href="#对于未导出的顶层常量和变量-使用-作为前缀">对于未导出的顶层常量和变量，使用_作为前缀</a></li>
+<li><a href="#结构体中的嵌入">结构体中的嵌入</a></li>
+<li><a href="#使用字段名初始化结构体">使用字段名初始化结构体</a></li>
+<li><a href="#本地变量声明">本地变量声明</a></li>
+<li><a href="#nil是一个有效的slice">nil是一个有效的slice</a></li>
+<li><a href="#小变量作用域">小变量作用域</a></li>
+<li><a href="#避免裸参数">避免裸参数</a></li>
+<li><a href="#使用原始字符串字面值-避免转义">使用原始字符串字面值，避免转义</a></li>
+<li><a href="#初始化结构体引用">初始化结构体引用</a></li>
+<li><a href="#格式化字符串放在printf外部">格式化字符串放在Printf外部</a></li>
+<li><a href="#命名printf样式的函数">命名Printf样式的函数</a></li>
+</ul></li>
+<li><a href="#模式">模式</a>
+<ul>
+<li><a href="#测试tables">测试Tables</a></li>
+<li><a href="#功能选项">功能选项</a></li>
+</ul></li>
+<li><a href="#地址-uber-go-guide-cn-https-github-com-xxjwxc-uber-go-guide-cn">地址 <a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="uber-go-guide-cn-https-github-com-xxjwxc-uber-go-guide-cn"><a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></h1>
+
+<!--
+
+Editing this document:
+
+- Discuss all changes in GitHub issues first.
+- Update the table of contents as new sections are added or removed.
+- Use tables for side-by-side code samples. See below.
+
+Code Samples:
+
+Use 2 spaces to indent. Horizontal real estate is important in side-by-side
+samples.
+
+For side-by-side code samples, use the following snippet.
+
+~~~
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+BAD CODE GOES HERE
+```
+
+</td><td>
+
+```go
+GOOD CODE GOES HERE
+```
+
+</td></tr>
+</tbody></table>
+~~~
+
+(You need the empty lines between the <td> and code samples for it to be
+treated as Markdown.)
+
+If you need to add labels or descriptions below the code samples, add another
+row before the </tbody></table> line.
+
+~~~
+<tr>
+<td>DESCRIBE BAD CODE</td>
+<td>DESCRIBE GOOD CODE</td>
+</tr>
+~~~
+
+-->
+
+<h1 id="uber-go语言编码规范">Uber Go语言编码规范</h1>
+
+<p><a href="https://www.uber.com/">Uber</a>是世界领先的生活出行服务提供商，也是Go语言的早期adopter，根据<a href="https://eng.uber.com/">Uber工程博客</a>的内容，大致可以判断出Go语言在Uber内部扮演了十分重要的角色。Uber内部的Go语言工程实践也是硕果累累，有大量Go实现的内部工具被Uber开源到<a href="https://github.com/uber-go">github</a>上，诸如被Gopher圈熟知的<a href="https://github.com/uber-go/zap">zap</a>、<a href="https://github.com/jaegertracing/jaeger">jaeger</a>等。2018年年末Uber将内部的<a href="https://github.com/uber-go/guide">Go风格规范</a>开源到github，经过一年的积累和更新，该规范已经初具规模，并受到广大Gopher的关注。本文是该规范的中文版本，并”夹带“了部分笔者的点评，希望对国内Gopher有所帮助。</p>
+
+<h2 id="目录">目录</h2>
+
+<ul>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#指导原则">指导原则</a>
+
+<ul>
+<li><a href="#指向interface的指针">指向interface的指针</a></li>
+<li><a href="#接收器(receiver)与接口">接收器(receiver)与接口</a></li>
+<li><a href="#零值Mutex是有效的">零值Mutex是有效的</a></li>
+<li><a href="#在边界处拷贝Slices和Maps">在边界处拷贝Slices和Maps</a></li>
+<li><a href="#使用defer做清理">使用defer做清理</a></li>
+<li><a href="#Channel的size要么是1，要么是无缓冲的">Channel的size要么是1，要么是无缓冲的</a></li>
+<li><a href="#枚举从1开始">枚举从1开始</a></li>
+<li><a href="#错误类型">错误类型</a></li>
+<li><a href="#错误包装(Error-Wrapping)">错误包装(Error Wrapping)</a></li>
+<li><a href="#处理类型断言失败">处理类型断言失败</a></li>
+<li><a href="#不要panic">不要panic</a></li>
+<li><a href="#使用go.uber.org/atomic">使用go.uber.org/atomic</a></li>
+</ul></li>
+<li><a href="#性能">性能</a>
+
+<ul>
+<li><a href="#优先使用strconv而不是fmt">优先使用strconv而不是fmt</a></li>
+<li><a href="#避免字符串到字节的转换">避免字符串到字节的转换</a></li>
+</ul></li>
+<li><a href="#规范">规范</a>
+
+<ul>
+<li><a href="#相似的声明放在一组">相似的声明放在一组</a></li>
+<li><a href="#import组内的包导入顺序">import组内的包导入顺序</a></li>
+<li><a href="#包名">包名</a></li>
+<li><a href="#函数名">函数名</a></li>
+<li><a href="#导入别名">导入别名</a></li>
+<li><a href="#函数分组与顺序">函数分组与顺序</a></li>
+<li><a href="#减少嵌套">减少嵌套</a></li>
+<li><a href="#不必要的else">不必要的else</a></li>
+<li><a href="#顶层变量声明">顶层变量声明</a></li>
+<li><a href="#对于未导出的顶层常量和变量，使用_作为前缀">对于未导出的顶层常量和变量，使用_作为前缀</a></li>
+<li><a href="#结构体中的嵌入">结构体中的嵌入</a></li>
+<li><a href="#使用字段名初始化结构体">使用字段名初始化结构体</a></li>
+<li><a href="#本地变量声明">本地变量声明</a></li>
+<li><a href="#nil是一个有效的slice">nil是一个有效的slice</a></li>
+<li><a href="#小变量作用域">小变量作用域</a></li>
+<li><a href="#避免裸参数">避免裸参数</a></li>
+<li><a href="#使用原始字符串字面值，避免转义">使用原始字符串字面值，避免转义</a></li>
+<li><a href="#初始化结构体引用">初始化结构体引用</a></li>
+<li><a href="#格式化字符串放在Printf外部">格式化字符串放在Printf外部</a></li>
+<li><a href="#命名Printf样式的函数">命名Printf样式的函数</a></li>
+</ul></li>
+<li><a href="#模式">模式</a>
+
+<ul>
+<li><a href="#测试Tables">测试Tables</a></li>
+<li><a href="#功能选项">功能选项</a></li>
+</ul></li>
+</ul>
+
+<h2 id="介绍">介绍</h2>
+
+<p>样式(style)是支配我们代码的惯例。术语“样式”有点用词不当，因为这些约定涵盖的范围不限于由gofmt替我们处理的源文件格式。</p>
+
+<p>本指南的目的是通过详细描述在Uber编写Go代码的注意事项来管理这种复杂性。这些规则的存在是为了使代码库易于管理，同时仍然允许工程师更有效地使用Go语言功能。</p>
+
+<p>该指南最初由<a href="https://github.com/prashantv">Prashant Varanasi</a>和<a href="https://github.com/nomis52">Simon Newton</a>编写，目的是使一些同事能快速使用Go。多年来，该指南已根据其他人的反馈进行了修改。</p>
+
+<p>本文档记录了我们在Uber遵循的Go代码中的惯用约定。其中许多是Go的通用准则，而其他扩展准则依赖于下面外部的指南：</p>
+
+<ol>
+<li><a href="https://golang.org/doc/effective_go.html">Effective Go</a></li>
+<li><a href="https://github.com/golang/go/wiki/CodeReviewComments">The Go common mistakes guide</a></li>
+</ol>
+
+<p>所有代码都应该通过<code>golint</code>和<code>go vet</code>的检查并无错误。我们建议您将编辑器设置为：</p>
+
+<ul>
+<li>保存时运行 <code>goimports</code></li>
+<li>运行 <code>golint</code> 和 <code>go vet</code> 检查错误</li>
+</ul>
+
+<p>您可以在以下Go编辑器工具支持页面中找到更为详细的信息:
+<a href="https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins">https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins</a></p>
+
+<h2 id="指导原则">指导原则</h2>
+
+<h3 id="指向interface的指针">指向interface的指针</h3>
+
+<p>您几乎不需要指向接口类型的指针。您应该将接口作为值进行传递，在这样的传递过程中，实质上传递的底层数据仍然可以是指针。</p>
+
+<p>接口实质上在底层用两个字段表示:</p>
+
+<ol>
+<li>一个指向某些特定类型信息的指针。您可以将其视为&rdquo;type.&rdquo;</li>
+<li>数据指针。如果存储的数据是指针，则直接存储。如果存储的数据是一个值，则存储指向该值的指针。</li>
+</ol>
+
+<p>如果希望接口方法修改基础数据，则必须使用指针传递。</p>
+
+<h3 id="接收器-receiver-与接口">接收器(receiver)与接口</h3>
+
+<p>使用值接收器的方法既可以通过值调用，也可以通过指针调用。</p>
+
+<p>例如,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">S</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">data</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="nx">S</span><span class="p">)</span> <span class="nf">Read</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">data</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">S</span><span class="p">)</span> <span class="nf">Write</span><span class="p">(</span><span class="nx">str</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nx">data</span> <span class="p">=</span> <span class="nx">str</span>
+<span class="p">}</span>
+
+<span class="nx">sVals</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="nx">S</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s">&#34;A&#34;</span><span class="p">}}</span>
+
+<span class="c1">// 你只能通过值调用Read
+</span><span class="c1"></span><span class="nx">sVals</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">Read</span><span class="p">()</span>
+
+<span class="c1">// 这不能编译通过:
+</span><span class="c1">//  sVals[1].Write(&#34;test&#34;)
+</span><span class="c1"></span>
+<span class="nx">sPtrs</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="o">*</span><span class="nx">S</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s">&#34;A&#34;</span><span class="p">}}</span>
+
+<span class="c1">// 通过指针既可以调用Read，也可以调用Write方法
+</span><span class="c1"></span><span class="nx">sPtrs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">Read</span><span class="p">()</span>
+<span class="nx">sPtrs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">Write</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>同样，即使该方法具有值接收器，也可以通过指针来满足接口。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">F</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="nf">f</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">S1</span> <span class="kd">struct</span><span class="p">{}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="nx">S1</span><span class="p">)</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="kd">type</span> <span class="nx">S2</span> <span class="kd">struct</span><span class="p">{}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">S2</span><span class="p">)</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="nx">s1Val</span> <span class="o">:=</span> <span class="nx">S1</span><span class="p">{}</span>
+<span class="nx">s1Ptr</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">S1</span><span class="p">{}</span>
+<span class="nx">s2Val</span> <span class="o">:=</span> <span class="nx">S2</span><span class="p">{}</span>
+<span class="nx">s2Ptr</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">S2</span><span class="p">{}</span>
+
+<span class="kd">var</span> <span class="nx">i</span> <span class="nx">F</span>
+<span class="nx">i</span> <span class="p">=</span> <span class="nx">s1Val</span>
+<span class="nx">i</span> <span class="p">=</span> <span class="nx">s1Ptr</span>
+<span class="nx">i</span> <span class="p">=</span> <span class="nx">s2Ptr</span>
+
+<span class="c1">//  下面代码无法通过编译。因为s2Val是一个值，而S2的f方法中没有使用值接收器
+</span><span class="c1"></span><span class="o">//</span>   <span class="nx">i</span> <span class="p">=</span> <span class="nx">s2Val</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>[Effective Go] 中有一段关于[pointers vs values]的精彩讲解。</p>
+
+<h3 id="零值mutex是有效的">零值Mutex是有效的</h3>
+
+<p>sync.Mutex和sync.RWMutex是有效的。因此你几乎不需要一个指向mutex的指针。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+mu := new(sync.Mutex)
+mu.Lock()
+```
+
+</td><td>
+
+```go
+var mu sync.Mutex
+mu.Lock()
+```
+
+</td></tr>
+</tbody></table>
+
+<p>如果你使用结构体指针，mutex可以非指针形式作为结构体的组成字段，或者更好的方式是直接嵌入到结构体中。
+如果是私有结构体类型或是要实现Mutex接口的类型，我们可以使用嵌入mutex的方法：</p>
+
+<table>
+<tbody>
+<tr><td>
+
+```go
+type smap struct {
+  sync.Mutex // only for unexported types（仅适用于非导出类型）
+
+  data map[string]string
+}
+
+func newSMap() *smap {
+  return &smap{
+    data: make(map[string]string),
+  }
+}
+
+func (m *smap) Get(k string) string {
+  m.Lock()
+  defer m.Unlock()
+
+  return m.data[k]
+}
+```
+
+</td><td>
+
+```go
+type SMap struct {
+  mu sync.Mutex // 对于导出类型，请使用私有锁
+
+  data map[string]string
+}
+
+func NewSMap() *SMap {
+  return &SMap{
+    data: make(map[string]string),
+  }
+}
+
+func (m *SMap) Get(k string) string {
+  m.mu.Lock()
+  defer m.mu.Unlock()
+
+  return m.data[k]
+}
+```
+
+</td></tr>
+
+</tr>
+<tr>
+<td>为私有类型或需要实现互斥接口的类型嵌入。</td>
+<td>对于导出的类型，请使用专用字段。</td>
+</tr>
+
+</tbody></table>
+
+<h3 id="在边界处拷贝slices和maps">在边界处拷贝Slices和Maps</h3>
+
+<p>slices和maps包含了指向底层数据的指针，因此在需要复制它们时要特别注意。</p>
+
+<h4 id="接收slices和maps">接收Slices和Maps</h4>
+
+<p>请记住，当map或slice作为函数参数传入时，如果您存储了对它们的引用，则用户可以对其进行修改。</p>
+
+<table>
+<thead><tr><th>Bad</th> <th>Good</th></tr></thead>
+<tbody>
+<tr>
+<td>
+
+```go
+func (d *Driver) SetTrips(trips []Trip) {
+  d.trips = trips
+}
+
+trips := ...
+d1.SetTrips(trips)
+
+// 你是要修改d1.trips吗？
+trips[0] = ...
+```
+
+</td>
+<td>
+
+```go
+func (d *Driver) SetTrips(trips []Trip) {
+  d.trips = make([]Trip, len(trips))
+  copy(d.trips, trips)
+}
+
+trips := ...
+d1.SetTrips(trips)
+
+// 这里我们修改trips[0]，但不会影响到d1.trips
+trips[0] = ...
+```
+
+</td>
+</tr>
+
+</tbody>
+</table>
+
+<h4 id="返回slices或maps">返回slices或maps</h4>
+
+<p>同样，请注意用户对暴露内部状态的map或slice的修改。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+type Stats struct {
+  sync.Mutex
+
+  counters map[string]int
+}
+
+// Snapshot返回当前状态。
+func (s *Stats) Snapshot() map[string]int {
+  s.Lock()
+  defer s.Unlock()
+
+  return s.counters
+}
+
+// snapshot不再受到锁的保护
+snapshot := stats.Snapshot()
+```
+
+</td><td>
+
+```go
+type Stats struct {
+  sync.Mutex
+
+  counters map[string]int
+}
+
+func (s *Stats) Snapshot() map[string]int {
+  s.Lock()
+  defer s.Unlock()
+
+  result := make(map[string]int, len(s.counters))
+  for k, v := range s.counters {
+    result[k] = v
+  }
+  return result
+}
+
+// snapshot现在是一个拷贝
+snapshot := stats.Snapshot()
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="使用defer做清理">使用defer做清理</h3>
+
+<p>使用defer清理资源，诸如文件和锁。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+p.Lock()
+if p.count < 10 {
+  p.Unlock()
+  return p.count
+}
+
+p.count++
+newCount := p.count
+p.Unlock()
+
+return newCount
+
+// 当有多个return分支时，很容易遗忘unlock
+```
+
+</td><td>
+
+```go
+p.Lock()
+defer p.Unlock()
+
+if p.count < 10 {
+  return p.count
+}
+
+p.count++
+return p.count
+
+// 更可读
+```
+
+</td></tr>
+</tbody></table>
+
+<p>Defer的开销非常小，只有在您可以证明函数执行时间处于纳秒级的程度时，才应避免这样做。使用defer提升可读性是值得的，因为使用它们的成本微不足道。尤其适用于那些不仅仅是简单内存访问的较大的方法，在这些方法中其他计算的资源消耗远超过 <code>defer</code>。</p>
+
+<h3 id="channel的size要么是1-要么是无缓冲的">Channel的size要么是1，要么是无缓冲的</h3>
+
+<p>channel通常size应为1或是无缓冲的。默认情况下，channel是无缓冲的，其size为零。任何其他尺寸都必须经过严格的审查。考虑如何确定大小，是什么阻止了channel在负载下被填满并阻止写入，以及发生这种情况时发生了什么。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+// 应该足以满足任何情况!
+c := make(chan int, 64)
+```
+
+</td><td>
+
+```go
+// 大小：1
+c := make(chan int, 1) // 或者
+// 无缓冲channel，大小为0
+c := make(chan int)
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="枚举从1开始">枚举从1开始</h3>
+
+<p>在Go中引入枚举的标准方法是声明一个自定义类型和一个使用了iota的const组。由于变量的默认值为0，因此通常应以非零值开头枚举。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+type Operation int
+
+const (
+  Add Operation = iota
+  Subtract
+  Multiply
+)
+
+// Add=0, Subtract=1, Multiply=2
+```
+
+</td><td>
+
+```go
+type Operation int
+
+const (
+  Add Operation = iota + 1
+  Subtract
+  Multiply
+)
+
+// Add=1, Subtract=2, Multiply=3
+```
+
+</td></tr>
+</tbody></table>
+
+<p>在某些情况下，使用零值是有意义的(枚举从零开始)，例如，当零值是理想的默认行为时。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">LogOutput</span> <span class="kt">int</span>
+
+<span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">LogToStdout</span> <span class="nx">LogOutput</span> <span class="p">=</span> <span class="kc">iota</span>
+  <span class="nx">LogToFile</span>
+  <span class="nx">LogToRemote</span>
+<span class="p">)</span>
+
+<span class="o">//</span> <span class="nx">LogToStdout</span><span class="p">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">LogToFile</span><span class="p">=</span><span class="mi">1</span><span class="p">,</span> <span class="nx">LogToRemote</span><span class="p">=</span><span class="mi">2</span></code></pre></td></tr></table>
+</div>
+</div>
+<!-- TODO: section on String methods for enums -->
+
+<h3 id="错误类型">错误类型</h3>
+
+<p>Go中有多种声明错误（Error)的选项：</p>
+
+<ul>
+<li><a href="https://golang.org/pkg/errors/#New"><code>errors.New</code></a> 对于简单静态字符串的错误</li>
+<li><a href="https://golang.org/pkg/fmt/#Errorf"><code>fmt.Errorf</code></a> 用于格式化的错误字符串</li>
+<li>实现 <code>Error()</code> 方法的自定义类型</li>
+<li>用 <a href="https://godoc.org/github.com/pkg/errors#Wrap"><code>&quot;pkg/errors&quot;.Wrap</code></a>的 Wrapped errors</li>
+</ul>
+
+<p>返回错误时，请考虑以下因素以确定最佳选择：</p>
+
+<ul>
+<li>这是一个不需要额外信息的简单错误吗？如果是这样，<a href="https://golang.org/pkg/errors/#New"><code>errors.New</code></a> 足够了.</li>
+<li>客户需要检测并处理此错误吗？如果是这样，则应使用自定义类型并实现该 <code>Error()</code> 方法。</li>
+<li>您是否正在传播下游函数返回的错误？如果是这样，请查看本文后面有关错误包装 <a href="#错误包装(Error-Wrapping)">section on error wrapping</a>部分的内容.</li>
+<li>否则 <a href="https://golang.org/pkg/fmt/#Errorf"><code>fmt.Errorf</code></a> 就可以了.</li>
+</ul>
+
+<p>如果客户端需要检测错误，并且您已使用创建了一个简单的错误<a href="https://golang.org/pkg/errors/#New"><code>errors.New</code></a>，请使用一个错误变量。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+// package foo
+
+func Open() error {
+  return errors.New("could not open")
+}
+
+// package bar
+
+func use() {
+  if err := foo.Open(); err != nil {
+    if err.Error() == "could not open" {
+      // handle
+    } else {
+      panic("unknown error")
+    }
+  }
+}
+```
+
+</td><td>
+
+```go
+// package foo
+
+var ErrCouldNotOpen = errors.New("could not open")
+
+func Open() error {
+  return ErrCouldNotOpen
+}
+
+// package bar
+
+if err := foo.Open(); err != nil {
+  if err == foo.ErrCouldNotOpen {
+    // handle
+  } else {
+    panic("unknown error")
+  }
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<p>如果您有可能需要客户端检测的错误，并且想向其中添加更多信息（例如，它不是静态字符串），则应使用自定义类型。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+func open(file string) error {
+  return fmt.Errorf("file %q not found", file)
+}
+
+func use() {
+  if err := open(); err != nil {
+    if strings.Contains(err.Error(), "not found") {
+      // handle
+    } else {
+      panic("unknown error")
+    }
+  }
+}
+```
+
+</td><td>
+
+```go
+type errNotFound struct {
+  file string
+}
+
+func (e errNotFound) Error() string {
+  return fmt.Sprintf("file %q not found", e.file)
+}
+
+func open(file string) error {
+  return errNotFound{file: file}
+}
+
+func use() {
+  if err := open(); err != nil {
+    if _, ok := err.(errNotFound); ok {
+      // handle
+    } else {
+      panic("unknown error")
+    }
+  }
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<p>直接导出自定义错误类型时要小心，因为它们已成为程序包公共API的一部分。最好公开匹配器功能以检查错误。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// package foo
+</span><span class="c1"></span>
+<span class="kd">type</span> <span class="nx">errNotFound</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">file</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">errNotFound</span><span class="p">)</span> <span class="nf">Error</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;file %q not found&#34;</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">file</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">IsNotFoundError</span><span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="nx">_</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">err</span><span class="p">.(</span><span class="nx">errNotFound</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">ok</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">Open</span><span class="p">(</span><span class="nx">file</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">errNotFound</span><span class="p">{</span><span class="nx">file</span><span class="p">:</span> <span class="nx">file</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// package bar
+</span><span class="c1"></span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">foo</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="s">&#34;foo&#34;</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nx">foo</span><span class="p">.</span><span class="nf">IsNotFoundError</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handle
+</span><span class="c1"></span>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;unknown error&#34;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<!-- TODO: Exposing the information to callers with accessor functions. -->
+
+<h3 id="错误包装-error-wrapping">错误包装(Error Wrapping)</h3>
+
+<p>一个(函数/方法)调用失败时，有三种主要的错误传播方式：</p>
+
+<ul>
+<li>如果没有要添加的其他上下文，并且您想要维护原始错误类型，则返回原始错误。</li>
+<li>添加上下文，使用 <a href="https://godoc.org/github.com/pkg/errors#Wrap"><code>&quot;pkg/errors&quot;.Wrap</code></a> 以便错误消息提供更多上下文 ,<a href="https://godoc.org/github.com/pkg/errors#Cause"><code>&quot;pkg/errors&quot;.Cause</code></a> 可用于提取原始错误。</li>
+<li>使用<a href="https://golang.org/pkg/fmt/#Errorf"><code>fmt.Errorf</code></a> ，如果调用者不需要检测或处理的特定错误情况。  specific error case.</li>
+</ul>
+
+<p>建议在可能的地方添加上下文，以使您获得诸如“调用服务foo：连接被拒绝”之类的更有用的错误，而不是诸如“连接被拒绝”之类的模糊错误。</p>
+
+<p>在将上下文添加到返回的错误时，请避免使用“failed to”之类的短语来保持上下文简洁，这些短语会陈述明显的内容，并随着错误在堆栈中的渗透而逐渐堆积：</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+s, err := store.New()
+if err != nil {
+    return fmt.Errorf(
+        "failed to create new store: %s", err)
+}
+```
+
+</td><td>
+
+```go
+s, err := store.New()
+if err != nil {
+    return fmt.Errorf(
+        "new store: %s", err)
+}
+```
+
+<tr><td>
+
+```
+failed to x: failed to y: failed to create new store: the error
+```
+
+</td><td>
+
+```
+x: y: new store: the error
+```
+
+</td></tr>
+</tbody></table>
+
+<p>但是，一旦将错误发送到另一个系统，就应该明确消息是错误消息（例如使用<code>err</code>标记，或在日志中以”Failed”为前缀）。</p>
+
+<p>另请参见 <a href="https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully">Don&rsquo;t just check errors, handle them gracefully</a>.不要只是检查错误，要优雅地处理错误</p>
+
+<h3 id="处理类型断言失败">处理类型断言失败</h3>
+
+<p><a href="https://golang.org/ref/spec#Type_assertions">type assertion</a>的单个返回值形式针对不正确的类型将产生panic。因此，请始终使用“comma ok”的惯用法。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+t := i.(string)
+```
+
+</td><td>
+
+```go
+t, ok := i.(string)
+if !ok {
+  // 优雅地处理错误
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<!-- TODO: There are a few situations where the single assignment form is
+fine. -->
+
+<h3 id="不要panic">不要panic</h3>
+
+<p>在生产环境中运行的代码必须避免出现panic。panic是<a href="https://en.wikipedia.org/wiki/Cascading_failure">cascading failures</a>级联失败的主要根源 。如果发生错误，该函数必须返回错误，并允许调用方决定如何处理它。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+func foo(bar string) {
+  if len(bar) == 0 {
+    panic("bar must not be empty")
+  }
+  // ...
+}
+
+func main() {
+  if len(os.Args) != 2 {
+    fmt.Println("USAGE: foo <bar>")
+    os.Exit(1)
+  }
+  foo(os.Args[1])
+}
+```
+
+</td><td>
+
+```go
+func foo(bar string) error {
+  if len(bar) == 0
+    return errors.New("bar must not be empty")
+  }
+  // ...
+  return nil
+}
+
+func main() {
+  if len(os.Args) != 2 {
+    fmt.Println("USAGE: foo <bar>")
+    os.Exit(1)
+  }
+  if err := foo(os.Args[1]); err != nil {
+    panic(err)
+  }
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<p>panic/recover不是错误处理策略。仅当发生不可恢复的事情（例如:nil引用）时，程序才必须panic。程序初始化是一个例外：程序启动时应使程序中止的不良情况可能会引起panic。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">_statusTemplate</span> <span class="p">=</span> <span class="nx">template</span><span class="p">.</span><span class="nf">Must</span><span class="p">(</span><span class="nx">template</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">).</span><span class="nf">Parse</span><span class="p">(</span><span class="s">&#34;_statusHTML&#34;</span><span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Even in tests, prefer <code>t.Fatal</code> or <code>t.FailNow</code> over panics to ensure that the
+test is marked as failed.</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+// func TestFoo(t *testing.T)
+
+f, err := ioutil.TempFile("", "test")
+if err != nil {
+  panic("failed to set up test")
+}
+```
+
+</td><td>
+
+```go
+// func TestFoo(t *testing.T)
+
+f, err := ioutil.TempFile("", "test")
+if err != nil {
+  t.Fatal("failed to set up test")
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<!-- TODO: Explain how to use _test packages. -->
+
+<h3 id="使用go-uber-org-atomic">使用go.uber.org/atomic</h3>
+
+<p>使用<a href="https://golang.org/pkg/sync/atomic/">sync/atomic</a>包的原子操作对原始类型(<code>int32</code>, <code>int64</code>等)进行操作，因此很容易忘记使用原子操作来读取或修改变量。</p>
+
+<p><a href="https://godoc.org/go.uber.org/atomic">go.uber.org/atomic</a>通过隐藏基础类型为这些操作增加了类型安全性。此外，它包括一个方便的<code>atomic.Bool</code>类型。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+type foo struct {
+  running int32  // atomic
+}
+
+func (f* foo) start() {
+  if atomic.SwapInt32(&f.running, 1) == 1 {
+     // already running…
+     return
+  }
+  // start the Foo
+}
+
+func (f *foo) isRunning() bool {
+  return f.running == 1  // race!
+}
+```
+
+</td><td>
+
+```go
+type foo struct {
+  running atomic.Bool
+}
+
+func (f *foo) start() {
+  if f.running.Swap(true) {
+     // already running…
+     return
+  }
+  // start the Foo
+}
+
+func (f *foo) isRunning() bool {
+  return f.running.Load()
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<h2 id="性能">性能</h2>
+
+<p>性能方面的特定准则，适用于热路径。</p>
+
+<h3 id="优先使用strconv而不是fmt">优先使用strconv而不是fmt</h3>
+
+<p>将原语转换为字符串或从字符串转换时，<code>strconv</code>速度比<code>fmt</code>快。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+for i := 0; i < b.N; i++ {
+  s := fmt.Sprint(rand.Int())
+}
+```
+
+</td><td>
+
+```go
+for i := 0; i < b.N; i++ {
+  s := strconv.Itoa(rand.Int())
+}
+```
+
+</td></tr>
+<tr><td>
+
+```
+BenchmarkFmtSprint-4    143 ns/op    2 allocs/op
+```
+
+</td><td>
+
+```
+BenchmarkStrconv-4    64.2 ns/op    1 allocs/op
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="避免字符串到字节的转换">避免字符串到字节的转换</h3>
+
+<p>不要反复从固定字符串创建字节slice。相反，请执行一次转换并捕获结果。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+for i := 0; i < b.N; i++ {
+  w.Write([]byte("Hello world"))
+}
+```
+
+</td><td>
+
+```go
+data := []byte("Hello world")
+for i := 0; i < b.N; i++ {
+  w.Write(data)
+}
+```
+
+</tr>
+<tr><td>
+
+```
+BenchmarkBad-4   50000000   22.2 ns/op
+```
+
+</td><td>
+
+```
+BenchmarkGood-4  500000000   3.25 ns/op
+```
+
+</td></tr>
+</tbody></table>
+
+<h2 id="规范">规范</h2>
+
+<h3 id="相似的声明放在一组">相似的声明放在一组</h3>
+
+<p>Go语言支持将相似的声明放在一个组内.</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+import "a"
+import "b"
+```
+
+</td><td>
+
+```go
+import (
+  "a"
+  "b"
+)
+```
+
+</td></tr>
+</tbody></table>
+
+<p>这同样适用于常量、变量和类型声明：</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+
+const a = 1
+const b = 2
+
+
+
+var a = 1
+var b = 2
+
+
+
+type Area float64
+type Volume float64
+```
+
+</td><td>
+
+```go
+const (
+  a = 1
+  b = 2
+)
+
+var (
+  a = 1
+  b = 2
+)
+
+type (
+  Area float64
+  Volume float64
+)
+```
+
+</td></tr>
+</tbody></table>
+
+<p>仅将相关的声明放在一组。不要将不相关的声明放在一组。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+type Operation int
+
+const (
+  Add Operation = iota + 1
+  Subtract
+  Multiply
+  ENV_VAR = "MY_ENV"
+)
+```
+
+</td><td>
+
+```go
+type Operation int
+
+const (
+  Add Operation = iota + 1
+  Subtract
+  Multiply
+)
+
+const ENV_VAR = "MY_ENV"
+```
+
+</td></tr>
+</tbody></table>
+
+<p>分组使用的位置没有限制，例如：你可以在函数内部使用它们：</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+func f() string {
+  var red = color.New(0xff0000)
+  var green = color.New(0x00ff00)
+  var blue = color.New(0x0000ff)
+
+  ...
+}
+```
+
+</td><td>
+
+```go
+func f() string {
+  var (
+    red   = color.New(0xff0000)
+    green = color.New(0x00ff00)
+    blue  = color.New(0x0000ff)
+  )
+
+  ...
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="import组内的包导入顺序">import组内的包导入顺序</h3>
+
+<p>应该有两类导入组：</p>
+
+<ul>
+<li>标准库</li>
+<li>其他一切</li>
+</ul>
+
+<p>默认情况下，这是goimports应用的分组。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+import (
+  "fmt"
+  "os"
+  "go.uber.org/atomic"
+  "golang.org/x/sync/errgroup"
+)
+```
+
+</td><td>
+
+```go
+import (
+  "fmt"
+  "os"
+
+  "go.uber.org/atomic"
+  "golang.org/x/sync/errgroup"
+)
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="包名">包名</h3>
+
+<p>当命名包时，请按下面规则选择一个名称：</p>
+
+<ul>
+<li>全部小写。没有大写或下划线。</li>
+<li>大多数使用命名导入的情况下，不需要重命名。</li>
+<li>简短而简洁。请记住，在每个使用的地方都完整标识了该名称。</li>
+<li>不用复数。例如<code>net/url</code>，而不是<code>net/urls</code>。</li>
+<li>不要用“common”，“util”，“shared”或“lib”。这些是不好的，信息量不足的名称。</li>
+</ul>
+
+<p>另请参阅 <a href="https://blog.golang.org/package-names">Package Names</a> 和 <a href="https://rakyll.org/style-packages/">Go包样式指南</a>.</p>
+
+<h3 id="函数名">函数名</h3>
+
+<p>我们遵循Go社区关于使用<a href="https://golang.org/doc/effective_go.html#mixed-caps">MixedCaps作为函数名</a>的约定。有一个例外，为了对相关的测试用例进行分组，函数名可能包含下划线，如: <code>TestMyFunction_WhatIsBeingTested</code>.</p>
+
+<h3 id="导入别名">导入别名</h3>
+
+<p>如果程序包名称与导入路径的最后一个元素不匹配，则必须使用导入别名。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;net/http&#34;</span>
+
+  <span class="nx">client</span> <span class="s">&#34;example.com/client-go&#34;</span>
+  <span class="nx">trace</span> <span class="s">&#34;example.com/trace/v2&#34;</span>
+<span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>在所有其他情况下，除非导入之间有直接冲突，否则应避免导入别名。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+import (
+  "fmt"
+  "os"
+
+
+  nettrace "golang.net/x/trace"
+)
+```
+
+</td><td>
+
+```go
+import (
+  "fmt"
+  "os"
+  "runtime/trace"
+
+  nettrace "golang.net/x/trace"
+)
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="函数分组与顺序">函数分组与顺序</h3>
+
+<ul>
+<li>函数应按粗略的调用顺序排序。</li>
+<li>同一文件中的函数应按接收者分组。</li>
+</ul>
+
+<p>因此，导出的函数应先出现在文件中，放在<code>struct</code>, <code>const</code>, <code>var</code>定义的后面。</p>
+
+<p>在定义类型之后，但在接收者的其余方法之前，可能会出现一个 <code>newXYZ()</code>/<code>NewXYZ()</code></p>
+
+<p>由于函数是按接收者分组的，因此普通工具函数应在文件末尾出现。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+func (s *something) Cost() {
+  return calcCost(s.weights)
+}
+
+type something struct{ ... }
+
+func calcCost(n []int) int {...}
+
+func (s *something) Stop() {...}
+
+func newSomething() *something {
+    return &something{}
+}
+```
+
+</td><td>
+
+```go
+type something struct{ ... }
+
+func newSomething() *something {
+    return &something{}
+}
+
+func (s *something) Cost() {
+  return calcCost(s.weights)
+}
+
+func (s *something) Stop() {...}
+
+func calcCost(n []int) int {...}
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="减少嵌套">减少嵌套</h3>
+
+<p>代码应通过尽可能先处理错误情况/特殊情况并尽早返回或继续循环来减少嵌套。减少嵌套多个级别的代码的代码量。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+for _, v := range data {
+  if v.F1 == 1 {
+    v = process(v)
+    if err := v.Call(); err == nil {
+      v.Send()
+    } else {
+      return err
+    }
+  } else {
+    log.Printf("Invalid v: %v", v)
+  }
+}
+```
+
+</td><td>
+
+```go
+for _, v := range data {
+  if v.F1 != 1 {
+    log.Printf("Invalid v: %v", v)
+    continue
+  }
+
+  v = process(v)
+  if err := v.Call(); err != nil {
+    return err
+  }
+  v.Send()
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="不必要的else">不必要的else</h3>
+
+<p>如果在if的两个分支中都设置了变量，则可以将其替换为单个if。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+var a int
+if b {
+  a = 100
+} else {
+  a = 10
+}
+```
+
+</td><td>
+
+```go
+a := 10
+if b {
+  a = 100
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="顶层变量声明">顶层变量声明</h3>
+
+<p>在顶层，使用标准<code>var</code>关键字。请勿指定类型，除非它与表达式的类型不同。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+var _s string = F()
+
+func F() string { return "A" }
+```
+
+</td><td>
+
+```go
+var _s = F()
+// 由于F已经明确了返回一个字符串类型，因此我们没有必要显式指定_s的类型
+// 还是那种类型
+
+func F() string { return "A" }
+```
+
+</td></tr>
+</tbody></table>
+
+<p>如果表达式的类型与所需的类型不完全匹配，请指定类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">myError</span> <span class="kd">struct</span><span class="p">{}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">myError</span><span class="p">)</span> <span class="nf">Error</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;error&#34;</span> <span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">F</span><span class="p">()</span> <span class="nx">myError</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">myError</span><span class="p">{}</span> <span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">_e</span> <span class="kt">error</span> <span class="p">=</span> <span class="nf">F</span><span class="p">()</span>
+<span class="o">//</span> <span class="nx">F返回一个myError类型的实例</span><span class="err">，</span><span class="nx">但是我们要error类型</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="对于未导出的顶层常量和变量-使用-作为前缀">对于未导出的顶层常量和变量，使用_作为前缀</h3>
+
+<p>在未导出的顶级<code>vars</code>和<code>consts</code>， 前面加上前缀_，以使它们在使用时明确表示它们是全局符号。</p>
+
+<p>例外：未导出的错误值，应以<code>err</code>开头。</p>
+
+<p>基本依据：顶级变量和常量具有包范围作用域。使用通用名称可能很容易在其他文件中意外使用错误的值。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+// foo.go
+
+const (
+  defaultPort = 8080
+  defaultUser = "user"
+)
+
+// bar.go
+
+func Bar() {
+  defaultPort := 9090
+  ...
+  fmt.Println("Default port", defaultPort)
+
+  // We will not see a compile error if the first line of
+  // Bar() is deleted.
+}
+```
+
+</td><td>
+
+```go
+// foo.go
+
+const (
+  _defaultPort = 8080
+  _defaultUser = "user"
+)
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="结构体中的嵌入">结构体中的嵌入</h3>
+
+<p>嵌入式类型（例如mutex）应位于结构体内的字段列表的顶部，并且必须有一个空行将嵌入式字段与常规字段分隔开。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+type Client struct {
+  version int
+  http.Client
+}
+```
+
+</td><td>
+
+```go
+type Client struct {
+  http.Client
+
+  version int
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="使用字段名初始化结构体">使用字段名初始化结构体</h3>
+
+<p>初始化结构体时，几乎始终应该指定字段名称。现在由<a href="https://golang.org/cmd/vet/"><code>go vet</code></a>强制执行。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+k := User{"John", "Doe", true}
+```
+
+</td><td>
+
+```go
+k := User{
+    FirstName: "John",
+    LastName: "Doe",
+    Admin: true,
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<p>例外：如果有3个或更少的字段，则可以在测试表中省略字段名称。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">tests</span> <span class="o">:=</span> <span class="p">[]</span><span class="kd">struct</span><span class="p">{</span>
+  <span class="nx">op</span> <span class="nx">Operation</span>
+  <span class="nx">want</span> <span class="kt">string</span>
+<span class="p">}{</span>
+  <span class="p">{</span><span class="nx">Add</span><span class="p">,</span> <span class="s">&#34;add&#34;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">Subtract</span><span class="p">,</span> <span class="s">&#34;subtract&#34;</span><span class="p">},</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="本地变量声明">本地变量声明</h3>
+
+<p>如果将变量明确设置为某个值，则应使用短变量声明形式 (<code>:=</code>)。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+var s = "foo"
+```
+
+</td><td>
+
+```go
+s := "foo"
+```
+
+</td></tr>
+</tbody></table>
+
+<p>但是，在某些情况下，<code>var</code> 使用关键字时默认值会更清晰。例如，声明空切片。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+func f(list []int) {
+  filtered := []int{}
+  for _, v := range list {
+    if v > 10 {
+      filtered = append(filtered, v)
+    }
+  }
+}
+```
+
+</td><td>
+
+```go
+func f(list []int) {
+  var filtered []int
+  for _, v := range list {
+    if v > 10 {
+      filtered = append(filtered, v)
+    }
+  }
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="nil是一个有效的slice">nil是一个有效的slice</h3>
+
+<p><code>nil</code> 是一个有效的长度为0的slice，这意味着,</p>
+
+<ul>
+<li>您不应明确返回长度为零的切片。返回<code>nil</code> 来代替。</li>
+</ul>
+
+<p><table>
+  <thead><tr><th>Bad</th><th>Good</th></tr></thead>
+  <tbody>
+  <tr><td></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">  <span class="k">if</span> <span class="nx">x</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p></td><td></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">  <span class="k">if</span> <span class="nx">x</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">nil</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p></td></tr>
+  </tbody></table></p>
+
+<ul>
+<li>要检查切片是否为空，请始终使用<code>len(s) == 0</code>。不要检查 <code>nil</code>。</li>
+</ul>
+
+<p><table>
+  <thead><tr><th>Bad</th><th>Good</th></tr></thead>
+  <tbody>
+  <tr><td></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">  <span class="kd">func</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="nx">s</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">s</span> <span class="o">==</span> <span class="kc">nil</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p></td><td></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">  <span class="kd">func</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="nx">s</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p></td></tr>
+  </tbody></table></p>
+
+<ul>
+<li>零值切片(用<code>var</code>声明的切片)可立即使用，无需调用<code>make()</code>创建。</li>
+</ul>
+
+<p><table>
+  <thead><tr><th>Bad</th><th>Good</th></tr></thead>
+  <tbody>
+  <tr><td></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">  <span class="nx">nums</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
+  <span class="c1">// or, nums := make([]int)
+</span><span class="c1"></span>
+  <span class="k">if</span> <span class="nx">add1</span> <span class="p">{</span>
+    <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="nx">add2</span> <span class="p">{</span>
+    <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p></td><td></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">  <span class="kd">var</span> <span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span>
+
+  <span class="k">if</span> <span class="nx">add1</span> <span class="p">{</span>
+    <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="nx">add2</span> <span class="p">{</span>
+    <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p></td></tr>
+  </tbody></table></p>
+
+<h3 id="小变量作用域">小变量作用域</h3>
+
+<p>如果有可能，尽量缩小变量作用范围。除非它与<a href="#减少嵌套">减少嵌套</a>的规则冲突。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+err := ioutil.WriteFile(name, data, 0644)
+if err != nil {
+ return err
+}
+```
+
+</td><td>
+
+```go
+if err := ioutil.WriteFile(name, data, 0644); err != nil {
+ return err
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<p>如果需要在if之外使用函数调用的结果，则不应尝试缩小范围。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+if data, err := ioutil.ReadFile(name); err == nil {
+  err = cfg.Decode(data)
+  if err != nil {
+    return err
+  }
+
+  fmt.Println(cfg)
+  return nil
+} else {
+  return err
+}
+```
+
+</td><td>
+
+```go
+data, err := ioutil.ReadFile(name)
+if err != nil {
+   return err
+}
+
+if err := cfg.Decode(data); err != nil {
+  return err
+}
+
+fmt.Println(cfg)
+return nil
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="避免裸参数">避免裸参数</h3>
+
+<p>函数调用中的裸参数可能会损害可读性。当参数名称的含义不明显时，请为参数添加C样式注释(<code>/* ... */</code>)</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+// func printInfo(name string, isLocal, done bool)
+
+printInfo("foo", true, true)
+```
+
+</td><td>
+
+```go
+// func printInfo(name string, isLocal, done bool)
+
+printInfo("foo", true /* isLocal */, true /* done */)
+```
+
+</td></tr>
+</tbody></table>
+
+<p>更好的作法是，将裸<code>bool</code>类型替换为自定义类型，以获得更易读和类型安全的代码。将来，该参数不仅允许两个状态（true/false）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Region</span> <span class="kt">int</span>
+
+<span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">UnknownRegion</span> <span class="nx">Region</span> <span class="p">=</span> <span class="kc">iota</span>
+  <span class="nx">Local</span>
+<span class="p">)</span>
+
+<span class="kd">type</span> <span class="nx">Status</span> <span class="kt">int</span>
+
+<span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">StatusReady</span> <span class="p">=</span> <span class="kc">iota</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="nx">StatusDone</span>
+  <span class="c1">// Maybe we will have a StatusInProgress in the future.
+</span><span class="c1"></span><span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">printInfo</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">region</span> <span class="nx">Region</span><span class="p">,</span> <span class="nx">status</span> <span class="nx">Status</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="使用原始字符串字面值-避免转义">使用原始字符串字面值，避免转义</h3>
+
+<p>Go支持<a href="https://golang.org/ref/spec#raw_string_lit">原始字符串字面值</a>，可以跨越多行并包含引号。使用这些字符串可以避免更难阅读的手工转义的字符串。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+wantError := "unknown name:\"test\""
+```
+
+</td><td>
+
+```go
+wantError := `unknown error:"test"`
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="初始化结构体引用">初始化结构体引用</h3>
+
+<p>在初始化结构引用时，请使用<code>&amp;T{}</code>代替<code>new(T)</code>，以使其与结构体初始化一致。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+sval := T{Name: "foo"}
+
+// inconsistent
+sptr := new(T)
+sptr.Name = "bar"
+```
+
+</td><td>
+
+```go
+sval := T{Name: "foo"}
+
+sptr := &T{Name: "bar"}
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="格式化字符串放在printf外部">格式化字符串放在Printf外部</h3>
+
+<p>如果你为<code>Printf</code>-style函数声明格式字符串，请将格式化字符串放在外面，并将其设置为<code>const</code>常量。</p>
+
+<p>这有助于<code>go vet</code>对格式字符串执行静态分析。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+msg := "unexpected values %v, %v\n"
+fmt.Printf(msg, 1, 2)
+```
+
+</td><td>
+
+```go
+const msg = "unexpected values %v, %v\n"
+fmt.Printf(msg, 1, 2)
+```
+
+</td></tr>
+</tbody></table>
+
+<h3 id="命名printf样式的函数">命名Printf样式的函数</h3>
+
+<p>声明<code>Printf</code>-style函数时，请确保<code>go vet</code>可以检测到它并检查格式字符串。</p>
+
+<p>这意味着您应尽可能使用预定义的<code>Printf</code>-style函数名称。<code>go vet</code>将默认检查这些。有关更多信息，请参见<a href="https://golang.org/cmd/vet/#hdr-Printf_family">Printf系列</a>。</p>
+
+<p>如果不能使用预定义的名称，请以f结束选择的名称：<code>Wrapf</code>，而不是<code>Wrap</code>。<code>go vet</code>可以要求检查特定的Printf样式名称，但名称必须以f结尾。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ go vet -printfuncs<span class="o">=</span>wrapf,statusf</code></pre></td></tr></table>
+</div>
+</div>
+<p>另请参阅 <a href="https://kuzminva.wordpress.com/2017/11/07/go-vet-printf-family-check/">go vet: Printf family check</a>.</p>
+
+<h2 id="模式">模式</h2>
+
+<h3 id="测试tables">测试Tables</h3>
+
+<p>在核心测试逻辑重复时，将表驱动测试与<a href="https://blog.golang.org/subtests">子测试</a>一起使用，以避免重复代码。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+// func TestSplitHostPort(t *testing.T)
+
+host, port, err := net.SplitHostPort("192.0.2.0:8000")
+require.NoError(t, err)
+assert.Equal(t, "192.0.2.0", host)
+assert.Equal(t, "8000", port)
+
+host, port, err = net.SplitHostPort("192.0.2.0:http")
+require.NoError(t, err)
+assert.Equal(t, "192.0.2.0", host)
+assert.Equal(t, "http", port)
+
+host, port, err = net.SplitHostPort(":8000")
+require.NoError(t, err)
+assert.Equal(t, "", host)
+assert.Equal(t, "8000", port)
+
+host, port, err = net.SplitHostPort("1:8")
+require.NoError(t, err)
+assert.Equal(t, "1", host)
+assert.Equal(t, "8", port)
+```
+
+</td><td>
+
+```go
+// func TestSplitHostPort(t *testing.T)
+
+tests := []struct{
+  give     string
+  wantHost string
+  wantPort string
+}{
+  {
+    give:     "192.0.2.0:8000",
+    wantHost: "192.0.2.0",
+    wantPort: "8000",
+  },
+  {
+    give:     "192.0.2.0:http",
+    wantHost: "192.0.2.0",
+    wantPort: "http",
+  },
+  {
+    give:     ":8000",
+    wantHost: "",
+    wantPort: "8000",
+  },
+  {
+    give:     "1:8",
+    wantHost: "1",
+    wantPort: "8",
+  },
+}
+
+for _, tt := range tests {
+  t.Run(tt.give, func(t *testing.T) {
+    host, port, err := net.SplitHostPort(tt.give)
+    require.NoError(t, err)
+    assert.Equal(t, tt.wantHost, host)
+    assert.Equal(t, tt.wantPort, port)
+  })
+}
+```
+
+</td></tr>
+</tbody></table>
+
+<p>试表使向错误消息添加上下文，减少重复的逻辑以及添加新的测试用例变得更加容易。</p>
+
+<p>我们遵循这样的约定：将结构体切片称为<code>tests</code>。 每个测试用例称为<code>tt</code>。此外，我们鼓励使用<code>give</code>和<code>want</code>前缀说明每个测试用例的输入和输出值。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">tests</span> <span class="o">:=</span> <span class="p">[]</span><span class="kd">struct</span><span class="p">{</span>
+  <span class="nx">give</span>     <span class="kt">string</span>
+  <span class="nx">wantHost</span> <span class="kt">string</span>
+  <span class="nx">wantPort</span> <span class="kt">string</span>
+<span class="p">}{</span>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">tt</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">tests</span> <span class="p">{</span>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="功能选项">功能选项</h3>
+
+<p>功能选项是一种模式，您可以在其中声明一个不透明Option类型，该类型在某些内部结构中记录信息。您接受这些选项的可变编号，并根据内部结构上的选项记录的全部信息采取行动。</p>
+
+<p>将此模式用于您需要扩展的构造函数和其他公共API中的可选参数，尤其是在这些功能上已经具有三个或更多参数的情况下。</p>
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+// package db
+
+func Connect(
+  addr string,
+  timeout time.Duration,
+  caching bool,
+) (*Connection, error) {
+  // ...
+}
+
+// Timeout and caching must always be provided,
+// even if the user wants to use the default.
+
+db.Connect(addr, db.DefaultTimeout, db.DefaultCaching)
+db.Connect(addr, newTimeout, db.DefaultCaching)
+db.Connect(addr, db.DefaultTimeout, false /* caching */)
+db.Connect(addr, newTimeout, false /* caching */)
+```
+
+</td><td>
+
+```go
+type options struct {
+  timeout time.Duration
+  caching bool
+}
+
+// Option overrides behavior of Connect.
+type Option interface {
+  apply(*options)
+}
+
+type optionFunc func(*options)
+
+func (f optionFunc) apply(o *options) {
+  f(o)
+}
+
+func WithTimeout(t time.Duration) Option {
+  return optionFunc(func(o *options) {
+    o.timeout = t
+  })
+}
+
+func WithCaching(cache bool) Option {
+  return optionFunc(func(o *options) {
+    o.caching = cache
+  })
+}
+
+// Connect creates a connection.
+func Connect(
+  addr string,
+  opts ...Option,
+) (*Connection, error) {
+  options := options{
+    timeout: defaultTimeout,
+    caching: defaultCaching,
+  }
+
+  for _, o := range opts {
+    o.apply(&options)
+  }
+
+  // ...
+}
+
+// Options must be provided only if needed.
+
+db.Connect(addr)
+db.Connect(addr, db.WithTimeout(newTimeout))
+db.Connect(addr, db.WithCaching(false))
+db.Connect(
+  addr,
+  db.WithCaching(false),
+  db.WithTimeout(newTimeout),
+)
+```
+
+</td></tr>
+</tbody></table>
+
+<p>还可以参考下面资料：</p>
+
+<ul>
+<li><a href="https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html">Self-referential functions and the design of options</a></li>
+<li><a href="https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis">Functional options for friendly APIs</a></li>
+</ul>
+
+<!-- TODO: replace this with parameter structs and functional options, when to
+use one vs other -->
+
+<hr />
+
+<h2 id="地址-uber-go-guide-cn-https-github-com-xxjwxc-uber-go-guide-cn">地址 <a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></h2>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">xiexiaojun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-10-13</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/image/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/image/ali.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://xxjwxc.github.io/tags/guide/">guide</a>
+          <a href="https://xxjwxc.github.io/tags/%E7%BF%BB%E8%AF%91/">翻译</a>
+          <a href="https://xxjwxc.github.io/tags/golang/">golang</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/gowp/">
+            <span class="next-text nav-default">golang工作池库 workerpool</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xxjwxc/xxjwxc.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+  
+
+  
+
+  
+
+  
+  
+    
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:xie1xiao1jun@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/xxjwxc" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.linkedin.com/in/%E5%B0%8F%E5%86%9B-%E8%B0%A2-237851116/" rel="me noopener" class="iconfont"
+      title="linkedin"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+    </a>
+
+ 
+</div>
+
+<div class="copyright">
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        xxj
+        
+      </span></span>
+
+  
+   
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
