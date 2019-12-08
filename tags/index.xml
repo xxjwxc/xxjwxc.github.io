@@ -6,89 +6,35 @@
     <description>Recent content in Tags on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Oct 2019 21:10:31 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 18:01:00 +0800</lastBuildDate>
     
 	<atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>gin</title>
+      <link>https://xxjwxc.github.io/tags/gin/</link>
+      <pubDate>Sun, 08 Dec 2019 18:01:00 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/gin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>golang</title>
       <link>https://xxjwxc.github.io/tags/golang/</link>
-      <pubDate>Sun, 13 Oct 2019 21:10:31 +0800</pubDate>
+      <pubDate>Sun, 08 Dec 2019 18:01:00 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>guide</title>
-      <link>https://xxjwxc.github.io/tags/guide/</link>
-      <pubDate>Sun, 13 Oct 2019 21:10:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/guide/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>翻译</title>
-      <link>https://xxjwxc.github.io/tags/%E7%BF%BB%E8%AF%91/</link>
-      <pubDate>Sun, 13 Oct 2019 21:10:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/%E7%BF%BB%E8%AF%91/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>debug</title>
-      <link>https://xxjwxc.github.io/tags/debug/</link>
-      <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/debug/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vue</title>
-      <link>https://xxjwxc.github.io/tags/vue/</link>
-      <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/vue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>工具</title>
       <link>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
+      <pubDate>Sun, 08 Dec 2019 18:01:00 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mod</title>
-      <link>https://xxjwxc.github.io/tags/mod/</link>
-      <pubDate>Fri, 13 Sep 2019 16:16:40 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/mod/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>配置</title>
-      <link>https://xxjwxc.github.io/tags/%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Fri, 13 Sep 2019 16:16:40 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/%E9%85%8D%E7%BD%AE/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gin</title>
-      <link>https://xxjwxc.github.io/tags/gin/</link>
-      <pubDate>Sat, 22 Jun 2019 21:01:00 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/gin/</guid>
       <description></description>
     </item>
     

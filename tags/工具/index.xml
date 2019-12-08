@@ -6,36 +6,18 @@
     <description>Recent content in 工具 on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 15 Sep 2019 11:48:31 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 18:01:00 +0800</lastBuildDate>
     
 	<atom:link href="https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>golang工作池库 workerpool</title>
-      <link>https://xxjwxc.github.io/post/gowp/</link>
-      <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/gowp/</guid>
-      <description>gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队</description>
-    </item>
-    
-    <item>
-      <title>vue环境配置及vscode调试</title>
-      <link>https://xxjwxc.github.io/post/vue/</link>
-      <pubDate>Thu, 12 Sep 2019 11:48:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/vue/</guid>
-      <description>mac安装 vue开发环境 本教程关于vue 在vscode 中的调试及开发。使用mac系统完成配置。 配置脚本在 vue_install.sh 以下展示 shell内容的详细信息。</description>
-    </item>
-    
-    <item>
       <title>go gin 参数自动绑定工具</title>
       <link>https://xxjwxc.github.io/post/ginrpc/</link>
-      <pubDate>Sat, 22 Jun 2019 21:01:00 +0800</pubDate>
+      <pubDate>Sun, 08 Dec 2019 18:01:00 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/post/ginrpc/</guid>
-      <description>golang gin 参数自动绑定工具 基于 go-gin 的 json restful 风格的golang基础库 自带请求参数过滤及绑定实现 代码注册简单且支持多种注册方式 1、 目录结构说明 ginrpc/base/common.go 基础库 ginrpc/base/api/context.go 自</description>
+      <description>ginprc golang gin 参数自动绑定工具 支持rpc自动映射 支持对象注册 支持注解路由 基于 go-gin 的 json restful 风格的golang基础库 自带请求参数过滤及绑定实现 binding:&amp;ldquo;required&amp;rdquo; validator 代码注册简</description>
     </item>
     
     <item>
