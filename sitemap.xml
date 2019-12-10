@@ -9,6 +9,34 @@
   </url>
   
   <url>
+    <loc>https://xxjwxc.github.io/post/uber_go_guide_cn/</loc>
+    <lastmod>2019-10-13T21:10:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/post/gowp/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/post/gomod/</loc>
+    <lastmod>2019-09-13T16:16:40+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/post/vue/</loc>
+    <lastmod>2019-09-12T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xxjwxc.github.io/post/pprof/</loc>
     <lastmod>2019-06-07T03:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -53,115 +81,183 @@
   <url>
     <loc>https://xxjwxc.github.io/categories/</loc>
     <lastmod>2019-12-08T18:01:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/post/</loc>
-    <lastmod>2019-12-08T18:01:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/tags/</loc>
-    <lastmod>2019-12-08T18:01:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/</loc>
-    <lastmod>2019-12-08T18:01:00+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/gin/</loc>
     <lastmod>2019-12-08T18:01:00+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/golang/</loc>
     <lastmod>2019-12-08T18:01:00+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://xxjwxc.github.io/post/</loc>
     <lastmod>2019-12-08T18:01:00+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/</loc>
+    <lastmod>2019-12-08T18:01:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/</loc>
+    <lastmod>2019-12-08T18:01:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2019-12-08T18:01:00+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2019-12-08T18:01:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/guide/</loc>
+    <lastmod>2019-10-13T21:10:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/categories/%E7%BF%BB%E8%AF%91/</loc>
+    <lastmod>2019-10-13T21:10:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/%E7%BF%BB%E8%AF%91/</loc>
+    <lastmod>2019-10-13T21:10:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/debug/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/vue/</loc>
+    <lastmod>2019-09-15T11:48:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/mod/</loc>
+    <lastmod>2019-09-13T16:16:40+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-09-13T16:16:40+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/pprof/</loc>
     <lastmod>2019-06-07T03:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/gorm/</loc>
     <lastmod>2019-06-01T14:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/log/</loc>
     <lastmod>2019-05-25T14:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2019-05-25T14:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/categories/%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2019-05-25T14:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/categories/go/</loc>
     <lastmod>2019-05-18T16:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/%E8%BD%AC%E6%8D%A2/</loc>
     <lastmod>2019-05-18T16:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/%E9%A9%BC%E5%B3%B0/</loc>
     <lastmod>2019-05-18T16:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/git/</loc>
     <lastmod>2019-05-01T16:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/help/</loc>
     <lastmod>2019-05-01T16:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/min/</loc>
     <lastmod>2019-05-01T16:01:23+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>
