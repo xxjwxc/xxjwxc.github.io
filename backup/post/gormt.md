@@ -21,7 +21,6 @@ mathjax: true    # 打开 mathjax
 
 # [gormt](https://github.com/xxjwxc/gormt)
 
-![show](/image/gormt/out.gif)
 
 ### 一款 mysql 数据库转 struct 工具
 
@@ -30,6 +29,8 @@ mathjax: true    # 打开 mathjax
 - [支持索引,外键](https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md)
 - 带大驼峰命名规则
 - 带json标签
+
+![show](/image/gormt/out.gif)
 
 --------
 
