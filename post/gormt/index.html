@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>go mod相关配置及说明 - Technology blog by xiexiaojun</title>
+  <title>gormt mysql数据库转换工具 - Technology blog by xiexiaojun</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="xiexiaojun" />
-  <meta name="description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@" />
+  <meta name="description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 1. 通过当前目录co" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.57.2" />
 
 
-<link rel="canonical" href="https://xxjwxc.github.io/post/gomod/" />
+<link rel="canonical" href="https://xxjwxc.github.io/post/gormt/" />
 
 
 
@@ -57,26 +57,26 @@
 
 
 
-<meta property="og:title" content="go mod相关配置及说明" />
-<meta property="og:description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@" />
+<meta property="og:title" content="gormt mysql数据库转换工具" />
+<meta property="og:description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 1. 通过当前目录co" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/gomod/" />
-<meta property="article:published_time" content="2019-09-13T16:16:40+08:00" />
-<meta property="article:modified_time" content="2019-09-13T16:16:40+08:00" />
-<meta itemprop="name" content="go mod相关配置及说明">
-<meta itemprop="description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@">
+<meta property="og:url" content="https://xxjwxc.github.io/post/gormt/" />
+<meta property="article:published_time" content="2020-01-13T11:01:23+08:00" />
+<meta property="article:modified_time" content="2020-01-13T11:01:23+08:00" />
+<meta itemprop="name" content="gormt mysql数据库转换工具">
+<meta itemprop="description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 1. 通过当前目录co">
 
 
-<meta itemprop="datePublished" content="2019-09-13T16:16:40&#43;08:00" />
-<meta itemprop="dateModified" content="2019-09-13T16:16:40&#43;08:00" />
-<meta itemprop="wordCount" content="359">
+<meta itemprop="datePublished" content="2020-01-13T11:01:23&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-13T11:01:23&#43;08:00" />
+<meta itemprop="wordCount" content="1092">
 
 
 
-<meta itemprop="keywords" content="golang,mod,配置," />
+<meta itemprop="keywords" content="golang,gorm,工具," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="go mod相关配置及说明"/>
-<meta name="twitter:description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@"/>
+<meta name="twitter:title" content="gormt mysql数据库转换工具"/>
+<meta name="twitter:description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 1. 通过当前目录co"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -330,18 +330,18 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">go mod相关配置及说明</h1>
+      <h1 class="post-title">gormt mysql数据库转换工具</h1>
       
       <div class="post-meta">
-        <time datetime="2019-09-13" class="post-time">
-          2019-09-13
+        <time datetime="2020-01-13" class="post-time">
+          2020-01-13
         </time>
         <div class="post-category">
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 359 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 1092 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
         
@@ -362,22 +362,39 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li>
-<ul>
-<li><a href="#golang-modules-的最新命令说明">golang Modules 的最新命令说明</a>
+<li><a href="#gormt-https-github-com-xxjwxc-gormt"><a href="https://github.com/xxjwxc/gormt">gormt</a></a>
 <ul>
 <li>
 <ul>
-<li><a href="#创建一个新的模块">创建一个新的模块</a></li>
+<li><a href="#一款-mysql-数据库转-struct-工具">一款 mysql 数据库转 struct 工具</a></li>
 </ul></li>
-<li><a href="#列出当前模块所有依赖项">列出当前模块所有依赖项</a>
+<li><a href="#1-通过当前目录config-toml文件配置默认配置项">1. 通过当前目录config.toml文件配置默认配置项</a></li>
+<li><a href="#2-可以使用命令行工具更新配置项">2. 可以使用命令行工具更新配置项</a></li>
+<li><a href="#3-查看帮助">3. 查看帮助</a></li>
+<li><a href="#4-支持gorm-相关属性">4. 支持gorm 相关属性</a></li>
+<li><a href="#5-示例展示">5. 示例展示</a>
 <ul>
-<li><a href="#清除依赖项">清除依赖项</a></li>
-<li><a href="#清理本地缓存">清理本地缓存</a></li>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#导出结果示例">&mdash;&gt;导出结果示例</a></li>
+<li><a href="#导出结果">&mdash;&gt;导出结果</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#实战">实战</a></li>
-<li><a href="#喜欢请给星-https-github-com-xxjwxc"><a href="https://github.com/xxjwxc">喜欢请给星</a></a></li>
+</ul></li>
+<li><a href="#更多-https-github-com-xxjwxc-gormt-tree-master-doc-export-cn-md"><a href="https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md">更多&gt;&gt;&gt;</a></a></li>
+</ul></li>
+<li><a href="#6-支持函数导出-导出函数只是-gorm-的辅助类函数-完全兼调用-gorm">6. 支持函数导出(导出函数只是 gorm 的辅助类函数，完全兼调用 gorm)</a>
+<ul>
+<li><a href="#更多-https-github-com-xxjwxc-gormt-tree-master-doc-func-cn-md"><a href="https://github.com/xxjwxc/gormt/tree/master/doc/func_cn.md">更多&gt;&gt;&gt;</a></a></li>
+<li><a href="#函数调用示例-https-github-com-xxjwxc-gormt-blob-master-data-view-genfunc-genfunc-test-go"><a href="https://github.com/xxjwxc/gormt/blob/master/data/view/genfunc/genfunc_test.go">函数调用示例&gt;&gt;&gt;</a></a></li>
+</ul></li>
+<li><a href="#7-构建">7. 构建</a></li>
+<li><a href="#8-下一步计划">8. 下一步计划</a></li>
+<li><a href="#9-提供一个windows-可视化工具">9. 提供一个windows 可视化工具</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -388,133 +405,285 @@
     <div class="post-content">
       
 
-<h2 id="golang-modules-的最新命令说明">golang Modules 的最新命令说明</h2>
+<h1 id="gormt-https-github-com-xxjwxc-gormt"><a href="https://github.com/xxjwxc/gormt">gormt</a></h1>
 
-<h4 id="创建一个新的模块">创建一个新的模块</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">go mod init [本项目mod名]</pre></td></tr></table>
-</div>
-</div>
-<h3 id="列出当前模块所有依赖项">列出当前模块所有依赖项</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">go get -u github.com/xxjwxc/public@[版本号,保持最新请使用latest 或者 master]</pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li><p>说明 go get -u 来保持最新，测试下来需要等待几分钟才同步的下来。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">go get -u github.com/xxjwxc/public@master</pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-
-<h4 id="清除依赖项">清除依赖项</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">go mod tidy</pre></td></tr></table>
-</div>
-</div>
-<h4 id="清理本地缓存">清理本地缓存</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">go clean -modcache </pre></td></tr></table>
-</div>
-</div>
-<h2 id="实战">实战</h2>
+<h3 id="一款-mysql-数据库转-struct-工具">一款 mysql 数据库转 struct 工具</h3>
 
 <ul>
-<li>添加一个库保持最新[github.com/xxjwxc/public] 使用MakeFile 及 go:generate 实现</li>
+<li>可以将mysql数据库自动生成 golang 结构</li>
+<li><a href="https://github.com/xxjwxc/gormt/blob/master/data/view/genfunc/genfunc_test.go">自动生成快捷操作函数</a></li>
+<li><a href="https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md">支持索引,外键</a></li>
+<li>带大驼峰命名规则</li>
+<li>带json标签</li>
 </ul>
-
-<ol>
-<li><p>添加 gogenerate.go</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="o">//</span><span class="k">go</span><span class="p">:</span><span class="nx">generate</span> <span class="nx">make</span> <span class="nx">gen</span></pre></td></tr></table>
-</div>
-</div></li>
-
-<li><p>添加 MakeFile</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">regen:
-	go clean -modcache #清理本地缓存
-gen:
-	go get -u github.com/xxjwxc/public@master # 保持最新
-	go mod tidy</pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-
-<p>说明:为了保持最新可以手动设置版本信息
-一般不带tag标签的版本是：</p>
-
-<p>github.com/xxjwxc/public v0.0.0-20190911032541-5d814c6ef57d</p>
-
-<p>其中：20190911032541 表示时间戳
-5d814c6ef57d 表示commit版本号</p>
-
-<p>可以通过 git log查看信息
-不过 20190911032541 中相差8个小时
-git log 对应 20190919032541</p>
-
-<ol>
-<li><p>启动</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">go generate &amp; go build ./main.go
-
-or
-
-make gen</pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-
-<p><a href="https://mp.weixin.qq.com/s/v-NdYEJBgKbiKsdoQaRsQg">参考链接</a></p>
-
-<h2 id="喜欢请给星-https-github-com-xxjwxc"><a href="https://github.com/xxjwxc">喜欢请给星</a></h2>
 
 <hr />
+
+<h2 id="1-通过当前目录config-toml文件配置默认配置项">1. 通过当前目录config.toml文件配置默认配置项</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">out_dir : &#34;.&#34;  # 输出目录
+singular_table : false  # 表名复数,是否大驼峰构建 参考:gorm.SingularTable
+simple : false #简单输出
+is_out_sql : false # 是否输出 sql 原信息
+is_out_func : true # 是否输出 快捷函数
+is_json_tag : false #是否打json标记
+is_foreign_key : true #是否导出外键关联
+mysql_info :
+    host : &#34;127.0.0.1&#34;
+    port : 3306
+    username : &#34;root&#34;
+    password : &#34;qwer&#34;
+    database : &#34;oauth_db&#34;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="2-可以使用命令行工具更新配置项">2. 可以使用命令行工具更新配置项</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./gormt -H=127.0.0.1 -d=oauth_db -p=qwer -u=root --port=3306</pre></td></tr></table>
+</div>
+</div>
+<h2 id="3-查看帮助">3. 查看帮助</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./gormt -h
+
+-------------------------------------------------------
+base on gorm tools for mysql database to golang struct
+
+Usage:
+  main [flags]
+
+Flags:
+  -d, --database string   数据库名
+  -h, --help              help for main
+  -H, --host string       数据库地址.(注意-H为大写)
+  -o, --outdir string     输出目录
+  -p, --password string   密码.
+      --port int          端口号 (default 3306)
+  -s, --singular          是否禁用表名复数
+  -u, --user string       用户名.
+  </pre></td></tr></table>
+</div>
+</div>
+<h2 id="4-支持gorm-相关属性">4. 支持gorm 相关属性</h2>
+
+<ul>
+<li>数据库表,列字段注释支持</li>
+<li>singular_table 表名复数(大驼峰)</li>
+<li>json tag json标签输出</li>
+<li>gorm.Model 基本模型   <a href="https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md">支持gorm.Model模式导出&gt;&gt;&gt;</a></li>
+<li>PRIMARY_KEY   将列指定为主键</li>
+<li>UNIQUE    将列指定为唯一</li>
+<li>NOT NULL  将列指定为非 NULL</li>
+<li>INDEX 创建具有或不带名称的索引, 如果多个索引同名则创建复合索引</li>
+<li>UNIQUE_INDEX  和 INDEX 类似，只不过创建的是唯一索引</li>
+<li>支持外键相关属性 <a href="https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md">简单带外键模式导出&gt;&gt;&gt;</a></li>
+<li>支持函数导出(包括:外键，关联体，索引关&hellip;)<a href="https://github.com/xxjwxc/gormt/blob/master/data/view/genfunc/genfunc_test.go">简单函数导出示例&gt;&gt;&gt;</a></li>
+</ul>
+
+<h2 id="5-示例展示">5. 示例展示</h2>
+
+<h6 id="导出结果示例">&mdash;&gt;导出结果示例</h6>
+
+<ul>
+<li><p>参数:singular_table = false simple = false isJsonTag = true</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">//	用户信息
+type UserAccountTbl struct {
+	ID          int       `gorm:&#34;primary_key;column:id;type:int(11);not null&#34; json:&#34;-&#34;`                                                   //
+	Account     string    `gorm:&#34;unique;column:account;type:varchar(64);not null&#34; json:&#34;account&#34;`                                         //
+	Password    string    `gorm:&#34;column:password;type:varchar(64);not null&#34; json:&#34;password&#34;`                                              //
+	AccountType int       `gorm:&#34;column:account_type;type:int(11);not null&#34; json:&#34;account_type&#34;`                                          //	帐号类型:0手机号，1邮件
+	AppKey      string    `json:&#34;app_key&#34; gorm:&#34;unique_index:UNIQ_5696AD037D3656A4;column:app_key;type:varchar(255);not null&#34;`            //	authbucket_oauth2_client表的id
+	UserInfoID  int       `gorm:&#34;unique_index:UNIQ_5696AD037D3656A4;index;column:user_info_id;type:int(11);not null&#34; json:&#34;user_info_id&#34;` //
+	RegTime     time.Time `gorm:&#34;column:reg_time;type:datetime&#34; json:&#34;reg_time&#34;`                                                          //
+	RegIP       string    `gorm:&#34;column:reg_ip;type:varchar(15)&#34; json:&#34;reg_ip&#34;`                                                           //
+	BundleID    string    `json:&#34;bundle_id&#34; gorm:&#34;column:bundle_id;type:varchar(255)&#34;`                                                    //
+	Describ     string    `gorm:&#34;column:describ;type:varchar(255)&#34; json:&#34;describ&#34;`                                                        //
+}</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>参数:singular_table = false simple = true isJsonTag = false</p></li>
+</ul>
+
+<h6 id="导出结果">&mdash;&gt;导出结果</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">//	用户信息
+type UserAccountTbl struct {
+	ID          int       `gorm:&#34;primary_key&#34;` //
+	Account     string    `gorm:&#34;unique&#34;`      //
+	Password    string    //
+	AccountType int       //	帐号类型:0手机号，1邮件
+	AppKey      string    `gorm:&#34;unique_index:UNIQ_5696AD037D3656A4&#34;`       //	authbucket_oauth2_client表的id
+	UserInfoID  int       `gorm:&#34;unique_index:UNIQ_5696AD037D3656A4;index&#34;` //
+	RegTime     time.Time //
+	RegIP       string    //
+	BundleID    string    //
+	Describ     string    //
+}</pre></td></tr></table>
+</div>
+</div>
+<h3 id="更多-https-github-com-xxjwxc-gormt-tree-master-doc-export-cn-md"><a href="https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md">更多&gt;&gt;&gt;</a></h3>
+
+<h2 id="6-支持函数导出-导出函数只是-gorm-的辅助类函数-完全兼调用-gorm">6. 支持函数导出(导出函数只是 gorm 的辅助类函数，完全兼调用 gorm)</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">// FetchByPrimaryKey primay or index 获取唯一内容
+func (obj *_UserAccountTblMgr) FetchByPrimaryKey(ID int) (result UserAccountTbl, err error) {
+	err = obj.DB.Table(obj.GetTableName()).Where(&#34;id = ?&#34;, ID).Find(&amp;result).Error
+	if err == nil &amp;&amp; obj.isRelated {
+		{
+			var info UserInfoTbl // 用户信息
+			err = obj.DB.Table(&#34;user_info_tbl&#34;).Where(&#34;id = ?&#34;, result.UserInfoTblID).Find(&amp;info).Error
+			if err != nil {
+				return
+			}
+			result.UserInfoTbl = info
+		}
+	}
+
+	return
+}</pre></td></tr></table>
+</div>
+</div>
+<h3 id="更多-https-github-com-xxjwxc-gormt-tree-master-doc-func-cn-md"><a href="https://github.com/xxjwxc/gormt/tree/master/doc/func_cn.md">更多&gt;&gt;&gt;</a></h3>
+
+<h3 id="函数调用示例-https-github-com-xxjwxc-gormt-blob-master-data-view-genfunc-genfunc-test-go"><a href="https://github.com/xxjwxc/gormt/blob/master/data/view/genfunc/genfunc_test.go">函数调用示例&gt;&gt;&gt;</a></h3>
+
+<h2 id="7-构建">7. 构建</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">make windows
+make linux
+make mac</pre></td></tr></table>
+</div>
+</div>
+<p>or</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">go generate</pre></td></tr></table>
+</div>
+</div>
+<h2 id="8-下一步计划">8. 下一步计划</h2>
+
+<ul>
+<li>更新，删除功能函数添加</li>
+<li>优化</li>
+</ul>
+
+<h2 id="9-提供一个windows-可视化工具">9. 提供一个windows 可视化工具</h2>
+
+<p><img src="/image/gormt/1.png" alt="图片描述" /></p>
+
+<p><img src="/image/gormt/2.jpg" alt="图片描述" /></p>
+
+<p><img src="/image/gormt/3.jpg" alt="图片描述" /></p>
+
+<p><img src="/image/gormt/4.jpg" alt="图片描述" /></p>
+
+<p><a href="https://github.com/xxjwxc/gormt/releases/download/v1.0.0.1/v1.0.zip">下载地址</a></p>
+
+<ul>
+<li>###### <a href="https://github.com/xxjwxc/gormt">传送门</a></li>
+</ul>
 
     </div>
 
@@ -527,7 +696,7 @@ make gen</pre></td></tr></table>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-09-13</span>
+    <span class="item-content">2020-01-13</span>
   </p>
   
   <p class="copyright-item">
@@ -560,30 +729,17 @@ make gen</pre></td></tr></table>
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://xxjwxc.github.io/tags/golang/">golang</a>
-          <a href="https://xxjwxc.github.io/tags/mod/">mod</a>
-          <a href="https://xxjwxc.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+          <a href="https://xxjwxc.github.io/tags/gorm/">gorm</a>
+          <a href="https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/gowp/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">golang工作池库 workerpool</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/vue/">
-            <span class="next-text nav-default">vue环境配置及vscode调试</span>
+          <a class="next" href="/post/ginrpc/">
+            <span class="next-text nav-default">go gin 参数自动绑定工具</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">

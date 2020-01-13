@@ -6,10 +6,302 @@
     <description>Recent content on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Dec 2019 18:01:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jan 2020 11:01:23 +0800</lastBuildDate>
     
         <atom:link href="https://xxjwxc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gormt mysql数据库转换工具</title>
+      <link>https://xxjwxc.github.io/post/gormt/</link>
+      <pubDate>Mon, 13 Jan 2020 11:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/gormt/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;gormt-https-github-com-xxjwxc-gormt&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt&#34;&gt;gormt&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h3 id=&#34;一款-mysql-数据库转-struct-工具&#34;&gt;一款 mysql 数据库转 struct 工具&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可以将mysql数据库自动生成 golang 结构&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt/blob/master/data/view/genfunc/genfunc_test.go&#34;&gt;自动生成快捷操作函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md&#34;&gt;支持索引,外键&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;带大驼峰命名规则&lt;/li&gt;
+&lt;li&gt;带json标签&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;1-通过当前目录config-toml文件配置默认配置项&#34;&gt;1. 通过当前目录config.toml文件配置默认配置项&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;out_dir : &amp;#34;.&amp;#34;  # 输出目录
+singular_table : false  # 表名复数,是否大驼峰构建 参考:gorm.SingularTable
+simple : false #简单输出
+is_out_sql : false # 是否输出 sql 原信息
+is_out_func : true # 是否输出 快捷函数
+is_json_tag : false #是否打json标记
+is_foreign_key : true #是否导出外键关联
+mysql_info :
+    host : &amp;#34;127.0.0.1&amp;#34;
+    port : 3306
+    username : &amp;#34;root&amp;#34;
+    password : &amp;#34;qwer&amp;#34;
+    database : &amp;#34;oauth_db&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;2-可以使用命令行工具更新配置项&#34;&gt;2. 可以使用命令行工具更新配置项&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;./gormt -H=127.0.0.1 -d=oauth_db -p=qwer -u=root --port=3306&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;3-查看帮助&#34;&gt;3. 查看帮助&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;./gormt -h
+
+-------------------------------------------------------
+base on gorm tools for mysql database to golang struct
+
+Usage:
+  main [flags]
+
+Flags:
+  -d, --database string   数据库名
+  -h, --help              help for main
+  -H, --host string       数据库地址.(注意-H为大写)
+  -o, --outdir string     输出目录
+  -p, --password string   密码.
+      --port int          端口号 (default 3306)
+  -s, --singular          是否禁用表名复数
+  -u, --user string       用户名.
+  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;4-支持gorm-相关属性&#34;&gt;4. 支持gorm 相关属性&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;数据库表,列字段注释支持&lt;/li&gt;
+&lt;li&gt;singular_table 表名复数(大驼峰)&lt;/li&gt;
+&lt;li&gt;json tag json标签输出&lt;/li&gt;
+&lt;li&gt;gorm.Model 基本模型   &lt;a href=&#34;https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md&#34;&gt;支持gorm.Model模式导出&amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PRIMARY_KEY   将列指定为主键&lt;/li&gt;
+&lt;li&gt;UNIQUE    将列指定为唯一&lt;/li&gt;
+&lt;li&gt;NOT NULL  将列指定为非 NULL&lt;/li&gt;
+&lt;li&gt;INDEX 创建具有或不带名称的索引, 如果多个索引同名则创建复合索引&lt;/li&gt;
+&lt;li&gt;UNIQUE_INDEX  和 INDEX 类似，只不过创建的是唯一索引&lt;/li&gt;
+&lt;li&gt;支持外键相关属性 &lt;a href=&#34;https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md&#34;&gt;简单带外键模式导出&amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;支持函数导出(包括:外键，关联体，索引关&amp;hellip;)&lt;a href=&#34;https://github.com/xxjwxc/gormt/blob/master/data/view/genfunc/genfunc_test.go&#34;&gt;简单函数导出示例&amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;5-示例展示&#34;&gt;5. 示例展示&lt;/h2&gt;
+
+&lt;h6 id=&#34;导出结果示例&#34;&gt;&amp;mdash;&amp;gt;导出结果示例&lt;/h6&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;参数:singular_table = false simple = false isJsonTag = true&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;//	用户信息
+type UserAccountTbl struct {
+	ID          int       `gorm:&amp;#34;primary_key;column:id;type:int(11);not null&amp;#34; json:&amp;#34;-&amp;#34;`                                                   //
+	Account     string    `gorm:&amp;#34;unique;column:account;type:varchar(64);not null&amp;#34; json:&amp;#34;account&amp;#34;`                                         //
+	Password    string    `gorm:&amp;#34;column:password;type:varchar(64);not null&amp;#34; json:&amp;#34;password&amp;#34;`                                              //
+	AccountType int       `gorm:&amp;#34;column:account_type;type:int(11);not null&amp;#34; json:&amp;#34;account_type&amp;#34;`                                          //	帐号类型:0手机号，1邮件
+	AppKey      string    `json:&amp;#34;app_key&amp;#34; gorm:&amp;#34;unique_index:UNIQ_5696AD037D3656A4;column:app_key;type:varchar(255);not null&amp;#34;`            //	authbucket_oauth2_client表的id
+	UserInfoID  int       `gorm:&amp;#34;unique_index:UNIQ_5696AD037D3656A4;index;column:user_info_id;type:int(11);not null&amp;#34; json:&amp;#34;user_info_id&amp;#34;` //
+	RegTime     time.Time `gorm:&amp;#34;column:reg_time;type:datetime&amp;#34; json:&amp;#34;reg_time&amp;#34;`                                                          //
+	RegIP       string    `gorm:&amp;#34;column:reg_ip;type:varchar(15)&amp;#34; json:&amp;#34;reg_ip&amp;#34;`                                                           //
+	BundleID    string    `json:&amp;#34;bundle_id&amp;#34; gorm:&amp;#34;column:bundle_id;type:varchar(255)&amp;#34;`                                                    //
+	Describ     string    `gorm:&amp;#34;column:describ;type:varchar(255)&amp;#34; json:&amp;#34;describ&amp;#34;`                                                        //
+}&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;参数:singular_table = false simple = true isJsonTag = false&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;导出结果&#34;&gt;&amp;mdash;&amp;gt;导出结果&lt;/h6&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;//	用户信息
+type UserAccountTbl struct {
+	ID          int       `gorm:&amp;#34;primary_key&amp;#34;` //
+	Account     string    `gorm:&amp;#34;unique&amp;#34;`      //
+	Password    string    //
+	AccountType int       //	帐号类型:0手机号，1邮件
+	AppKey      string    `gorm:&amp;#34;unique_index:UNIQ_5696AD037D3656A4&amp;#34;`       //	authbucket_oauth2_client表的id
+	UserInfoID  int       `gorm:&amp;#34;unique_index:UNIQ_5696AD037D3656A4;index&amp;#34;` //
+	RegTime     time.Time //
+	RegIP       string    //
+	BundleID    string    //
+	Describ     string    //
+}&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;更多-https-github-com-xxjwxc-gormt-tree-master-doc-export-cn-md&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md&#34;&gt;更多&amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h2 id=&#34;6-支持函数导出-导出函数只是-gorm-的辅助类函数-完全兼调用-gorm&#34;&gt;6. 支持函数导出(导出函数只是 gorm 的辅助类函数，完全兼调用 gorm)&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;// FetchByPrimaryKey primay or index 获取唯一内容
+func (obj *_UserAccountTblMgr) FetchByPrimaryKey(ID int) (result UserAccountTbl, err error) {
+	err = obj.DB.Table(obj.GetTableName()).Where(&amp;#34;id = ?&amp;#34;, ID).Find(&amp;amp;result).Error
+	if err == nil &amp;amp;&amp;amp; obj.isRelated {
+		{
+			var info UserInfoTbl // 用户信息
+			err = obj.DB.Table(&amp;#34;user_info_tbl&amp;#34;).Where(&amp;#34;id = ?&amp;#34;, result.UserInfoTblID).Find(&amp;amp;info).Error
+			if err != nil {
+				return
+			}
+			result.UserInfoTbl = info
+		}
+	}
+
+	return
+}&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;更多-https-github-com-xxjwxc-gormt-tree-master-doc-func-cn-md&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt/tree/master/doc/func_cn.md&#34;&gt;更多&amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;函数调用示例-https-github-com-xxjwxc-gormt-blob-master-data-view-genfunc-genfunc-test-go&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt/blob/master/data/view/genfunc/genfunc_test.go&#34;&gt;函数调用示例&amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h2 id=&#34;7-构建&#34;&gt;7. 构建&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;make windows
+make linux
+make mac&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;go generate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;8-下一步计划&#34;&gt;8. 下一步计划&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;更新，删除功能函数添加&lt;/li&gt;
+&lt;li&gt;优化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;9-提供一个windows-可视化工具&#34;&gt;9. 提供一个windows 可视化工具&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/gormt/1.png&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/gormt/2.jpg&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/gormt/3.jpg&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/gormt/4.jpg&#34; alt=&#34;图片描述&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt/releases/download/v1.0.0.1/v1.0.zip&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;###### &lt;a href=&#34;https://github.com/xxjwxc/gormt&#34;&gt;传送门&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>go gin 参数自动绑定工具</title>
