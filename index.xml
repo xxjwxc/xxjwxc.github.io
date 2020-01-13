@@ -214,7 +214,7 @@ type UserAccountTbl struct {
 &lt;/div&gt;
 &lt;h3 id=&#34;更多-https-github-com-xxjwxc-gormt-tree-master-doc-export-cn-md&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md&#34;&gt;更多&amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/h3&gt;
 
-&lt;h2 id=&#34;6-支持函数导出-导出函数只是-gorm-的辅助类函数-完全兼调用-gorm&#34;&gt;6. 支持函数导出(导出函数只是 gorm 的辅助类函数，完全兼调用 gorm)&lt;/h2&gt;
+&lt;h2 id=&#34;6-支持函数导出-导出函数只是-gorm-的辅助类函数-完全兼容-gorm-相关函数集&#34;&gt;6. 支持函数导出(导出函数只是 gorm 的辅助类函数，完全兼容 gorm 相关函数集)&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1

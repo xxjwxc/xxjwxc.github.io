@@ -136,7 +136,7 @@ type UserAccountTbl struct {
 
 ### [更多>>>](https://github.com/xxjwxc/gormt/tree/master/doc/export_cn.md)
 
-## 6. 支持函数导出(导出函数只是 gorm 的辅助类函数，完全兼调用 gorm)
+## 6. 支持函数导出(导出函数只是 gorm 的辅助类函数，完全兼容 gorm 相关函数集)
 
 ```
 // FetchByPrimaryKey primay or index 获取唯一内容
