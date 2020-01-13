@@ -21,6 +21,8 @@ mathjax: true    # 打开 mathjax
 
 # [gormt](https://github.com/xxjwxc/gormt)
 
+![show](/image/gormt/out.gif)
+
 ### 一款 mysql 数据库转 struct 工具
 
 - 可以将mysql数据库自动生成 golang 结构
