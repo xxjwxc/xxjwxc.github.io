@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="xiexiaojun" />
-  <meta name="description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 1. 通过当前目录co" />
+  <meta name="description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 交互界面模式 1 ./gormt -g=true" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -58,25 +58,25 @@
 
 
 <meta property="og:title" content="gormt mysql数据库转换工具" />
-<meta property="og:description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 1. 通过当前目录co" />
+<meta property="og:description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 交互界面模式 1 ./gormt -g=true" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xxjwxc.github.io/post/gormt/" />
-<meta property="article:published_time" content="2020-01-13T11:01:23+08:00" />
-<meta property="article:modified_time" content="2020-01-13T11:01:23+08:00" />
+<meta property="article:published_time" content="2020-01-22T10:01:23+08:00" />
+<meta property="article:modified_time" content="2020-01-22T10:01:23+08:00" />
 <meta itemprop="name" content="gormt mysql数据库转换工具">
-<meta itemprop="description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 1. 通过当前目录co">
+<meta itemprop="description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 交互界面模式 1 ./gormt -g=true">
 
 
-<meta itemprop="datePublished" content="2020-01-13T11:01:23&#43;08:00" />
-<meta itemprop="dateModified" content="2020-01-13T11:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="1097">
+<meta itemprop="datePublished" content="2020-01-22T10:01:23&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-22T10:01:23&#43;08:00" />
+<meta itemprop="wordCount" content="1256">
 
 
 
 <meta itemprop="keywords" content="golang,gorm,工具," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="gormt mysql数据库转换工具"/>
-<meta name="twitter:description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 1. 通过当前目录co"/>
+<meta name="twitter:description" content="gormt 一款 mysql 数据库转 struct 工具 可以将mysql数据库自动生成 golang 结构 自动生成快捷操作函数 支持索引,外键 带大驼峰命名规则 带json标签 交互界面模式 1 ./gormt -g=true"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -333,14 +333,14 @@
       <h1 class="post-title">gormt mysql数据库转换工具</h1>
       
       <div class="post-meta">
-        <time datetime="2020-01-13" class="post-time">
-          2020-01-13
+        <time datetime="2020-01-22" class="post-time">
+          2020-01-22
         </time>
         <div class="post-category">
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 1097 字 </span>
+        <span class="more-meta"> 约 1256 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -368,6 +368,8 @@
 <ul>
 <li><a href="#一款-mysql-数据库转-struct-工具">一款 mysql 数据库转 struct 工具</a></li>
 </ul></li>
+<li><a href="#交互界面模式">交互界面模式</a></li>
+<li><a href="#命令行模式">命令行模式</a></li>
 <li><a href="#1-通过当前目录config-toml文件配置默认配置项">1. 通过当前目录config.toml文件配置默认配置项</a></li>
 <li><a href="#2-可以使用命令行工具更新配置项">2. 可以使用命令行工具更新配置项</a></li>
 <li><a href="#3-查看帮助">3. 查看帮助</a></li>
@@ -417,8 +419,28 @@
 <li>带json标签</li>
 </ul>
 
-<p><img src="/image/gormt/out.gif" alt="show" /></p>
+<h2 id="交互界面模式">交互界面模式</h2>
 
+<p><img src="/image/gormt/ui_cn.gif" alt="show" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./gormt -g=true</pre></td></tr></table>
+</div>
+</div>
+<h2 id="命令行模式">命令行模式</h2>
+
+<p><img src="/image/gormt/out.gif" alt="show" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./gormt -g=false</pre></td></tr></table>
+</div>
+</div>
 <hr />
 
 <h2 id="1-通过当前目录config-toml文件配置默认配置项">1. 通过当前目录config.toml文件配置默认配置项</h2>
@@ -437,21 +459,33 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">out_dir : &#34;.&#34;  # 输出目录
-singular_table : false  # 表名复数,是否大驼峰构建 参考:gorm.SingularTable
-simple : false #简单输出
+<pre class="chroma">base:
+    is_dev : false
+out_dir : ./model  # 输出目录
+url_tag : json # web url tag(json,db(https://github.com/google/go-querystring))
+language :  # 语言(English,中 文)
+db_tag : gorm # 数据库标签(gorm,db)
+singular_table : false  # 单表模式:true:禁用表名复数,false:采用表明复数 参考:gorm.SingularTable
+simple : false # 简单输出(默认gorm标签不输出)
 is_out_sql : false # 是否输出 sql 原信息
 is_out_func : true # 是否输出 快捷函数
-is_json_tag : false #是否打json标记
-is_foreign_key : true #是否导出外键关联
-mysql_info :
-    host : &#34;127.0.0.1&#34;
+is_url_tag : true # 是否打web标记
+is_foreign_key : true # 是否导出外键关联
+is_gui : false # 是否ui模式显示
+mysql_info:
+    host : 127.0.0.1
     port : 3306
-    username : &#34;root&#34;
-    password : &#34;qwer&#34;
-    database : &#34;oauth_db&#34;</pre></td></tr></table>
+    username : root
+    password : qwer
+    database : oauth_db</pre></td></tr></table>
 </div>
 </div>
 <h2 id="2-可以使用命令行工具更新配置项">2. 可以使用命令行工具更新配置项</h2>
@@ -484,6 +518,10 @@ mysql_info :
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">./gormt -h
@@ -496,12 +534,16 @@ Usage:
 
 Flags:
   -d, --database string   数据库名
+  -f, --foreign           是否导出外键关联
+  -F, --fun               是否导出函数
+  -g, --gui               是否ui显示模式
   -h, --help              help for main
   -H, --host string       数据库地址.(注意-H为大写)
   -o, --outdir string     输出目录
   -p, --password string   密码.
       --port int          端口号 (default 3306)
   -s, --singular          是否禁用表名复数
+  -l, --url string        url标签(json,url)
   -u, --user string       用户名.
   </pre></td></tr></table>
 </div>
@@ -698,7 +740,7 @@ make mac</pre></td></tr></table>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2020-01-13</span>
+    <span class="item-content">2020-01-22</span>
   </p>
   
   <p class="copyright-item">
