@@ -1,8 +1,8 @@
 ---
 # 常用定义
 title: "gormt mysql数据库转换工具"           # 标题
-date: 2020-01-13T11:01:23+08:00    # 创建时间
-lastmod: 2020-01-13T11:01:23+08:00 # 最后修改时间
+date: 2020-01-25T10:01:23+08:00    # 创建时间
+lastmod: 2020-01-25T10:01:23+08:00 # 最后修改时间
 draft: false                       # 是否是草稿？
 tags: ["golang", "gorm", "工具"]  # 标签
 categories: ["工具"]              # 分类
@@ -30,7 +30,20 @@ mathjax: true    # 打开 mathjax
 - 带大驼峰命名规则
 - 带json标签
 
+## 交互界面模式
+
+![show](/image/gormt/ui_cn.gif)
+
+```
+./gormt -g=true
+```
+
+## 命令行模式
+
 ![show](/image/gormt/out.gif)
+```
+./gormt -g=false
+```
 
 --------
 
