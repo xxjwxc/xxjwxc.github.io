@@ -30,21 +30,21 @@
     </item>
     
     <item>
+      <title>go mod相关配置及说明</title>
+      <link>https://xxjwxc.github.io/post/gomod/</link>
+      <pubDate>Sun, 22 Sep 2019 16:16:40 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/gomod/</guid>
+      <description>golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@</description>
+    </item>
+    
+    <item>
       <title>golang工作池库 workerpool</title>
       <link>https://xxjwxc.github.io/post/gowp/</link>
       <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/post/gowp/</guid>
       <description>gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队</description>
-    </item>
-    
-    <item>
-      <title>go mod相关配置及说明</title>
-      <link>https://xxjwxc.github.io/post/gomod/</link>
-      <pubDate>Fri, 13 Sep 2019 16:16:40 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/gomod/</guid>
-      <description>golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@</description>
     </item>
     
     <item>

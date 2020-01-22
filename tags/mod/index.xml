@@ -6,7 +6,7 @@
     <description>Recent content in mod on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 13 Sep 2019 16:16:40 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Sep 2019 16:16:40 +0800</lastBuildDate>
     
 	<atom:link href="https://xxjwxc.github.io/tags/mod/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>go mod相关配置及说明</title>
       <link>https://xxjwxc.github.io/post/gomod/</link>
-      <pubDate>Fri, 13 Sep 2019 16:16:40 +0800</pubDate>
+      <pubDate>Sun, 22 Sep 2019 16:16:40 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/post/gomod/</guid>
       <description>golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@</description>

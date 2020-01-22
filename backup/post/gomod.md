@@ -1,8 +1,8 @@
 ---
 # 常用定义
 title: "go mod相关配置及说明"           # 标题
-date: 2019-09-13T16:16:40+08:00    # 创建时间
-lastmod: 2019-09-13T16:16:40+08:00 # 最后修改时间
+date: 2019-09-22T16:16:40+08:00    # 创建时间
+lastmod: 2019-09-22T16:16:40+08:00 # 最后修改时间
 draft: false                       # 是否是草稿？
 tags: ["golang", "mod", "配置"]  # 标签
 categories: ["工具"]              # 分类
@@ -48,6 +48,13 @@ go mod tidy
 #### 清理本地缓存
 ```
 go clean -modcache 
+```
+
+#### 添加本地项目
+go.mod 中添加
+```
+require github.com/xxjwxc/public v0.0.0-incompatible
+replace github.com/xxjwxc/public => ../public
 ```
 
 ## 实战

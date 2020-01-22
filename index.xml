@@ -2991,6 +2991,159 @@ use one vs other --&gt;
     </item>
     
     <item>
+      <title>go mod相关配置及说明</title>
+      <link>https://xxjwxc.github.io/post/gomod/</link>
+      <pubDate>Sun, 22 Sep 2019 16:16:40 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/gomod/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;golang-modules-的最新命令说明&#34;&gt;golang Modules 的最新命令说明&lt;/h2&gt;
+
+&lt;h4 id=&#34;创建一个新的模块&#34;&gt;创建一个新的模块&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;go mod init [本项目mod名]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;列出当前模块所有依赖项&#34;&gt;列出当前模块所有依赖项&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;go get -u github.com/xxjwxc/public@[版本号,保持最新请使用latest 或者 master]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;说明 go get -u 来保持最新，测试下来需要等待几分钟才同步的下来。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;go get -u github.com/xxjwxc/public@master&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;清除依赖项&#34;&gt;清除依赖项&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;go mod tidy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;清理本地缓存&#34;&gt;清理本地缓存&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;go clean -modcache &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;添加本地项目&#34;&gt;添加本地项目&lt;/h4&gt;
+
+&lt;p&gt;go.mod 中添加&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;require github.com/xxjwxc/public v0.0.0-incompatible
+replace github.com/xxjwxc/public =&amp;gt; ../public&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;实战&#34;&gt;实战&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;添加一个库保持最新[github.com/xxjwxc/public] 使用MakeFile 及 go:generate 实现&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;添加 gogenerate.go&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;generate&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gen&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加 MakeFile&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;regen:
+	go clean -modcache #清理本地缓存
+gen:
+	go get -u github.com/xxjwxc/public@master # 保持最新
+	go mod tidy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;说明:为了保持最新可以手动设置版本信息
+一般不带tag标签的版本是：&lt;/p&gt;
+
+&lt;p&gt;github.com/xxjwxc/public v0.0.0-20190911032541-5d814c6ef57d&lt;/p&gt;
+
+&lt;p&gt;其中：20190911032541 表示时间戳
+5d814c6ef57d 表示commit版本号&lt;/p&gt;
+
+&lt;p&gt;可以通过 git log查看信息
+不过 20190911032541 中相差8个小时
+git log 对应 20190919032541&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;启动&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;go generate &amp;amp; go build ./main.go
+
+or
+
+make gen&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/v-NdYEJBgKbiKsdoQaRsQg&#34;&gt;参考链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;喜欢请给星-https-github-com-xxjwxc&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc&#34;&gt;喜欢请给星&lt;/a&gt;&lt;/h2&gt;
+
+&lt;hr /&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>golang工作池库 workerpool</title>
       <link>https://xxjwxc.github.io/post/gowp/</link>
       <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
@@ -3282,146 +3435,6 @@ use one vs other --&gt;
 &lt;hr /&gt;
 
 &lt;h2 id=&#34;代码地址-gowp-https-github-com-xxjwxc-gowp&#34;&gt;代码地址 &lt;a href=&#34;https://github.com/xxjwxc/gowp&#34;&gt;gowp&lt;/a&gt;&lt;/h2&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>go mod相关配置及说明</title>
-      <link>https://xxjwxc.github.io/post/gomod/</link>
-      <pubDate>Fri, 13 Sep 2019 16:16:40 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/gomod/</guid>
-      
-        <description>
-
-&lt;h2 id=&#34;golang-modules-的最新命令说明&#34;&gt;golang Modules 的最新命令说明&lt;/h2&gt;
-
-&lt;h4 id=&#34;创建一个新的模块&#34;&gt;创建一个新的模块&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;go mod init [本项目mod名]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;列出当前模块所有依赖项&#34;&gt;列出当前模块所有依赖项&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;go get -u github.com/xxjwxc/public@[版本号,保持最新请使用latest 或者 master]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;说明 go get -u 来保持最新，测试下来需要等待几分钟才同步的下来。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;go get -u github.com/xxjwxc/public@master&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;清除依赖项&#34;&gt;清除依赖项&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;go mod tidy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h4 id=&#34;清理本地缓存&#34;&gt;清理本地缓存&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;go clean -modcache &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;实战&#34;&gt;实战&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;添加一个库保持最新[github.com/xxjwxc/public] 使用MakeFile 及 go:generate 实现&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;添加 gogenerate.go&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
-
-&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;generate&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gen&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;添加 MakeFile&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;regen:
-	go clean -modcache #清理本地缓存
-gen:
-	go get -u github.com/xxjwxc/public@master # 保持最新
-	go mod tidy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;说明:为了保持最新可以手动设置版本信息
-一般不带tag标签的版本是：&lt;/p&gt;
-
-&lt;p&gt;github.com/xxjwxc/public v0.0.0-20190911032541-5d814c6ef57d&lt;/p&gt;
-
-&lt;p&gt;其中：20190911032541 表示时间戳
-5d814c6ef57d 表示commit版本号&lt;/p&gt;
-
-&lt;p&gt;可以通过 git log查看信息
-不过 20190911032541 中相差8个小时
-git log 对应 20190919032541&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;启动&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;go generate &amp;amp; go build ./main.go
-
-or
-
-make gen&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/v-NdYEJBgKbiKsdoQaRsQg&#34;&gt;参考链接&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;喜欢请给星-https-github-com-xxjwxc&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc&#34;&gt;喜欢请给星&lt;/a&gt;&lt;/h2&gt;
-
-&lt;hr /&gt;
 </description>
       
     </item>
