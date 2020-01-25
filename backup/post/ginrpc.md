@@ -1,10 +1,10 @@
 ---
 # 常用定义
-title: "go gin 参数自动绑定工具"           # 标题
-date: 2019-12-08T18:01:00+08:00    # 创建时间
-lastmod: 2019-12-08T18:01:00+08:00 # 最后修改时间
+title: "go gin grpc 参数自动绑定工具"           # 标题
+date: 2020-01-25T18:01:00+08:00    # 创建时间
+lastmod: 2020-01-25T18:01:00+08:00 # 最后修改时间
 draft: false                       # 是否是草稿？
-tags: ["golang", "工具", "gin"]  # 标签
+tags: ["golang","grpc", "工具", "gin"]  # 标签
 categories: ["工具"]              # 分类
 author: "xiexiaojun"                  # 作者
 
@@ -30,6 +30,7 @@ mathjax: true    # 打开 mathjax
 - 基于 [go-gin](https://github.com/gin-gonic/gin) 的 json restful 风格的golang基础库
 - 自带请求参数过滤及绑定实现 binding:"required"  [validator](go-playground/validator.v8)
 - 代码注册简单且支持多种注册方式
+- 支持 [grpc-go](https://github.com/grpc/grpc-go) 绑定模式
 
 
 ## api接口说明
@@ -48,6 +49,9 @@ mathjax: true    # 打开 mathjax
 
   func(*gin.Context,req)
 
+- func(*gin.Context,*req)(*resp,error) //go-gin context类型,带request 请求参数,带错误返回参数 ==> [grpc-go](https://github.com/grpc/grpc-go)
+
+   func(*gin.Context,req)(resp,error)
 
 ## 一,参数自动绑定
 
@@ -69,19 +73,17 @@ type ReqTest struct {
 	Password     string `json:"password"`
 }
 
-//TestFun4 带自定义context跟已解析的req参数回调方式
-func TestFun4(c *gin.Context, req ReqTest) {
-	fmt.Println(c.Params)
+//TestFun6 带自定义context跟已解析的req参数回调方式,err,resp 返回模式
+func TestFun6(c *gin.Context, req ReqTest) (*ReqTest, error) {
 	fmt.Println(req)
-
-	c.JSON(http.StatusOK, req)
+	//c.JSON(http.StatusOK, req)
+	return &req, nil
 }
 
 func main() {
-	base := ginrpc.New() 
+	base := ginrpc.New()
 	router := gin.Default()
-	router.POST("/test4", base.HandlerFunc(TestFun4))
-	base.RegisterHandlerFunc(router, []string{"post", "get"}, "/test", TestFun4) // 多种请求方式注册
+	router.POST("/test6", base.HandlerFunc(TestFun6))
 	router.Run(":8080")
 }
 
@@ -138,6 +140,11 @@ func (s *Hello) Hello2(c *gin.Context, req ReqTest) {
 	c.JSON(http.StatusOK, "ok")
 }
 
+// Hello3 [grpc-go](https://github.com/grpc/grpc-go) 模式
+func (s *Hello) Hello3(c *gin.Context, req ReqTest) (*ReqTest, error) {
+	fmt.Println(req)
+	return &req,nil
+}
 
 func main() {
 	base := ginrpc.New(ginrpc.WithCtx(func(c *gin.Context) interface{} {
@@ -173,7 +180,7 @@ func main() {
 
 	默认也会在项目根目录生成[gen_router.data]文件(保留此文件，可以不用添加上面代码嵌入)
 
-### 2. 注解路由调用方式：
+### 2. 注解路由调用方式,支持绑定grpc函数：
 
 	详细请看demo  [ginweb](/sample/ginweb)
 

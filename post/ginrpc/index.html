@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>go gin 参数自动绑定工具 - Technology blog by xiexiaojun</title>
+  <title>go gin grpc 参数自动绑定工具 - Technology blog by xiexiaojun</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -57,25 +57,25 @@
 
 
 
-<meta property="og:title" content="go gin 参数自动绑定工具" />
+<meta property="og:title" content="go gin grpc 参数自动绑定工具" />
 <meta property="og:description" content="ginprc golang gin 参数自动绑定工具 支持rpc自动映射 支持对象注册 支持注解路由 基于 go-gin 的 json restful 风格的golang基础库 自带请求参数过滤及绑定实现 binding:&ldquo;required&rdquo; validator 代码注册简" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xxjwxc.github.io/post/ginrpc/" />
-<meta property="article:published_time" content="2019-12-08T18:01:00+08:00" />
-<meta property="article:modified_time" content="2019-12-08T18:01:00+08:00" />
-<meta itemprop="name" content="go gin 参数自动绑定工具">
+<meta property="article:published_time" content="2020-01-25T18:01:00+08:00" />
+<meta property="article:modified_time" content="2020-01-25T18:01:00+08:00" />
+<meta itemprop="name" content="go gin grpc 参数自动绑定工具">
 <meta itemprop="description" content="ginprc golang gin 参数自动绑定工具 支持rpc自动映射 支持对象注册 支持注解路由 基于 go-gin 的 json restful 风格的golang基础库 自带请求参数过滤及绑定实现 binding:&ldquo;required&rdquo; validator 代码注册简">
 
 
-<meta itemprop="datePublished" content="2019-12-08T18:01:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-12-08T18:01:00&#43;08:00" />
-<meta itemprop="wordCount" content="1074">
+<meta itemprop="datePublished" content="2020-01-25T18:01:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-25T18:01:00&#43;08:00" />
+<meta itemprop="wordCount" content="1152">
 
 
 
-<meta itemprop="keywords" content="golang,工具,gin," />
+<meta itemprop="keywords" content="golang,grpc,工具,gin," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="go gin 参数自动绑定工具"/>
+<meta name="twitter:title" content="go gin grpc 参数自动绑定工具"/>
 <meta name="twitter:description" content="ginprc golang gin 参数自动绑定工具 支持rpc自动映射 支持对象注册 支持注解路由 基于 go-gin 的 json restful 风格的golang基础库 自带请求参数过滤及绑定实现 binding:&ldquo;required&rdquo; validator 代码注册简"/>
 
 <!--[if lte IE 9]>
@@ -330,17 +330,17 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">go gin 参数自动绑定工具</h1>
+      <h1 class="post-title">go gin grpc 参数自动绑定工具</h1>
       
       <div class="post-meta">
-        <time datetime="2019-12-08" class="post-time">
-          2019-12-08
+        <time datetime="2020-01-25" class="post-time">
+          2020-01-25
         </time>
         <div class="post-category">
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 1074 字 </span>
+        <span class="more-meta"> 约 1152 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -377,7 +377,7 @@
 <li><a href="#代码-详细地址-https-github-com-xxjwxc-ginrpc-tree-master-sample-ginweb">代码 <a href="https://github.com/xxjwxc/ginrpc/tree/master/sample/ginweb">详细地址&gt;&gt;</a></a></li>
 <li><a href="#注解路由相关说明">-注解路由相关说明</a></li>
 <li><a href="#1-注解路由会自动创建-mod-routers-gen-router-go-文件-需要在调用时加">1. 注解路由会自动创建[mod]/routers/gen_router.go 文件 需要在调用时加：</a></li>
-<li><a href="#2-注解路由调用方式">2. 注解路由调用方式：</a></li>
+<li><a href="#2-注解路由调用方式-支持绑定grpc函数">2. 注解路由调用方式,支持绑定grpc函数：</a></li>
 <li><a href="#3-相关参数说明">3. 相关参数说明</a></li>
 <li><a href="#4-执行curl-可以自动参数绑定-直接看结果">4. 执行curl，可以自动参数绑定。直接看结果</a></li>
 </ul></li>
@@ -408,6 +408,7 @@
 <li>基于 <a href="https://github.com/gin-gonic/gin">go-gin</a> 的 json restful 风格的golang基础库</li>
 <li>自带请求参数过滤及绑定实现 binding:&ldquo;required&rdquo;  <a href="go-playground/validator.v8">validator</a></li>
 <li>代码注册简单且支持多种注册方式</li>
+<li>支持 <a href="https://github.com/grpc/grpc-go">grpc-go</a> 绑定模式</li>
 </ul>
 
 <h2 id="api接口说明">api接口说明</h2>
@@ -431,6 +432,12 @@
 </ul>
 
 <p>func(*gin.Context,req)</p>
+
+<ul>
+<li>func(*gin.Context,*req)(*resp,error) //go-gin context类型,带request 请求参数,带错误返回参数 ==&gt; <a href="https://github.com/grpc/grpc-go">grpc-go</a></li>
+</ul>
+
+<p>func(*gin.Context,req)(resp,error)</p>
 
 <h2 id="一-参数自动绑定">一,参数自动绑定</h2>
 <div class="highlight"><div class="chroma">
@@ -464,8 +471,6 @@
 </span><span class="lnt">27
 </span><span class="lnt">28
 </span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
@@ -484,20 +489,18 @@
 </span><span class="c1"></span>	<span class="nx">Password</span>     <span class="kt">string</span> <span class="s">`json:&#34;password&#34;`</span>
 <span class="p">}</span>
 
-<span class="c1">//TestFun4 带自定义context跟已解析的req参数回调方式
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">TestFun4</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">req</span> <span class="nx">ReqTest</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">Params</span><span class="p">)</span>
+<span class="c1">//TestFun6 带自定义context跟已解析的req参数回调方式,err,resp 返回模式
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">TestFun6</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">req</span> <span class="nx">ReqTest</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">ReqTest</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
-
-	<span class="nx">c</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="nx">req</span><span class="p">)</span>
+	<span class="c1">//c.JSON(http.StatusOK, req)
+</span><span class="c1"></span>	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">req</span><span class="p">,</span> <span class="kc">nil</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">base</span> <span class="o">:=</span> <span class="nx">ginrpc</span><span class="p">.</span><span class="nf">New</span><span class="p">()</span> 
+	<span class="nx">base</span> <span class="o">:=</span> <span class="nx">ginrpc</span><span class="p">.</span><span class="nf">New</span><span class="p">()</span>
 	<span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
-	<span class="nx">router</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/test4&#34;</span><span class="p">,</span> <span class="nx">base</span><span class="p">.</span><span class="nf">HandlerFunc</span><span class="p">(</span><span class="nx">TestFun4</span><span class="p">))</span>
-	<span class="nx">base</span><span class="p">.</span><span class="nf">RegisterHandlerFunc</span><span class="p">(</span><span class="nx">router</span><span class="p">,</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;post&#34;</span><span class="p">,</span> <span class="s">&#34;get&#34;</span><span class="p">},</span> <span class="s">&#34;/test&#34;</span><span class="p">,</span> <span class="nx">TestFun4</span><span class="p">)</span> <span class="c1">// 多种请求方式注册
-</span><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">)</span>
+	<span class="nx">router</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/test6&#34;</span><span class="p">,</span> <span class="nx">base</span><span class="p">.</span><span class="nf">HandlerFunc</span><span class="p">(</span><span class="nx">TestFun6</span><span class="p">))</span>
+	<span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">)</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
@@ -574,6 +577,11 @@
 </span><span class="lnt">45
 </span><span class="lnt">46
 </span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
@@ -612,6 +620,11 @@
 	<span class="nx">c</span><span class="p">.</span><span class="nf">JSON</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">,</span> <span class="s">&#34;ok&#34;</span><span class="p">)</span>
 <span class="p">}</span>
 
+<span class="c1">// Hello3 [grpc-go](https://github.com/grpc/grpc-go) 模式
+</span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">Hello</span><span class="p">)</span> <span class="nf">Hello3</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">req</span> <span class="nx">ReqTest</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">ReqTest</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
+	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">req</span><span class="p">,</span><span class="kc">nil</span>
+<span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 	<span class="nx">base</span> <span class="o">:=</span> <span class="nx">ginrpc</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="nx">ginrpc</span><span class="p">.</span><span class="nf">WithCtx</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="kd">interface</span><span class="p">{}</span> <span class="p">{</span>
@@ -659,7 +672,7 @@ _ &#34;[mod]/routers&#34; // debug模式需要添加[mod]/routers 注册注解�
 默认也会在项目根目录生成[gen_router.data]文件(保留此文件，可以不用添加上面代码嵌入)</pre></td></tr></table>
 </div>
 </div>
-<h3 id="2-注解路由调用方式">2. 注解路由调用方式：</h3>
+<h3 id="2-注解路由调用方式-支持绑定grpc函数">2. 注解路由调用方式,支持绑定grpc函数：</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -735,7 +748,7 @@ ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-12-08</span>
+    <span class="item-content">2020-01-25</span>
   </p>
   
   <p class="copyright-item">
@@ -768,6 +781,7 @@ ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://xxjwxc.github.io/tags/golang/">golang</a>
+          <a href="https://xxjwxc.github.io/tags/grpc/">grpc</a>
           <a href="https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
           <a href="https://xxjwxc.github.io/tags/gin/">gin</a>
           
@@ -776,22 +790,9 @@ ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/gormt/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">gormt mysql数据库转换工具</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/uber_go_guide_cn/">
-            <span class="next-text nav-default">Uber Go 风格指南中文版</span>
+          <a class="next" href="/post/gormt/">
+            <span class="next-text nav-default">gormt mysql数据库转换工具</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
