@@ -22,7 +22,8 @@
 
 &lt;h2 id=&#34;ginprc-https-github-com-xxjwxc-ginrpc-注解路由-自动参数绑定工具&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/ginrpc&#34;&gt;ginprc&lt;/a&gt; 注解路由，自动参数绑定工具&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/ginrpc.gif&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xxjwxc.github.io/image/ginrpc.gif&#34; alt=&#34;img&#34; /&gt;
+![doc][image/ginrpc_doc.gif]&lt;/p&gt;
 
 &lt;h2 id=&#34;golang-gin-参数自动绑定工具&#34;&gt;golang gin 参数自动绑定工具&lt;/h2&gt;
 

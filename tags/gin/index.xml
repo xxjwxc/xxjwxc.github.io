@@ -17,7 +17,7 @@
       <pubDate>Sat, 25 Jan 2020 18:01:00 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/post/ginrpc/</guid>
-      <description>ginprc 注解路由，自动参数绑定工具 golang gin 参数自动绑定工具 支持对象自动注册及注解路由 支持参数自动绑定 自带请求参数过滤及绑定实现 binding:&amp;ldquo;required&amp;rdquo; validator 支持 grpc-go 绑定模式 支持s</description>
+      <description>ginprc 注解路由，自动参数绑定工具 ![doc][image/ginrpc_doc.gif] golang gin 参数自动绑定工具 支持对象自动注册及注解路由 支持参数自动绑定 自带请求参数过滤及绑定实现 binding:&amp;ldquo;required&amp;rdquo; validator 支持 grpc-go 绑定模式 支持</description>
     </item>
     
   </channel>
