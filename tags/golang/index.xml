@@ -6,10 +6,19 @@
     <description>Recent content in golang on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 Jan 2020 18:01:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2020 23:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://xxjwxc.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gmsec golang 微服务集成框架</title>
+      <link>https://xxjwxc.github.io/post/gmsec/</link>
+      <pubDate>Tue, 12 May 2020 23:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/gmsec/</guid>
+      <description>gmsec golang 微服务集成框架 grpc gorm 自动构建(gormt) grpc 参数自动绑定工具(ginrpc) dns 注册发现(mdns) markdown/mindoc 文档自动导出 安装 install proto环境安装 1</description>
+    </item>
     
     <item>
       <title>go gin grpc 参数自动绑定工具</title>
