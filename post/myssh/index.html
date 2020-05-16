@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>gmsec golang 微服务集成框架 - Technology blog by xiexiaojun</title>
+  <title>golang ssh 远程终端控制 - Technology blog by xiexiaojun</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="xiexiaojun" />
-  <meta name="description" content="gmsec golang 微服务集成框架 grpc gorm 自动构建(gormt) grpc 参数自动绑定工具(ginrpc) dns 注册发现(mdns) markdown/mindoc 文档自动导出 安装 install proto环境安装 1" />
+  <meta name="description" content="golang ssh 远程命令终端支持 一个封装，支持自动补全 代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 package main import ( &amp;#34;fmt&amp;#34; &amp;#34;time&amp;#34; _ &amp;#34;gmsec/internal/routers&amp;#34; // debug模式需要添" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.56.3" />
 
 
-<link rel="canonical" href="https://xxjwxc.github.io/post/gmsec/" />
+<link rel="canonical" href="https://xxjwxc.github.io/post/myssh/" />
 
 
 
@@ -57,26 +57,26 @@
 
 
 
-<meta property="og:title" content="gmsec golang 微服务集成框架" />
-<meta property="og:description" content="gmsec golang 微服务集成框架 grpc gorm 自动构建(gormt) grpc 参数自动绑定工具(ginrpc) dns 注册发现(mdns) markdown/mindoc 文档自动导出 安装 install proto环境安装 1" />
+<meta property="og:title" content="golang ssh 远程终端控制" />
+<meta property="og:description" content="golang ssh 远程命令终端支持 一个封装，支持自动补全 代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 package main import ( &#34;fmt&#34; &#34;time&#34; _ &#34;gmsec/internal/routers&#34; // debug模式需要添" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/gmsec/" />
-<meta property="article:published_time" content="2020-05-12T23:01:23+08:00" />
-<meta property="article:modified_time" content="2020-05-12T23:01:23+08:00" />
-<meta itemprop="name" content="gmsec golang 微服务集成框架">
-<meta itemprop="description" content="gmsec golang 微服务集成框架 grpc gorm 自动构建(gormt) grpc 参数自动绑定工具(ginrpc) dns 注册发现(mdns) markdown/mindoc 文档自动导出 安装 install proto环境安装 1">
+<meta property="og:url" content="https://xxjwxc.github.io/post/myssh/" />
+<meta property="article:published_time" content="2020-05-16T23:01:23+08:00" />
+<meta property="article:modified_time" content="2020-05-16T23:01:23+08:00" />
+<meta itemprop="name" content="golang ssh 远程终端控制">
+<meta itemprop="description" content="golang ssh 远程命令终端支持 一个封装，支持自动补全 代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 package main import ( &#34;fmt&#34; &#34;time&#34; _ &#34;gmsec/internal/routers&#34; // debug模式需要添">
 
 
-<meta itemprop="datePublished" content="2020-05-12T23:01:23&#43;08:00" />
-<meta itemprop="dateModified" content="2020-05-12T23:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="522">
+<meta itemprop="datePublished" content="2020-05-16T23:01:23&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-16T23:01:23&#43;08:00" />
+<meta itemprop="wordCount" content="155">
 
 
 
-<meta itemprop="keywords" content="golang,grpc,gin," />
+<meta itemprop="keywords" content="golang,ssh," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="gmsec golang 微服务集成框架"/>
-<meta name="twitter:description" content="gmsec golang 微服务集成框架 grpc gorm 自动构建(gormt) grpc 参数自动绑定工具(ginrpc) dns 注册发现(mdns) markdown/mindoc 文档自动导出 安装 install proto环境安装 1"/>
+<meta name="twitter:title" content="golang ssh 远程终端控制"/>
+<meta name="twitter:description" content="golang ssh 远程命令终端支持 一个封装，支持自动补全 代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 package main import ( &#34;fmt&#34; &#34;time&#34; _ &#34;gmsec/internal/routers&#34; // debug模式需要添"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -330,18 +330,18 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">gmsec golang 微服务集成框架</h1>
+      <h1 class="post-title">golang ssh 远程终端控制</h1>
       
       <div class="post-meta">
-        <time datetime="2020-05-12" class="post-time">
-          2020-05-12
+        <time datetime="2020-05-16" class="post-time">
+          2020-05-16
         </time>
         <div class="post-category">
-            <a href="https://xxjwxc.github.io/categories/micro/"> micro </a>
+            <a href="https://xxjwxc.github.io/categories/ssh/"> ssh </a>
             
           </div>
-        <span class="more-meta"> 约 522 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 155 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
         
@@ -362,21 +362,13 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#gmsec-https-github-com-gmsec-gmsec"><a href="https://github.com/gmsec/gmsec">gmsec</a></a>
+<li><a href="#golang-ssh-远程命令终端支持">golang ssh 远程命令终端支持</a>
 <ul>
-<li>
-<ul>
-<li><a href="#golang-微服务集成框架">golang 微服务集成框架</a></li>
+<li><a href="#一个封装-支持自动补全">一个封装，支持自动补全</a></li>
+<li><a href="#代码">代码：</a></li>
 </ul></li>
-<li><a href="#安装">安装</a></li>
-<li><a href="#proto定义">proto定义</a></li>
-<li><a href="#服务端代码示例">服务端代码示例</a></li>
-<li><a href="#客户端代码">客户端代码:</a></li>
-<li><a href="#更多示例-传送门-https-github-com-gmsec-gmsec-tree-master-gmsec">更多示例 =&gt; <a href="https://github.com/gmsec/gmsec/tree/master/gmsec">传送门</a></a></li>
-<li><a href="#正在做">正在做</a></li>
-<li><a href="#欢迎一起共建共享">欢迎一起共建共享</a></li>
-<li><a href="#传送门-https-github-com-gmsec"><a href="https://github.com/gmsec">传送门</a></a></li>
-</ul></li>
+<li><a href="#详细代码-myssh-https-github-com-xxjwxc-public-blob-master-myssh-myssh-go">详细代码 ==&gt; <a href="https://github.com/xxjwxc/public/blob/master/myssh/myssh.go">myssh</a></a></li>
+<li><a href="#感谢您的点星支持-https-github-com-xxjwxc-public"><a href="https://github.com/xxjwxc/public/">感谢您的点星支持</a></a></li>
 </ul>
 </nav>
   </div>
@@ -388,86 +380,11 @@
 
 <hr />
 
-<h1 id="gmsec-https-github-com-gmsec-gmsec"><a href="https://github.com/gmsec/gmsec">gmsec</a></h1>
+<h1 id="golang-ssh-远程命令终端支持">golang ssh 远程命令终端支持</h1>
 
-<h3 id="golang-微服务集成框架">golang 微服务集成框架</h3>
+<h2 id="一个封装-支持自动补全">一个封装，支持自动补全</h2>
 
-<ul>
-<li><a href="https://github.com/grpc/grpc-go">grpc</a></li>
-<li><a href="https://github.com/xxjwxc/gormt">gorm 自动构建(gormt)</a></li>
-<li><a href="https://github.com/xxjwxc/ginrpc">grpc 参数自动绑定工具(ginrpc)</a></li>
-<li><a href="https://github.com/asim/mdns">dns 注册发现(mdns)</a></li>
-<li><a href="https://github.com/grpc">markdown/mindoc 文档自动导出</a></li>
-</ul>
-
-<h2 id="安装">安装</h2>
-
-<ul>
-<li><p>install</p></li>
-
-<li><p>proto环境安装</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">make install </pre></td></tr></table>
-</div>
-</div></li>
-
-<li><p>本地环境搭建(gmsec为例)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">make gen</pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-
-<h2 id="proto定义">proto定义</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span> <span class="c1">// 指定proto版本
-</span><span class="c1"></span><span class="kn">package</span> <span class="nx">proto</span><span class="p">;</span>     <span class="c1">// 指定包名
-</span><span class="c1"></span><span class="nx">option</span> <span class="nx">go_package</span> <span class="p">=</span> <span class="s">&#34;.;proto&#34;</span><span class="p">;</span> <span class="c1">// 指定路径
-</span><span class="c1"></span>
-<span class="c1">// 定义Hello服务
-</span><span class="c1"></span><span class="nx">service</span> <span class="nx">Hello</span> <span class="p">{</span>
-    <span class="c1">// 定义SayHello方法
-</span><span class="c1"></span>    <span class="nx">rpc</span> <span class="nf">SayHello</span><span class="p">(</span><span class="nx">HelloRequest</span><span class="p">)</span> <span class="nf">returns</span> <span class="p">(</span><span class="nx">HelloReply</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-<span class="c1">// HelloRequest 请求结构
-</span><span class="c1"></span><span class="nx">message</span> <span class="nx">HelloRequest</span> <span class="p">{</span>
-    <span class="kt">string</span> <span class="nx">name</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 名字
-</span><span class="c1"></span><span class="p">}</span>
-<span class="c1">// HelloReply 响应结构
-</span><span class="c1"></span><span class="nx">message</span> <span class="nx">HelloReply</span> <span class="p">{</span>
-    <span class="kt">string</span> <span class="nx">message</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 消息
-</span><span class="c1"></span><span class="p">}</span></pre></td></tr></table>
-</div>
-</div>
-<h2 id="服务端代码示例">服务端代码示例</h2>
+<h2 id="代码">代码：</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
@@ -497,135 +414,40 @@
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;context&#34;</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="nx">proto</span> <span class="s">&#34;gmsec/rpc&#34;</span>
 
-	<span class="s">&#34;github.com/gin-gonic/gin&#34;</span>
-	<span class="s">&#34;github.com/gmsec/goplugins/plugin&#34;</span>
-	<span class="s">&#34;github.com/gmsec/micro&#34;</span>
-	<span class="s">&#34;github.com/xxjwxc/ginrpc&#34;</span>
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;time&#34;</span>
+	<span class="nx">_</span> <span class="s">&#34;gmsec/internal/routers&#34;</span> <span class="c1">// debug模式需要添加[mod]/routers 注册注解路由
+</span><span class="c1"></span>	<span class="s">&#34;github.com/xxjwxc/public/myssh&#34;</span>
 <span class="p">)</span>
 
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c1">// grpc 相关 初始化服务
-</span><span class="c1"></span>	<span class="nx">service</span> <span class="o">:=</span> <span class="nx">micro</span><span class="p">.</span><span class="nf">NewService</span><span class="p">(</span>
-		<span class="nx">micro</span><span class="p">.</span><span class="nf">WithName</span><span class="p">(</span><span class="s">&#34;lp.srv.eg1&#34;</span><span class="p">),</span>
-	<span class="p">)</span>
-	<span class="nx">h</span> <span class="o">:=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">hello</span><span class="p">)</span>
-	<span class="nx">proto</span><span class="p">.</span><span class="nf">RegisterHelloServer</span><span class="p">(</span><span class="nx">service</span><span class="p">.</span><span class="nf">Server</span><span class="p">(),</span> <span class="nx">h</span><span class="p">)</span> <span class="c1">// 服务注册
-</span><span class="c1"></span>	<span class="c1">// ----------- end
+	<span class="nx">c</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">myssh</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;175.24.103.30&#34;</span><span class="p">,</span> <span class="s">&#34;ubuntu&#34;</span><span class="p">,</span> <span class="s">&#34;qwer@1234&#34;</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;err&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+
+	<span class="nx">output</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;free -h&#34;</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%v\n%v&#34;</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span> <span class="c1">// 返回字符串
 </span><span class="c1"></span>
-	<span class="c1">// gin 相关
-</span><span class="c1"></span>	<span class="nx">base</span> <span class="o">:=</span> <span class="nx">ginrpc</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="nx">ginrpc</span><span class="p">.</span><span class="nf">WithCtx</span><span class="p">(</span><span class="nx">Ctx</span><span class="p">),</span> <span class="nx">ginrpc</span><span class="p">.</span><span class="nf">WithDebug</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span> <span class="nx">ginrpc</span><span class="p">.</span><span class="nf">WithGroup</span><span class="p">(</span><span class="s">&#34;xxjwxc&#34;</span><span class="p">))</span>
-	<span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>  <span class="c1">// gen 对象
-</span><span class="c1"></span>	<span class="nx">base</span><span class="p">.</span><span class="nf">Register</span><span class="p">(</span><span class="nx">router</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span> <span class="c1">// genrpc对象注册
-</span><span class="c1"></span>	<span class="c1">// ------ end
+	<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+
+	<span class="c1">// c.RunTerminal(&#34;top&#34;) 交互式
 </span><span class="c1"></span>
-	<span class="nx">plg</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">plugin</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="nx">plugin</span><span class="p">.</span><span class="nf">WithMicro</span><span class="p">(</span><span class="nx">service</span><span class="p">),</span><span class="c1">// grpc 入口
-</span><span class="c1"></span>		<span class="nx">plugin</span><span class="p">.</span><span class="nf">WithGin</span><span class="p">(</span><span class="nx">router</span><span class="p">),</span> <span class="c1">// http 入口
-</span><span class="c1"></span>        <span class="nx">plugin</span><span class="p">.</span><span class="nf">WithAddr</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">))</span> <span class="c1">// 开始服务(公用端口)
-</span><span class="c1"></span>    
-    <span class="nx">plg</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span> <span class="c1">// 等待结束(ctrl+c)
-</span><span class="c1"></span>    
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;done&#34;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1">// Ctx gin.Context 到 context.Context 的转换
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">Ctx</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="kd">interface</span><span class="p">{}</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">context</span><span class="p">.</span><span class="nf">Background</span><span class="p">()</span>
-<span class="p">}</span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="客户端代码">客户端代码:</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;context&#34;</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="nx">proto</span> <span class="s">&#34;gmsec/rpc&#34;</span>
-
-	<span class="s">&#34;github.com/gmsec/micro&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// reg := registry.NewDNSNamingRegistry()
-</span><span class="c1"></span>	<span class="c1">// grpc 相关 注册服务发现等
-</span><span class="c1"></span>	<span class="nx">micro</span><span class="p">.</span><span class="nf">NewService</span><span class="p">(</span>
-        <span class="nx">micro</span><span class="p">.</span><span class="nf">WithName</span><span class="p">(</span><span class="s">&#34;lp.srv.eg1&#34;</span><span class="p">),</span>
-        <span class="c1">// micro.WithRegisterTTL(time.Second*30),      //指定服务注册时间
-</span><span class="c1"></span>        <span class="c1">// micro.WithRegisterInterval(time.Second*15), //让服务在指定时间内重新注册
-</span><span class="c1"></span>        <span class="c1">// micro.WithRegistryNameing(reg),
-</span><span class="c1"></span>	<span class="p">)</span>
-	<span class="c1">// ----------- end
+	<span class="c1">// time.Sleep(1 * time.Second)
 </span><span class="c1"></span>
-	<span class="nx">say</span> <span class="o">:=</span> <span class="nx">proto</span><span class="p">.</span><span class="nf">GetHelloClient</span><span class="p">()</span>
-	<span class="nx">ctx</span> <span class="o">:=</span> <span class="nx">context</span><span class="p">.</span><span class="nf">Background</span><span class="p">()</span>
-	<span class="nx">resp</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">say</span><span class="p">.</span><span class="nf">SayHello</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">proto</span><span class="p">.</span><span class="nx">HelloRequest</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="s">&#34;xxjwxc&#34;</span><span class="p">})</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;result:&#34;</span><span class="p">,</span> <span class="nx">resp</span><span class="p">)</span>
-<span class="p">}</span></code></pre></td></tr></table>
+	<span class="nx">c</span><span class="p">.</span><span class="nf">Terminal</span><span class="p">()</span> <span class="c1">// 进入
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="更多示例-传送门-https-github-com-gmsec-gmsec-tree-master-gmsec">更多示例 =&gt; <a href="https://github.com/gmsec/gmsec/tree/master/gmsec">传送门</a></h2>
+<h1 id="详细代码-myssh-https-github-com-xxjwxc-public-blob-master-myssh-myssh-go">详细代码 ==&gt; <a href="https://github.com/xxjwxc/public/blob/master/myssh/myssh.go">myssh</a></h1>
 
-<h2 id="正在做">正在做</h2>
-
-<ul>
-<li>etcdv3</li>
-</ul>
-
-<h2 id="欢迎一起共建共享">欢迎一起共建共享</h2>
-
-<h2 id="传送门-https-github-com-gmsec"><a href="https://github.com/gmsec">传送门</a></h2>
+<h1 id="感谢您的点星支持-https-github-com-xxjwxc-public"><a href="https://github.com/xxjwxc/public/">感谢您的点星支持</a></h1>
 
     </div>
 
@@ -638,7 +460,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2020-05-12</span>
+    <span class="item-content">2020-05-16</span>
   </p>
   
   <p class="copyright-item">
@@ -671,30 +493,16 @@
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://xxjwxc.github.io/tags/golang/">golang</a>
-          <a href="https://xxjwxc.github.io/tags/grpc/">grpc</a>
-          <a href="https://xxjwxc.github.io/tags/gin/">gin</a>
+          <a href="https://xxjwxc.github.io/tags/ssh/">ssh</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/myssh/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">golang ssh 远程终端控制</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/ginrpc/">
-            <span class="next-text nav-default">go gin grpc 参数自动绑定工具</span>
+          <a class="next" href="/post/gmsec/">
+            <span class="next-text nav-default">gmsec golang 微服务集成框架</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">

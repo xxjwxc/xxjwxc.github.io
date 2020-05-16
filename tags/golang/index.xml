@@ -6,10 +6,19 @@
     <description>Recent content in golang on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 12 May 2020 23:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2020 23:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://xxjwxc.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>golang ssh 远程终端控制</title>
+      <link>https://xxjwxc.github.io/post/myssh/</link>
+      <pubDate>Sat, 16 May 2020 23:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/myssh/</guid>
+      <description>golang ssh 远程命令终端支持 一个封装，支持自动补全 代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 package main import ( &amp;#34;fmt&amp;#34; &amp;#34;time&amp;#34; _ &amp;#34;gmsec/internal/routers&amp;#34; // debug模式需要添</description>
+    </item>
     
     <item>
       <title>gmsec golang 微服务集成框架</title>
