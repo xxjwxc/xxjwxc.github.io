@@ -405,46 +405,46 @@
 <h3 id="工具安装">工具安装</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">go get -u github.com/google/pprof</pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">go get -u github.com/google/pprof</code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="代码注入">代码注入</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">import _ &#34;net/http/pprof&#34;</pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="nx">_</span> <span class="s">&#34;net/http/pprof&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="启动服务-6060端口为例">启动服务(6060端口为例)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">go run ...</pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">go run ...</code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="获取监控文件-heap为例">获取监控文件(heap为例)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">curl http://localhost:6060/debug/pprof/heap &gt; heap.profile</pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">curl http://localhost:6060/debug/pprof/heap &gt; heap.profile</code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="pprof-web监控示例">pprof web监控示例</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">pprof -http=: ./heap.profile</pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">pprof -http<span class="o">=</span>: ./heap.profile</code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="more">more</h2>

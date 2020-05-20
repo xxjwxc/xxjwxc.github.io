@@ -23,32 +23,32 @@ mathjax: true    # 打开 mathjax
 
 ### 工具安装
 
-```
+```shell
 go get -u github.com/google/pprof
 ```
 
 ### 代码注入
 
-```
+```go
 import _ "net/http/pprof"
 ```
 
 ### 启动服务(6060端口为例)
 
-```
+```shell
 go run ...
 ```
 
 ### 获取监控文件(heap为例)
 
-```
+```shell
 curl http://localhost:6060/debug/pprof/heap > heap.profile
 ```
 
 
 ### pprof web监控示例
 
-```
+```shell
 pprof -http=: ./heap.profile
 ```
 
