@@ -6,10 +6,19 @@
     <description>Recent content in golang on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 16 May 2020 23:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2020 03:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://xxjwxc.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>golang内存泄露分析(pprof)</title>
+      <link>https://xxjwxc.github.io/post/pprof/</link>
+      <pubDate>Wed, 20 May 2020 03:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/pprof/</guid>
+      <description>pprof 安装及使用 golang pprof 用于对线上运行程序 性能监控与分析 工具安装 1 go get -u github.com/google/pprof 代码注入 1 import _ &amp;#34;net/http/pprof&amp;#34; 启动服务(6060端口为例) 1 go run ... 获取监控文件(heap</description>
+    </item>
     
     <item>
       <title>golang ssh 远程终端控制</title>
@@ -63,15 +72,6 @@
       
       <guid>https://xxjwxc.github.io/post/gomod/</guid>
       <description>golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@</description>
-    </item>
-    
-    <item>
-      <title>golang内存泄露分析</title>
-      <link>https://xxjwxc.github.io/post/pprof/</link>
-      <pubDate>Fri, 07 Jun 2019 03:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/pprof/</guid>
-      <description>golang内存泄露工具检查 安装工具 brew install graphviz （生成图片时候要用到dot） 使用pprof工具实现 简单使用场景 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18</description>
     </item>
     
     <item>

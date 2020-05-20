@@ -1,8 +1,8 @@
 ---
 # 常用定义
-title: "golang内存泄露分析"           # 标题
-date: 2019-06-07T03:01:23+08:00    # 创建时间
-lastmod: 2019-06-07T03:01:23+08:00 # 最后修改时间
+title: "golang内存泄露分析(pprof)"           # 标题
+date: 2020-05-20T03:01:23+08:00    # 创建时间
+lastmod: 2019-05-20T03:01:23+08:00 # 最后修改时间
 draft: false                       # 是否是草稿？
 tags: ["golang", "工具", "pprof"]  # 标签
 categories: ["工具"]              # 分类
@@ -18,6 +18,46 @@ reward: true	 # 打赏
 mathjax: true    # 打开 mathjax
 
 ---
+## pprof 安装及使用
+### golang pprof 用于对线上运行程序 性能监控与分析
+
+### 工具安装
+
+```
+go get -u github.com/google/pprof
+```
+
+### 代码注入
+
+```
+import _ "net/http/pprof"
+```
+
+### 启动服务(6060端口为例)
+
+```
+go run ...
+```
+
+### 获取监控文件(heap为例)
+
+```
+curl http://localhost:6060/debug/pprof/heap > heap.profile
+```
+
+
+### pprof web监控示例
+
+```
+pprof -http=: ./heap.profile
+```
+
+## more
+### [pprof tools](https://golang.org/pkg/net/http/pprof/)
+### [pprof doc](https://github.com/google/pprof)
+### [xxjwxc doc](https://xxjwxc.github.io/post/pprof/)
+
+# 手动安装
 
 ## golang内存泄露工具检查
 
