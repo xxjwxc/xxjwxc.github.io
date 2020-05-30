@@ -34,7 +34,7 @@ import (
 )
 
 func main() {
-	c, err := myssh.New("175.24.103.30", "ubuntu", "qwer@1234", 22)
+	c, err := myssh.New("127.0.0.1", "ubuntu", "123456", 22)
 	if err != nil {
 		fmt.Println("err", err)
 	}
