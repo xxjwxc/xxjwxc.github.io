@@ -112,9 +112,10 @@ func main() {
 	myswagger.SetBasePath("gmsec")
 	myswagger.SetSchemes(true, false)
 	// -----end --
-	base := ginrpc.New(ginrpc.WithGroup("xxjwxc"))
+	base := ginrpc.New())
 	router := gin.Default()
-	base.Register(router, new(Hello)) // 对象注册 like(go-micro)
+	group := router.Group("/xxjwxc")
+	base.Register(group, new(Hello)) // 对象注册 like(go-micro)
 	router.POST("/test6", base.HandlerFunc(TestFun6))                            // 函数注册
 	base.RegisterHandlerFunc(router, []string{"post", "get"}, "/test", TestFun6) // 多种请求方式注册
 	router.Run(":8080")
@@ -163,6 +164,8 @@ _ "[mod]/routers" // debug模式需要添加[mod]/routers 注册注解路由
 
 	ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)
 
+	ginrpc.WithBeforeAfter(&ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后执行中间件
+
 [更多>>](https://godoc.org/github.com/xxjwxc/ginrpc)
 
 ### 2. 注解路由调用demo：[ginweb](/sample/ginweb)
@@ -184,6 +187,17 @@ type ReqTest struct {
 ```
 - [更多 >>>](https://github.com/xxjwxc/gmsec)
   
+## 三. 支持调用中间件
+- (全局模式) 可通过 `ginrpc.WithBeforeAfter(&ginrpc.DefaultGinBeforeAfter{})`设置(全局)
+- (单个对象模式) 也可以在对象上实现函数(单个类型)
+```go
+	// GinBeforeAfter 对象调用前后执行中间件(支持总的跟对象单独添加)
+	type GinBeforeAfter interface {
+		GinBefore(req *GinBeforeAfterInfo) bool
+		GinAfter(req *GinBeforeAfterInfo) bool
+	}
+```
+
 
 ## Stargazers over time
 

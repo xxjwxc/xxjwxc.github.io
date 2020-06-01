@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.57.2" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/ginrpc/" />
@@ -69,7 +69,7 @@
 
 <meta itemprop="datePublished" content="2020-01-25T18:01:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-14T18:01:00&#43;08:00" />
-<meta itemprop="wordCount" content="1190">
+<meta itemprop="wordCount" content="1359">
 
 
 
@@ -340,7 +340,7 @@
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 1190 字 </span>
+        <span class="more-meta"> 约 1359 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -390,6 +390,7 @@
 <li><a href="#3-默认导出路径-docs-swagger-swagger-json-docs-markdown">3.默认导出路径:(<code>/docs/swagger/swagger.json</code>,<code>/docs/markdown</code>)</a></li>
 <li><a href="#4-struct-demo">4 struct demo</a></li>
 </ul></li>
+<li><a href="#三-支持调用中间件">三. 支持调用中间件</a></li>
 <li><a href="#stargazers-over-time">Stargazers over time</a></li>
 <li><a href="#下一步">下一步</a>
 <ul>
@@ -513,6 +514,7 @@
 </span><span class="lnt">60
 </span><span class="lnt">61
 </span><span class="lnt">62
+</span><span class="lnt">63
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
@@ -570,9 +572,10 @@
 	<span class="nx">myswagger</span><span class="p">.</span><span class="nf">SetBasePath</span><span class="p">(</span><span class="s">&#34;gmsec&#34;</span><span class="p">)</span>
 	<span class="nx">myswagger</span><span class="p">.</span><span class="nf">SetSchemes</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
 	<span class="c1">// -----end --
-</span><span class="c1"></span>	<span class="nx">base</span> <span class="o">:=</span> <span class="nx">ginrpc</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="nx">ginrpc</span><span class="p">.</span><span class="nf">WithGroup</span><span class="p">(</span><span class="s">&#34;xxjwxc&#34;</span><span class="p">))</span>
+</span><span class="c1"></span>	<span class="nx">base</span> <span class="o">:=</span> <span class="nx">ginrpc</span><span class="p">.</span><span class="nf">New</span><span class="p">())</span>
 	<span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
-	<span class="nx">base</span><span class="p">.</span><span class="nf">Register</span><span class="p">(</span><span class="nx">router</span><span class="p">,</span> <span class="nb">new</span><span class="p">(</span><span class="nx">Hello</span><span class="p">))</span> <span class="c1">// 对象注册 like(go-micro)
+	<span class="nx">group</span> <span class="o">:=</span> <span class="nx">router</span><span class="p">.</span><span class="nf">Group</span><span class="p">(</span><span class="s">&#34;/xxjwxc&#34;</span><span class="p">)</span>
+	<span class="nx">base</span><span class="p">.</span><span class="nf">Register</span><span class="p">(</span><span class="nx">group</span><span class="p">,</span> <span class="nb">new</span><span class="p">(</span><span class="nx">Hello</span><span class="p">))</span> <span class="c1">// 对象注册 like(go-micro)
 </span><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/test6&#34;</span><span class="p">,</span> <span class="nx">base</span><span class="p">.</span><span class="nf">HandlerFunc</span><span class="p">(</span><span class="nx">TestFun6</span><span class="p">))</span>                            <span class="c1">// 函数注册
 </span><span class="c1"></span>	<span class="nx">base</span><span class="p">.</span><span class="nf">RegisterHandlerFunc</span><span class="p">(</span><span class="nx">router</span><span class="p">,</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;post&#34;</span><span class="p">,</span> <span class="s">&#34;get&#34;</span><span class="p">},</span> <span class="s">&#34;/test&#34;</span><span class="p">,</span> <span class="nx">TestFun6</span><span class="p">)</span> <span class="c1">// 多种请求方式注册
 </span><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">)</span>
@@ -633,6 +636,8 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">ginrpc.WithCtx ： 设置自定义context
@@ -641,7 +646,9 @@ ginrpc.WithDebug(true) : 设置debug模式
 
 ginrpc.WithGroup(&#34;xxjwxc&#34;) : 添加路由前缀 (也可以使用gin.Group 分组)
 
-ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)</pre></td></tr></table>
+ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)
+
+ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后执行中间件</pre></td></tr></table>
 </div>
 </div>
 <p><a href="https://godoc.org/github.com/xxjwxc/ginrpc">更多&gt;&gt;</a></p>
@@ -678,6 +685,30 @@ ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)
 <ul>
 <li><a href="https://github.com/xxjwxc/gmsec">更多 &gt;&gt;&gt;</a>
 <br /></li>
+</ul>
+
+<h2 id="三-支持调用中间件">三. 支持调用中间件</h2>
+
+<ul>
+<li>(全局模式) 可通过 <code>ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{})</code>设置(全局)</li>
+
+<li><p>(单个对象模式) 也可以在对象上实现函数(单个类型)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">	<span class="c1">// GinBeforeAfter 对象调用前后执行中间件(支持总的跟对象单独添加)
+</span><span class="c1"></span>	<span class="kd">type</span> <span class="nx">GinBeforeAfter</span> <span class="kd">interface</span> <span class="p">{</span>
+		<span class="nf">GinBefore</span><span class="p">(</span><span class="nx">req</span> <span class="o">*</span><span class="nx">GinBeforeAfterInfo</span><span class="p">)</span> <span class="kt">bool</span>
+		<span class="nf">GinAfter</span><span class="p">(</span><span class="nx">req</span> <span class="o">*</span><span class="nx">GinBeforeAfterInfo</span><span class="p">)</span> <span class="kt">bool</span>
+	<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 
 <h2 id="stargazers-over-time">Stargazers over time</h2>

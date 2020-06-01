@@ -6,19 +6,10 @@
     <description>Recent content in golang on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 30 May 2020 04:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2020 03:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://xxjwxc.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>ssh 远程监控工具</title>
-      <link>https://xxjwxc.github.io/post/jump/</link>
-      <pubDate>Sat, 30 May 2020 04:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/jump/</guid>
-      <description>jump remote monitoring . 远程监控工具 支持 默认配置 (jump config),保存公共配置 登录(jump in),远程登录(支持tab键) 监控(jump run),远程监控</description>
-    </item>
     
     <item>
       <title>golang内存泄露分析(pprof)</title>
