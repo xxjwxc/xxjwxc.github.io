@@ -6,10 +6,19 @@
     <description>Recent content in gin on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 12 May 2020 23:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2020 18:01:00 +0800</lastBuildDate>
     
 	<atom:link href="https://xxjwxc.github.io/tags/gin/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>go gin grpc 参数自动绑定工具</title>
+      <link>https://xxjwxc.github.io/post/ginrpc/</link>
+      <pubDate>Mon, 01 Jun 2020 18:01:00 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/ginrpc/</guid>
+      <description>ginprc 注解路由，自动参数绑定工具 ![doc][image/ginrpc_doc.gif] golang gin 参数自动绑定工具 支持对象自动注册及注解路由 支持参数自动绑定 自带请求参数过滤及绑定实现 binding:&amp;ldquo;required&amp;rdquo; validator 支持 grpc-go 绑定模式 支持</description>
+    </item>
     
     <item>
       <title>gmsec golang 微服务集成框架</title>
@@ -18,15 +27,6 @@
       
       <guid>https://xxjwxc.github.io/post/gmsec/</guid>
       <description>gmsec golang 微服务集成框架 grpc gorm 自动构建(gormt) grpc 参数自动绑定工具(ginrpc) dns 注册发现(mdns) markdown/mindoc 文档自动导出 安装 install proto环境安装 1</description>
-    </item>
-    
-    <item>
-      <title>go gin grpc 参数自动绑定工具</title>
-      <link>https://xxjwxc.github.io/post/ginrpc/</link>
-      <pubDate>Sat, 25 Jan 2020 18:01:00 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/ginrpc/</guid>
-      <description>ginprc 注解路由，自动参数绑定工具 ![doc][image/ginrpc_doc.gif] golang gin 参数自动绑定工具 支持对象自动注册及注解路由 支持参数自动绑定 自带请求参数过滤及绑定实现 binding:&amp;ldquo;required&amp;rdquo; validator 支持 grpc-go 绑定模式 支持</description>
     </item>
     
   </channel>
