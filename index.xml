@@ -32,11 +32,26 @@
 &lt;li&gt;支持参数自动绑定&lt;/li&gt;
 &lt;li&gt;自带请求参数过滤及绑定实现 binding:&amp;ldquo;required&amp;rdquo;  &lt;a href=&#34;go-playground/validator.v8&#34;&gt;validator&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;支持 &lt;a href=&#34;https://github.com/grpc/grpc-go&#34;&gt;grpc-go&lt;/a&gt; 绑定模式&lt;/li&gt;
-&lt;li&gt;支持&lt;a href=&#34;http://editor.swagger.io/&#34;&gt;swagger 文档&lt;/a&gt;导出 &lt;a href=&#34;https://github.com/xxjwxc/gmsec&#34;&gt;MORE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;支持&lt;a href=&#34;http://editor.swagger.io/&#34;&gt;swagger 文档&lt;/a&gt;导出 &lt;a href=&#34;https://github.com/gmsec/gmsec&#34;&gt;MORE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;支持&lt;a href=&#34;https://www.iminho.me/&#34;&gt;markdown/mindoc 文档&lt;/a&gt;导出 &lt;a href=&#34;https://github.com/gmsec/gmsec&#34;&gt;MORE&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;支持&lt;a href=&#34;https://www.iminho.me/&#34;&gt;markdown/mindoc 文档&lt;/a&gt;导出 &lt;a href=&#34;https://github.com/xxjwxc/gmsec&#34;&gt;MORE&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;支持调用前后中间件(&lt;code&gt;ginrpc.WithBeforeAfter&lt;/code&gt;)&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/xxjwxc/gmsec&#34;&gt;更多请看&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/gmsec/gmsec&#34;&gt;更多请看&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;安装使用&#34;&gt;安装使用&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;go mod:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;go get -u github.com/xxjwxc/ginrpc@master&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;支持多种接口模式&#34;&gt;支持多种接口模式&lt;/h3&gt;
@@ -59,9 +74,9 @@
 
 &lt;h2 id=&#34;一-参数自动绑定-对象注册-注解路由&#34;&gt;一. 参数自动绑定/对象注册(注解路由)&lt;/h2&gt;
 
-&lt;h3 id=&#34;初始化项目-本项目以ginweb-为名字&#34;&gt;初始化项目(本项目以ginweb 为名字)&lt;/h3&gt;
+&lt;h3 id=&#34;初始化项目-本项目以gmsec-为名字&#34;&gt;初始化项目(本项目以gmsec 为名字)&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;go mod init ginweb&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;go mod init gmsec&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;代码&#34;&gt;代码&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -128,7 +143,6 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;60
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;61
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;62
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;63
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
@@ -137,10 +151,9 @@
 	&lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
 	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
 
-	&lt;span class=&#34;s&#34;&gt;&amp;#34;github.com/xxjwxc/public/mydoc/myswagger&amp;#34;&lt;/span&gt;	
-	&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;ginweb/routers&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// debug模式需要添加[mod]/routers 注册注解路由
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
-	&lt;span class=&#34;s&#34;&gt;&amp;#34;github.com/gin-gonic/gin&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;gmsec/routers&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// debug模式需要添加[mod]/routers 注册注解路由
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;s&#34;&gt;&amp;#34;github.com/xxjwxc/public/mydoc/myswagger&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// swagger 支持
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;s&#34;&gt;&amp;#34;github.com/gin-gonic/gin&amp;#34;&lt;/span&gt;
 	&lt;span class=&#34;s&#34;&gt;&amp;#34;github.com/xxjwxc/ginrpc&amp;#34;&lt;/span&gt;
 	&lt;span class=&#34;s&#34;&gt;&amp;#34;github.com/xxjwxc/ginrpc/api&amp;#34;&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -189,14 +202,14 @@
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;base&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ginrpc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
 	&lt;span class=&#34;nx&#34;&gt;router&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Default&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 	&lt;span class=&#34;nx&#34;&gt;group&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;router&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Group&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/xxjwxc&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;base&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;group&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Hello&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 对象注册 like(go-micro)
+	&lt;span class=&#34;nx&#34;&gt;base&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;router&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Hello&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 对象注册 like(go-micro)
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;router&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;POST&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/test6&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;base&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;HandlerFunc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;TestFun6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;                            &lt;span class=&#34;c1&#34;&gt;// 函数注册
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;base&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;RegisterHandlerFunc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;router&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;get&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/test&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;TestFun6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 多种请求方式注册
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;router&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;:8080&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/xxjwxc/ginrpc/tree/master/sample/ginweb&#34;&gt;更多&amp;gt;&amp;gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gmsec/gmsec&#34;&gt;更多&amp;gt;&amp;gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;执行curl-可以自动参数绑定-直接看结果&#34;&gt;执行curl，可以自动参数绑定。直接看结果&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -221,10 +234,14 @@
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt; // @Router /block [post,get]
-@Router 标记  /block 路由 [post,get] method 调用方式&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;// @Router /block [post,get]
+@Router 标记 
+/block 路由 
+[post,get] method 调用方式&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4 id=&#34;说明-如果对象函数中不加注解路由-系统会默认添加注解路由-post方式-带req-2个参数-ctx-req-get方式为一个参数-ctx&#34;&gt;说明:如果对象函数中不加注解路由，系统会默认添加注解路由。post方式：带req(2个参数(ctx,req))，get方式为一个参数(ctx)&lt;/h4&gt;
@@ -250,15 +267,11 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;ginrpc.WithCtx ： 设置自定义context
 
 ginrpc.WithDebug(true) : 设置debug模式
-
-ginrpc.WithGroup(&amp;#34;xxjwxc&amp;#34;) : 添加路由前缀 (也可以使用gin.Group 分组)
 
 ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)
 
@@ -267,9 +280,9 @@ ginrpc.WithBeforeAfter(&amp;amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用�
 &lt;/div&gt;
 &lt;p&gt;&lt;a href=&#34;https://godoc.org/github.com/xxjwxc/ginrpc&#34;&gt;更多&amp;gt;&amp;gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;2-注解路由调用demo-ginweb-sample-ginweb&#34;&gt;2. 注解路由调用demo：&lt;a href=&#34;https://xxjwxc.github.io/sample/ginweb&#34;&gt;ginweb&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;2-注解路由调用demo-gmsec-https-github-com-gmsec-gmsec&#34;&gt;2. 注解路由调用demo：&lt;a href=&#34;https://github.com/gmsec/gmsec&#34;&gt;gmsec&lt;/a&gt;&lt;/h3&gt;
 
-&lt;h3 id=&#34;3-支持绑定grpc函数-ginweb-sample-ginweb&#34;&gt;3. 支持绑定grpc函数: &lt;a href=&#34;https://xxjwxc.github.io/sample/ginweb&#34;&gt;ginweb&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;3-支持绑定grpc函数-gmsec-https-github-com-gmsec-gmsec&#34;&gt;3. 支持绑定grpc函数: &lt;a href=&#34;https://github.com/gmsec/gmsec&#34;&gt;gmsec&lt;/a&gt;&lt;/h3&gt;
 
 &lt;h2 id=&#34;二-swagger-markdown-mindoc-文档生成说明&#34;&gt;二. swagger/markdown/mindoc 文档生成说明&lt;/h2&gt;
 
@@ -282,23 +295,22 @@ ginrpc.WithBeforeAfter(&amp;amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用�
 &lt;h3 id=&#34;4-struct-demo&#34;&gt;4 struct demo&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;type ReqTest struct {
-	AccessToken string `json:&amp;#34;access_token&amp;#34;`
-	UserName    string `json:&amp;#34;user_name&amp;#34; binding:&amp;#34;required&amp;#34;` // 带校验方式
-	Password    string `json:&amp;#34;password&amp;#34;`
-}&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ReqTest&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;AccessToken&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;`json:&amp;#34;access_token&amp;#34;`&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;UserName&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;`json:&amp;#34;user_name&amp;#34; binding:&amp;#34;required&amp;#34;`&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 带校验方式
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;Password&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;`json:&amp;#34;password&amp;#34;`&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/xxjwxc/gmsec&#34;&gt;更多 &amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/xxjwxc/gmsec&#34;&gt;更多 &amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;三-支持调用中间件&#34;&gt;三. 支持调用中间件&lt;/h2&gt;
@@ -328,12 +340,6 @@ ginrpc.WithBeforeAfter(&amp;amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用�
 &lt;h2 id=&#34;stargazers-over-time&#34;&gt;Stargazers over time&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://starchart.cc/xxjwxc/ginrpc&#34;&gt;&lt;img src=&#34;https://starchart.cc/xxjwxc/ginrpc.svg&#34; alt=&#34;Stargazers over time&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;下一步&#34;&gt;下一步&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;添加服务发现&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;h3 id=&#34;代码地址-ginprc-https-github-com-xxjwxc-ginrpc-如果喜欢请给星支持&#34;&gt;代码地址： &lt;a href=&#34;https://github.com/xxjwxc/ginrpc&#34;&gt;ginprc&lt;/a&gt; 如果喜欢请给星支持&lt;/h3&gt;
 </description>

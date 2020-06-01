@@ -29,10 +29,17 @@ mathjax: true    # 打开 mathjax
 - 支持参数自动绑定
 - 自带请求参数过滤及绑定实现 binding:"required"  [validator](go-playground/validator.v8)
 - 支持 [grpc-go](https://github.com/grpc/grpc-go) 绑定模式
-- 支持[swagger 文档](http://editor.swagger.io/)导出 [MORE](https://github.com/xxjwxc/gmsec)
-- 支持[markdown/mindoc 文档](https://www.iminho.me/)导出 [MORE](https://github.com/xxjwxc/gmsec)
+- 支持[swagger 文档](http://editor.swagger.io/)导出 [MORE](https://github.com/gmsec/gmsec)
+- 支持[markdown/mindoc 文档](https://www.iminho.me/)导出 [MORE](https://github.com/gmsec/gmsec)
+- 支持调用前后中间件(`ginrpc.WithBeforeAfter`)
 
-- [更多请看](https://github.com/xxjwxc/gmsec)
+- [更多请看](https://github.com/gmsec/gmsec)
+
+## 安装使用
+- go mod:
+```
+go get -u github.com/xxjwxc/ginrpc@master
+```
 
 ### 支持多种接口模式
 
@@ -50,9 +57,9 @@ mathjax: true    # 打开 mathjax
 
 ## 一. 参数自动绑定/对象注册(注解路由)
 
-### 初始化项目(本项目以ginweb 为名字)
+### 初始化项目(本项目以gmsec 为名字)
 
-` go mod init ginweb `
+` go mod init gmsec `
 
 ### 代码 
 
@@ -63,9 +70,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/xxjwxc/public/mydoc/myswagger"	
-	_ "ginweb/routers" // debug模式需要添加[mod]/routers 注册注解路由
-
+	_ "gmsec/routers" // debug模式需要添加[mod]/routers 注册注解路由
+	"github.com/xxjwxc/public/mydoc/myswagger" // swagger 支持
 	"github.com/gin-gonic/gin"
 	"github.com/xxjwxc/ginrpc"
 	"github.com/xxjwxc/ginrpc/api"
@@ -115,14 +121,14 @@ func main() {
 	base := ginrpc.New())
 	router := gin.Default()
 	group := router.Group("/xxjwxc")
-	base.Register(group, new(Hello)) // 对象注册 like(go-micro)
+	base.Register(router, new(Hello)) // 对象注册 like(go-micro)
 	router.POST("/test6", base.HandlerFunc(TestFun6))                            // 函数注册
 	base.RegisterHandlerFunc(router, []string{"post", "get"}, "/test", TestFun6) // 多种请求方式注册
 	router.Run(":8080")
 }
    ```
 
-[更多>>](https://github.com/xxjwxc/ginrpc/tree/master/sample/ginweb)
+[更多>>](https://github.com/gmsec/gmsec)
 
 ### 执行curl，可以自动参数绑定。直接看结果
 
@@ -139,8 +145,10 @@ func main() {
 ### -注解路由相关说明
 
 ```
- // @Router /block [post,get]
-@Router 标记  /block 路由 [post,get] method 调用方式
+// @Router /block [post,get]
+@Router 标记 
+/block 路由 
+[post,get] method 调用方式
 
  ```
 
@@ -160,17 +168,15 @@ _ "[mod]/routers" // debug模式需要添加[mod]/routers 注册注解路由
 
 	ginrpc.WithDebug(true) : 设置debug模式
 
-	ginrpc.WithGroup("xxjwxc") : 添加路由前缀 (也可以使用gin.Group 分组)
-
 	ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)
-
+	
 	ginrpc.WithBeforeAfter(&ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后执行中间件
 
 [更多>>](https://godoc.org/github.com/xxjwxc/ginrpc)
 
-### 2. 注解路由调用demo：[ginweb](/sample/ginweb)
+### 2. 注解路由调用demo：[gmsec](https://github.com/gmsec/gmsec)
 
-### 3. 支持绑定grpc函数: [ginweb](/sample/ginweb)
+### 3. 支持绑定grpc函数: [gmsec](https://github.com/gmsec/gmsec)
 
 ## 二. swagger/markdown/mindoc 文档生成说明
 
@@ -178,18 +184,20 @@ _ "[mod]/routers" // debug模式需要添加[mod]/routers 注册注解路由
 ### 2.导出支持注解路由,支持参数注释,支持默认值(`tag`.`default`)
 ### 3.默认导出路径:(`/docs/swagger/swagger.json`,`/docs/markdown`)
 ### 4 struct demo
-```
+```go 
 type ReqTest struct {
 	AccessToken string `json:"access_token"`
 	UserName    string `json:"user_name" binding:"required"` // 带校验方式
 	Password    string `json:"password"`
 }
 ```
+
 - [更多 >>>](https://github.com/xxjwxc/gmsec)
-  
+
 ## 三. 支持调用中间件
 - (全局模式) 可通过 `ginrpc.WithBeforeAfter(&ginrpc.DefaultGinBeforeAfter{})`设置(全局)
 - (单个对象模式) 也可以在对象上实现函数(单个类型)
+
 ```go
 	// GinBeforeAfter 对象调用前后执行中间件(支持总的跟对象单独添加)
 	type GinBeforeAfter interface {
@@ -198,13 +206,9 @@ type ReqTest struct {
 	}
 ```
 
-
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/xxjwxc/ginrpc.svg)](https://starchart.cc/xxjwxc/ginrpc)
 
-## 下一步
-
-- 添加服务发现
 
 ### 代码地址： [ginprc](https://github.com/xxjwxc/ginrpc) 如果喜欢请给星支持
