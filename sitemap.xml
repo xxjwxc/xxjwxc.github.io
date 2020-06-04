@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://xxjwxc.github.io/post/jump/</loc>
+    <lastmod>2020-05-30T04:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xxjwxc.github.io/post/pprof/</loc>
     <lastmod>2019-05-20T03:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -163,22 +170,22 @@
   </url>
   
   <url>
-    <loc>https://xxjwxc.github.io/tags/pprof/</loc>
-    <lastmod>2019-05-20T03:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xxjwxc.github.io/categories/ssh/</loc>
-    <lastmod>2020-05-16T23:01:23+08:00</lastmod>
+    <lastmod>2020-05-30T04:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/ssh/</loc>
-    <lastmod>2020-05-16T23:01:23+08:00</lastmod>
+    <lastmod>2020-05-30T04:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/pprof/</loc>
+    <lastmod>2019-05-20T03:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
