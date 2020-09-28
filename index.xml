@@ -1521,6 +1521,23 @@ make mac&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;pre class=&#34;chroma&#34;&gt;go generate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;h3 id=&#34;说明-windows-不支持中文默认方式-ascall-模式&#34;&gt;说明：windows 不支持中文默认方式。ASCALL 模式&lt;/h3&gt;
+
+&lt;p&gt;切换编码方式&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;CHCP 65001 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;表注释-default&#34;&gt;表注释 default&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;给列添加注释以&lt;code&gt;[@gormt default:&#39;test&#39;]&lt;/code&gt;开头即可&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&#34;8-下一步计划&#34;&gt;8. 下一步计划&lt;/h2&gt;
 
 &lt;ul&gt;
