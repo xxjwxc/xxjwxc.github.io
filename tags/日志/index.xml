@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>日志 on Technology blog by xiexiaojun</title>
@@ -6,11 +6,7 @@
     <description>Recent content in 日志 on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 May 2019 14:01:23 +0800</lastBuildDate>
-    
-	<atom:link href="https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 25 May 2019 14:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>日志系统设计</title>
       <link>https://xxjwxc.github.io/post/loglistdef/</link>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Technology blog by xiexiaojun</title>
@@ -6,10 +6,51 @@
     <description>Recent content in Tags on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 01 Jun 2020 18:01:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 24 Feb 2021 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cmux</title>
+      <link>https://xxjwxc.github.io/tags/cmux/</link>
+      <pubDate>Wed, 24 Feb 2021 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/cmux/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang</title>
+      <link>https://xxjwxc.github.io/tags/golang/</link>
+      <pubDate>Wed, 24 Feb 2021 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>端口复用</title>
+      <link>https://xxjwxc.github.io/tags/%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8/</link>
+      <pubDate>Wed, 24 Feb 2021 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chunck</title>
+      <link>https://xxjwxc.github.io/tags/chunck/</link>
+      <pubDate>Fri, 25 Dec 2020 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/chunck/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具</title>
+      <link>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Fri, 25 Dec 2020 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>gin</title>
@@ -21,29 +62,11 @@
     </item>
     
     <item>
-      <title>golang</title>
-      <link>https://xxjwxc.github.io/tags/golang/</link>
-      <pubDate>Mon, 01 Jun 2020 18:01:00 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>grpc</title>
       <link>https://xxjwxc.github.io/tags/grpc/</link>
       <pubDate>Mon, 01 Jun 2020 18:01:00 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/grpc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>工具</title>
-      <link>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Mon, 01 Jun 2020 18:01:00 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
@@ -161,33 +184,6 @@
       <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/%E9%A9%BC%E5%B3%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://xxjwxc.github.io/tags/git/</link>
-      <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>help</title>
-      <link>https://xxjwxc.github.io/tags/help/</link>
-      <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/help/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>min</title>
-      <link>https://xxjwxc.github.io/tags/min/</link>
-      <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/min/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cmux on Technology blog by xiexiaojun</title>
+    <link>https://xxjwxc.github.io/tags/cmux/</link>
+    <description>Recent content in cmux on Technology blog by xiexiaojun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 Feb 2021 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/cmux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang gRPC 和 HTTP 共用端口</title>
+      <link>https://xxjwxc.github.io/post/grpc_http_same_port/</link>
+      <pubDate>Wed, 24 Feb 2021 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/grpc_http_same_port/</guid>
+      <description>前言 接口需要提供给其他业务组访问，但是 RPC 协议不同无法内调，对方问能否走 HTTP 接口 有时候，我们服务都需要同时支持grpc跟http(restful</description>
+    </item>
+    
+  </channel>
+</rss>

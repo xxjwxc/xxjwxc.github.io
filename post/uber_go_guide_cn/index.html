@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="xiexiaojun" />
-  <meta name="description" content="uber_go_guide_cn BadGood ```go BAD CODE GOES HERE ``` ```go GOOD CODE GOES HERE ``` ~~~ (You need the empty lines between the and code samples for it to be treated as Markdown.) If you need to add labels or descriptions below the code samples, add another row before the line. ~~~ DESCRIBE BAD CODE DESCRIBE GOOD CODE ~~~ -- Uber Go语言编码规范 Ub" />
+  <meta name="description" content="uber_go_guide_cn Uber Go语言编码规范 Uber是世界领先的生活出行服务提供商，也是Go语言的早期adopter，根据Uber工程博客的内容，大致可以判断出Go" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -32,10 +32,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/uber_go_guide_cn/" />
+
+
 
 
 
@@ -58,25 +60,19 @@
 
 
 <meta property="og:title" content="Uber Go 风格指南中文版" />
-<meta property="og:description" content="uber_go_guide_cn BadGood ```go BAD CODE GOES HERE ``` ```go GOOD CODE GOES HERE ``` ~~~ (You need the empty lines between the and code samples for it to be treated as Markdown.) If you need to add labels or descriptions below the code samples, add another row before the line. ~~~ DESCRIBE BAD CODE DESCRIBE GOOD CODE ~~~ -- Uber Go语言编码规范 Ub" />
+<meta property="og:description" content="uber_go_guide_cn Uber Go语言编码规范 Uber是世界领先的生活出行服务提供商，也是Go语言的早期adopter，根据Uber工程博客的内容，大致可以判断出Go" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/uber_go_guide_cn/" />
-<meta property="article:published_time" content="2019-10-13T21:10:31+08:00" />
-<meta property="article:modified_time" content="2019-10-13T21:10:31+08:00" />
+<meta property="og:url" content="https://xxjwxc.github.io/post/uber_go_guide_cn/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-10-13T21:10:31&#43;08:00" />
+<meta property="article:modified_time" content="2019-10-13T21:10:31&#43;08:00" />
+
 <meta itemprop="name" content="Uber Go 风格指南中文版">
-<meta itemprop="description" content="uber_go_guide_cn BadGood ```go BAD CODE GOES HERE ``` ```go GOOD CODE GOES HERE ``` ~~~ (You need the empty lines between the and code samples for it to be treated as Markdown.) If you need to add labels or descriptions below the code samples, add another row before the line. ~~~ DESCRIBE BAD CODE DESCRIBE GOOD CODE ~~~ -- Uber Go语言编码规范 Ub">
-
-
-<meta itemprop="datePublished" content="2019-10-13T21:10:31&#43;08:00" />
+<meta itemprop="description" content="uber_go_guide_cn Uber Go语言编码规范 Uber是世界领先的生活出行服务提供商，也是Go语言的早期adopter，根据Uber工程博客的内容，大致可以判断出Go"><meta itemprop="datePublished" content="2019-10-13T21:10:31&#43;08:00" />
 <meta itemprop="dateModified" content="2019-10-13T21:10:31&#43;08:00" />
-<meta itemprop="wordCount" content="8339">
-
-
-
-<meta itemprop="keywords" content="guide,翻译,golang," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="8836">
+<meta itemprop="keywords" content="guide,翻译,golang," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Uber Go 风格指南中文版"/>
-<meta name="twitter:description" content="uber_go_guide_cn BadGood ```go BAD CODE GOES HERE ``` ```go GOOD CODE GOES HERE ``` ~~~ (You need the empty lines between the and code samples for it to be treated as Markdown.) If you need to add labels or descriptions below the code samples, add another row before the line. ~~~ DESCRIBE BAD CODE DESCRIBE GOOD CODE ~~~ -- Uber Go语言编码规范 Ub"/>
+<meta name="twitter:description" content="uber_go_guide_cn Uber Go语言编码规范 Uber是世界领先的生活出行服务提供商，也是Go语言的早期adopter，根据Uber工程博客的内容，大致可以判断出Go"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -160,6 +156,8 @@
         
       </li>
     
+
+    
   </ul>
 </nav>
 
@@ -221,6 +219,8 @@
     </div>
     </div>
 </div>
+
+  
 
   
 
@@ -317,6 +317,10 @@
 
       </li>
     
+
+    
+    
+
     
   </ul>
 </nav>
@@ -340,8 +344,8 @@
             <a href="https://xxjwxc.github.io/categories/%E7%BF%BB%E8%AF%91/"> 翻译 </a>
             
           </div>
-        <span class="more-meta"> 约 8339 字 </span>
-          <span class="more-meta"> 预计阅读 17 分钟 </span>
+        <span class="more-meta"> 约 8836 字 </span>
+          <span class="more-meta"> 预计阅读 18 分钟 </span>
 
         
         
@@ -361,237 +365,161 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#uber-go-guide-cn-https-github-com-xxjwxc-uber-go-guide-cn"><a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></a></li>
-<li><a href="#uber-go语言编码规范">Uber Go语言编码规范</a>
-<ul>
-<li><a href="#目录">目录</a></li>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#指导原则">指导原则</a>
-<ul>
-<li><a href="#指向interface的指针">指向interface的指针</a></li>
-<li><a href="#接收器-receiver-与接口">接收器(receiver)与接口</a></li>
-<li><a href="#零值mutex是有效的">零值Mutex是有效的</a></li>
-<li><a href="#在边界处拷贝slices和maps">在边界处拷贝Slices和Maps</a>
-<ul>
-<li><a href="#接收slices和maps">接收Slices和Maps</a></li>
-<li><a href="#返回slices或maps">返回slices或maps</a></li>
-</ul></li>
-<li><a href="#使用defer做清理">使用defer做清理</a></li>
-<li><a href="#channel的size要么是1-要么是无缓冲的">Channel的size要么是1，要么是无缓冲的</a></li>
-<li><a href="#枚举从1开始">枚举从1开始</a></li>
-<li><a href="#错误类型">错误类型</a></li>
-<li><a href="#错误包装-error-wrapping">错误包装(Error Wrapping)</a></li>
-<li><a href="#处理类型断言失败">处理类型断言失败</a></li>
-<li><a href="#不要panic">不要panic</a></li>
-<li><a href="#使用go-uber-org-atomic">使用go.uber.org/atomic</a></li>
-</ul></li>
-<li><a href="#性能">性能</a>
-<ul>
-<li><a href="#优先使用strconv而不是fmt">优先使用strconv而不是fmt</a></li>
-<li><a href="#避免字符串到字节的转换">避免字符串到字节的转换</a></li>
-</ul></li>
-<li><a href="#规范">规范</a>
-<ul>
-<li><a href="#相似的声明放在一组">相似的声明放在一组</a></li>
-<li><a href="#import组内的包导入顺序">import组内的包导入顺序</a></li>
-<li><a href="#包名">包名</a></li>
-<li><a href="#函数名">函数名</a></li>
-<li><a href="#导入别名">导入别名</a></li>
-<li><a href="#函数分组与顺序">函数分组与顺序</a></li>
-<li><a href="#减少嵌套">减少嵌套</a></li>
-<li><a href="#不必要的else">不必要的else</a></li>
-<li><a href="#顶层变量声明">顶层变量声明</a></li>
-<li><a href="#对于未导出的顶层常量和变量-使用-作为前缀">对于未导出的顶层常量和变量，使用_作为前缀</a></li>
-<li><a href="#结构体中的嵌入">结构体中的嵌入</a></li>
-<li><a href="#使用字段名初始化结构体">使用字段名初始化结构体</a></li>
-<li><a href="#本地变量声明">本地变量声明</a></li>
-<li><a href="#nil是一个有效的slice">nil是一个有效的slice</a></li>
-<li><a href="#小变量作用域">小变量作用域</a></li>
-<li><a href="#避免裸参数">避免裸参数</a></li>
-<li><a href="#使用原始字符串字面值-避免转义">使用原始字符串字面值，避免转义</a></li>
-<li><a href="#初始化结构体引用">初始化结构体引用</a></li>
-<li><a href="#格式化字符串放在printf外部">格式化字符串放在Printf外部</a></li>
-<li><a href="#命名printf样式的函数">命名Printf样式的函数</a></li>
-</ul></li>
-<li><a href="#模式">模式</a>
-<ul>
-<li><a href="#测试tables">测试Tables</a></li>
-<li><a href="#功能选项">功能选项</a></li>
-</ul></li>
-<li><a href="#地址-uber-go-guide-cn-https-github-com-xxjwxc-uber-go-guide-cn">地址 <a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#目录">目录</a></li>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#指导原则">指导原则</a>
+      <ul>
+        <li><a href="#指向interface的指针">指向interface的指针</a></li>
+        <li><a href="#接收器receiver与接口">接收器(receiver)与接口</a></li>
+        <li><a href="#零值mutex是有效的">零值Mutex是有效的</a></li>
+        <li><a href="#在边界处拷贝slices和maps">在边界处拷贝Slices和Maps</a></li>
+        <li><a href="#使用defer做清理">使用defer做清理</a></li>
+        <li><a href="#channel的size要么是1要么是无缓冲的">Channel的size要么是1，要么是无缓冲的</a></li>
+        <li><a href="#枚举从1开始">枚举从1开始</a></li>
+        <li><a href="#错误类型">错误类型</a></li>
+        <li><a href="#错误包装error-wrapping">错误包装(Error Wrapping)</a></li>
+        <li><a href="#处理类型断言失败">处理类型断言失败</a></li>
+        <li><a href="#不要panic">不要panic</a></li>
+        <li><a href="#使用gouberorgatomic">使用go.uber.org/atomic</a></li>
+      </ul>
+    </li>
+    <li><a href="#性能">性能</a>
+      <ul>
+        <li><a href="#优先使用strconv而不是fmt">优先使用strconv而不是fmt</a></li>
+        <li><a href="#避免字符串到字节的转换">避免字符串到字节的转换</a></li>
+      </ul>
+    </li>
+    <li><a href="#规范">规范</a>
+      <ul>
+        <li><a href="#相似的声明放在一组">相似的声明放在一组</a></li>
+        <li><a href="#import组内的包导入顺序">import组内的包导入顺序</a></li>
+        <li><a href="#包名">包名</a></li>
+        <li><a href="#函数名">函数名</a></li>
+        <li><a href="#导入别名">导入别名</a></li>
+        <li><a href="#函数分组与顺序">函数分组与顺序</a></li>
+        <li><a href="#减少嵌套">减少嵌套</a></li>
+        <li><a href="#不必要的else">不必要的else</a></li>
+        <li><a href="#顶层变量声明">顶层变量声明</a></li>
+        <li><a href="#对于未导出的顶层常量和变量使用_作为前缀">对于未导出的顶层常量和变量，使用_作为前缀</a></li>
+        <li><a href="#结构体中的嵌入">结构体中的嵌入</a></li>
+        <li><a href="#使用字段名初始化结构体">使用字段名初始化结构体</a></li>
+        <li><a href="#本地变量声明">本地变量声明</a></li>
+        <li><a href="#nil是一个有效的slice">nil是一个有效的slice</a></li>
+        <li><a href="#小变量作用域">小变量作用域</a></li>
+        <li><a href="#避免裸参数">避免裸参数</a></li>
+        <li><a href="#使用原始字符串字面值避免转义">使用原始字符串字面值，避免转义</a></li>
+        <li><a href="#初始化结构体引用">初始化结构体引用</a></li>
+        <li><a href="#格式化字符串放在printf外部">格式化字符串放在Printf外部</a></li>
+        <li><a href="#命名printf样式的函数">命名Printf样式的函数</a></li>
+      </ul>
+    </li>
+    <li><a href="#模式">模式</a>
+      <ul>
+        <li><a href="#测试tables">测试Tables</a></li>
+        <li><a href="#功能选项">功能选项</a></li>
+      </ul>
+    </li>
+    <li><a href="#地址-uber_go_guide_cnhttpsgithubcomxxjwxcuber_go_guide_cn">地址 <a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="uber-go-guide-cn-https-github-com-xxjwxc-uber-go-guide-cn"><a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></h1>
-
-<!--
-
-Editing this document:
-
-- Discuss all changes in GitHub issues first.
-- Update the table of contents as new sections are added or removed.
-- Use tables for side-by-side code samples. See below.
-
-Code Samples:
-
-Use 2 spaces to indent. Horizontal real estate is important in side-by-side
-samples.
-
-For side-by-side code samples, use the following snippet.
-
-~~~
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-BAD CODE GOES HERE
-```
-
-</td><td>
-
-```go
-GOOD CODE GOES HERE
-```
-
-</td></tr>
-</tbody></table>
-~~~
-
-(You need the empty lines between the <td> and code samples for it to be
-treated as Markdown.)
-
-If you need to add labels or descriptions below the code samples, add another
-row before the </tbody></table> line.
-
-~~~
-<tr>
-<td>DESCRIBE BAD CODE</td>
-<td>DESCRIBE GOOD CODE</td>
-</tr>
-~~~
-
--->
-
+      <h1 id="uber_go_guide_cnhttpsgithubcomxxjwxcuber_go_guide_cn"><a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h1 id="uber-go语言编码规范">Uber Go语言编码规范</h1>
-
 <p><a href="https://www.uber.com/">Uber</a>是世界领先的生活出行服务提供商，也是Go语言的早期adopter，根据<a href="https://eng.uber.com/">Uber工程博客</a>的内容，大致可以判断出Go语言在Uber内部扮演了十分重要的角色。Uber内部的Go语言工程实践也是硕果累累，有大量Go实现的内部工具被Uber开源到<a href="https://github.com/uber-go">github</a>上，诸如被Gopher圈熟知的<a href="https://github.com/uber-go/zap">zap</a>、<a href="https://github.com/jaegertracing/jaeger">jaeger</a>等。2018年年末Uber将内部的<a href="https://github.com/uber-go/guide">Go风格规范</a>开源到github，经过一年的积累和更新，该规范已经初具规模，并受到广大Gopher的关注。本文是该规范的中文版本，并”夹带“了部分笔者的点评，希望对国内Gopher有所帮助。</p>
-
 <h2 id="目录">目录</h2>
-
 <ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#指导原则">指导原则</a>
-
+<li><a href="#%E4%BB%8B%E7%BB%8D">介绍</a></li>
+<li><a href="#%E6%8C%87%E5%AF%BC%E5%8E%9F%E5%88%99">指导原则</a>
 <ul>
-<li><a href="#指向interface的指针">指向interface的指针</a></li>
-<li><a href="#接收器(receiver)与接口">接收器(receiver)与接口</a></li>
-<li><a href="#零值Mutex是有效的">零值Mutex是有效的</a></li>
-<li><a href="#在边界处拷贝Slices和Maps">在边界处拷贝Slices和Maps</a></li>
-<li><a href="#使用defer做清理">使用defer做清理</a></li>
-<li><a href="#Channel的size要么是1，要么是无缓冲的">Channel的size要么是1，要么是无缓冲的</a></li>
-<li><a href="#枚举从1开始">枚举从1开始</a></li>
-<li><a href="#错误类型">错误类型</a></li>
-<li><a href="#错误包装(Error-Wrapping)">错误包装(Error Wrapping)</a></li>
-<li><a href="#处理类型断言失败">处理类型断言失败</a></li>
-<li><a href="#不要panic">不要panic</a></li>
-<li><a href="#使用go.uber.org/atomic">使用go.uber.org/atomic</a></li>
-</ul></li>
-<li><a href="#性能">性能</a>
-
-<ul>
-<li><a href="#优先使用strconv而不是fmt">优先使用strconv而不是fmt</a></li>
-<li><a href="#避免字符串到字节的转换">避免字符串到字节的转换</a></li>
-</ul></li>
-<li><a href="#规范">规范</a>
-
-<ul>
-<li><a href="#相似的声明放在一组">相似的声明放在一组</a></li>
-<li><a href="#import组内的包导入顺序">import组内的包导入顺序</a></li>
-<li><a href="#包名">包名</a></li>
-<li><a href="#函数名">函数名</a></li>
-<li><a href="#导入别名">导入别名</a></li>
-<li><a href="#函数分组与顺序">函数分组与顺序</a></li>
-<li><a href="#减少嵌套">减少嵌套</a></li>
-<li><a href="#不必要的else">不必要的else</a></li>
-<li><a href="#顶层变量声明">顶层变量声明</a></li>
-<li><a href="#对于未导出的顶层常量和变量，使用_作为前缀">对于未导出的顶层常量和变量，使用_作为前缀</a></li>
-<li><a href="#结构体中的嵌入">结构体中的嵌入</a></li>
-<li><a href="#使用字段名初始化结构体">使用字段名初始化结构体</a></li>
-<li><a href="#本地变量声明">本地变量声明</a></li>
-<li><a href="#nil是一个有效的slice">nil是一个有效的slice</a></li>
-<li><a href="#小变量作用域">小变量作用域</a></li>
-<li><a href="#避免裸参数">避免裸参数</a></li>
-<li><a href="#使用原始字符串字面值，避免转义">使用原始字符串字面值，避免转义</a></li>
-<li><a href="#初始化结构体引用">初始化结构体引用</a></li>
-<li><a href="#格式化字符串放在Printf外部">格式化字符串放在Printf外部</a></li>
-<li><a href="#命名Printf样式的函数">命名Printf样式的函数</a></li>
-</ul></li>
-<li><a href="#模式">模式</a>
-
-<ul>
-<li><a href="#测试Tables">测试Tables</a></li>
-<li><a href="#功能选项">功能选项</a></li>
-</ul></li>
+<li><a href="#%E6%8C%87%E5%90%91interface%E7%9A%84%E6%8C%87%E9%92%88">指向interface的指针</a></li>
+<li><a href="#%E6%8E%A5%E6%94%B6%E5%99%A8(receiver)%E4%B8%8E%E6%8E%A5%E5%8F%A3">接收器(receiver)与接口</a></li>
+<li><a href="#%E9%9B%B6%E5%80%BCMutex%E6%98%AF%E6%9C%89%E6%95%88%E7%9A%84">零值Mutex是有效的</a></li>
+<li><a href="#%E5%9C%A8%E8%BE%B9%E7%95%8C%E5%A4%84%E6%8B%B7%E8%B4%9DSlices%E5%92%8CMaps">在边界处拷贝Slices和Maps</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8defer%E5%81%9A%E6%B8%85%E7%90%86">使用defer做清理</a></li>
+<li><a href="#Channel%E7%9A%84size%E8%A6%81%E4%B9%88%E6%98%AF1%EF%BC%8C%E8%A6%81%E4%B9%88%E6%98%AF%E6%97%A0%E7%BC%93%E5%86%B2%E7%9A%84">Channel的size要么是1，要么是无缓冲的</a></li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E4%BB%8E1%E5%BC%80%E5%A7%8B">枚举从1开始</a></li>
+<li><a href="#%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B">错误类型</a></li>
+<li><a href="#%E9%94%99%E8%AF%AF%E5%8C%85%E8%A3%85(Error-Wrapping)">错误包装(Error Wrapping)</a></li>
+<li><a href="#%E5%A4%84%E7%90%86%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%E5%A4%B1%E8%B4%A5">处理类型断言失败</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81panic">不要panic</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8go.uber.org/atomic">使用go.uber.org/atomic</a></li>
 </ul>
-
+</li>
+<li><a href="#%E6%80%A7%E8%83%BD">性能</a>
+<ul>
+<li><a href="#%E4%BC%98%E5%85%88%E4%BD%BF%E7%94%A8strconv%E8%80%8C%E4%B8%8D%E6%98%AFfmt">优先使用strconv而不是fmt</a></li>
+<li><a href="#%E9%81%BF%E5%85%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%B0%E5%AD%97%E8%8A%82%E7%9A%84%E8%BD%AC%E6%8D%A2">避免字符串到字节的转换</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A7%84%E8%8C%83">规范</a>
+<ul>
+<li><a href="#%E7%9B%B8%E4%BC%BC%E7%9A%84%E5%A3%B0%E6%98%8E%E6%94%BE%E5%9C%A8%E4%B8%80%E7%BB%84">相似的声明放在一组</a></li>
+<li><a href="#import%E7%BB%84%E5%86%85%E7%9A%84%E5%8C%85%E5%AF%BC%E5%85%A5%E9%A1%BA%E5%BA%8F">import组内的包导入顺序</a></li>
+<li><a href="#%E5%8C%85%E5%90%8D">包名</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%90%8D">函数名</a></li>
+<li><a href="#%E5%AF%BC%E5%85%A5%E5%88%AB%E5%90%8D">导入别名</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%88%86%E7%BB%84%E4%B8%8E%E9%A1%BA%E5%BA%8F">函数分组与顺序</a></li>
+<li><a href="#%E5%87%8F%E5%B0%91%E5%B5%8C%E5%A5%97">减少嵌套</a></li>
+<li><a href="#%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84else">不必要的else</a></li>
+<li><a href="#%E9%A1%B6%E5%B1%82%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E">顶层变量声明</a></li>
+<li><a href="#%E5%AF%B9%E4%BA%8E%E6%9C%AA%E5%AF%BC%E5%87%BA%E7%9A%84%E9%A1%B6%E5%B1%82%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%EF%BC%8C%E4%BD%BF%E7%94%A8_%E4%BD%9C%E4%B8%BA%E5%89%8D%E7%BC%80">对于未导出的顶层常量和变量，使用_作为前缀</a></li>
+<li><a href="#%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%AD%E7%9A%84%E5%B5%8C%E5%85%A5">结构体中的嵌入</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%AD%97%E6%AE%B5%E5%90%8D%E5%88%9D%E5%A7%8B%E5%8C%96%E7%BB%93%E6%9E%84%E4%BD%93">使用字段名初始化结构体</a></li>
+<li><a href="#%E6%9C%AC%E5%9C%B0%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E">本地变量声明</a></li>
+<li><a href="#nil%E6%98%AF%E4%B8%80%E4%B8%AA%E6%9C%89%E6%95%88%E7%9A%84slice">nil是一个有效的slice</a></li>
+<li><a href="#%E5%B0%8F%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F">小变量作用域</a></li>
+<li><a href="#%E9%81%BF%E5%85%8D%E8%A3%B8%E5%8F%82%E6%95%B0">避免裸参数</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%A7%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E9%9D%A2%E5%80%BC%EF%BC%8C%E9%81%BF%E5%85%8D%E8%BD%AC%E4%B9%89">使用原始字符串字面值，避免转义</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E7%BB%93%E6%9E%84%E4%BD%93%E5%BC%95%E7%94%A8">初始化结构体引用</a></li>
+<li><a href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%94%BE%E5%9C%A8Printf%E5%A4%96%E9%83%A8">格式化字符串放在Printf外部</a></li>
+<li><a href="#%E5%91%BD%E5%90%8DPrintf%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%87%BD%E6%95%B0">命名Printf样式的函数</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A8%A1%E5%BC%8F">模式</a>
+<ul>
+<li><a href="#%E6%B5%8B%E8%AF%95Tables">测试Tables</a></li>
+<li><a href="#%E5%8A%9F%E8%83%BD%E9%80%89%E9%A1%B9">功能选项</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="介绍">介绍</h2>
-
 <p>样式(style)是支配我们代码的惯例。术语“样式”有点用词不当，因为这些约定涵盖的范围不限于由gofmt替我们处理的源文件格式。</p>
-
 <p>本指南的目的是通过详细描述在Uber编写Go代码的注意事项来管理这种复杂性。这些规则的存在是为了使代码库易于管理，同时仍然允许工程师更有效地使用Go语言功能。</p>
-
 <p>该指南最初由<a href="https://github.com/prashantv">Prashant Varanasi</a>和<a href="https://github.com/nomis52">Simon Newton</a>编写，目的是使一些同事能快速使用Go。多年来，该指南已根据其他人的反馈进行了修改。</p>
-
 <p>本文档记录了我们在Uber遵循的Go代码中的惯用约定。其中许多是Go的通用准则，而其他扩展准则依赖于下面外部的指南：</p>
-
 <ol>
 <li><a href="https://golang.org/doc/effective_go.html">Effective Go</a></li>
 <li><a href="https://github.com/golang/go/wiki/CodeReviewComments">The Go common mistakes guide</a></li>
 </ol>
-
 <p>所有代码都应该通过<code>golint</code>和<code>go vet</code>的检查并无错误。我们建议您将编辑器设置为：</p>
-
 <ul>
 <li>保存时运行 <code>goimports</code></li>
 <li>运行 <code>golint</code> 和 <code>go vet</code> 检查错误</li>
 </ul>
-
 <p>您可以在以下Go编辑器工具支持页面中找到更为详细的信息:
 <a href="https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins">https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins</a></p>
-
 <h2 id="指导原则">指导原则</h2>
-
 <h3 id="指向interface的指针">指向interface的指针</h3>
-
 <p>您几乎不需要指向接口类型的指针。您应该将接口作为值进行传递，在这样的传递过程中，实质上传递的底层数据仍然可以是指针。</p>
-
 <p>接口实质上在底层用两个字段表示:</p>
-
 <ol>
-<li>一个指向某些特定类型信息的指针。您可以将其视为&rdquo;type.&rdquo;</li>
+<li>一个指向某些特定类型信息的指针。您可以将其视为&quot;type.&quot;</li>
 <li>数据指针。如果存储的数据是指针，则直接存储。如果存储的数据是一个值，则存储指向该值的指针。</li>
 </ol>
-
 <p>如果希望接口方法修改基础数据，则必须使用指针传递。</p>
-
-<h3 id="接收器-receiver-与接口">接收器(receiver)与接口</h3>
-
+<h3 id="接收器receiver与接口">接收器(receiver)与接口</h3>
 <p>使用值接收器的方法既可以通过值调用，也可以通过指针调用。</p>
-
 <p>例如,</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -642,13 +570,13 @@ row before the </tbody></table> line.
 
 <span class="c1">// 通过指针既可以调用Read，也可以调用Write方法
 </span><span class="c1"></span><span class="nx">sPtrs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">Read</span><span class="p">()</span>
-<span class="nx">sPtrs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">Write</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+<span class="nx">sPtrs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">Write</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>同样，即使该方法具有值接收器，也可以通过指针来满足接口。</p>
+</div><p>同样，即使该方法具有值接收器，也可以通过指针来满足接口。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -697,313 +625,423 @@ row before the </tbody></table> line.
 <span class="nx">i</span> <span class="p">=</span> <span class="nx">s2Ptr</span>
 
 <span class="c1">//  下面代码无法通过编译。因为s2Val是一个值，而S2的f方法中没有使用值接收器
-</span><span class="c1"></span><span class="o">//</span>   <span class="nx">i</span> <span class="p">=</span> <span class="nx">s2Val</span></code></pre></td></tr></table>
+</span><span class="c1">//   i = s2Val
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<p>[Effective Go] 中有一段关于[pointers vs values]的精彩讲解。</p>
-
+</div><p>[Effective Go] 中有一段关于[pointers vs values]的精彩讲解。</p>
 <h3 id="零值mutex是有效的">零值Mutex是有效的</h3>
-
 <p>sync.Mutex和sync.RWMutex是有效的。因此你几乎不需要一个指向mutex的指针。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-mu := new(sync.Mutex)
-mu.Lock()
-```
-
-</td><td>
-
-```go
-var mu sync.Mutex
-mu.Lock()
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">mu</span> <span class="o">:=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span><span class="p">)</span>
+<span class="nx">mu</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">mu</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span>
+<span class="nx">mu</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>如果你使用结构体指针，mutex可以非指针形式作为结构体的组成字段，或者更好的方式是直接嵌入到结构体中。
 如果是私有结构体类型或是要实现Mutex接口的类型，我们可以使用嵌入mutex的方法：</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">smap</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span> <span class="c1">// only for unexported types（仅适用于非导出类型）
+</span><span class="c1"></span>
+  <span class="nx">data</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
+<span class="p">}</span>
 
-<table>
-<tbody>
-<tr><td>
+<span class="kd">func</span> <span class="nf">newSMap</span><span class="p">()</span> <span class="o">*</span><span class="nx">smap</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&amp;</span><span class="nx">smap</span><span class="p">{</span>
+    <span class="nx">data</span><span class="p">:</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">),</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-```go
-type smap struct {
-  sync.Mutex // only for unexported types（仅适用于非导出类型）
+<span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="o">*</span><span class="nx">smap</span><span class="p">)</span> <span class="nf">Get</span><span class="p">(</span><span class="nx">k</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+  <span class="nx">m</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+  <span class="k">defer</span> <span class="nx">m</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
 
-  data map[string]string
-}
+  <span class="k">return</span> <span class="nx">m</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">SMap</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">mu</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span> <span class="c1">// 对于导出类型，请使用私有锁
+</span><span class="c1"></span>
+  <span class="nx">data</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
+<span class="p">}</span>
 
-func newSMap() *smap {
-  return &smap{
-    data: make(map[string]string),
-  }
-}
+<span class="kd">func</span> <span class="nf">NewSMap</span><span class="p">()</span> <span class="o">*</span><span class="nx">SMap</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&amp;</span><span class="nx">SMap</span><span class="p">{</span>
+    <span class="nx">data</span><span class="p">:</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">),</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-func (m *smap) Get(k string) string {
-  m.Lock()
-  defer m.Unlock()
+<span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="o">*</span><span class="nx">SMap</span><span class="p">)</span> <span class="nf">Get</span><span class="p">(</span><span class="nx">k</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+  <span class="nx">m</span><span class="p">.</span><span class="nx">mu</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+  <span class="k">defer</span> <span class="nx">m</span><span class="p">.</span><span class="nx">mu</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
 
-  return m.data[k]
-}
-```
-
-</td><td>
-
-```go
-type SMap struct {
-  mu sync.Mutex // 对于导出类型，请使用私有锁
-
-  data map[string]string
-}
-
-func NewSMap() *SMap {
-  return &SMap{
-    data: make(map[string]string),
-  }
-}
-
-func (m *SMap) Get(k string) string {
-  m.mu.Lock()
-  defer m.mu.Unlock()
-
-  return m.data[k]
-}
-```
-
-</td></tr>
-
-</tr>
-<tr>
-<td>为私有类型或需要实现互斥接口的类型嵌入。</td>
-<td>对于导出的类型，请使用专用字段。</td>
-</tr>
-
-</tbody></table>
-
+  <span class="k">return</span> <span class="nx">m</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h3 id="在边界处拷贝slices和maps">在边界处拷贝Slices和Maps</h3>
-
 <p>slices和maps包含了指向底层数据的指针，因此在需要复制它们时要特别注意。</p>
-
 <h4 id="接收slices和maps">接收Slices和Maps</h4>
-
 <p>请记住，当map或slice作为函数参数传入时，如果您存储了对它们的引用，则用户可以对其进行修改。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span><span class="nx">Driver</span><span class="p">)</span> <span class="nf">SetTrips</span><span class="p">(</span><span class="nx">trips</span> <span class="p">[]</span><span class="nx">Trip</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">d</span><span class="p">.</span><span class="nx">trips</span> <span class="p">=</span> <span class="nx">trips</span>
+<span class="p">}</span>
 
-<table>
-<thead><tr><th>Bad</th> <th>Good</th></tr></thead>
-<tbody>
-<tr>
-<td>
+<span class="nx">trips</span> <span class="o">:=</span> <span class="o">...</span>
+<span class="nx">d1</span><span class="p">.</span><span class="nf">SetTrips</span><span class="p">(</span><span class="nx">trips</span><span class="p">)</span>
 
-```go
-func (d *Driver) SetTrips(trips []Trip) {
-  d.trips = trips
-}
+<span class="c1">// 你是要修改d1.trips吗？
+</span><span class="c1"></span><span class="nx">trips</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="o">...</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span><span class="nx">Driver</span><span class="p">)</span> <span class="nf">SetTrips</span><span class="p">(</span><span class="nx">trips</span> <span class="p">[]</span><span class="nx">Trip</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">d</span><span class="p">.</span><span class="nx">trips</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">Trip</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">trips</span><span class="p">))</span>
+  <span class="nb">copy</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">trips</span><span class="p">,</span> <span class="nx">trips</span><span class="p">)</span>
+<span class="p">}</span>
 
-trips := ...
-d1.SetTrips(trips)
+<span class="nx">trips</span> <span class="o">:=</span> <span class="o">...</span>
+<span class="nx">d1</span><span class="p">.</span><span class="nf">SetTrips</span><span class="p">(</span><span class="nx">trips</span><span class="p">)</span>
 
-// 你是要修改d1.trips吗？
-trips[0] = ...
-```
-
-</td>
-<td>
-
-```go
-func (d *Driver) SetTrips(trips []Trip) {
-  d.trips = make([]Trip, len(trips))
-  copy(d.trips, trips)
-}
-
-trips := ...
-d1.SetTrips(trips)
-
-// 这里我们修改trips[0]，但不会影响到d1.trips
-trips[0] = ...
-```
-
-</td>
-</tr>
-
-</tbody>
-</table>
-
+<span class="c1">// 这里我们修改trips[0]，但不会影响到d1.trips
+</span><span class="c1"></span><span class="nx">trips</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="o">...</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h4 id="返回slices或maps">返回slices或maps</h4>
-
 <p>同样，请注意用户对暴露内部状态的map或slice的修改。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Stats</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+  <span class="nx">counters</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span>
+<span class="p">}</span>
 
-```go
-type Stats struct {
-  sync.Mutex
+<span class="c1">// Snapshot返回当前状态。
+</span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">Stats</span><span class="p">)</span> <span class="nf">Snapshot</span><span class="p">()</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span> <span class="p">{</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+  <span class="k">defer</span> <span class="nx">s</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
 
-  counters map[string]int
-}
+  <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">counters</span>
+<span class="p">}</span>
 
-// Snapshot返回当前状态。
-func (s *Stats) Snapshot() map[string]int {
-  s.Lock()
-  defer s.Unlock()
+<span class="c1">// snapshot不再受到锁的保护
+</span><span class="c1"></span><span class="nx">snapshot</span> <span class="o">:=</span> <span class="nx">stats</span><span class="p">.</span><span class="nf">Snapshot</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Stats</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span>
 
-  return s.counters
-}
+  <span class="nx">counters</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span>
+<span class="p">}</span>
 
-// snapshot不再受到锁的保护
-snapshot := stats.Snapshot()
-```
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">Stats</span><span class="p">)</span> <span class="nf">Snapshot</span><span class="p">()</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span> <span class="p">{</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+  <span class="k">defer</span> <span class="nx">s</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
 
-</td><td>
+  <span class="nx">result</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">counters</span><span class="p">))</span>
+  <span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">s</span><span class="p">.</span><span class="nx">counters</span> <span class="p">{</span>
+    <span class="nx">result</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="p">=</span> <span class="nx">v</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span>
+<span class="p">}</span>
 
-```go
-type Stats struct {
-  sync.Mutex
-
-  counters map[string]int
-}
-
-func (s *Stats) Snapshot() map[string]int {
-  s.Lock()
-  defer s.Unlock()
-
-  result := make(map[string]int, len(s.counters))
-  for k, v := range s.counters {
-    result[k] = v
-  }
-  return result
-}
-
-// snapshot现在是一个拷贝
-snapshot := stats.Snapshot()
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="c1">// snapshot现在是一个拷贝
+</span><span class="c1"></span><span class="nx">snapshot</span> <span class="o">:=</span> <span class="nx">stats</span><span class="p">.</span><span class="nf">Snapshot</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="使用defer做清理">使用defer做清理</h3>
-
 <p>使用defer清理资源，诸如文件和锁。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">p</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+<span class="k">if</span> <span class="nx">p</span><span class="p">.</span><span class="nx">count</span> <span class="p">&lt;</span> <span class="mi">10</span> <span class="p">{</span>
+  <span class="nx">p</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
+  <span class="k">return</span> <span class="nx">p</span><span class="p">.</span><span class="nx">count</span>
+<span class="p">}</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="nx">p</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span>
+<span class="nx">newCount</span> <span class="o">:=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">count</span>
+<span class="nx">p</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
 
-```go
-p.Lock()
-if p.count < 10 {
-  p.Unlock()
-  return p.count
-}
+<span class="k">return</span> <span class="nx">newCount</span>
 
-p.count++
-newCount := p.count
-p.Unlock()
+<span class="c1">// 当有多个return分支时，很容易遗忘unlock
+</span></code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">p</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+<span class="k">defer</span> <span class="nx">p</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
 
-return newCount
+<span class="k">if</span> <span class="nx">p</span><span class="p">.</span><span class="nx">count</span> <span class="p">&lt;</span> <span class="mi">10</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">p</span><span class="p">.</span><span class="nx">count</span>
+<span class="p">}</span>
 
-// 当有多个return分支时，很容易遗忘unlock
-```
+<span class="nx">p</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span>
+<span class="k">return</span> <span class="nx">p</span><span class="p">.</span><span class="nx">count</span>
 
-</td><td>
-
-```go
-p.Lock()
-defer p.Unlock()
-
-if p.count < 10 {
-  return p.count
-}
-
-p.count++
-return p.count
-
-// 更可读
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="c1">// 更可读
+</span></code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>Defer的开销非常小，只有在您可以证明函数执行时间处于纳秒级的程度时，才应避免这样做。使用defer提升可读性是值得的，因为使用它们的成本微不足道。尤其适用于那些不仅仅是简单内存访问的较大的方法，在这些方法中其他计算的资源消耗远超过 <code>defer</code>。</p>
-
-<h3 id="channel的size要么是1-要么是无缓冲的">Channel的size要么是1，要么是无缓冲的</h3>
-
+<h3 id="channel的size要么是1要么是无缓冲的">Channel的size要么是1，要么是无缓冲的</h3>
 <p>channel通常size应为1或是无缓冲的。默认情况下，channel是无缓冲的，其size为零。任何其他尺寸都必须经过严格的审查。考虑如何确定大小，是什么阻止了channel在负载下被填满并阻止写入，以及发生这种情况时发生了什么。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-// 应该足以满足任何情况!
-c := make(chan int, 64)
-```
-
-</td><td>
-
-```go
-// 大小：1
-c := make(chan int, 1) // 或者
-// 无缓冲channel，大小为0
-c := make(chan int)
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 应该足以满足任何情况!
+</span><span class="c1"></span><span class="nx">c</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 大小：1
+</span><span class="c1"></span><span class="nx">c</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// 或者
+</span><span class="c1">// 无缓冲channel，大小为0
+</span><span class="c1"></span><span class="nx">c</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="枚举从1开始">枚举从1开始</h3>
-
 <p>在Go中引入枚举的标准方法是声明一个自定义类型和一个使用了iota的const组。由于变量的默认值为0，因此通常应以非零值开头枚举。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Operation</span> <span class="kt">int</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">Add</span> <span class="nx">Operation</span> <span class="p">=</span> <span class="kc">iota</span>
+  <span class="nx">Subtract</span>
+  <span class="nx">Multiply</span>
+<span class="p">)</span>
 
-```go
-type Operation int
+<span class="c1">// Add=0, Subtract=1, Multiply=2
+</span></code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Operation</span> <span class="kt">int</span>
 
-const (
-  Add Operation = iota
-  Subtract
-  Multiply
-)
+<span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">Add</span> <span class="nx">Operation</span> <span class="p">=</span> <span class="kc">iota</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="nx">Subtract</span>
+  <span class="nx">Multiply</span>
+<span class="p">)</span>
 
-// Add=0, Subtract=1, Multiply=2
-```
-
-</td><td>
-
-```go
-type Operation int
-
-const (
-  Add Operation = iota + 1
-  Subtract
-  Multiply
-)
-
-// Add=1, Subtract=2, Multiply=3
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="c1">// Add=1, Subtract=2, Multiply=3
+</span></code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>在某些情况下，使用零值是有意义的(枚举从零开始)，例如，当零值是理想的默认行为时。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1022,139 +1060,205 @@ const (
   <span class="nx">LogToRemote</span>
 <span class="p">)</span>
 
-<span class="o">//</span> <span class="nx">LogToStdout</span><span class="p">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">LogToFile</span><span class="p">=</span><span class="mi">1</span><span class="p">,</span> <span class="nx">LogToRemote</span><span class="p">=</span><span class="mi">2</span></code></pre></td></tr></table>
+<span class="c1">// LogToStdout=0, LogToFile=1, LogToRemote=2
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<!-- TODO: section on String methods for enums -->
-
+</div><!-- raw HTML omitted -->
 <h3 id="错误类型">错误类型</h3>
-
 <p>Go中有多种声明错误（Error)的选项：</p>
-
 <ul>
 <li><a href="https://golang.org/pkg/errors/#New"><code>errors.New</code></a> 对于简单静态字符串的错误</li>
 <li><a href="https://golang.org/pkg/fmt/#Errorf"><code>fmt.Errorf</code></a> 用于格式化的错误字符串</li>
 <li>实现 <code>Error()</code> 方法的自定义类型</li>
 <li>用 <a href="https://godoc.org/github.com/pkg/errors#Wrap"><code>&quot;pkg/errors&quot;.Wrap</code></a>的 Wrapped errors</li>
 </ul>
-
 <p>返回错误时，请考虑以下因素以确定最佳选择：</p>
-
 <ul>
-<li>这是一个不需要额外信息的简单错误吗？如果是这样，<a href="https://golang.org/pkg/errors/#New"><code>errors.New</code></a> 足够了.</li>
-<li>客户需要检测并处理此错误吗？如果是这样，则应使用自定义类型并实现该 <code>Error()</code> 方法。</li>
-<li>您是否正在传播下游函数返回的错误？如果是这样，请查看本文后面有关错误包装 <a href="#错误包装(Error-Wrapping)">section on error wrapping</a>部分的内容.</li>
-<li>否则 <a href="https://golang.org/pkg/fmt/#Errorf"><code>fmt.Errorf</code></a> 就可以了.</li>
+<li>
+<p>这是一个不需要额外信息的简单错误吗？如果是这样，<a href="https://golang.org/pkg/errors/#New"><code>errors.New</code></a> 足够了.</p>
+</li>
+<li>
+<p>客户需要检测并处理此错误吗？如果是这样，则应使用自定义类型并实现该 <code>Error()</code> 方法。</p>
+</li>
+<li>
+<p>您是否正在传播下游函数返回的错误？如果是这样，请查看本文后面有关错误包装 <a href="#%E9%94%99%E8%AF%AF%E5%8C%85%E8%A3%85(Error-Wrapping)">section on error wrapping</a>部分的内容.</p>
+</li>
+<li>
+<p>否则 <a href="https://golang.org/pkg/fmt/#Errorf"><code>fmt.Errorf</code></a> 就可以了.</p>
+</li>
 </ul>
-
 <p>如果客户端需要检测错误，并且您已使用创建了一个简单的错误<a href="https://golang.org/pkg/errors/#New"><code>errors.New</code></a>，请使用一个错误变量。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// package foo
+</span><span class="c1"></span>
+<span class="kd">func</span> <span class="nf">Open</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;could not open&#34;</span><span class="p">)</span>
+<span class="p">}</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="c1">// package bar
+</span><span class="c1"></span>
+<span class="kd">func</span> <span class="nf">use</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">foo</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#34;could not open&#34;</span> <span class="p">{</span>
+      <span class="c1">// handle
+</span><span class="c1"></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;unknown error&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// package foo
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">ErrCouldNotOpen</span> <span class="p">=</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;could not open&#34;</span><span class="p">)</span>
 
-```go
-// package foo
+<span class="kd">func</span> <span class="nf">Open</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">ErrCouldNotOpen</span>
+<span class="p">}</span>
 
-func Open() error {
-  return errors.New("could not open")
-}
-
-// package bar
-
-func use() {
-  if err := foo.Open(); err != nil {
-    if err.Error() == "could not open" {
-      // handle
-    } else {
-      panic("unknown error")
-    }
-  }
-}
-```
-
-</td><td>
-
-```go
-// package foo
-
-var ErrCouldNotOpen = errors.New("could not open")
-
-func Open() error {
-  return ErrCouldNotOpen
-}
-
-// package bar
-
-if err := foo.Open(); err != nil {
-  if err == foo.ErrCouldNotOpen {
-    // handle
-  } else {
-    panic("unknown error")
-  }
-}
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="c1">// package bar
+</span><span class="c1"></span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">foo</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nx">err</span> <span class="o">==</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">ErrCouldNotOpen</span> <span class="p">{</span>
+    <span class="c1">// handle
+</span><span class="c1"></span>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;unknown error&#34;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>如果您有可能需要客户端检测的错误，并且想向其中添加更多信息（例如，它不是静态字符串），则应使用自定义类型。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">open</span><span class="p">(</span><span class="nx">file</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;file %q not found&#34;</span><span class="p">,</span> <span class="nx">file</span><span class="p">)</span>
+<span class="p">}</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="kd">func</span> <span class="nf">use</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">open</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">(),</span> <span class="s">&#34;not found&#34;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// handle
+</span><span class="c1"></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;unknown error&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">errNotFound</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">file</span> <span class="kt">string</span>
+<span class="p">}</span>
 
-```go
-func open(file string) error {
-  return fmt.Errorf("file %q not found", file)
-}
+<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">errNotFound</span><span class="p">)</span> <span class="nf">Error</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;file %q not found&#34;</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">file</span><span class="p">)</span>
+<span class="p">}</span>
 
-func use() {
-  if err := open(); err != nil {
-    if strings.Contains(err.Error(), "not found") {
-      // handle
-    } else {
-      panic("unknown error")
-    }
-  }
-}
-```
+<span class="kd">func</span> <span class="nf">open</span><span class="p">(</span><span class="nx">file</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">errNotFound</span><span class="p">{</span><span class="nx">file</span><span class="p">:</span> <span class="nx">file</span><span class="p">}</span>
+<span class="p">}</span>
 
-</td><td>
-
-```go
-type errNotFound struct {
-  file string
-}
-
-func (e errNotFound) Error() string {
-  return fmt.Sprintf("file %q not found", e.file)
-}
-
-func open(file string) error {
-  return errNotFound{file: file}
-}
-
-func use() {
-  if err := open(); err != nil {
-    if _, ok := err.(errNotFound); ok {
-      // handle
-    } else {
-      panic("unknown error")
-    }
-  }
-}
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="kd">func</span> <span class="nf">use</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">open</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">err</span><span class="p">.(</span><span class="nx">errNotFound</span><span class="p">);</span> <span class="nx">ok</span> <span class="p">{</span>
+      <span class="c1">// handle
+</span><span class="c1"></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;unknown error&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>直接导出自定义错误类型时要小心，因为它们已成为程序包公共API的一部分。最好公开匹配器功能以检查错误。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1211,509 +1315,657 @@ func use() {
 </span><span class="c1"></span>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;unknown error&#34;</span><span class="p">)</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<!-- TODO: Exposing the information to callers with accessor functions. -->
-
-<h3 id="错误包装-error-wrapping">错误包装(Error Wrapping)</h3>
-
+</div><!-- raw HTML omitted -->
+<h3 id="错误包装error-wrapping">错误包装(Error Wrapping)</h3>
 <p>一个(函数/方法)调用失败时，有三种主要的错误传播方式：</p>
-
 <ul>
 <li>如果没有要添加的其他上下文，并且您想要维护原始错误类型，则返回原始错误。</li>
 <li>添加上下文，使用 <a href="https://godoc.org/github.com/pkg/errors#Wrap"><code>&quot;pkg/errors&quot;.Wrap</code></a> 以便错误消息提供更多上下文 ,<a href="https://godoc.org/github.com/pkg/errors#Cause"><code>&quot;pkg/errors&quot;.Cause</code></a> 可用于提取原始错误。</li>
 <li>使用<a href="https://golang.org/pkg/fmt/#Errorf"><code>fmt.Errorf</code></a> ，如果调用者不需要检测或处理的特定错误情况。  specific error case.</li>
 </ul>
-
 <p>建议在可能的地方添加上下文，以使您获得诸如“调用服务foo：连接被拒绝”之类的更有用的错误，而不是诸如“连接被拒绝”之类的模糊错误。</p>
-
 <p>在将上下文添加到返回的错误时，请避免使用“failed to”之类的短语来保持上下文简洁，这些短语会陈述明显的内容，并随着错误在堆栈中的渗透而逐渐堆积：</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-s, err := store.New()
-if err != nil {
-    return fmt.Errorf(
-        "failed to create new store: %s", err)
-}
-```
-
-</td><td>
-
-```go
-s, err := store.New()
-if err != nil {
-    return fmt.Errorf(
-        "new store: %s", err)
-}
-```
-
-<tr><td>
-
-```
-failed to x: failed to y: failed to create new store: the error
-```
-
-</td><td>
-
-```
-x: y: new store: the error
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">s</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">store</span><span class="p">.</span><span class="nf">New</span><span class="p">()</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span>
+        <span class="s">&#34;failed to create new store: %s&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">s</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">store</span><span class="p">.</span><span class="nf">New</span><span class="p">()</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span>
+        <span class="s">&#34;new store: %s&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">failed to x: failed to y: failed to create new store: the error
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">x: y: new store: the error
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>但是，一旦将错误发送到另一个系统，就应该明确消息是错误消息（例如使用<code>err</code>标记，或在日志中以”Failed”为前缀）。</p>
-
 <p>另请参见 <a href="https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully">Don&rsquo;t just check errors, handle them gracefully</a>.不要只是检查错误，要优雅地处理错误</p>
-
 <h3 id="处理类型断言失败">处理类型断言失败</h3>
-
 <p><a href="https://golang.org/ref/spec#Type_assertions">type assertion</a>的单个返回值形式针对不正确的类型将产生panic。因此，请始终使用“comma ok”的惯用法。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-t := i.(string)
-```
-
-</td><td>
-
-```go
-t, ok := i.(string)
-if !ok {
-  // 优雅地处理错误
-}
-```
-
-</td></tr>
-</tbody></table>
-
-<!-- TODO: There are a few situations where the single assignment form is
-fine. -->
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">t</span> <span class="o">:=</span> <span class="nx">i</span><span class="p">.(</span><span class="kt">string</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">t</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">i</span><span class="p">.(</span><span class="kt">string</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">!</span><span class="nx">ok</span> <span class="p">{</span>
+  <span class="c1">// 优雅地处理错误
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h3 id="不要panic">不要panic</h3>
-
 <p>在生产环境中运行的代码必须避免出现panic。panic是<a href="https://en.wikipedia.org/wiki/Cascading_failure">cascading failures</a>级联失败的主要根源 。如果发生错误，该函数必须返回错误，并允许调用方决定如何处理它。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">bar</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">bar</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+    <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;bar must not be empty&#34;</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;USAGE: foo &lt;bar&gt;&#34;</span><span class="p">)</span>
+    <span class="nx">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nf">foo</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">bar</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">bar</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;bar must not be empty&#34;</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="c1">// ...
+</span><span class="c1"></span>  <span class="k">return</span> <span class="kc">nil</span>
+<span class="p">}</span>
 
-```go
-func foo(bar string) {
-  if len(bar) == 0 {
-    panic("bar must not be empty")
-  }
-  // ...
-}
-
-func main() {
-  if len(os.Args) != 2 {
-    fmt.Println("USAGE: foo <bar>")
-    os.Exit(1)
-  }
-  foo(os.Args[1])
-}
-```
-
-</td><td>
-
-```go
-func foo(bar string) error {
-  if len(bar) == 0
-    return errors.New("bar must not be empty")
-  }
-  // ...
-  return nil
-}
-
-func main() {
-  if len(os.Args) != 2 {
-    fmt.Println("USAGE: foo <bar>")
-    os.Exit(1)
-  }
-  if err := foo(os.Args[1]); err != nil {
-    panic(err)
-  }
-}
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;USAGE: foo &lt;bar&gt;&#34;</span><span class="p">)</span>
+    <span class="nx">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>panic/recover不是错误处理策略。仅当发生不可恢复的事情（例如:nil引用）时，程序才必须panic。程序初始化是一个例外：程序启动时应使程序中止的不良情况可能会引起panic。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">_statusTemplate</span> <span class="p">=</span> <span class="nx">template</span><span class="p">.</span><span class="nf">Must</span><span class="p">(</span><span class="nx">template</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">).</span><span class="nf">Parse</span><span class="p">(</span><span class="s">&#34;_statusHTML&#34;</span><span class="p">))</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">_statusTemplate</span> <span class="p">=</span> <span class="nx">template</span><span class="p">.</span><span class="nf">Must</span><span class="p">(</span><span class="nx">template</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">).</span><span class="nf">Parse</span><span class="p">(</span><span class="s">&#34;_statusHTML&#34;</span><span class="p">))</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>Even in tests, prefer <code>t.Fatal</code> or <code>t.FailNow</code> over panics to ensure that the
+</div><p>Even in tests, prefer <code>t.Fatal</code> or <code>t.FailNow</code> over panics to ensure that the
 test is marked as failed.</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-// func TestFoo(t *testing.T)
-
-f, err := ioutil.TempFile("", "test")
-if err != nil {
-  panic("failed to set up test")
-}
-```
-
-</td><td>
-
-```go
-// func TestFoo(t *testing.T)
-
-f, err := ioutil.TempFile("", "test")
-if err != nil {
-  t.Fatal("failed to set up test")
-}
-```
-
-</td></tr>
-</tbody></table>
-
-<!-- TODO: Explain how to use _test packages. -->
-
-<h3 id="使用go-uber-org-atomic">使用go.uber.org/atomic</h3>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// func TestFoo(t *testing.T)
+</span><span class="c1"></span>
+<span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">TempFile</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="s">&#34;test&#34;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+  <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;failed to set up test&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// func TestFoo(t *testing.T)
+</span><span class="c1"></span>
+<span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">TempFile</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="s">&#34;test&#34;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+  <span class="nx">t</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;failed to set up test&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="使用gouberorgatomic">使用go.uber.org/atomic</h3>
 <p>使用<a href="https://golang.org/pkg/sync/atomic/">sync/atomic</a>包的原子操作对原始类型(<code>int32</code>, <code>int64</code>等)进行操作，因此很容易忘记使用原子操作来读取或修改变量。</p>
-
 <p><a href="https://godoc.org/go.uber.org/atomic">go.uber.org/atomic</a>通过隐藏基础类型为这些操作增加了类型安全性。此外，它包括一个方便的<code>atomic.Bool</code>类型。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">foo</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">running</span> <span class="kt">int32</span>  <span class="c1">// atomic
+</span><span class="c1"></span><span class="p">}</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">f</span><span class="o">*</span> <span class="nx">foo</span><span class="p">)</span> <span class="nf">start</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nx">atomic</span><span class="p">.</span><span class="nf">SwapInt32</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">f</span><span class="p">.</span><span class="nx">running</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+     <span class="c1">// already running…
+</span><span class="c1"></span>     <span class="k">return</span>
+  <span class="p">}</span>
+  <span class="c1">// start the Foo
+</span><span class="c1"></span><span class="p">}</span>
 
-```go
-type foo struct {
-  running int32  // atomic
-}
+<span class="kd">func</span> <span class="p">(</span><span class="nx">f</span> <span class="o">*</span><span class="nx">foo</span><span class="p">)</span> <span class="nf">isRunning</span><span class="p">()</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">f</span><span class="p">.</span><span class="nx">running</span> <span class="o">==</span> <span class="mi">1</span>  <span class="c1">// race!
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">foo</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">running</span> <span class="nx">atomic</span><span class="p">.</span><span class="nx">Bool</span>
+<span class="p">}</span>
 
-func (f* foo) start() {
-  if atomic.SwapInt32(&f.running, 1) == 1 {
-     // already running…
-     return
-  }
-  // start the Foo
-}
+<span class="kd">func</span> <span class="p">(</span><span class="nx">f</span> <span class="o">*</span><span class="nx">foo</span><span class="p">)</span> <span class="nf">start</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nx">f</span><span class="p">.</span><span class="nx">running</span><span class="p">.</span><span class="nf">Swap</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// already running…
+</span><span class="c1"></span>     <span class="k">return</span>
+  <span class="p">}</span>
+  <span class="c1">// start the Foo
+</span><span class="c1"></span><span class="p">}</span>
 
-func (f *foo) isRunning() bool {
-  return f.running == 1  // race!
-}
-```
-
-</td><td>
-
-```go
-type foo struct {
-  running atomic.Bool
-}
-
-func (f *foo) start() {
-  if f.running.Swap(true) {
-     // already running…
-     return
-  }
-  // start the Foo
-}
-
-func (f *foo) isRunning() bool {
-  return f.running.Load()
-}
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="kd">func</span> <span class="p">(</span><span class="nx">f</span> <span class="o">*</span><span class="nx">foo</span><span class="p">)</span> <span class="nf">isRunning</span><span class="p">()</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">f</span><span class="p">.</span><span class="nx">running</span><span class="p">.</span><span class="nf">Load</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h2 id="性能">性能</h2>
-
 <p>性能方面的特定准则，适用于热路径。</p>
-
 <h3 id="优先使用strconv而不是fmt">优先使用strconv而不是fmt</h3>
-
 <p>将原语转换为字符串或从字符串转换时，<code>strconv</code>速度比<code>fmt</code>快。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-for i := 0; i < b.N; i++ {
-  s := fmt.Sprint(rand.Int())
-}
-```
-
-</td><td>
-
-```go
-for i := 0; i < b.N; i++ {
-  s := strconv.Itoa(rand.Int())
-}
-```
-
-</td></tr>
-<tr><td>
-
-```
-BenchmarkFmtSprint-4    143 ns/op    2 allocs/op
-```
-
-</td><td>
-
-```
-BenchmarkStrconv-4    64.2 ns/op    1 allocs/op
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+  <span class="nx">s</span> <span class="o">:=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprint</span><span class="p">(</span><span class="nx">rand</span><span class="p">.</span><span class="nf">Int</span><span class="p">())</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+  <span class="nx">s</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Itoa</span><span class="p">(</span><span class="nx">rand</span><span class="p">.</span><span class="nf">Int</span><span class="p">())</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">BenchmarkFmtSprint-4    143 ns/op    2 allocs/op
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">BenchmarkStrconv-4    64.2 ns/op    1 allocs/op
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="避免字符串到字节的转换">避免字符串到字节的转换</h3>
-
 <p>不要反复从固定字符串创建字节slice。相反，请执行一次转换并捕获结果。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-for i := 0; i < b.N; i++ {
-  w.Write([]byte("Hello world"))
-}
-```
-
-</td><td>
-
-```go
-data := []byte("Hello world")
-for i := 0; i < b.N; i++ {
-  w.Write(data)
-}
-```
-
-</tr>
-<tr><td>
-
-```
-BenchmarkBad-4   50000000   22.2 ns/op
-```
-
-</td><td>
-
-```
-BenchmarkGood-4  500000000   3.25 ns/op
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+  <span class="nx">w</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;Hello world&#34;</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">data</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;Hello world&#34;</span><span class="p">)</span>
+<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+  <span class="nx">w</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">BenchmarkBad-4   50000000   22.2 ns/op
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">BenchmarkGood-4  500000000   3.25 ns/op
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h2 id="规范">规范</h2>
-
 <h3 id="相似的声明放在一组">相似的声明放在一组</h3>
-
 <p>Go语言支持将相似的声明放在一个组内.</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-import "a"
-import "b"
-```
-
-</td><td>
-
-```go
-import (
-  "a"
-  "b"
-)
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="s">&#34;a&#34;</span>
+<span class="kn">import</span> <span class="s">&#34;b&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;a&#34;</span>
+  <span class="s">&#34;b&#34;</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>这同样适用于常量、变量和类型声明：</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">
+<span class="kd">const</span> <span class="nx">a</span> <span class="p">=</span> <span class="mi">1</span>
+<span class="kd">const</span> <span class="nx">b</span> <span class="p">=</span> <span class="mi">2</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
 
-```go
 
-const a = 1
-const b = 2
+<span class="kd">var</span> <span class="nx">a</span> <span class="p">=</span> <span class="mi">1</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="p">=</span> <span class="mi">2</span>
 
 
 
-var a = 1
-var b = 2
+<span class="kd">type</span> <span class="nx">Area</span> <span class="kt">float64</span>
+<span class="kd">type</span> <span class="nx">Volume</span> <span class="kt">float64</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">a</span> <span class="p">=</span> <span class="mi">1</span>
+  <span class="nx">b</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="p">)</span>
 
+<span class="kd">var</span> <span class="p">(</span>
+  <span class="nx">a</span> <span class="p">=</span> <span class="mi">1</span>
+  <span class="nx">b</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="p">)</span>
 
-
-type Area float64
-type Volume float64
-```
-
-</td><td>
-
-```go
-const (
-  a = 1
-  b = 2
-)
-
-var (
-  a = 1
-  b = 2
-)
-
-type (
-  Area float64
-  Volume float64
-)
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="kd">type</span> <span class="p">(</span>
+  <span class="nx">Area</span> <span class="kt">float64</span>
+  <span class="nx">Volume</span> <span class="kt">float64</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>仅将相关的声明放在一组。不要将不相关的声明放在一组。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Operation</span> <span class="kt">int</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">Add</span> <span class="nx">Operation</span> <span class="p">=</span> <span class="kc">iota</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="nx">Subtract</span>
+  <span class="nx">Multiply</span>
+  <span class="nx">ENV_VAR</span> <span class="p">=</span> <span class="s">&#34;MY_ENV&#34;</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Operation</span> <span class="kt">int</span>
 
-```go
-type Operation int
+<span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">Add</span> <span class="nx">Operation</span> <span class="p">=</span> <span class="kc">iota</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="nx">Subtract</span>
+  <span class="nx">Multiply</span>
+<span class="p">)</span>
 
-const (
-  Add Operation = iota + 1
-  Subtract
-  Multiply
-  ENV_VAR = "MY_ENV"
-)
-```
-
-</td><td>
-
-```go
-type Operation int
-
-const (
-  Add Operation = iota + 1
-  Subtract
-  Multiply
-)
-
-const ENV_VAR = "MY_ENV"
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="kd">const</span> <span class="nx">ENV_VAR</span> <span class="p">=</span> <span class="s">&#34;MY_ENV&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>分组使用的位置没有限制，例如：你可以在函数内部使用它们：</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">f</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">red</span> <span class="p">=</span> <span class="nx">color</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mh">0xff0000</span><span class="p">)</span>
+  <span class="kd">var</span> <span class="nx">green</span> <span class="p">=</span> <span class="nx">color</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mh">0x00ff00</span><span class="p">)</span>
+  <span class="kd">var</span> <span class="nx">blue</span> <span class="p">=</span> <span class="nx">color</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mh">0x0000ff</span><span class="p">)</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+  <span class="o">...</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">f</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="p">(</span>
+    <span class="nx">red</span>   <span class="p">=</span> <span class="nx">color</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mh">0xff0000</span><span class="p">)</span>
+    <span class="nx">green</span> <span class="p">=</span> <span class="nx">color</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mh">0x00ff00</span><span class="p">)</span>
+    <span class="nx">blue</span>  <span class="p">=</span> <span class="nx">color</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mh">0x0000ff</span><span class="p">)</span>
+  <span class="p">)</span>
 
-```go
-func f() string {
-  var red = color.New(0xff0000)
-  var green = color.New(0x00ff00)
-  var blue = color.New(0x0000ff)
-
-  ...
-}
-```
-
-</td><td>
-
-```go
-func f() string {
-  var (
-    red   = color.New(0xff0000)
-    green = color.New(0x00ff00)
-    blue  = color.New(0x0000ff)
-  )
-
-  ...
-}
-```
-
-</td></tr>
-</tbody></table>
-
+  <span class="o">...</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="import组内的包导入顺序">import组内的包导入顺序</h3>
-
 <p>应该有两类导入组：</p>
-
 <ul>
 <li>标准库</li>
 <li>其他一切</li>
 </ul>
-
 <p>默认情况下，这是goimports应用的分组。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;fmt&#34;</span>
+  <span class="s">&#34;os&#34;</span>
+  <span class="s">&#34;go.uber.org/atomic&#34;</span>
+  <span class="s">&#34;golang.org/x/sync/errgroup&#34;</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;fmt&#34;</span>
+  <span class="s">&#34;os&#34;</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-import (
-  "fmt"
-  "os"
-  "go.uber.org/atomic"
-  "golang.org/x/sync/errgroup"
-)
-```
-
-</td><td>
-
-```go
-import (
-  "fmt"
-  "os"
-
-  "go.uber.org/atomic"
-  "golang.org/x/sync/errgroup"
-)
-```
-
-</td></tr>
-</tbody></table>
-
+  <span class="s">&#34;go.uber.org/atomic&#34;</span>
+  <span class="s">&#34;golang.org/x/sync/errgroup&#34;</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="包名">包名</h3>
-
 <p>当命名包时，请按下面规则选择一个名称：</p>
-
 <ul>
 <li>全部小写。没有大写或下划线。</li>
 <li>大多数使用命名导入的情况下，不需要重命名。</li>
@@ -1721,19 +1973,14 @@ import (
 <li>不用复数。例如<code>net/url</code>，而不是<code>net/urls</code>。</li>
 <li>不要用“common”，“util”，“shared”或“lib”。这些是不好的，信息量不足的名称。</li>
 </ul>
-
 <p>另请参阅 <a href="https://blog.golang.org/package-names">Package Names</a> 和 <a href="https://rakyll.org/style-packages/">Go包样式指南</a>.</p>
-
 <h3 id="函数名">函数名</h3>
-
 <p>我们遵循Go社区关于使用<a href="https://golang.org/doc/effective_go.html#mixed-caps">MixedCaps作为函数名</a>的约定。有一个例外，为了对相关的测试用例进行分组，函数名可能包含下划线，如: <code>TestMyFunction_WhatIsBeingTested</code>.</p>
-
 <h3 id="导入别名">导入别名</h3>
-
 <p>如果程序包名称与导入路径的最后一个元素不匹配，则必须使用导入别名。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1746,202 +1993,267 @@ import (
 
   <span class="nx">client</span> <span class="s">&#34;example.com/client-go&#34;</span>
   <span class="nx">trace</span> <span class="s">&#34;example.com/trace/v2&#34;</span>
-<span class="p">)</span></code></pre></td></tr></table>
+<span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
+</div><p>在所有其他情况下，除非导入之间有直接冲突，否则应避免导入别名。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;fmt&#34;</span>
+  <span class="s">&#34;os&#34;</span>
+
+
+  <span class="nx">nettrace</span> <span class="s">&#34;golang.net/x/trace&#34;</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
-<p>在所有其他情况下，除非导入之间有直接冲突，否则应避免导入别名。</p>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;fmt&#34;</span>
+  <span class="s">&#34;os&#34;</span>
+  <span class="s">&#34;runtime/trace&#34;</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-import (
-  "fmt"
-  "os"
-
-
-  nettrace "golang.net/x/trace"
-)
-```
-
-</td><td>
-
-```go
-import (
-  "fmt"
-  "os"
-  "runtime/trace"
-
-  nettrace "golang.net/x/trace"
-)
-```
-
-</td></tr>
-</tbody></table>
-
+  <span class="nx">nettrace</span> <span class="s">&#34;golang.net/x/trace&#34;</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="函数分组与顺序">函数分组与顺序</h3>
-
 <ul>
 <li>函数应按粗略的调用顺序排序。</li>
 <li>同一文件中的函数应按接收者分组。</li>
 </ul>
-
 <p>因此，导出的函数应先出现在文件中，放在<code>struct</code>, <code>const</code>, <code>var</code>定义的后面。</p>
-
 <p>在定义类型之后，但在接收者的其余方法之前，可能会出现一个 <code>newXYZ()</code>/<code>NewXYZ()</code></p>
-
 <p>由于函数是按接收者分组的，因此普通工具函数应在文件末尾出现。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">something</span><span class="p">)</span> <span class="nf">Cost</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">calcCost</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">weights</span><span class="p">)</span>
+<span class="p">}</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="kd">type</span> <span class="nx">something</span> <span class="kd">struct</span><span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 
-```go
-func (s *something) Cost() {
-  return calcCost(s.weights)
-}
+<span class="kd">func</span> <span class="nf">calcCost</span><span class="p">(</span><span class="nx">n</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
 
-type something struct{ ... }
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">something</span><span class="p">)</span> <span class="nf">Stop</span><span class="p">()</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
 
-func calcCost(n []int) int {...}
+<span class="kd">func</span> <span class="nf">newSomething</span><span class="p">()</span> <span class="o">*</span><span class="nx">something</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="nx">something</span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">something</span> <span class="kd">struct</span><span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 
-func (s *something) Stop() {...}
+<span class="kd">func</span> <span class="nf">newSomething</span><span class="p">()</span> <span class="o">*</span><span class="nx">something</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="nx">something</span><span class="p">{}</span>
+<span class="p">}</span>
 
-func newSomething() *something {
-    return &something{}
-}
-```
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">something</span><span class="p">)</span> <span class="nf">Cost</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">calcCost</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">weights</span><span class="p">)</span>
+<span class="p">}</span>
 
-</td><td>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">something</span><span class="p">)</span> <span class="nf">Stop</span><span class="p">()</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
 
-```go
-type something struct{ ... }
-
-func newSomething() *something {
-    return &something{}
-}
-
-func (s *something) Cost() {
-  return calcCost(s.weights)
-}
-
-func (s *something) Stop() {...}
-
-func calcCost(n []int) int {...}
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="kd">func</span> <span class="nf">calcCost</span><span class="p">(</span><span class="nx">n</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="减少嵌套">减少嵌套</h3>
-
 <p>代码应通过尽可能先处理错误情况/特殊情况并尽早返回或继续循环来减少嵌套。减少嵌套多个级别的代码的代码量。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">data</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nx">v</span><span class="p">.</span><span class="nx">F1</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="nx">v</span> <span class="p">=</span> <span class="nf">process</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">v</span><span class="p">.</span><span class="nf">Call</span><span class="p">();</span> <span class="nx">err</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+      <span class="nx">v</span><span class="p">.</span><span class="nf">Send</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">err</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Invalid v: %v&#34;</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">data</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="nx">v</span><span class="p">.</span><span class="nx">F1</span> <span class="o">!=</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Invalid v: %v&#34;</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+    <span class="k">continue</span>
+  <span class="p">}</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-for _, v := range data {
-  if v.F1 == 1 {
-    v = process(v)
-    if err := v.Call(); err == nil {
-      v.Send()
-    } else {
-      return err
-    }
-  } else {
-    log.Printf("Invalid v: %v", v)
-  }
-}
-```
-
-</td><td>
-
-```go
-for _, v := range data {
-  if v.F1 != 1 {
-    log.Printf("Invalid v: %v", v)
-    continue
-  }
-
-  v = process(v)
-  if err := v.Call(); err != nil {
-    return err
-  }
-  v.Send()
-}
-```
-
-</td></tr>
-</tbody></table>
-
+  <span class="nx">v</span> <span class="p">=</span> <span class="nf">process</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+  <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">v</span><span class="p">.</span><span class="nf">Call</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">err</span>
+  <span class="p">}</span>
+  <span class="nx">v</span><span class="p">.</span><span class="nf">Send</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="不必要的else">不必要的else</h3>
-
 <p>如果在if的两个分支中都设置了变量，则可以将其替换为单个if。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-var a int
-if b {
-  a = 100
-} else {
-  a = 10
-}
-```
-
-</td><td>
-
-```go
-a := 10
-if b {
-  a = 100
-}
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">a</span> <span class="kt">int</span>
+<span class="k">if</span> <span class="nx">b</span> <span class="p">{</span>
+  <span class="nx">a</span> <span class="p">=</span> <span class="mi">100</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">a</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">a</span> <span class="o">:=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="nx">b</span> <span class="p">{</span>
+  <span class="nx">a</span> <span class="p">=</span> <span class="mi">100</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="顶层变量声明">顶层变量声明</h3>
-
 <p>在顶层，使用标准<code>var</code>关键字。请勿指定类型，除非它与表达式的类型不同。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">_s</span> <span class="kt">string</span> <span class="p">=</span> <span class="nf">F</span><span class="p">()</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-var _s string = F()
-
-func F() string { return "A" }
-```
-
-</td><td>
-
-```go
-var _s = F()
-// 由于F已经明确了返回一个字符串类型，因此我们没有必要显式指定_s的类型
-// 还是那种类型
-
-func F() string { return "A" }
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="kd">func</span> <span class="nf">F</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;A&#34;</span> <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">_s</span> <span class="p">=</span> <span class="nf">F</span><span class="p">()</span>
+<span class="c1">// 由于F已经明确了返回一个字符串类型，因此我们没有必要显式指定_s的类型
+</span><span class="c1">// 还是那种类型
+</span><span class="c1"></span>
+<span class="kd">func</span> <span class="nf">F</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;A&#34;</span> <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>如果表达式的类型与所需的类型不完全匹配，请指定类型。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1958,115 +2270,142 @@ func F() string { return "A" }
 <span class="kd">func</span> <span class="nf">F</span><span class="p">()</span> <span class="nx">myError</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">myError</span><span class="p">{}</span> <span class="p">}</span>
 
 <span class="kd">var</span> <span class="nx">_e</span> <span class="kt">error</span> <span class="p">=</span> <span class="nf">F</span><span class="p">()</span>
-<span class="o">//</span> <span class="nx">F返回一个myError类型的实例</span><span class="err">，</span><span class="nx">但是我们要error类型</span></code></pre></td></tr></table>
+<span class="c1">// F返回一个myError类型的实例，但是我们要error类型
+</span></code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="对于未导出的顶层常量和变量-使用-作为前缀">对于未导出的顶层常量和变量，使用_作为前缀</h3>
-
+</div><h3 id="对于未导出的顶层常量和变量使用_作为前缀">对于未导出的顶层常量和变量，使用_作为前缀</h3>
 <p>在未导出的顶级<code>vars</code>和<code>consts</code>， 前面加上前缀_，以使它们在使用时明确表示它们是全局符号。</p>
-
 <p>例外：未导出的错误值，应以<code>err</code>开头。</p>
-
 <p>基本依据：顶级变量和常量具有包范围作用域。使用通用名称可能很容易在其他文件中意外使用错误的值。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// foo.go
+</span><span class="c1"></span>
+<span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">defaultPort</span> <span class="p">=</span> <span class="mi">8080</span>
+  <span class="nx">defaultUser</span> <span class="p">=</span> <span class="s">&#34;user&#34;</span>
+<span class="p">)</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="c1">// bar.go
+</span><span class="c1"></span>
+<span class="kd">func</span> <span class="nf">Bar</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">defaultPort</span> <span class="o">:=</span> <span class="mi">9090</span>
+  <span class="o">...</span>
+  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Default port&#34;</span><span class="p">,</span> <span class="nx">defaultPort</span><span class="p">)</span>
 
-```go
-// foo.go
-
-const (
-  defaultPort = 8080
-  defaultUser = "user"
-)
-
-// bar.go
-
-func Bar() {
-  defaultPort := 9090
-  ...
-  fmt.Println("Default port", defaultPort)
-
-  // We will not see a compile error if the first line of
-  // Bar() is deleted.
-}
-```
-
-</td><td>
-
-```go
-// foo.go
-
-const (
-  _defaultPort = 8080
-  _defaultUser = "user"
-)
-```
-
-</td></tr>
-</tbody></table>
-
+  <span class="c1">// We will not see a compile error if the first line of
+</span><span class="c1"></span>  <span class="c1">// Bar() is deleted.
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// foo.go
+</span><span class="c1"></span>
+<span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">_defaultPort</span> <span class="p">=</span> <span class="mi">8080</span>
+  <span class="nx">_defaultUser</span> <span class="p">=</span> <span class="s">&#34;user&#34;</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="结构体中的嵌入">结构体中的嵌入</h3>
-
 <p>嵌入式类型（例如mutex）应位于结构体内的字段列表的顶部，并且必须有一个空行将嵌入式字段与常规字段分隔开。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Client</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">version</span> <span class="kt">int</span>
+  <span class="nx">http</span><span class="p">.</span><span class="nx">Client</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Client</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">http</span><span class="p">.</span><span class="nx">Client</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-type Client struct {
-  version int
-  http.Client
-}
-```
-
-</td><td>
-
-```go
-type Client struct {
-  http.Client
-
-  version int
-}
-```
-
-</td></tr>
-</tbody></table>
-
+  <span class="nx">version</span> <span class="kt">int</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="使用字段名初始化结构体">使用字段名初始化结构体</h3>
-
 <p>初始化结构体时，几乎始终应该指定字段名称。现在由<a href="https://golang.org/cmd/vet/"><code>go vet</code></a>强制执行。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-k := User{"John", "Doe", true}
-```
-
-</td><td>
-
-```go
-k := User{
-    FirstName: "John",
-    LastName: "Doe",
-    Admin: true,
-}
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">k</span> <span class="o">:=</span> <span class="nx">User</span><span class="p">{</span><span class="s">&#34;John&#34;</span><span class="p">,</span> <span class="s">&#34;Doe&#34;</span><span class="p">,</span> <span class="kc">true</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">k</span> <span class="o">:=</span> <span class="nx">User</span><span class="p">{</span>
+    <span class="nx">FirstName</span><span class="p">:</span> <span class="s">&#34;John&#34;</span><span class="p">,</span>
+    <span class="nx">LastName</span><span class="p">:</span> <span class="s">&#34;Doe&#34;</span><span class="p">,</span>
+    <span class="nx">Admin</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>例外：如果有3个或更少的字段，则可以在测试表中省略字段名称。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2081,152 +2420,147 @@ k := User{
 <span class="p">}{</span>
   <span class="p">{</span><span class="nx">Add</span><span class="p">,</span> <span class="s">&#34;add&#34;</span><span class="p">},</span>
   <span class="p">{</span><span class="nx">Subtract</span><span class="p">,</span> <span class="s">&#34;subtract&#34;</span><span class="p">},</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="本地变量声明">本地变量声明</h3>
-
+</div><h3 id="本地变量声明">本地变量声明</h3>
 <p>如果将变量明确设置为某个值，则应使用短变量声明形式 (<code>:=</code>)。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-var s = "foo"
-```
-
-</td><td>
-
-```go
-s := "foo"
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">s</span> <span class="p">=</span> <span class="s">&#34;foo&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">s</span> <span class="o">:=</span> <span class="s">&#34;foo&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>但是，在某些情况下，<code>var</code> 使用关键字时默认值会更清晰。例如，声明空切片。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-func f(list []int) {
-  filtered := []int{}
-  for _, v := range list {
-    if v > 10 {
-      filtered = append(filtered, v)
-    }
-  }
-}
-```
-
-</td><td>
-
-```go
-func f(list []int) {
-  var filtered []int
-  for _, v := range list {
-    if v > 10 {
-      filtered = append(filtered, v)
-    }
-  }
-}
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">f</span><span class="p">(</span><span class="nx">list</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">filtered</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
+  <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">list</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">v</span> <span class="p">&gt;</span> <span class="mi">10</span> <span class="p">{</span>
+      <span class="nx">filtered</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">filtered</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">f</span><span class="p">(</span><span class="nx">list</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">filtered</span> <span class="p">[]</span><span class="kt">int</span>
+  <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">list</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">v</span> <span class="p">&gt;</span> <span class="mi">10</span> <span class="p">{</span>
+      <span class="nx">filtered</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">filtered</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="nil是一个有效的slice">nil是一个有效的slice</h3>
-
 <p><code>nil</code> 是一个有效的长度为0的slice，这意味着,</p>
-
 <ul>
-<li>您不应明确返回长度为零的切片。返回<code>nil</code> 来代替。</li>
-</ul>
-
-<p><table>
-  <thead><tr><th>Bad</th><th>Good</th></tr></thead>
-  <tbody>
-  <tr><td></p>
+<li>
+<p>您不应明确返回长度为零的切片。返回<code>nil</code> 来代替。</p>
+<!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="k">if</span> <span class="nx">x</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">if</span> <span class="nx">x</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p></td><td></p>
+</div><!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="k">if</span> <span class="nx">x</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kc">nil</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">if</span> <span class="nx">x</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">nil</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p></td></tr>
-  </tbody></table></p>
-
-<ul>
-<li>要检查切片是否为空，请始终使用<code>len(s) == 0</code>。不要检查 <code>nil</code>。</li>
-</ul>
-
-<p><table>
-  <thead><tr><th>Bad</th><th>Good</th></tr></thead>
-  <tbody>
-  <tr><td></p>
+</div><!-- raw HTML omitted -->
+</li>
+<li>
+<p>要检查切片是否为空，请始终使用<code>len(s) == 0</code>。不要检查 <code>nil</code>。</p>
+<!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="kd">func</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="nx">s</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">s</span> <span class="o">==</span> <span class="kc">nil</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="nx">s</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">s</span> <span class="o">==</span> <span class="kc">nil</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p></td><td></p>
+</div><!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="kd">func</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="nx">s</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="nx">s</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p></td></tr>
-  </tbody></table></p>
-
-<ul>
-<li>零值切片(用<code>var</code>声明的切片)可立即使用，无需调用<code>make()</code>创建。</li>
-</ul>
-
-<p><table>
-  <thead><tr><th>Bad</th><th>Good</th></tr></thead>
-  <tbody>
-  <tr><td></p>
+</div><!-- raw HTML omitted -->
+</li>
+<li>
+<p>零值切片(用<code>var</code>声明的切片)可立即使用，无需调用<code>make()</code>创建。</p>
+<!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2238,22 +2572,22 @@ func f(list []int) {
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="nx">nums</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
-  <span class="c1">// or, nums := make([]int)
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">nums</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
+<span class="c1">// or, nums := make([]int)
 </span><span class="c1"></span>
-  <span class="k">if</span> <span class="nx">add1</span> <span class="p">{</span>
-    <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-  <span class="p">}</span>
+<span class="k">if</span> <span class="nx">add1</span> <span class="p">{</span>
+  <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
 
-  <span class="k">if</span> <span class="nx">add2</span> <span class="p">{</span>
-    <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<span class="k">if</span> <span class="nx">add2</span> <span class="p">{</span>
+  <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p></td><td></p>
+</div><!-- raw HTML omitted -->
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2264,117 +2598,144 @@ func f(list []int) {
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="kd">var</span> <span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span>
 
-  <span class="k">if</span> <span class="nx">add1</span> <span class="p">{</span>
-    <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">if</span> <span class="nx">add1</span> <span class="p">{</span>
+  <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="nx">add2</span> <span class="p">{</span>
+  <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+</li>
+</ul>
+<h3 id="小变量作用域">小变量作用域</h3>
+<p>如果有可能，尽量缩小变量作用范围。除非它与<a href="#%E5%87%8F%E5%B0%91%E5%B5%8C%E5%A5%97">减少嵌套</a>的规则冲突。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">WriteFile</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="mo">0644</span><span class="p">)</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="nx">err</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">WriteFile</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="mo">0644</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="nx">err</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<p>如果需要在if之外使用函数调用的结果，则不应尝试缩小范围。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">if</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadFile</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span> <span class="nx">err</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+  <span class="nx">err</span> <span class="p">=</span> <span class="nx">cfg</span><span class="p">.</span><span class="nf">Decode</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+  <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">err</span>
   <span class="p">}</span>
 
-  <span class="k">if</span> <span class="nx">add2</span> <span class="p">{</span>
-    <span class="nx">nums</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">cfg</span><span class="p">)</span>
+  <span class="k">return</span> <span class="kc">nil</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">err</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">data</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadFile</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">err</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">cfg</span><span class="p">.</span><span class="nf">Decode</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">err</span>
+<span class="p">}</span>
+
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">cfg</span><span class="p">)</span>
+<span class="k">return</span> <span class="kc">nil</span>
+</code></pre></td></tr></table>
 </div>
-<p></td></tr>
-  </tbody></table></p>
-
-<h3 id="小变量作用域">小变量作用域</h3>
-
-<p>如果有可能，尽量缩小变量作用范围。除非它与<a href="#减少嵌套">减少嵌套</a>的规则冲突。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-err := ioutil.WriteFile(name, data, 0644)
-if err != nil {
- return err
-}
-```
-
-</td><td>
-
-```go
-if err := ioutil.WriteFile(name, data, 0644); err != nil {
- return err
-}
-```
-
-</td></tr>
-</tbody></table>
-
-<p>如果需要在if之外使用函数调用的结果，则不应尝试缩小范围。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-if data, err := ioutil.ReadFile(name); err == nil {
-  err = cfg.Decode(data)
-  if err != nil {
-    return err
-  }
-
-  fmt.Println(cfg)
-  return nil
-} else {
-  return err
-}
-```
-
-</td><td>
-
-```go
-data, err := ioutil.ReadFile(name)
-if err != nil {
-   return err
-}
-
-if err := cfg.Decode(data); err != nil {
-  return err
-}
-
-fmt.Println(cfg)
-return nil
-```
-
-</td></tr>
-</tbody></table>
-
+</div><!-- raw HTML omitted -->
 <h3 id="避免裸参数">避免裸参数</h3>
-
 <p>函数调用中的裸参数可能会损害可读性。当参数名称的含义不明显时，请为参数添加C样式注释(<code>/* ... */</code>)</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-// func printInfo(name string, isLocal, done bool)
-
-printInfo("foo", true, true)
-```
-
-</td><td>
-
-```go
-// func printInfo(name string, isLocal, done bool)
-
-printInfo("foo", true /* isLocal */, true /* done */)
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// func printInfo(name string, isLocal, done bool)
+</span><span class="c1"></span>
+<span class="nf">printInfo</span><span class="p">(</span><span class="s">&#34;foo&#34;</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// func printInfo(name string, isLocal, done bool)
+</span><span class="c1"></span>
+<span class="nf">printInfo</span><span class="p">(</span><span class="s">&#34;foo&#34;</span><span class="p">,</span> <span class="kc">true</span> <span class="cm">/* isLocal */</span><span class="p">,</span> <span class="kc">true</span> <span class="cm">/* done */</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>更好的作法是，将裸<code>bool</code>类型替换为自定义类型，以获得更易读和类型安全的代码。将来，该参数不仅允许两个状态（true/false）。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2407,188 +2768,241 @@ printInfo("foo", true /* isLocal */, true /* done */)
   <span class="c1">// Maybe we will have a StatusInProgress in the future.
 </span><span class="c1"></span><span class="p">)</span>
 
-<span class="kd">func</span> <span class="nf">printInfo</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">region</span> <span class="nx">Region</span><span class="p">,</span> <span class="nx">status</span> <span class="nx">Status</span><span class="p">)</span></code></pre></td></tr></table>
+<span class="kd">func</span> <span class="nf">printInfo</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">region</span> <span class="nx">Region</span><span class="p">,</span> <span class="nx">status</span> <span class="nx">Status</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="使用原始字符串字面值-避免转义">使用原始字符串字面值，避免转义</h3>
-
+</div><h3 id="使用原始字符串字面值避免转义">使用原始字符串字面值，避免转义</h3>
 <p>Go支持<a href="https://golang.org/ref/spec#raw_string_lit">原始字符串字面值</a>，可以跨越多行并包含引号。使用这些字符串可以避免更难阅读的手工转义的字符串。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-wantError := "unknown name:\"test\""
-```
-
-</td><td>
-
-```go
-wantError := `unknown error:"test"`
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">wantError</span> <span class="o">:=</span> <span class="s">&#34;unknown name:\&#34;test\&#34;&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">wantError</span> <span class="o">:=</span> <span class="s">`unknown error:&#34;test&#34;`</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="初始化结构体引用">初始化结构体引用</h3>
-
 <p>在初始化结构引用时，请使用<code>&amp;T{}</code>代替<code>new(T)</code>，以使其与结构体初始化一致。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">sval</span> <span class="o">:=</span> <span class="nx">T</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;foo&#34;</span><span class="p">}</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="c1">// inconsistent
+</span><span class="c1"></span><span class="nx">sptr</span> <span class="o">:=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">T</span><span class="p">)</span>
+<span class="nx">sptr</span><span class="p">.</span><span class="nx">Name</span> <span class="p">=</span> <span class="s">&#34;bar&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">sval</span> <span class="o">:=</span> <span class="nx">T</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;foo&#34;</span><span class="p">}</span>
 
-```go
-sval := T{Name: "foo"}
-
-// inconsistent
-sptr := new(T)
-sptr.Name = "bar"
-```
-
-</td><td>
-
-```go
-sval := T{Name: "foo"}
-
-sptr := &T{Name: "bar"}
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="nx">sptr</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">T</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;bar&#34;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="格式化字符串放在printf外部">格式化字符串放在Printf外部</h3>
-
 <p>如果你为<code>Printf</code>-style函数声明格式字符串，请将格式化字符串放在外面，并将其设置为<code>const</code>常量。</p>
-
 <p>这有助于<code>go vet</code>对格式字符串执行静态分析。</p>
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-msg := "unexpected values %v, %v\n"
-fmt.Printf(msg, 1, 2)
-```
-
-</td><td>
-
-```go
-const msg = "unexpected values %v, %v\n"
-fmt.Printf(msg, 1, 2)
-```
-
-</td></tr>
-</tbody></table>
-
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">msg</span> <span class="o">:=</span> <span class="s">&#34;unexpected values %v, %v\n&#34;</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="nx">msg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">const</span> <span class="nx">msg</span> <span class="p">=</span> <span class="s">&#34;unexpected values %v, %v\n&#34;</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="nx">msg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h3 id="命名printf样式的函数">命名Printf样式的函数</h3>
-
 <p>声明<code>Printf</code>-style函数时，请确保<code>go vet</code>可以检测到它并检查格式字符串。</p>
-
 <p>这意味着您应尽可能使用预定义的<code>Printf</code>-style函数名称。<code>go vet</code>将默认检查这些。有关更多信息，请参见<a href="https://golang.org/cmd/vet/#hdr-Printf_family">Printf系列</a>。</p>
-
 <p>如果不能使用预定义的名称，请以f结束选择的名称：<code>Wrapf</code>，而不是<code>Wrap</code>。<code>go vet</code>可以要求检查特定的Printf样式名称，但名称必须以f结尾。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ go vet -printfuncs<span class="o">=</span>wrapf,statusf</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ go vet -printfuncs<span class="o">=</span>wrapf,statusf
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>另请参阅 <a href="https://kuzminva.wordpress.com/2017/11/07/go-vet-printf-family-check/">go vet: Printf family check</a>.</p>
-
+</div><p>另请参阅 <a href="https://kuzminva.wordpress.com/2017/11/07/go-vet-printf-family-check/">go vet: Printf family check</a>.</p>
 <h2 id="模式">模式</h2>
-
 <h3 id="测试tables">测试Tables</h3>
-
 <p>在核心测试逻辑重复时，将表驱动测试与<a href="https://blog.golang.org/subtests">子测试</a>一起使用，以避免重复代码。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// func TestSplitHostPort(t *testing.T)
+</span><span class="c1"></span>
+<span class="nx">host</span><span class="p">,</span> <span class="nx">port</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">SplitHostPort</span><span class="p">(</span><span class="s">&#34;192.0.2.0:8000&#34;</span><span class="p">)</span>
+<span class="nx">require</span><span class="p">.</span><span class="nf">NoError</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s">&#34;192.0.2.0&#34;</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
+<span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s">&#34;8000&#34;</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="nx">host</span><span class="p">,</span> <span class="nx">port</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">SplitHostPort</span><span class="p">(</span><span class="s">&#34;192.0.2.0:http&#34;</span><span class="p">)</span>
+<span class="nx">require</span><span class="p">.</span><span class="nf">NoError</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s">&#34;192.0.2.0&#34;</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
+<span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s">&#34;http&#34;</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span>
 
-```go
-// func TestSplitHostPort(t *testing.T)
+<span class="nx">host</span><span class="p">,</span> <span class="nx">port</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">SplitHostPort</span><span class="p">(</span><span class="s">&#34;:8000&#34;</span><span class="p">)</span>
+<span class="nx">require</span><span class="p">.</span><span class="nf">NoError</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
+<span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s">&#34;8000&#34;</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span>
 
-host, port, err := net.SplitHostPort("192.0.2.0:8000")
-require.NoError(t, err)
-assert.Equal(t, "192.0.2.0", host)
-assert.Equal(t, "8000", port)
+<span class="nx">host</span><span class="p">,</span> <span class="nx">port</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">SplitHostPort</span><span class="p">(</span><span class="s">&#34;1:8&#34;</span><span class="p">)</span>
+<span class="nx">require</span><span class="p">.</span><span class="nf">NoError</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s">&#34;1&#34;</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
+<span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s">&#34;8&#34;</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// func TestSplitHostPort(t *testing.T)
+</span><span class="c1"></span>
+<span class="nx">tests</span> <span class="o">:=</span> <span class="p">[]</span><span class="kd">struct</span><span class="p">{</span>
+  <span class="nx">give</span>     <span class="kt">string</span>
+  <span class="nx">wantHost</span> <span class="kt">string</span>
+  <span class="nx">wantPort</span> <span class="kt">string</span>
+<span class="p">}{</span>
+  <span class="p">{</span>
+    <span class="nx">give</span><span class="p">:</span>     <span class="s">&#34;192.0.2.0:8000&#34;</span><span class="p">,</span>
+    <span class="nx">wantHost</span><span class="p">:</span> <span class="s">&#34;192.0.2.0&#34;</span><span class="p">,</span>
+    <span class="nx">wantPort</span><span class="p">:</span> <span class="s">&#34;8000&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">give</span><span class="p">:</span>     <span class="s">&#34;192.0.2.0:http&#34;</span><span class="p">,</span>
+    <span class="nx">wantHost</span><span class="p">:</span> <span class="s">&#34;192.0.2.0&#34;</span><span class="p">,</span>
+    <span class="nx">wantPort</span><span class="p">:</span> <span class="s">&#34;http&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">give</span><span class="p">:</span>     <span class="s">&#34;:8000&#34;</span><span class="p">,</span>
+    <span class="nx">wantHost</span><span class="p">:</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+    <span class="nx">wantPort</span><span class="p">:</span> <span class="s">&#34;8000&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">give</span><span class="p">:</span>     <span class="s">&#34;1:8&#34;</span><span class="p">,</span>
+    <span class="nx">wantHost</span><span class="p">:</span> <span class="s">&#34;1&#34;</span><span class="p">,</span>
+    <span class="nx">wantPort</span><span class="p">:</span> <span class="s">&#34;8&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">}</span>
 
-host, port, err = net.SplitHostPort("192.0.2.0:http")
-require.NoError(t, err)
-assert.Equal(t, "192.0.2.0", host)
-assert.Equal(t, "http", port)
-
-host, port, err = net.SplitHostPort(":8000")
-require.NoError(t, err)
-assert.Equal(t, "", host)
-assert.Equal(t, "8000", port)
-
-host, port, err = net.SplitHostPort("1:8")
-require.NoError(t, err)
-assert.Equal(t, "1", host)
-assert.Equal(t, "8", port)
-```
-
-</td><td>
-
-```go
-// func TestSplitHostPort(t *testing.T)
-
-tests := []struct{
-  give     string
-  wantHost string
-  wantPort string
-}{
-  {
-    give:     "192.0.2.0:8000",
-    wantHost: "192.0.2.0",
-    wantPort: "8000",
-  },
-  {
-    give:     "192.0.2.0:http",
-    wantHost: "192.0.2.0",
-    wantPort: "http",
-  },
-  {
-    give:     ":8000",
-    wantHost: "",
-    wantPort: "8000",
-  },
-  {
-    give:     "1:8",
-    wantHost: "1",
-    wantPort: "8",
-  },
-}
-
-for _, tt := range tests {
-  t.Run(tt.give, func(t *testing.T) {
-    host, port, err := net.SplitHostPort(tt.give)
-    require.NoError(t, err)
-    assert.Equal(t, tt.wantHost, host)
-    assert.Equal(t, tt.wantPort, port)
-  })
-}
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">tt</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">tests</span> <span class="p">{</span>
+  <span class="nx">t</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="nx">tt</span><span class="p">.</span><span class="nx">give</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">host</span><span class="p">,</span> <span class="nx">port</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">SplitHostPort</span><span class="p">(</span><span class="nx">tt</span><span class="p">.</span><span class="nx">give</span><span class="p">)</span>
+    <span class="nx">require</span><span class="p">.</span><span class="nf">NoError</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">tt</span><span class="p">.</span><span class="nx">wantHost</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nf">Equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">tt</span><span class="p">.</span><span class="nx">wantPort</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>试表使向错误消息添加上下文，减少重复的逻辑以及添加新的测试用例变得更加容易。</p>
-
 <p>我们遵循这样的约定：将结构体切片称为<code>tests</code>。 每个测试用例称为<code>tt</code>。此外，我们鼓励使用<code>give</code>和<code>want</code>前缀说明每个测试用例的输入和输出值。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2611,116 +3025,184 @@ for _, tt := range tests {
 
 <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">tt</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">tests</span> <span class="p">{</span>
   <span class="c1">// ...
-</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="功能选项">功能选项</h3>
-
+</div><h3 id="功能选项">功能选项</h3>
 <p>功能选项是一种模式，您可以在其中声明一个不透明Option类型，该类型在某些内部结构中记录信息。您接受这些选项的可变编号，并根据内部结构上的选项记录的全部信息采取行动。</p>
-
 <p>将此模式用于您需要扩展的构造函数和其他公共API中的可选参数，尤其是在这些功能上已经具有三个或更多参数的情况下。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// package db
+</span><span class="c1"></span>
+<span class="kd">func</span> <span class="nf">Connect</span><span class="p">(</span>
+  <span class="nx">addr</span> <span class="kt">string</span><span class="p">,</span>
+  <span class="nx">timeout</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="p">,</span>
+  <span class="nx">caching</span> <span class="kt">bool</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">Connection</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
 
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
+<span class="c1">// Timeout and caching must always be provided,
+</span><span class="c1">// even if the user wants to use the default.
+</span><span class="c1"></span>
+<span class="nx">db</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="nx">addr</span><span class="p">,</span> <span class="nx">db</span><span class="p">.</span><span class="nx">DefaultTimeout</span><span class="p">,</span> <span class="nx">db</span><span class="p">.</span><span class="nx">DefaultCaching</span><span class="p">)</span>
+<span class="nx">db</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="nx">addr</span><span class="p">,</span> <span class="nx">newTimeout</span><span class="p">,</span> <span class="nx">db</span><span class="p">.</span><span class="nx">DefaultCaching</span><span class="p">)</span>
+<span class="nx">db</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="nx">addr</span><span class="p">,</span> <span class="nx">db</span><span class="p">.</span><span class="nx">DefaultTimeout</span><span class="p">,</span> <span class="kc">false</span> <span class="cm">/* caching */</span><span class="p">)</span>
+<span class="nx">db</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="nx">addr</span><span class="p">,</span> <span class="nx">newTimeout</span><span class="p">,</span> <span class="kc">false</span> <span class="cm">/* caching */</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">options</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">timeout</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span>
+  <span class="nx">caching</span> <span class="kt">bool</span>
+<span class="p">}</span>
 
-```go
-// package db
+<span class="c1">// Option overrides behavior of Connect.
+</span><span class="c1"></span><span class="kd">type</span> <span class="nx">Option</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="nf">apply</span><span class="p">(</span><span class="o">*</span><span class="nx">options</span><span class="p">)</span>
+<span class="p">}</span>
 
-func Connect(
-  addr string,
-  timeout time.Duration,
-  caching bool,
-) (*Connection, error) {
-  // ...
-}
+<span class="kd">type</span> <span class="nx">optionFunc</span> <span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">options</span><span class="p">)</span>
 
-// Timeout and caching must always be provided,
-// even if the user wants to use the default.
+<span class="kd">func</span> <span class="p">(</span><span class="nx">f</span> <span class="nx">optionFunc</span><span class="p">)</span> <span class="nf">apply</span><span class="p">(</span><span class="nx">o</span> <span class="o">*</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">f</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span>
+<span class="p">}</span>
 
-db.Connect(addr, db.DefaultTimeout, db.DefaultCaching)
-db.Connect(addr, newTimeout, db.DefaultCaching)
-db.Connect(addr, db.DefaultTimeout, false /* caching */)
-db.Connect(addr, newTimeout, false /* caching */)
-```
+<span class="kd">func</span> <span class="nf">WithTimeout</span><span class="p">(</span><span class="nx">t</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="p">)</span> <span class="nx">Option</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">optionFunc</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">o</span> <span class="o">*</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">o</span><span class="p">.</span><span class="nx">timeout</span> <span class="p">=</span> <span class="nx">t</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-</td><td>
+<span class="kd">func</span> <span class="nf">WithCaching</span><span class="p">(</span><span class="nx">cache</span> <span class="kt">bool</span><span class="p">)</span> <span class="nx">Option</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">optionFunc</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">o</span> <span class="o">*</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">o</span><span class="p">.</span><span class="nx">caching</span> <span class="p">=</span> <span class="nx">cache</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-```go
-type options struct {
-  timeout time.Duration
-  caching bool
-}
+<span class="c1">// Connect creates a connection.
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">Connect</span><span class="p">(</span>
+  <span class="nx">addr</span> <span class="kt">string</span><span class="p">,</span>
+  <span class="nx">opts</span> <span class="o">...</span><span class="nx">Option</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">Connection</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">options</span> <span class="o">:=</span> <span class="nx">options</span><span class="p">{</span>
+    <span class="nx">timeout</span><span class="p">:</span> <span class="nx">defaultTimeout</span><span class="p">,</span>
+    <span class="nx">caching</span><span class="p">:</span> <span class="nx">defaultCaching</span><span class="p">,</span>
+  <span class="p">}</span>
 
-// Option overrides behavior of Connect.
-type Option interface {
-  apply(*options)
-}
+  <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">o</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">opts</span> <span class="p">{</span>
+    <span class="nx">o</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">options</span><span class="p">)</span>
+  <span class="p">}</span>
 
-type optionFunc func(*options)
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
 
-func (f optionFunc) apply(o *options) {
-  f(o)
-}
-
-func WithTimeout(t time.Duration) Option {
-  return optionFunc(func(o *options) {
-    o.timeout = t
-  })
-}
-
-func WithCaching(cache bool) Option {
-  return optionFunc(func(o *options) {
-    o.caching = cache
-  })
-}
-
-// Connect creates a connection.
-func Connect(
-  addr string,
-  opts ...Option,
-) (*Connection, error) {
-  options := options{
-    timeout: defaultTimeout,
-    caching: defaultCaching,
-  }
-
-  for _, o := range opts {
-    o.apply(&options)
-  }
-
-  // ...
-}
-
-// Options must be provided only if needed.
-
-db.Connect(addr)
-db.Connect(addr, db.WithTimeout(newTimeout))
-db.Connect(addr, db.WithCaching(false))
-db.Connect(
-  addr,
-  db.WithCaching(false),
-  db.WithTimeout(newTimeout),
-)
-```
-
-</td></tr>
-</tbody></table>
-
+<span class="c1">// Options must be provided only if needed.
+</span><span class="c1"></span>
+<span class="nx">db</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="nx">addr</span><span class="p">)</span>
+<span class="nx">db</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="nx">addr</span><span class="p">,</span> <span class="nx">db</span><span class="p">.</span><span class="nf">WithTimeout</span><span class="p">(</span><span class="nx">newTimeout</span><span class="p">))</span>
+<span class="nx">db</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="nx">addr</span><span class="p">,</span> <span class="nx">db</span><span class="p">.</span><span class="nf">WithCaching</span><span class="p">(</span><span class="kc">false</span><span class="p">))</span>
+<span class="nx">db</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span>
+  <span class="nx">addr</span><span class="p">,</span>
+  <span class="nx">db</span><span class="p">.</span><span class="nf">WithCaching</span><span class="p">(</span><span class="kc">false</span><span class="p">),</span>
+  <span class="nx">db</span><span class="p">.</span><span class="nf">WithTimeout</span><span class="p">(</span><span class="nx">newTimeout</span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <p>还可以参考下面资料：</p>
-
 <ul>
-<li><a href="https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html">Self-referential functions and the design of options</a></li>
-<li><a href="https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis">Functional options for friendly APIs</a></li>
+<li>
+<p><a href="https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html">Self-referential functions and the design of options</a></p>
+</li>
+<li>
+<p><a href="https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis">Functional options for friendly APIs</a></p>
+</li>
 </ul>
-
-<!-- TODO: replace this with parameter structs and functional options, when to
-use one vs other -->
-
-<hr />
-
-<h2 id="地址-uber-go-guide-cn-https-github-com-xxjwxc-uber-go-guide-cn">地址 <a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></h2>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="地址-uber_go_guide_cnhttpsgithubcomxxjwxcuber_go_guide_cn">地址 <a href="https://github.com/xxjwxc/uber_go_guide_cn">uber_go_guide_cn</a></h2>
 
     </div>
 
@@ -2733,7 +3215,10 @@ use one vs other -->
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-10-13</span>
+    <span class="item-content">
+      2019-10-13
+      
+    </span>
   </p>
   
   <p class="copyright-item">
@@ -2812,6 +3297,8 @@ use one vs other -->
   
 
   
+
+  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -2829,10 +3316,10 @@ use one vs other -->
   
 
   
-  
+
     
 
-
+  
 
         </div>
       </div>
@@ -2874,7 +3361,17 @@ use one vs other -->
 
     </a>
 
- 
+
+<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
 </div>
 
 <div class="copyright">
@@ -2882,7 +3379,7 @@ use one vs other -->
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">
@@ -2930,7 +3427,9 @@ use one vs other -->
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
+
+
 
   <script type="text/javascript">
     window.MathJax = {
@@ -2939,6 +3438,10 @@ use one vs other -->
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
 
 
 
@@ -2954,6 +3457,8 @@ use one vs other -->
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
 
 
 

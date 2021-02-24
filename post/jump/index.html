@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,10 +32,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/jump/" />
+
+
 
 
 
@@ -60,21 +62,15 @@
 <meta property="og:title" content="ssh 远程监控工具" />
 <meta property="og:description" content="jump remote monitoring . 远程监控工具 支持 默认配置 (jump config),保存公共配置 登录(jump in),远程登录(支持tab键) 监控(jump run),远程监控" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/jump/" />
-<meta property="article:published_time" content="2020-05-30T04:01:23+08:00" />
-<meta property="article:modified_time" content="2020-05-30T04:01:23+08:00" />
+<meta property="og:url" content="https://xxjwxc.github.io/post/jump/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-05-30T04:01:23&#43;08:00" />
+<meta property="article:modified_time" content="2020-05-30T04:01:23&#43;08:00" />
+
 <meta itemprop="name" content="ssh 远程监控工具">
-<meta itemprop="description" content="jump remote monitoring . 远程监控工具 支持 默认配置 (jump config),保存公共配置 登录(jump in),远程登录(支持tab键) 监控(jump run),远程监控">
-
-
-<meta itemprop="datePublished" content="2020-05-30T04:01:23&#43;08:00" />
+<meta itemprop="description" content="jump remote monitoring . 远程监控工具 支持 默认配置 (jump config),保存公共配置 登录(jump in),远程登录(支持tab键) 监控(jump run),远程监控"><meta itemprop="datePublished" content="2020-05-30T04:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-30T04:01:23&#43;08:00" />
 <meta itemprop="wordCount" content="190">
-
-
-
-<meta itemprop="keywords" content="golang,ssh," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="golang,ssh," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ssh 远程监控工具"/>
 <meta name="twitter:description" content="jump remote monitoring . 远程监控工具 支持 默认配置 (jump config),保存公共配置 登录(jump in),远程登录(支持tab键) 监控(jump run),远程监控"/>
 
@@ -160,6 +156,8 @@
         
       </li>
     
+
+    
   </ul>
 </nav>
 
@@ -221,6 +219,8 @@
     </div>
     </div>
 </div>
+
+  
 
   
 
@@ -317,6 +317,10 @@
 
       </li>
     
+
+    
+    
+
     
   </ul>
 </nav>
@@ -361,100 +365,86 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#jump-https-github-com-xxjwxc-jump"><a href="https://github.com/xxjwxc/jump/">jump</a></a></li>
-<li><a href="#支持">支持</a>
-<ul>
-<li><a href="#设置配置文件-jump-config">设置配置文件(jump config)</a>
-<ul>
-<li><a href="#更多">更多：</a></li>
-</ul></li>
-<li><a href="#远程登录-jump-in">远程登录(jump in)</a></li>
-<li><a href="#远程监控-jump-run">远程监控(jump run)</a>
-<ul>
-<li><a href="#更多-1">更多：</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#ssh-myssh-https-github-com-xxjwxc-public-blob-master-myssh-myssh-go">SSH ==&gt; <a href="https://github.com/xxjwxc/public/blob/master/myssh/myssh.go">myssh</a></a></li>
-<li><a href="#感谢您的点星支持-https-github-com-xxjwxc-jump"><a href="https://github.com/xxjwxc/jump/">感谢您的点星支持</a></a></li>
-</ul>
+  <ul>
+    <li><a href="#设置配置文件jump-config">设置配置文件(jump config)</a>
+      <ul>
+        <li><a href="#更多">更多：</a></li>
+      </ul>
+    </li>
+    <li><a href="#远程登录jump-in">远程登录(jump in)</a></li>
+    <li><a href="#远程监控jump-run">远程监控(jump run)</a>
+      <ul>
+        <li><a href="#更多-1">更多：</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<hr />
-
-<h1 id="jump-https-github-com-xxjwxc-jump"><a href="https://github.com/xxjwxc/jump/">jump</a></h1>
-
+      <hr>
+<h1 id="jumphttpsgithubcomxxjwxcjump"><a href="https://github.com/xxjwxc/jump/">jump</a></h1>
 <p>remote monitoring . 远程监控工具</p>
-
 <h1 id="支持">支持</h1>
-
 <ul>
 <li>默认配置 (jump config),保存公共配置</li>
 <li>登录(jump in),远程登录(支持tab键)</li>
 <li>监控(jump run),远程监控(支持登录命令行预执行，支持文件监控,tail -f)</li>
 <li>ptrace 远程进程调试</li>
 </ul>
-
-<h2 id="设置配置文件-jump-config">设置配置文件(jump config)</h2>
+<h2 id="设置配置文件jump-config">设置配置文件(jump config)</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">./jump config -d=~ -i=127.0.0.1 -p=123456 -u=ubuntu -P=22 -c=&#34;cd /var/log/,ls,ll&#34;</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./jump config -d=~ -i=127.0.0.1 -p=123456 -u=ubuntu -P=22 -c=&#34;cd /var/log/,ls,ll&#34;
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="更多">更多：</h3>
+</div><h3 id="更多">更多：</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">./jump config -h</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./jump config -h
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="远程登录-jump-in">远程登录(jump in)</h2>
+</div><h2 id="远程登录jump-in">远程登录(jump in)</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">./jump in</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./jump in
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="远程监控-jump-run">远程监控(jump run)</h2>
+</div><h2 id="远程监控jump-run">远程监控(jump run)</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">./jump run -f=nginx/access.log</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./jump run -f=nginx/access.log
+</code></pre></td></tr></table>
 </div>
-</div>
-<ul>
+</div><ul>
 <li>支持预定义命令</li>
 </ul>
-
 <p>./jump config -c = &ldquo;cd /var/log/,ls,ll&rdquo; 添加</p>
-
 <h3 id="更多-1">更多：</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">./jump run -h</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./jump run -h
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="ssh-myssh-https-github-com-xxjwxc-public-blob-master-myssh-myssh-go">SSH ==&gt; <a href="https://github.com/xxjwxc/public/blob/master/myssh/myssh.go">myssh</a></h1>
-
-<h1 id="感谢您的点星支持-https-github-com-xxjwxc-jump"><a href="https://github.com/xxjwxc/jump/">感谢您的点星支持</a></h1>
+</div><h1 id="ssh--mysshhttpsgithubcomxxjwxcpublicblobmastermysshmysshgo">SSH ==&gt; <a href="https://github.com/xxjwxc/public/blob/master/myssh/myssh.go">myssh</a></h1>
+<h1 id="感谢您的点星支持httpsgithubcomxxjwxcjump"><a href="https://github.com/xxjwxc/jump/">感谢您的点星支持</a></h1>
 
     </div>
 
@@ -467,7 +457,10 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2020-05-30</span>
+    <span class="item-content">
+      2020-05-30
+      
+    </span>
   </p>
   
   <p class="copyright-item">
@@ -545,6 +538,8 @@
   
 
   
+
+  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -562,10 +557,10 @@
   
 
   
-  
+
     
 
-
+  
 
         </div>
       </div>
@@ -607,7 +602,17 @@
 
     </a>
 
- 
+
+<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
 </div>
 
 <div class="copyright">
@@ -615,7 +620,7 @@
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">
@@ -663,7 +668,9 @@
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
+
+
 
   <script type="text/javascript">
     window.MathJax = {
@@ -672,6 +679,10 @@
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
 
 
 
@@ -687,6 +698,8 @@
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
 
 
 

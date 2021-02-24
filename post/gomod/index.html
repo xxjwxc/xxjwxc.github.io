@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,10 +32,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/gomod/" />
+
+
 
 
 
@@ -60,21 +62,15 @@
 <meta property="og:title" content="go mod相关配置及说明" />
 <meta property="og:description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/gomod/" />
-<meta property="article:published_time" content="2019-09-22T16:16:40+08:00" />
-<meta property="article:modified_time" content="2019-09-22T16:16:40+08:00" />
+<meta property="og:url" content="https://xxjwxc.github.io/post/gomod/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-09-22T16:16:40&#43;08:00" />
+<meta property="article:modified_time" content="2019-09-22T16:16:40&#43;08:00" />
+
 <meta itemprop="name" content="go mod相关配置及说明">
-<meta itemprop="description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@">
-
-
-<meta itemprop="datePublished" content="2019-09-22T16:16:40&#43;08:00" />
+<meta itemprop="description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@"><meta itemprop="datePublished" content="2019-09-22T16:16:40&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-22T16:16:40&#43;08:00" />
-<meta itemprop="wordCount" content="378">
-
-
-
-<meta itemprop="keywords" content="golang,mod,配置," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="380">
+<meta itemprop="keywords" content="golang,mod,配置," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="go mod相关配置及说明"/>
 <meta name="twitter:description" content="golang Modules 的最新命令说明 创建一个新的模块 1 go mod init [本项目mod名] 列出当前模块所有依赖项 1 go get -u github.com/xxjwxc/public@"/>
 
@@ -160,6 +156,8 @@
         
       </li>
     
+
+    
   </ul>
 </nav>
 
@@ -221,6 +219,8 @@
     </div>
     </div>
 </div>
+
+  
 
   
 
@@ -317,6 +317,10 @@
 
       </li>
     
+
+    
+    
+
     
   </ul>
 </nav>
@@ -340,7 +344,7 @@
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 378 字 </span>
+        <span class="more-meta"> 约 380 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -361,174 +365,154 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#golang-modules-的最新命令说明">golang Modules 的最新命令说明</a>
-<ul>
-<li>
-<ul>
-<li><a href="#创建一个新的模块">创建一个新的模块</a></li>
-</ul></li>
-<li><a href="#列出当前模块所有依赖项">列出当前模块所有依赖项</a>
-<ul>
-<li><a href="#清除依赖项">清除依赖项</a></li>
-<li><a href="#清理本地缓存">清理本地缓存</a></li>
-<li><a href="#添加本地项目">添加本地项目</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#实战">实战</a></li>
-<li><a href="#喜欢请给星-https-github-com-xxjwxc"><a href="https://github.com/xxjwxc">喜欢请给星</a></a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#golang-modules-的最新命令说明">golang Modules 的最新命令说明</a>
+      <ul>
+        <li></li>
+        <li><a href="#列出当前模块所有依赖项">列出当前模块所有依赖项</a></li>
+      </ul>
+    </li>
+    <li><a href="#实战">实战</a></li>
+    <li><a href="#喜欢请给星httpsgithubcomxxjwxc"><a href="https://github.com/xxjwxc">喜欢请给星</a></a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="golang-modules-的最新命令说明">golang Modules 的最新命令说明</h2>
-
+      <h2 id="golang-modules-的最新命令说明">golang Modules 的最新命令说明</h2>
 <h4 id="创建一个新的模块">创建一个新的模块</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">go mod init [本项目mod名]</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">go mod init [本项目mod名]
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="列出当前模块所有依赖项">列出当前模块所有依赖项</h3>
+</div><h3 id="列出当前模块所有依赖项">列出当前模块所有依赖项</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">go get -u github.com/xxjwxc/public@[版本号,保持最新请使用latest 或者 master]</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">go get -u github.com/xxjwxc/public@[版本号,保持最新请使用latest 或者 master]
+</code></pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li><p>说明 go get -u 来保持最新，测试下来需要等待几分钟才同步的下来。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">go get -u github.com/xxjwxc/public@master</pre></td></tr></table>
-</div>
-</div></li>
+</div><ul>
+<li>说明 go get -u 来保持最新，测试下来需要等待几分钟才同步的下来。</li>
 </ul>
-
-<h4 id="清除依赖项">清除依赖项</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">go mod tidy</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">go get -u github.com/xxjwxc/public@master
+</code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="清理本地缓存">清理本地缓存</h4>
+</div><h4 id="清除依赖项">清除依赖项</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">go clean -modcache </pre></td></tr></table>
-</div>
-</div>
-<h4 id="添加本地项目">添加本地项目</h4>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">go mod tidy
 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="清理本地缓存">清理本地缓存</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">go clean -modcache 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="添加本地项目">添加本地项目</h4>
 <p>go.mod 中添加</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">require github.com/xxjwxc/public v0.0.0-incompatible
-replace github.com/xxjwxc/public =&gt; ../public</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">require github.com/xxjwxc/public v0.0.0-incompatible
+replace github.com/xxjwxc/public =&gt; ../public
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="实战">实战</h2>
-
+</div><h2 id="实战">实战</h2>
 <ul>
 <li>添加一个库保持最新[github.com/xxjwxc/public] 使用MakeFile 及 go:generate 实现</li>
 </ul>
-
 <ol>
-<li><p>添加 gogenerate.go</p>
+<li>添加 gogenerate.go</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span></pre></td>
+</span><span class="lnt">4
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
-<span class="o">//</span><span class="k">go</span><span class="p">:</span><span class="nx">generate</span> <span class="nx">make</span> <span class="nx">gen</span></pre></td></tr></table>
+<span class="c1">//go:generate make gen
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
 </div>
-</div></li>
-
-<li><p>添加 MakeFile</p>
+</div><ol start="2">
+<li>添加 MakeFile</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">regen:
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">regen:
 	go clean -modcache #清理本地缓存
 gen:
 	go get -u github.com/xxjwxc/public@master # 保持最新
-	go mod tidy</pre></td></tr></table>
+	go mod tidy
+</code></pre></td></tr></table>
 </div>
-</div></li>
-</ol>
-
-<p>说明:为了保持最新可以手动设置版本信息
+</div><p>说明:为了保持最新可以手动设置版本信息
 一般不带tag标签的版本是：</p>
-
 <p>github.com/xxjwxc/public v0.0.0-20190911032541-5d814c6ef57d</p>
-
-<p>其中：20190911032541 表示时间戳
+<p>其中：20190911032541 表示时间戳 
 5d814c6ef57d 表示commit版本号</p>
-
 <p>可以通过 git log查看信息
 不过 20190911032541 中相差8个小时
 git log 对应 20190919032541</p>
-
-<ol>
-<li><p>启动</p>
+<ol start="3">
+<li>启动</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">go generate &amp; go build ./main.go
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">go generate &amp; go build ./main.go
 
 or
 
-make gen</pre></td></tr></table>
+make gen
+</code></pre></td></tr></table>
 </div>
-</div></li>
-</ol>
-
-<p><a href="https://mp.weixin.qq.com/s/v-NdYEJBgKbiKsdoQaRsQg">参考链接</a></p>
-
-<h2 id="喜欢请给星-https-github-com-xxjwxc"><a href="https://github.com/xxjwxc">喜欢请给星</a></h2>
-
-<hr />
+</div><p><a href="https://mp.weixin.qq.com/s/v-NdYEJBgKbiKsdoQaRsQg">参考链接</a></p>
+<h2 id="喜欢请给星httpsgithubcomxxjwxc"><a href="https://github.com/xxjwxc">喜欢请给星</a></h2>
+<hr>
 
     </div>
 
@@ -541,7 +525,10 @@ make gen</pre></td></tr></table>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-09-22</span>
+    <span class="item-content">
+      2019-09-22
+      
+    </span>
   </p>
   
   <p class="copyright-item">
@@ -620,6 +607,8 @@ make gen</pre></td></tr></table>
   
 
   
+
+  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -637,10 +626,10 @@ make gen</pre></td></tr></table>
   
 
   
-  
+
     
 
-
+  
 
         </div>
       </div>
@@ -682,7 +671,17 @@ make gen</pre></td></tr></table>
 
     </a>
 
- 
+
+<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
 </div>
 
 <div class="copyright">
@@ -690,7 +689,7 @@ make gen</pre></td></tr></table>
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">
@@ -738,7 +737,9 @@ make gen</pre></td></tr></table>
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
+
+
 
   <script type="text/javascript">
     window.MathJax = {
@@ -747,6 +748,10 @@ make gen</pre></td></tr></table>
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
 
 
 
@@ -762,6 +767,8 @@ make gen</pre></td></tr></table>
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
 
 
 

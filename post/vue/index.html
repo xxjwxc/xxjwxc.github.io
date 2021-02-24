@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,10 +32,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/vue/" />
+
+
 
 
 
@@ -60,21 +62,15 @@
 <meta property="og:title" content="vue环境配置及vscode调试" />
 <meta property="og:description" content="mac安装 vue开发环境 本教程关于vue 在vscode 中的调试及开发。使用mac系统完成配置。 配置脚本在 vue_install.sh 以下展示 shell内容的详细信息。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/vue/" />
-<meta property="article:published_time" content="2019-09-12T11:48:31+08:00" />
-<meta property="article:modified_time" content="2019-09-12T11:48:31+08:00" />
+<meta property="og:url" content="https://xxjwxc.github.io/post/vue/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-09-12T11:48:31&#43;08:00" />
+<meta property="article:modified_time" content="2019-09-12T11:48:31&#43;08:00" />
+
 <meta itemprop="name" content="vue环境配置及vscode调试">
-<meta itemprop="description" content="mac安装 vue开发环境 本教程关于vue 在vscode 中的调试及开发。使用mac系统完成配置。 配置脚本在 vue_install.sh 以下展示 shell内容的详细信息。">
-
-
-<meta itemprop="datePublished" content="2019-09-12T11:48:31&#43;08:00" />
+<meta itemprop="description" content="mac安装 vue开发环境 本教程关于vue 在vscode 中的调试及开发。使用mac系统完成配置。 配置脚本在 vue_install.sh 以下展示 shell内容的详细信息。"><meta itemprop="datePublished" content="2019-09-12T11:48:31&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-12T11:48:31&#43;08:00" />
-<meta itemprop="wordCount" content="562">
-
-
-
-<meta itemprop="keywords" content="vue,工具,debug," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="564">
+<meta itemprop="keywords" content="vue,工具,debug," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="vue环境配置及vscode调试"/>
 <meta name="twitter:description" content="mac安装 vue开发环境 本教程关于vue 在vscode 中的调试及开发。使用mac系统完成配置。 配置脚本在 vue_install.sh 以下展示 shell内容的详细信息。"/>
 
@@ -160,6 +156,8 @@
         
       </li>
     
+
+    
   </ul>
 </nav>
 
@@ -221,6 +219,8 @@
     </div>
     </div>
 </div>
+
+  
 
   
 
@@ -317,6 +317,10 @@
 
       </li>
     
+
+    
+    
+
     
   </ul>
 </nav>
@@ -340,7 +344,7 @@
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 562 字 </span>
+        <span class="more-meta"> 约 564 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -361,33 +365,29 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#mac安装-vue开发环境">mac安装 vue开发环境</a></li>
-<li><a href="#vscode-vue-调试-chrome-浏览器">vscode vue 调试 (chrome 浏览器)</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#mac安装-vue开发环境">mac安装 vue开发环境</a></li>
+    <li><a href="#vscode-vue-调试-chrome-浏览器">vscode vue 调试 (chrome 浏览器)</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="mac安装-vue开发环境">mac安装 vue开发环境</h2>
-
+      <h2 id="mac安装-vue开发环境">mac安装 vue开发环境</h2>
 <ul>
-<li><p>本教程关于vue 在vscode 中的调试及开发。使用mac系统完成配置。</p></li>
-
-<li><p>配置脚本在 <a href="/image/vue_install.sh">vue_install.sh</a></p></li>
+<li>
+<p>本教程关于vue 在vscode 中的调试及开发。使用mac系统完成配置。</p>
+</li>
+<li>
+<p>配置脚本在 <a href="/image/vue_install.sh">vue_install.sh</a></p>
+</li>
 </ul>
-
 <p>以下展示 shell内容的详细信息。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -425,10 +425,13 @@
 </span><span class="lnt">36
 </span><span class="lnt">37
 </span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/bash -v
-</span><span class="cp"></span><span class="c1">#set -v</span> 
+<pre class="chroma"><code class="language-sh" data-lang="sh">
+<span class="c1">#!/bin/bash -v</span>
+<span class="c1">#set -v </span>
 
 <span class="nb">echo</span>  <span class="s2">&#34;vrew 版本.&#34;</span>
 brew -v 
@@ -464,65 +467,64 @@ cnpm install vue-router vue-resource --save
 
 <span class="nb">echo</span> <span class="s2">&#34;启动项目：在项目目录中使用,npm run dev 或 cnpm run dev&#34;</span>
 
-<span class="nb">echo</span> <span class="s2">&#34;报错可能需要执行(npm install 或 npm install -g @vue/cli@latest)&#34;</span></code></pre></td></tr></table>
+<span class="nb">echo</span> <span class="s2">&#34;报错可能需要执行(npm install 或 npm install -g @vue/cli@latest)&#34;</span>
+
+</code></pre></td></tr></table>
 </div>
-</div>
-<ul>
+</div><ul>
 <li>详细请见注解</li>
 </ul>
-
 <h2 id="vscode-vue-调试-chrome-浏览器">vscode vue 调试 (chrome 浏览器)</h2>
-
 <ol>
-<li><p>安装chrome 到系统软件目录(必须系统软件目录))</p></li>
-
-<li><p>vscode 搜索chrome debug插件
-<img src="/image/vue1.png" alt="2" /></p></li>
-
-<li><p>配置debug信息
-<img src="/image/vue2.png" alt="3" /></p>
-
+<li>
+<p>安装chrome 到系统软件目录(必须系统软件目录))</p>
+</li>
+<li>
+<p>vscode 搜索chrome debug插件
+<img src="/image/vue1.png" alt="2"></p>
+</li>
+<li>
+<p>配置debug信息
+<img src="/image/vue2.png" alt="3"></p>
+</li>
+</ol>
 <ul>
 <li>配置调试信息
-<img src="/image/vue3.png" alt="3" />
+<img src="/image/vue3.png" alt="3">
 注意：这里需要配置的url需要与</li>
-</ul></li>
-
-<li><p>demo 端口需要一一映射
-<img src="/image/vue4.png" alt="4" /></p></li>
-
-<li><p>调试开始</p></li>
-</ol>
-
-<ul>
-<li><p>启动vue项目</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">npm run dev</pre></td></tr></table>
-</div>
-</div></li>
-
-<li><p>启动 vscode 调试</p></li>
+<li>demo 端口需要一一映射
+<img src="/image/vue4.png" alt="4"></li>
 </ul>
-
-<p><img src="/image/vue5.jpg" alt="5" /></p>
-
-<ol>
-<li><p>打包发布</p>
+<ol start="4">
+<li>调试开始</li>
+</ol>
+<ul>
+<li>启动vue项目</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">npm run build:prod</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> npm run dev
+</code></pre></td></tr></table>
 </div>
-</div></li>
+</div><ul>
+<li>启动 vscode 调试</li>
+</ul>
+<p><img src="/image/vue5.jpg" alt="5"></p>
+<ol start="5">
+<li>打包发布</li>
 </ol>
-
-<hr />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">npm run build:prod
+</code></pre></td></tr></table>
+</div>
+</div><hr>
 
     </div>
 
@@ -535,7 +537,10 @@ cnpm install vue-router vue-resource --save
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-09-12</span>
+    <span class="item-content">
+      2019-09-12
+      
+    </span>
   </p>
   
   <p class="copyright-item">
@@ -614,6 +619,8 @@ cnpm install vue-router vue-resource --save
   
 
   
+
+  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -631,10 +638,10 @@ cnpm install vue-router vue-resource --save
   
 
   
-  
+
     
 
-
+  
 
         </div>
       </div>
@@ -676,7 +683,17 @@ cnpm install vue-router vue-resource --save
 
     </a>
 
- 
+
+<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
 </div>
 
 <div class="copyright">
@@ -684,7 +701,7 @@ cnpm install vue-router vue-resource --save
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">
@@ -732,7 +749,9 @@ cnpm install vue-router vue-resource --save
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
+
+
 
   <script type="text/javascript">
     window.MathJax = {
@@ -741,6 +760,10 @@ cnpm install vue-router vue-resource --save
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
 
 
 
@@ -756,6 +779,8 @@ cnpm install vue-router vue-resource --save
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
 
 
 

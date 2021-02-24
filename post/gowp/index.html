@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,10 +32,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.81.0" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/gowp/" />
+
+
 
 
 
@@ -60,21 +62,15 @@
 <meta property="og:title" content="golang工作池库 workerpool" />
 <meta property="og:description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/gowp/" />
-<meta property="article:published_time" content="2019-09-15T11:48:31+08:00" />
-<meta property="article:modified_time" content="2019-09-15T11:48:31+08:00" />
+<meta property="og:url" content="https://xxjwxc.github.io/post/gowp/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-09-15T11:48:31&#43;08:00" />
+<meta property="article:modified_time" content="2019-09-15T11:48:31&#43;08:00" />
+
 <meta itemprop="name" content="golang工作池库 workerpool">
-<meta itemprop="description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队">
-
-
-<meta itemprop="datePublished" content="2019-09-15T11:48:31&#43;08:00" />
+<meta itemprop="description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队"><meta itemprop="datePublished" content="2019-09-15T11:48:31&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-15T11:48:31&#43;08:00" />
 <meta itemprop="wordCount" content="645">
-
-
-
-<meta itemprop="keywords" content="vue,工具,debug," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="vue,工具,debug," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="golang工作池库 workerpool"/>
 <meta name="twitter:description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队"/>
 
@@ -160,6 +156,8 @@
         
       </li>
     
+
+    
   </ul>
 </nav>
 
@@ -221,6 +219,8 @@
     </div>
     </div>
 </div>
+
+  
 
   
 
@@ -317,6 +317,10 @@
 
       </li>
     
+
+    
+    
+
     
   </ul>
 </nav>
@@ -361,46 +365,47 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#gowp-https-github-com-xxjwxc-gowp"><a href="https://github.com/xxjwxc/gowp">gowp</a></a></li>
-<li><a href="#golang-worker-pool-线程池-工作池">golang worker pool ,线程池 , 工作池</a>
-<ul>
-<li><a href="#支持最大任务数-放到工作池里面-并等待全部完成">支持最大任务数, 放到工作池里面 并等待全部完成</a></li>
-<li><a href="#支持错误返回">支持错误返回</a></li>
-<li><a href="#支持判断是否完成-非阻塞">支持判断是否完成 (非阻塞)</a></li>
-<li><a href="#支持同步等待结果">支持同步等待结果</a></li>
-</ul></li>
-<li><a href="#代码地址-gowp-https-github-com-xxjwxc-gowp">代码地址 <a href="https://github.com/xxjwxc/gowp">gowp</a></a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#gowphttpsgithubcomxxjwxcgowp"><a href="https://github.com/xxjwxc/gowp">gowp</a></a></li>
+    <li><a href="#golang-worker-pool-线程池--工作池">golang worker pool ,线程池 , 工作池</a>
+      <ul>
+        <li><a href="#支持最大任务数-放到工作池里面-并等待全部完成">支持最大任务数, 放到工作池里面 并等待全部完成</a></li>
+        <li><a href="#支持错误返回">支持错误返回</a></li>
+        <li><a href="#支持判断是否完成-非阻塞">支持判断是否完成 (非阻塞)</a></li>
+        <li><a href="#支持同步等待结果">支持同步等待结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#代码地址-gowphttpsgithubcomxxjwxcgowp">代码地址 <a href="https://github.com/xxjwxc/gowp">gowp</a></a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="gowp-https-github-com-xxjwxc-gowp"><a href="https://github.com/xxjwxc/gowp">gowp</a></h2>
-
-<h2 id="golang-worker-pool-线程池-工作池">golang worker pool ,线程池 , 工作池</h2>
-
+      <h2 id="gowphttpsgithubcomxxjwxcgowp"><a href="https://github.com/xxjwxc/gowp">gowp</a></h2>
+<h2 id="golang-worker-pool-线程池--工作池">golang worker pool ,线程池 , 工作池</h2>
 <ul>
-<li>并发限制goroutine池。</li>
-<li>限制任务执行的并发性，而不是排队的任务数。</li>
-<li>无论排队多少任务，都不会阻止提交任务。</li>
-
-<li><p>通过队列支持</p></li>
-
-<li><p>golang 工作池公共库</p></li>
+<li>
+<p>并发限制goroutine池。</p>
+</li>
+<li>
+<p>限制任务执行的并发性，而不是排队的任务数。</p>
+</li>
+<li>
+<p>无论排队多少任务，都不会阻止提交任务。</p>
+</li>
+<li>
+<p>通过队列支持</p>
+</li>
+<li>
+<p>golang 工作池公共库</p>
+</li>
 </ul>
-
 <h3 id="支持最大任务数-放到工作池里面-并等待全部完成">支持最大任务数, 放到工作池里面 并等待全部完成</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -426,9 +431,9 @@
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
 	<span class="s">&#34;fmt&#34;</span>
@@ -453,13 +458,13 @@
 
 	<span class="nx">wp</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
-<span class="p">}</span></pre></td></tr></table>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="支持错误返回">支持错误返回</h3>
+</div><h3 id="支持错误返回">支持错误返回</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -491,9 +496,9 @@
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
 	<span class="s">&#34;fmt&#34;</span>
@@ -524,13 +529,13 @@
 		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
 	<span class="p">}</span>
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
-	<span class="p">}</span></pre></td></tr></table>
+	<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="支持判断是否完成-非阻塞">支持判断是否完成 (非阻塞)</h3>
+</div><h3 id="支持判断是否完成-非阻塞">支持判断是否完成 (非阻塞)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -557,9 +562,9 @@
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
 	<span class="s">&#34;fmt&#34;</span>
@@ -585,13 +590,13 @@
 	<span class="nx">wp</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">wp</span><span class="p">.</span><span class="nf">IsDone</span><span class="p">())</span>
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
-<span class="p">}</span></pre></td></tr></table>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="支持同步等待结果">支持同步等待结果</h3>
+</div><h3 id="支持同步等待结果">支持同步等待结果</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -625,9 +630,9 @@
 </span><span class="lnt">32
 </span><span class="lnt">33
 </span><span class="lnt">34
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><span class="kn">package</span> <span class="nx">main</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
 	<span class="s">&#34;fmt&#34;</span>
@@ -660,12 +665,11 @@
 		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
 	<span class="p">}</span>
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
-<span class="p">}</span></pre></td></tr></table>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<hr />
-
-<h2 id="代码地址-gowp-https-github-com-xxjwxc-gowp">代码地址 <a href="https://github.com/xxjwxc/gowp">gowp</a></h2>
+</div><hr>
+<h2 id="代码地址-gowphttpsgithubcomxxjwxcgowp">代码地址 <a href="https://github.com/xxjwxc/gowp">gowp</a></h2>
 
     </div>
 
@@ -678,7 +682,10 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-09-15</span>
+    <span class="item-content">
+      2019-09-15
+      
+    </span>
   </p>
   
   <p class="copyright-item">
@@ -757,6 +764,8 @@
   
 
   
+
+  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -774,10 +783,10 @@
   
 
   
-  
+
     
 
-
+  
 
         </div>
       </div>
@@ -819,7 +828,17 @@
 
     </a>
 
- 
+
+<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
 </div>
 
 <div class="copyright">
@@ -827,7 +846,7 @@
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">
@@ -875,7 +894,9 @@
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
+
+
 
   <script type="text/javascript">
     window.MathJax = {
@@ -884,6 +905,10 @@
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
 
 
 
@@ -899,6 +924,8 @@
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
 
 
 

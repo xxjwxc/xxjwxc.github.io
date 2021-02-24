@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>golang on Technology blog by xiexiaojun</title>
@@ -6,10 +6,24 @@
     <description>Recent content in golang on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 01 Jun 2020 18:01:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 24 Feb 2021 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang gRPC 和 HTTP 共用端口</title>
+      <link>https://xxjwxc.github.io/post/grpc_http_same_port/</link>
+      <pubDate>Wed, 24 Feb 2021 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/grpc_http_same_port/</guid>
+      <description>前言 接口需要提供给其他业务组访问，但是 RPC 协议不同无法内调，对方问能否走 HTTP 接口 有时候，我们服务都需要同时支持grpc跟http(restful</description>
+    </item>
     
-	<atom:link href="https://xxjwxc.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>golang chunck 服务器长连接</title>
+      <link>https://xxjwxc.github.io/post/chunck/</link>
+      <pubDate>Fri, 25 Dec 2020 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/chunck/</guid>
+      <description>http 协议的chunck概念 有时候，Web服务器生成HTTP Response是无法在Header就确定消息大小的，这时一般来说服务器将不会提供C</description>
+    </item>
     
     <item>
       <title>go gin grpc 参数自动绑定工具</title>
@@ -71,7 +85,7 @@
       <pubDate>Sun, 13 Oct 2019 21:10:31 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/post/uber_go_guide_cn/</guid>
-      <description>uber_go_guide_cn BadGood ```go BAD CODE GOES HERE ``` ```go GOOD CODE GOES HERE ``` ~~~ (You need the empty lines between the and code samples for it to be treated as Markdown.) If you need to add labels or descriptions below the code samples, add another row before the line. ~~~ DESCRIBE BAD CODE DESCRIBE GOOD CODE ~~~ -- Uber Go语言编码规范 Ub</description>
+      <description>uber_go_guide_cn Uber Go语言编码规范 Uber是世界领先的生活出行服务提供商，也是Go语言的早期adopter，根据Uber工程博客的内容，大致可以判断出Go</description>
     </item>
     
     <item>

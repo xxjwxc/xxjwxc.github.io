@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chunck on Technology blog by xiexiaojun</title>
+    <link>https://xxjwxc.github.io/tags/chunck/</link>
+    <description>Recent content in chunck on Technology blog by xiexiaojun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 25 Dec 2020 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/chunck/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang chunck 服务器长连接</title>
+      <link>https://xxjwxc.github.io/post/chunck/</link>
+      <pubDate>Fri, 25 Dec 2020 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/chunck/</guid>
+      <description>http 协议的chunck概念 有时候，Web服务器生成HTTP Response是无法在Header就确定消息大小的，这时一般来说服务器将不会提供C</description>
+    </item>
+    
+  </channel>
+</rss>
