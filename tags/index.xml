@@ -6,22 +6,40 @@
     <description>Recent content in Tags on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 24 Feb 2021 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Mar 2021 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>cmux</title>
-      <link>https://xxjwxc.github.io/tags/cmux/</link>
-      <pubDate>Wed, 24 Feb 2021 10:01:23 +0800</pubDate>
+      <title>api</title>
+      <link>https://xxjwxc.github.io/tags/api/</link>
+      <pubDate>Sat, 27 Mar 2021 10:01:23 +0800</pubDate>
       
-      <guid>https://xxjwxc.github.io/tags/cmux/</guid>
+      <guid>https://xxjwxc.github.io/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
       <link>https://xxjwxc.github.io/tags/golang/</link>
-      <pubDate>Wed, 24 Feb 2021 10:01:23 +0800</pubDate>
+      <pubDate>Sat, 27 Mar 2021 10:01:23 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hanlp</title>
+      <link>https://xxjwxc.github.io/tags/hanlp/</link>
+      <pubDate>Sat, 27 Mar 2021 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/hanlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cmux</title>
+      <link>https://xxjwxc.github.io/tags/cmux/</link>
+      <pubDate>Wed, 24 Feb 2021 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/cmux/</guid>
       <description></description>
     </item>
     
@@ -166,24 +184,6 @@
       <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>转换</title>
-      <link>https://xxjwxc.github.io/tags/%E8%BD%AC%E6%8D%A2/</link>
-      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/%E8%BD%AC%E6%8D%A2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>驼峰</title>
-      <link>https://xxjwxc.github.io/tags/%E9%A9%BC%E5%B3%B0/</link>
-      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/%E9%A9%BC%E5%B3%B0/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,16 @@
     <description>Recent content in 工具 on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 24 Feb 2021 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Mar 2021 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hanlp golang接口</title>
+      <link>https://xxjwxc.github.io/post/gohanlp/</link>
+      <pubDate>Sat, 27 Mar 2021 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/gohanlp/</guid>
+      <description>前言 Hanlp 是基于PyTorch和TensorFlow 2.x的面向研究人员和公司的多语言NLP库，用于在学术界和行业中推广最先进的深度学习技术。H</description>
+    </item>
+    
     <item>
       <title>golang gRPC 和 HTTP 共用端口</title>
       <link>https://xxjwxc.github.io/post/grpc_http_same_port/</link>
