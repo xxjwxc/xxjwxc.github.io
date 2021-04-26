@@ -6,22 +6,40 @@
     <description>Recent content in Tags on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 27 Mar 2021 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Apr 2021 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>api</title>
-      <link>https://xxjwxc.github.io/tags/api/</link>
-      <pubDate>Sat, 27 Mar 2021 10:01:23 +0800</pubDate>
+      <title>consul</title>
+      <link>https://xxjwxc.github.io/tags/consul/</link>
+      <pubDate>Mon, 26 Apr 2021 10:01:23 +0800</pubDate>
       
-      <guid>https://xxjwxc.github.io/tags/api/</guid>
+      <guid>https://xxjwxc.github.io/tags/consul/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
       <link>https://xxjwxc.github.io/tags/golang/</link>
-      <pubDate>Sat, 27 Mar 2021 10:01:23 +0800</pubDate>
+      <pubDate>Mon, 26 Apr 2021 10:01:23 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>https://xxjwxc.github.io/tags/tools/</link>
+      <pubDate>Mon, 26 Apr 2021 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api</title>
+      <link>https://xxjwxc.github.io/tags/api/</link>
+      <pubDate>Sat, 27 Mar 2021 10:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/api/</guid>
       <description></description>
     </item>
     
@@ -166,24 +184,6 @@
       <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/vue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>log</title>
-      <link>https://xxjwxc.github.io/tags/log/</link>
-      <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/log/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>日志</title>
-      <link>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</link>
-      <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</guid>
       <description></description>
     </item>
     

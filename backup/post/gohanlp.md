@@ -19,6 +19,8 @@ mathjax: true    # 打开 mathjax
 
 ---
 
+## [GoHanlp](https://github.com/xxjwxc/gohanlp)
+
 ### 前言
 
 [Hanlp](https://github.com/hankcs/HanLP) 是基于PyTorch和TensorFlow 2.x的面向研究人员和公司的多语言NLP库，用于在学术界和行业中推广最先进的深度学习技术。HanLP从一开始就被设计为高效，用户友好和可扩展的。它带有针对各种人类语言的预训练模型，包括英语，中文和许多其他语言。
@@ -26,8 +28,7 @@ mathjax: true    # 打开 mathjax
 
 ## 使用方式
 
-### 安装
-
+### 安装 [GoHanlp](https://github.com/xxjwxc/gohanlp)
 ```
 go get -u github.com/xxjwxc/gohanlp@master
 ```
