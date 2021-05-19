@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>golang工作池库 workerpool - Technology blog by xiexiaojun</title>
+  <title>golang工作池库 限流器 - Technology blog by xiexiaojun</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.81.0" />
 
 
-<link rel="canonical" href="https://xxjwxc.github.io/post/gowp/" />
+<link rel="canonical" href="https://xxjwxc.github.io/post/gowplimit/" />
 
 
 
@@ -59,19 +59,19 @@
 
 
 
-<meta property="og:title" content="golang工作池库 workerpool" />
+<meta property="og:title" content="golang工作池库 限流器" />
 <meta property="og:description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/gowp/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://xxjwxc.github.io/post/gowplimit/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-09-15T11:48:31&#43;08:00" />
 <meta property="article:modified_time" content="2019-09-15T11:48:31&#43;08:00" />
 
-<meta itemprop="name" content="golang工作池库 workerpool">
+<meta itemprop="name" content="golang工作池库 限流器">
 <meta itemprop="description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队"><meta itemprop="datePublished" content="2019-09-15T11:48:31&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-15T11:48:31&#43;08:00" />
-<meta itemprop="wordCount" content="645">
+<meta itemprop="wordCount" content="440">
 <meta itemprop="keywords" content="vue,工具,debug," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="golang工作池库 workerpool"/>
+<meta name="twitter:title" content="golang工作池库 限流器"/>
 <meta name="twitter:description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队"/>
 
 <!--[if lte IE 9]>
@@ -334,7 +334,7 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">golang工作池库 workerpool</h1>
+      <h1 class="post-title">golang工作池库 限流器</h1>
       
       <div class="post-meta">
         <time datetime="2019-09-15" class="post-time">
@@ -344,8 +344,8 @@
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 645 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 440 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
         
@@ -370,11 +370,10 @@
     <li><a href="#golang-worker-pool-线程池--工作池">golang worker pool ,线程池 , 工作池</a>
       <ul>
         <li><a href="#支持最大任务数-放到工作池里面-并等待全部完成">支持最大任务数, 放到工作池里面 并等待全部完成</a></li>
-        <li><a href="#支持错误返回">支持错误返回</a></li>
-        <li><a href="#支持判断是否完成-非阻塞">支持判断是否完成 (非阻塞)</a></li>
-        <li><a href="#支持同步等待结果">支持同步等待结果</a></li>
       </ul>
     </li>
+    <li><a href="#限流器cache">限流器(cache)</a></li>
+    <li><a href="#限流器redis">限流器(redis)</a></li>
     <li><a href="#代码地址-gowphttpsgithubcomxxjwxcgowp">代码地址 <a href="https://github.com/xxjwxc/gowp">gowp</a></a></li>
   </ul>
 </nav>
@@ -386,21 +385,12 @@
       <h2 id="gowphttpsgithubcomxxjwxcgowp"><a href="https://github.com/xxjwxc/gowp">gowp</a></h2>
 <h2 id="golang-worker-pool-线程池--工作池">golang worker pool ,线程池 , 工作池</h2>
 <ul>
-<li>
-<p>并发限制goroutine池。</p>
-</li>
-<li>
-<p>限制任务执行的并发性，而不是排队的任务数。</p>
-</li>
-<li>
-<p>无论排队多少任务，都不会阻止提交任务。</p>
-</li>
-<li>
-<p>通过队列支持</p>
-</li>
-<li>
-<p>golang 工作池公共库</p>
-</li>
+<li>并发限制goroutine池。</li>
+<li>限制任务执行的并发性，而不是排队的任务数。</li>
+<li>无论排队多少任务，都不会阻止提交任务。</li>
+<li>通过队列支持</li>
+<li>限流器</li>
+<li>golang 工作池公共库</li>
 </ul>
 <h3 id="支持最大任务数-放到工作池里面-并等待全部完成">支持最大任务数, 放到工作池里面 并等待全部完成</h3>
 <div class="highlight"><div class="chroma">
@@ -461,78 +451,7 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="支持错误返回">支持错误返回</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;time&#34;</span>
-
-	<span class="s">&#34;github.com/xxjwxc/gowp/workerpool&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">wp</span> <span class="o">:=</span> <span class="nx">workerpool</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>             <span class="c1">//设置最大线程数
-</span><span class="c1"></span>	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//开启20个请求
-</span><span class="c1"></span>		<span class="nx">ii</span> <span class="o">:=</span> <span class="nx">i</span>
-		<span class="nx">wp</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="kd">func</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
-			<span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//每次打印0-10的值
-</span><span class="c1"></span>				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%v-&gt;\t%v&#34;</span><span class="p">,</span> <span class="nx">ii</span><span class="p">,</span> <span class="nx">j</span><span class="p">))</span>
-				<span class="k">if</span> <span class="nx">ii</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
-					<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">Cause</span><span class="p">(</span><span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;my test err&#34;</span><span class="p">))</span> <span class="c1">//有err 立即返回
-</span><span class="c1"></span>				<span class="p">}</span>
-				<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
-			<span class="p">}</span>
-
-			<span class="k">return</span> <span class="kc">nil</span>
-		<span class="p">})</span>
-	<span class="p">}</span>
-
-	<span class="nx">err</span> <span class="o">:=</span> <span class="nx">wp</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
-	<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="支持判断是否完成-非阻塞">支持判断是否完成 (非阻塞)</h3>
+</div><h2 id="限流器cache">限流器(cache)</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -568,32 +487,32 @@
 
 <span class="kn">import</span> <span class="p">(</span>
 	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;sync&#34;</span>
 	<span class="s">&#34;time&#34;</span>
 
-	<span class="s">&#34;github.com/xxjwxc/gowp/workerpool&#34;</span>
+	<span class="s">&#34;github.com/xxjwxc/gowp/limiter&#34;</span>
 <span class="p">)</span>
 
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">wp</span> <span class="o">:=</span> <span class="nx">workerpool</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>              <span class="c1">//设置最大线程数
-</span><span class="c1"></span>	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//开启20个请求
-</span><span class="c1"></span>		<span class="c1">//	ii := i
-</span><span class="c1"></span>		<span class="nx">wp</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="kd">func</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
-			<span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//每次打印0-10的值
-</span><span class="c1"></span>				<span class="c1">//fmt.Println(fmt.Sprintf(&#34;%v-&gt;\t%v&#34;, ii, j))
-</span><span class="c1"></span>				<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
-			<span class="p">}</span>
-			<span class="k">return</span> <span class="kc">nil</span>
-		<span class="p">})</span>
+	<span class="nx">limiter</span> <span class="o">:=</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">NewLimiter</span><span class="p">(</span><span class="nx">limiter</span><span class="p">.</span><span class="nf">WithLimit</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">WithNamespace</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">),</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">WithTsTimeout</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="cm">/*, limiter.WithRedis(res)*/</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="nx">wg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">wg</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+		<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+			<span class="k">defer</span> <span class="nx">wg</span><span class="p">.</span><span class="nf">Done</span><span class="p">()</span>
+			<span class="nx">token</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">Acquire</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// 获取一个
+</span><span class="c1"></span>			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span>
 
-		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">wp</span><span class="p">.</span><span class="nf">IsDone</span><span class="p">())</span>
+			<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+			<span class="nx">limiter</span><span class="p">.</span><span class="nf">Release</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="c1">// 回退
+</span><span class="c1"></span>		<span class="p">}()</span>
 	<span class="p">}</span>
-	<span class="nx">wp</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">wp</span><span class="p">.</span><span class="nf">IsDone</span><span class="p">())</span>
+	<span class="nx">wg</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="支持同步等待结果">支持同步等待结果</h3>
+</div><h2 id="限流器redis">限流器(redis)</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -630,42 +549,46 @@
 </span><span class="lnt">32
 </span><span class="lnt">33
 </span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
 	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;sync&#34;</span>
 	<span class="s">&#34;time&#34;</span>
 
-	<span class="s">&#34;github.com/xxjwxc/gowp/workerpool&#34;</span>
+	<span class="s">&#34;github.com/xxjwxc/gowp/limiter&#34;</span>
+	<span class="s">&#34;github.com/xxjwxc/public/myredis&#34;</span>
 <span class="p">)</span>
 
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">wp</span> <span class="o">:=</span> <span class="nx">workerpool</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>              <span class="c1">//设置最大线程数
-</span><span class="c1"></span>	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//开启20个请求
-</span><span class="c1"></span>		<span class="nx">ii</span> <span class="o">:=</span> <span class="nx">i</span>
-		<span class="nx">wp</span><span class="p">.</span><span class="nf">DoWait</span><span class="p">(</span><span class="kd">func</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
-			<span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//每次打印0-10的值
-</span><span class="c1"></span>				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%v-&gt;\t%v&#34;</span><span class="p">,</span> <span class="nx">ii</span><span class="p">,</span> <span class="nx">j</span><span class="p">))</span>
-				<span class="c1">// if ii == 1 {
-</span><span class="c1"></span>				<span class="c1">// 	return errors.New(&#34;my test err&#34;)
-</span><span class="c1"></span>				<span class="c1">// }
-</span><span class="c1"></span>				<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
-			<span class="p">}</span>
-
-			<span class="k">return</span> <span class="kc">nil</span>
-			<span class="c1">//time.Sleep(1 * time.Second)
-</span><span class="c1"></span>			<span class="c1">//return errors.New(&#34;my test err&#34;)
-</span><span class="c1"></span>		<span class="p">})</span>
-	<span class="p">}</span>
-
-	<span class="nx">err</span> <span class="o">:=</span> <span class="nx">wp</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
+	<span class="nx">conf</span> <span class="o">:=</span> <span class="nx">myredis</span><span class="p">.</span><span class="nf">InitRedis</span><span class="p">(</span><span class="nx">myredis</span><span class="p">.</span><span class="nf">WithAddr</span><span class="p">(</span><span class="s">&#34;127.0.0.1:6379&#34;</span><span class="p">),</span> <span class="nx">myredis</span><span class="p">.</span><span class="nf">WithPwd</span><span class="p">(</span><span class="s">&#34;123456&#34;</span><span class="p">),</span> <span class="nx">myredis</span><span class="p">.</span><span class="nf">WithGroupName</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">))</span>
+	<span class="nx">res</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">myredis</span><span class="p">.</span><span class="nf">NewRedis</span><span class="p">(</span><span class="nx">conf</span><span class="p">)</span>
 	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
 		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+		<span class="k">return</span>
 	<span class="p">}</span>
+
+	<span class="nx">limiter</span> <span class="o">:=</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">NewLimiter</span><span class="p">(</span><span class="nx">limiter</span><span class="p">.</span><span class="nf">WithRedis</span><span class="p">(</span><span class="nx">res</span><span class="p">),</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">WithLimit</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">WithNamespace</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">)</span> <span class="cm">/*, limiter.WithRedis(res)*/</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="nx">wg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">wg</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+		<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+			<span class="k">defer</span> <span class="nx">wg</span><span class="p">.</span><span class="nf">Done</span><span class="p">()</span>
+			<span class="nx">token</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">Acquire</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// 获取一个
+</span><span class="c1"></span>			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span>
+
+			<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+			<span class="nx">limiter</span><span class="p">.</span><span class="nf">Release</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="c1">// 回退
+</span><span class="c1"></span>		<span class="p">}()</span>
+	<span class="p">}</span>
+	<span class="nx">wg</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
 <span class="p">}</span>
+
 </code></pre></td></tr></table>
 </div>
 </div><hr>
@@ -726,7 +649,7 @@
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/gomod/">
+          <a class="prev" href="/post/gowp/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -736,12 +659,12 @@
 </svg>
 
             </i>
-            <span class="prev-text nav-default">go mod相关配置及说明</span>
+            <span class="prev-text nav-default">golang工作池库 workerpool</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/gowplimit/">
-            <span class="next-text nav-default">golang工作池库 限流器</span>
+          <a class="next" href="/post/vue/">
+            <span class="next-text nav-default">vue环境配置及vscode调试</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
