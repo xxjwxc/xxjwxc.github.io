@@ -6,7 +6,16 @@
     <description>Recent content in 工具 on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 26 Apr 2021 10:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 11:48:31 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang工作池库 限流器</title>
+      <link>https://xxjwxc.github.io/post/gowplimit/</link>
+      <pubDate>Tue, 18 May 2021 11:48:31 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/gowplimit/</guid>
+      <description>gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队</description>
+    </item>
+    
     <item>
       <title>consul 自动配置工具</title>
       <link>https://xxjwxc.github.io/post/consult/</link>
@@ -85,15 +94,6 @@
       <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/post/gowp/</guid>
-      <description>gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队</description>
-    </item>
-    
-    <item>
-      <title>golang工作池库 限流器</title>
-      <link>https://xxjwxc.github.io/post/gowplimit/</link>
-      <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/gowplimit/</guid>
       <description>gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队</description>
     </item>
     
