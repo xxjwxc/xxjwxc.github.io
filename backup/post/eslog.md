@@ -1,6 +1,6 @@
 ---
 # 常用定义
-title: "golang elasticsearch 操作函数"           # 标题
+title: "golang elasticsearch 搜索封装"           # 标题
 date: 2021-08-11T14:01:23+08:00    # 创建时间
 lastmod: 2021-08-11T14:01:23+08:00 # 最后修改时间
 draft: false                       # 是否是草稿？
