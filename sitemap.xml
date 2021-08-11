@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xxjwxc.github.io/post/eslog/</loc>
+    <lastmod>2021-08-11T14:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xxjwxc.github.io/post/gowplimit/</loc>
     <lastmod>2021-05-18T11:48:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -143,34 +150,62 @@
   
   <url>
     <loc>https://xxjwxc.github.io/categories/</loc>
-    <lastmod>2021-05-18T11:48:31+08:00</lastmod>
+    <lastmod>2021-08-11T14:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xxjwxc.github.io/tags/debug/</loc>
-    <lastmod>2021-05-18T11:48:31+08:00</lastmod>
+    <loc>https://xxjwxc.github.io/tags/golang/</loc>
+    <lastmod>2021-08-11T14:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/log/</loc>
+    <lastmod>2021-08-11T14:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/post/</loc>
-    <lastmod>2021-05-18T11:48:31+08:00</lastmod>
+    <lastmod>2021-08-11T14:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/tags/</loc>
-    <lastmod>2021-05-18T11:48:31+08:00</lastmod>
+    <lastmod>2021-08-11T14:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xxjwxc.github.io/</loc>
+    <lastmod>2021-08-11T14:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</loc>
+    <lastmod>2021-08-11T14:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/categories/%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2021-08-11T14:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xxjwxc.github.io/tags/debug/</loc>
     <lastmod>2021-05-18T11:48:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -199,13 +234,6 @@
   
   <url>
     <loc>https://xxjwxc.github.io/tags/consul/</loc>
-    <lastmod>2021-04-26T10:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/tags/golang/</loc>
     <lastmod>2021-04-26T10:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -333,27 +361,6 @@
   <url>
     <loc>https://xxjwxc.github.io/tags/%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2019-09-22T16:16:40+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/tags/log/</loc>
-    <lastmod>2019-05-25T14:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</loc>
-    <lastmod>2019-05-25T14:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xxjwxc.github.io/categories/%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2019-05-25T14:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

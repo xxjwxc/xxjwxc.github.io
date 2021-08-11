@@ -6,7 +6,16 @@
     <description>Recent content in log on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 May 2019 14:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/log/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Aug 2021 14:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/log/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang elasticsearch 操作函数</title>
+      <link>https://xxjwxc.github.io/post/eslog/</link>
+      <pubDate>Wed, 11 Aug 2021 14:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/eslog/</guid>
+      <description>#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主</description>
+    </item>
+    
     <item>
       <title>日志系统设计</title>
       <link>https://xxjwxc.github.io/post/loglistdef/</link>

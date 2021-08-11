@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>golang工作池库 限流器 - Technology blog by xiexiaojun</title>
+  <title>golang elasticsearch 操作函数 - Technology blog by xiexiaojun</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="xiexiaojun" />
-  <meta name="description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队" />
+  <meta name="description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.81.0" />
 
 
-<link rel="canonical" href="https://xxjwxc.github.io/post/gowplimit/" />
+<link rel="canonical" href="https://xxjwxc.github.io/post/eslog/" />
 
 
 
@@ -59,20 +59,20 @@
 
 
 
-<meta property="og:title" content="golang工作池库 限流器" />
-<meta property="og:description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队" />
+<meta property="og:title" content="golang elasticsearch 操作函数" />
+<meta property="og:description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/gowplimit/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-05-18T11:48:31&#43;08:00" />
-<meta property="article:modified_time" content="2021-05-18T11:48:31&#43;08:00" />
+<meta property="og:url" content="https://xxjwxc.github.io/post/eslog/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-11T14:01:23&#43;08:00" />
+<meta property="article:modified_time" content="2021-08-11T14:01:23&#43;08:00" />
 
-<meta itemprop="name" content="golang工作池库 限流器">
-<meta itemprop="description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队"><meta itemprop="datePublished" content="2021-05-18T11:48:31&#43;08:00" />
-<meta itemprop="dateModified" content="2021-05-18T11:48:31&#43;08:00" />
-<meta itemprop="wordCount" content="440">
-<meta itemprop="keywords" content="vue,工具,debug," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="golang工作池库 限流器"/>
-<meta name="twitter:description" content="gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队"/>
+<meta itemprop="name" content="golang elasticsearch 操作函数">
+<meta itemprop="description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主"><meta itemprop="datePublished" content="2021-08-11T14:01:23&#43;08:00" />
+<meta itemprop="dateModified" content="2021-08-11T14:01:23&#43;08:00" />
+<meta itemprop="wordCount" content="729">
+<meta itemprop="keywords" content="golang,日志,log," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="golang elasticsearch 操作函数"/>
+<meta name="twitter:description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -334,18 +334,18 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">golang工作池库 限流器</h1>
+      <h1 class="post-title">golang elasticsearch 操作函数</h1>
       
       <div class="post-meta">
-        <time datetime="2021-05-18" class="post-time">
-          2021-05-18
+        <time datetime="2021-08-11" class="post-time">
+          2021-08-11
         </time>
         <div class="post-category">
-            <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
+            <a href="https://xxjwxc.github.io/categories/%E8%AE%BE%E8%AE%A1/"> 设计 </a>
             
           </div>
-        <span class="more-meta"> 约 440 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 729 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
         
@@ -364,155 +364,43 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#gowphttpsgithubcomxxjwxcgowp"><a href="https://github.com/xxjwxc/gowp">gowp</a></a></li>
-    <li><a href="#golang-worker-pool-线程池--工作池">golang worker pool ,线程池 , 工作池</a>
-      <ul>
-        <li><a href="#支持最大任务数-放到工作池里面-并等待全部完成">支持最大任务数, 放到工作池里面 并等待全部完成</a></li>
-      </ul>
-    </li>
-    <li><a href="#限流器cache">限流器(cache)</a></li>
-    <li><a href="#限流器redis">限流器(redis)</a></li>
-    <li><a href="#代码地址-gowphttpsgithubcomxxjwxcgowp">代码地址 <a href="https://github.com/xxjwxc/gowp">gowp</a></a></li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <h2 id="gowphttpsgithubcomxxjwxcgowp"><a href="https://github.com/xxjwxc/gowp">gowp</a></h2>
-<h2 id="golang-worker-pool-线程池--工作池">golang worker pool ,线程池 , 工作池</h2>
+      <p>#日志系统说明
+先来传送门:</p>
+<p><a href="https://github.com/xxjwxc/esLog">代码传送门</a></p>
 <ul>
-<li>并发限制goroutine池。</li>
-<li>限制任务执行的并发性，而不是排队的任务数。</li>
-<li>无论排队多少任务，都不会阻止提交任务。</li>
-<li>通过队列支持</li>
-<li>限流器</li>
-<li>golang 工作池公共库</li>
+<li>
+<p>1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。</p>
+</li>
+<li>
+<p>2、日志系统主要建设在oplogger基础上。将现有的mysql存储方式改成elasticsearch的存储方式。并且更新了现有字段，使其更优化</p>
+</li>
+<li>
+<p>3、以下为主要设计原理图：</p>
+</li>
 </ul>
-<h3 id="支持最大任务数-放到工作池里面-并等待全部完成">支持最大任务数, 放到工作池里面 并等待全部完成</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;time&#34;</span>
-
-	<span class="s">&#34;github.com/xxjwxc/gowp/workerpool&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">wp</span> <span class="o">:=</span> <span class="nx">workerpool</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>             <span class="c1">//设置最大线程数
-</span><span class="c1"></span>	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//开启20个请求
-</span><span class="c1"></span>		<span class="nx">ii</span> <span class="o">:=</span> <span class="nx">i</span>
-		<span class="nx">wp</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="kd">func</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
-			<span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span> <span class="c1">//每次打印0-10的值
-</span><span class="c1"></span>				<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%v-&gt;\t%v&#34;</span><span class="p">,</span> <span class="nx">ii</span><span class="p">,</span> <span class="nx">j</span><span class="p">))</span>
-				<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
-			<span class="p">}</span>
-			<span class="c1">//time.Sleep(1 * time.Second)
-</span><span class="c1"></span>			<span class="k">return</span> <span class="kc">nil</span>
-		<span class="p">})</span>
-	<span class="p">}</span>
-
-	<span class="nx">wp</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="限流器cache">限流器(cache)</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;sync&#34;</span>
-	<span class="s">&#34;time&#34;</span>
-
-	<span class="s">&#34;github.com/xxjwxc/gowp/limiter&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">limiter</span> <span class="o">:=</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">NewLimiter</span><span class="p">(</span><span class="nx">limiter</span><span class="p">.</span><span class="nf">WithLimit</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">WithNamespace</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">),</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">WithTsTimeout</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="cm">/*, limiter.WithRedis(res)*/</span><span class="p">)</span>
-	<span class="kd">var</span> <span class="nx">wg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
-	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-		<span class="nx">wg</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-		<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-			<span class="k">defer</span> <span class="nx">wg</span><span class="p">.</span><span class="nf">Done</span><span class="p">()</span>
-			<span class="nx">token</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">Acquire</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// 获取一个
-</span><span class="c1"></span>			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span>
-
-			<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
-			<span class="nx">limiter</span><span class="p">.</span><span class="nf">Release</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="c1">// 回退
-</span><span class="c1"></span>		<span class="p">}()</span>
-	<span class="p">}</span>
-	<span class="nx">wg</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="限流器redis">限流器(redis)</h2>
+<p>说明：</p>
+<ol>
+<li>trace_id ：  用来追踪一个请求的全服务调用流向</li>
+<li>应用/服务的唯一标识：   用来确定日志产生的应用服务器的唯一标识(可以细分)</li>
+<li>业务项的唯一标识：  用来确定逻辑段的唯一标识，如orderid，sku，stokin_code 等</li>
+<li>时间序列表：  用来记录日志的变化时间序，及日志创建的时间点</li>
+<li>事件序列、描述：  具体描述一件事情；如打包调试信息，封箱错误信息，拆包裹业务信息</li>
+<li>变化值序列：  描述事件内部的不同变化值</li>
+<li>备注：  用于一些说明</li>
+<li>预留字段：  用来扩展日志系统业务能力</li>
+<li>caller：  日志产生的当前文件名及行号等信息</li>
+<li>user_id,user_name ：添加操作人记录</li>
+</ol>
+<p>6、golang elasticsearch 查询封装：</p>
+<ul>
+<li>初始化</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -551,48 +439,121 @@
 </span><span class="lnt">34
 </span><span class="lnt">35
 </span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;sync&#34;</span>
-	<span class="s">&#34;time&#34;</span>
-
-	<span class="s">&#34;github.com/xxjwxc/gowp/limiter&#34;</span>
-	<span class="s">&#34;github.com/xxjwxc/public/myredis&#34;</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;github.com/xxjwxc/esLog/view/es&#34;</span>
 <span class="p">)</span>
+	<span class="nx">client</span><span class="p">,</span><span class="nx">_</span> <span class="o">:=</span> <span class="nf">New</span><span class="p">(</span><span class="nf">WithIndexName</span><span class="p">(</span><span class="s">&#34;test_log&#34;</span><span class="p">),</span> <span class="nf">WithAddrs</span><span class="p">(</span><span class="s">&#34;http://192.168.198.17:9200/&#34;</span><span class="p">))</span>
+	<span class="c1">//精确搜索
+</span><span class="c1"></span>	<span class="nx">term</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+	<span class="nx">term</span><span class="p">[</span><span class="s">&#34;topic&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;topic&#34;</span>
+	<span class="nx">term</span><span class="p">[</span><span class="s">&#34;etype&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">oplogger</span><span class="p">.</span><span class="nx">EOpType_EOpGunbuster</span>
+	<span class="nx">term</span><span class="p">[</span><span class="s">&#34;user_name&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;username&#34;</span>
+	<span class="nx">term</span><span class="p">[</span><span class="s">&#34;ekey&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;iddd-1&#34;</span>
+	<span class="nx">term</span><span class="p">[</span><span class="s">&#34;elevel&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">oplogger</span><span class="p">.</span><span class="nx">ELogLevel_EOperate</span>
+	<span class="c1">//模糊匹配
+</span><span class="c1"></span>	<span class="nx">match</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+	<span class="nx">match</span><span class="p">[</span><span class="s">&#34;desc&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;desc&#34;</span>
+	<span class="nx">match</span><span class="p">[</span><span class="s">&#34;attach&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;attach&#34;</span>
 
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">conf</span> <span class="o">:=</span> <span class="nx">myredis</span><span class="p">.</span><span class="nf">InitRedis</span><span class="p">(</span><span class="nx">myredis</span><span class="p">.</span><span class="nf">WithAddr</span><span class="p">(</span><span class="s">&#34;127.0.0.1:6379&#34;</span><span class="p">),</span> <span class="nx">myredis</span><span class="p">.</span><span class="nf">WithPwd</span><span class="p">(</span><span class="s">&#34;123456&#34;</span><span class="p">),</span> <span class="nx">myredis</span><span class="p">.</span><span class="nf">WithGroupName</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">))</span>
-	<span class="nx">res</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">myredis</span><span class="p">.</span><span class="nf">NewRedis</span><span class="p">(</span><span class="nx">conf</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-		<span class="k">return</span>
+	<span class="c1">// 时间范围
+</span><span class="c1"></span>	<span class="nx">timeCase</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">CaseSection</span><span class="p">)</span>
+	<span class="nx">timeCase</span><span class="p">[</span><span class="s">&#34;creat_time&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">CaseSection</span><span class="p">{</span>
+		<span class="nx">Min</span><span class="p">:</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">().</span><span class="nf">AddDate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+		<span class="nx">Max</span><span class="p">:</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">(),</span>
 	<span class="p">}</span>
 
-	<span class="nx">limiter</span> <span class="o">:=</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">NewLimiter</span><span class="p">(</span><span class="nx">limiter</span><span class="p">.</span><span class="nf">WithRedis</span><span class="p">(</span><span class="nx">res</span><span class="p">),</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">WithLimit</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">WithNamespace</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">)</span> <span class="cm">/*, limiter.WithRedis(res)*/</span><span class="p">)</span>
-	<span class="kd">var</span> <span class="nx">wg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
-	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-		<span class="nx">wg</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-		<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-			<span class="k">defer</span> <span class="nx">wg</span><span class="p">.</span><span class="nf">Done</span><span class="p">()</span>
-			<span class="nx">token</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">limiter</span><span class="p">.</span><span class="nf">Acquire</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// 获取一个
-</span><span class="c1"></span>			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span>
+	<span class="c1">//构造搜索器
+</span><span class="c1"></span>	<span class="kd">var</span> <span class="nx">que</span> <span class="nx">EsQuery</span>
+	<span class="nx">que</span><span class="p">.</span><span class="nf">OnPages</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="nf">OnTerm</span><span class="p">(</span><span class="nx">term</span><span class="p">).</span><span class="nf">OnMatch</span><span class="p">(</span><span class="nx">match</span><span class="p">).</span><span class="nf">OnRangeTime</span><span class="p">(</span><span class="nx">timeCase</span><span class="p">)</span>
 
-			<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
-			<span class="nx">limiter</span><span class="p">.</span><span class="nf">Release</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="c1">// 回退
-</span><span class="c1"></span>		<span class="p">}()</span>
-	<span class="p">}</span>
-	<span class="nx">wg</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;down&#34;</span><span class="p">)</span>
-<span class="p">}</span>
+	<span class="c1">// 答应查询字符串 
+</span><span class="c1"></span>	<span class="nx">data1</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Marshal</span><span class="p">(</span><span class="nx">que</span><span class="p">.</span><span class="nf">OnSource</span><span class="p">())</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">data1</span><span class="p">))</span>
+
+	<span class="c1">// 查询结果
+</span><span class="c1"></span>	<span class="nx">client</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nf">New</span><span class="p">(</span><span class="nf">WithIndexName</span><span class="p">(</span><span class="nx">Index</span><span class="p">),</span> <span class="nf">WithAddrs</span><span class="p">(</span><span class="nx">url</span><span class="p">))</span>
+	<span class="kd">var</span> <span class="nx">eslog</span> <span class="p">[]</span><span class="nx">ESLog</span>
+	<span class="nx">client</span><span class="p">.</span><span class="nf">WithOption</span><span class="p">(</span><span class="nf">WithIndexName</span><span class="p">(</span><span class="nx">Index</span><span class="p">),</span> <span class="nf">WithTypeName</span><span class="p">(</span><span class="nx">Index</span><span class="p">)).</span><span class="nf">Search</span><span class="p">(</span><span class="nx">que</span><span class="p">.</span><span class="nf">OnSource</span><span class="p">(),</span> <span class="kd">func</span><span class="p">(</span><span class="nx">e</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+		<span class="kd">var</span> <span class="nx">tmp</span> <span class="nx">ESLog</span>
+		<span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">tmp</span><span class="p">)</span>
+		<span class="nx">eslog</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">eslog</span><span class="p">,</span> <span class="nx">tmp</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">nil</span>
+	<span class="p">})</span>
+
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">eslog</span><span class="p">)</span><span class="c1">// 答应结果
+</span></code></pre></td></tr></table>
+</div>
+</div><p>6、逻辑及代码调用说明：</p>
+<p>日志写入调用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//批量添加
+</span><span class="c1"></span><span class="nx">client</span><span class="p">.</span><span class="nf">BulkAdd</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>日志写入调用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//批量添加
+</span><span class="c1"></span><span class="nx">client</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="nx">info</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>日志搜索：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">
+<span class="c1">//精确搜索
+</span><span class="c1"></span><span class="nx">term</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+<span class="o">...</span>
+<span class="c1">//模糊匹配
+</span><span class="c1"></span><span class="nx">match</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+<span class="o">...</span>
+<span class="c1">//时间段搜索
+</span><span class="c1"></span><span class="nx">timeCase</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">es</span><span class="p">.</span><span class="nx">CaseSection</span><span class="p">)</span>
+<span class="o">...</span>
+
+
+<span class="c1">// tools 搜索
+</span><span class="c1"></span><span class="nx">eslist</span> <span class="o">:=</span> <span class="nx">tools</span><span class="p">.</span><span class="nf">Search</span><span class="p">(</span><span class="nx">term</span><span class="p">,</span> <span class="nx">match</span><span class="p">,</span> <span class="nx">timeCase</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">Page</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">Limit</span><span class="p">)</span>
 
 </code></pre></td></tr></table>
 </div>
-</div><hr>
-<h2 id="代码地址-gowphttpsgithubcomxxjwxcgowp">代码地址 <a href="https://github.com/xxjwxc/gowp">gowp</a></h2>
+</div><p>说明：以接口解耦，具体业务根据不同需求实现接口实现。主要用来对数据分流。</p>
+<p><a href="https://github.com/xxjwxc/esLog">传送门</a></p>
+<p><a href="https://xxjwxc.github.io/post/loglistdef/">设计思想</a></p>
 
     </div>
 
@@ -606,7 +567,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2021-05-18
+      2021-08-11
       
     </span>
   </p>
@@ -640,31 +601,18 @@
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="https://xxjwxc.github.io/tags/vue/">vue</a>
-          <a href="https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
-          <a href="https://xxjwxc.github.io/tags/debug/">debug</a>
+          <a href="https://xxjwxc.github.io/tags/golang/">golang</a>
+          <a href="https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/">日志</a>
+          <a href="https://xxjwxc.github.io/tags/log/">log</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/eslog/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">golang elasticsearch 操作函数</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/consult/">
-            <span class="next-text nav-default">consul 自动配置工具</span>
+          <a class="next" href="/post/gowplimit/">
+            <span class="next-text nav-default">golang工作池库 限流器</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
