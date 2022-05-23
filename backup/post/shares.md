@@ -30,7 +30,7 @@ mathjax: true    # 打开 mathjax
 
 ### 欢迎微信扫码体验
 
-![show](http://tva1.sinaimg.cn/large/006MvKbTly1h2fclsxvwkj31bi0hcag8.jpg)
+![show](http://tva1.sinaimg.cn/large/006MvKbTly1h2ifotjxz8j31bi0hcag8.jpg)
 
 ## [传送门](https://github.com/xxjwxc/shares)
 
