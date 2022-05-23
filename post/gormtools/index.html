@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,12 +32,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/gormtools/" />
-
-
 
 
 
@@ -62,15 +60,21 @@
 <meta property="og:title" content="gorm mysql数据库转换工具" />
 <meta property="og:description" content="gorm-tools gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签 1. 通过当前目录co" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/gormtools/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-06-01T14:01:23&#43;08:00" />
-<meta property="article:modified_time" content="2019-06-01T14:01:23&#43;08:00" />
-
+<meta property="og:url" content="https://xxjwxc.github.io/post/gormtools/" />
+<meta property="article:published_time" content="2019-06-01T14:01:23+08:00" />
+<meta property="article:modified_time" content="2019-06-01T14:01:23+08:00" />
 <meta itemprop="name" content="gorm mysql数据库转换工具">
-<meta itemprop="description" content="gorm-tools gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签 1. 通过当前目录co"><meta itemprop="datePublished" content="2019-06-01T14:01:23&#43;08:00" />
+<meta itemprop="description" content="gorm-tools gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签 1. 通过当前目录co">
+
+
+<meta itemprop="datePublished" content="2019-06-01T14:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-01T14:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="1442">
-<meta itemprop="keywords" content="golang,gorm,工具," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="1441">
+
+
+
+<meta itemprop="keywords" content="golang,gorm,工具," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="gorm mysql数据库转换工具"/>
 <meta name="twitter:description" content="gorm-tools gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签 1. 通过当前目录co"/>
 
@@ -156,8 +160,6 @@
         
       </li>
     
-
-    
   </ul>
 </nav>
 
@@ -219,8 +221,6 @@
     </div>
     </div>
 </div>
-
-  
 
   
 
@@ -317,10 +317,6 @@
 
       </li>
     
-
-    
-    
-
     
   </ul>
 </nav>
@@ -344,7 +340,7 @@
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 1442 字 </span>
+        <span class="more-meta"> 约 1441 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -365,40 +361,67 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#gorm-mysql数据库转-struct-工具可以将mysql数据库自动生成golang-sturct结构带大驼峰命名规则带json标签">gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签</a></li>
-      </ul>
-    </li>
-    <li><a href="#1-通过当前目录configtoml文件配置默认配置项">1. 通过当前目录config.toml文件配置默认配置项</a></li>
-    <li><a href="#2-可以使用命令行工具更新配置项">2. 可以使用命令行工具更新配置项</a></li>
-    <li><a href="#3-查看帮助">3. 查看帮助</a></li>
-    <li><a href="#4-支持gorm-相关属性">4. 支持gorm 相关属性</a></li>
-    <li><a href="#5-示例展示">5. 示例展示</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-    <li><a href="#6-提供一个windows-可视化工具">6. 提供一个windows 可视化工具</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
+<ul>
+<li><a href="#gorm-tools-https-github-com-xxjwxc-gorm-tools"><a href="https://github.com/xxjwxc/gorm-tools">gorm-tools</a></a>
+<ul>
+<li>
+<ul>
+<li><a href="#gorm-mysql数据库转-struct-工具-可以将mysql数据库自动生成golang-sturct结构-带大驼峰命名规则-带json标签">gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签</a></li>
+</ul></li>
+<li><a href="#1-通过当前目录config-toml文件配置默认配置项">1. 通过当前目录config.toml文件配置默认配置项</a></li>
+<li><a href="#2-可以使用命令行工具更新配置项">2. 可以使用命令行工具更新配置项</a></li>
+<li><a href="#3-查看帮助">3. 查看帮助</a></li>
+<li><a href="#4-支持gorm-相关属性">4. 支持gorm 相关属性</a></li>
+<li><a href="#5-示例展示">5. 示例展示</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#导出结果">&mdash;&gt;导出结果</a></li>
+<li><a href="#导出结果-1">&mdash;&gt;导出结果</a></li>
+<li><a href="#导出结果-2">&mdash;&gt;导出结果</a></li>
+<li><a href="#导出结果-3">&mdash;&gt;导出结果</a></li>
+<li><a href="#导出结果-4">&mdash;&gt;导出结果</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#6-提供一个windows-可视化工具">6. 提供一个windows 可视化工具</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#传送门-https-github-com-xxjwxc-gorm-tools"><a href="https://github.com/xxjwxc/gorm-tools">传送门</a></a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <h1 id="gorm-toolshttpsgithubcomxxjwxcgorm-tools"><a href="https://github.com/xxjwxc/gorm-tools">gorm-tools</a></h1>
-<h3 id="gorm-mysql数据库转-struct-工具可以将mysql数据库自动生成golang-sturct结构带大驼峰命名规则带json标签">gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签</h3>
-<hr>
-<h2 id="1-通过当前目录configtoml文件配置默认配置项">1. 通过当前目录config.toml文件配置默认配置项</h2>
+      
+
+<h1 id="gorm-tools-https-github-com-xxjwxc-gorm-tools"><a href="https://github.com/xxjwxc/gorm-tools">gorm-tools</a></h1>
+
+<h3 id="gorm-mysql数据库转-struct-工具-可以将mysql数据库自动生成golang-sturct结构-带大驼峰命名规则-带json标签">gorm mysql数据库转 struct 工具,可以将mysql数据库自动生成golang sturct结构，带大驼峰命名规则。带json标签</h3>
+
+<hr />
+
+<h2 id="1-通过当前目录config-toml文件配置默认配置项">1. 通过当前目录config.toml文件配置默认配置项</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -408,10 +431,9 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">out_dir = &#34;.&#34;  # 输出目录
+<pre class="chroma">out_dir = &#34;.&#34;  # 输出目录
 singular_table = false  # 表名复数,是否大驼峰构建 参考:gorm.SingularTable
 simple = false #简单输出
 isJsonTag = true #是否打json标记
@@ -420,23 +442,22 @@ isJsonTag = true #是否打json标记
     port = 3306
     username = &#34;root&#34;
     password = &#34;qwer&#34;
-    database = &#34;oauth_db&#34;
-
-</code></pre></td></tr></table>
+    database = &#34;oauth_db&#34;</pre></td></tr></table>
 </div>
-</div><h2 id="2-可以使用命令行工具更新配置项">2. 可以使用命令行工具更新配置项</h2>
+</div>
+<h2 id="2-可以使用命令行工具更新配置项">2. 可以使用命令行工具更新配置项</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">./gormt -H=127.0.0.1 -d=oauth_db -p=qwer -u=root --port=3306
-</code></pre></td></tr></table>
+<pre class="chroma">./gormt -H=127.0.0.1 -d=oauth_db -p=qwer -u=root --port=3306</pre></td></tr></table>
 </div>
-</div><h2 id="3-查看帮助">3. 查看帮助</h2>
+</div>
+<h2 id="3-查看帮助">3. 查看帮助</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -456,9 +477,9 @@ isJsonTag = true #是否打json标记
 </span><span class="lnt">18
 </span><span class="lnt">19
 </span><span class="lnt">20
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">./gormt --help
+<pre class="chroma">./gormt --help
 or
 ./gormt -h
 
@@ -477,28 +498,30 @@ Flags:
       --port int          端口号 (default 3306)
   -s, --singular          是否禁用表名复数
   -u, --user string       用户名.
-  
-</code></pre></td></tr></table>
+  </pre></td></tr></table>
 </div>
-</div><h2 id="4-支持gorm-相关属性">4. 支持gorm 相关属性</h2>
+</div>
+<h2 id="4-支持gorm-相关属性">4. 支持gorm 相关属性</h2>
+
 <ul>
 <li>数据库表,列字段注释支持</li>
 <li>singular_table 表名复数(大驼峰)</li>
 <li>json tag json标签输出</li>
 <li>gorm.Model 基本模型</li>
-<li>PRIMARY_KEY	将列指定为主键</li>
-<li>UNIQUE	将列指定为唯一</li>
-<li>NOT NULL	将列指定为非 NULL</li>
-<li>INDEX	创建具有或不带名称的索引, 如果多个索引同名则创建复合索引</li>
-<li>UNIQUE_INDEX	和 INDEX 类似，只不过创建的是唯一索引</li>
+<li>PRIMARY_KEY   将列指定为主键</li>
+<li>UNIQUE    将列指定为唯一</li>
+<li>NOT NULL  将列指定为非 NULL</li>
+<li>INDEX 创建具有或不带名称的索引, 如果多个索引同名则创建复合索引</li>
+<li>UNIQUE_INDEX  和 INDEX 类似，只不过创建的是唯一索引</li>
 </ul>
+
 <h2 id="5-示例展示">5. 示例展示</h2>
+
 <ul>
-<li>sql:</li>
-</ul>
+<li><p>sql:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -515,34 +538,35 @@ Flags:
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">CREATE TABLE `user_account_tbl` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `account` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `account_type` int(11) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;帐号类型:0手机号，1邮件&#39;,
-  `app_key` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT &#39;authbucket_oauth2_client表的id&#39;,
-  `user_info_id` int(11) NOT NULL,
-  `reg_time` datetime DEFAULT NULL,
-  `reg_ip` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `bundle_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `describ` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE KEY `account` (`account`),
-  UNIQUE KEY `UNIQ_5696AD037D3656A4` (`app_key`,`user_info_id`) USING BTREE,
-  KEY `user_info_id` (`user_info_id`),
-  CONSTRAINT `1` FOREIGN KEY (`user_info_id`) REFERENCES `user_info_tbl` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC COMMENT=&#39;用户信息&#39;
-</code></pre></td></tr></table>
+<pre class="chroma">CREATE TABLE `user_account_tbl` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`account` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+`password` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+`account_type` int(11) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;帐号类型:0手机号，1邮件&#39;,
+`app_key` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT &#39;authbucket_oauth2_client表的id&#39;,
+`user_info_id` int(11) NOT NULL,
+`reg_time` datetime DEFAULT NULL,
+`reg_ip` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+`bundle_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+`describ` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+PRIMARY KEY (`id`) USING BTREE,
+UNIQUE KEY `account` (`account`),
+UNIQUE KEY `UNIQ_5696AD037D3656A4` (`app_key`,`user_info_id`) USING BTREE,
+KEY `user_info_id` (`user_info_id`),
+CONSTRAINT `1` FOREIGN KEY (`user_info_id`) REFERENCES `user_info_tbl` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC COMMENT=&#39;用户信息&#39;</pre></td></tr></table>
 </div>
-</div><ul>
-<li>参数:singular_table = false simple = false</li>
+</div></li>
+
+<li><p>参数:singular_table = false simple = false</p></li>
 </ul>
-<h6 id="---导出结果">&mdash;&gt;导出结果</h6>
+
+<h6 id="导出结果">&mdash;&gt;导出结果</h6>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -555,9 +579,9 @@ Flags:
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">//	用户信息
+<pre class="chroma">//	用户信息
 type UserAccountTbl struct {
 	ID          int       `gorm:&#34;primary_key;column:id;type:int(11);not null&#34; json:&#34;-&#34;`                                                   //
 	Account     string    `gorm:&#34;unique;column:account;type:varchar(64);not null&#34; json:&#34;account&#34;`                                         //
@@ -569,16 +593,17 @@ type UserAccountTbl struct {
 	RegIP       string    `gorm:&#34;column:reg_ip;type:varchar(15)&#34; json:&#34;reg_ip&#34;`                                                           //
 	BundleID    string    `json:&#34;bundle_id&#34; gorm:&#34;column:bundle_id;type:varchar(255)&#34;`                                                    //
 	Describ     string    `gorm:&#34;column:describ;type:varchar(255)&#34; json:&#34;describ&#34;`                                                        //
-}
-</code></pre></td></tr></table>
+}</pre></td></tr></table>
 </div>
-</div><ul>
+</div>
+<ul>
 <li>参数:singular_table = true simple = false</li>
 </ul>
-<h6 id="---导出结果-1">&mdash;&gt;导出结果</h6>
+
+<h6 id="导出结果-1">&mdash;&gt;导出结果</h6>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -590,9 +615,9 @@ type UserAccountTbl struct {
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">type User_account_tbl struct {
+<pre class="chroma">type User_account_tbl struct {
 	Id           int       `gorm:&#34;primary_key;column:id;type:int(11);not null&#34; json:&#34;-&#34;`                                                   //
 	Account      string    `gorm:&#34;unique;column:account;type:varchar(64);not null&#34; json:&#34;account&#34;`                                         //
 	Password     string    `gorm:&#34;column:password;type:varchar(64);not null&#34; json:&#34;password&#34;`                                              //
@@ -603,16 +628,17 @@ type UserAccountTbl struct {
 	Reg_ip       string    `gorm:&#34;column:reg_ip;type:varchar(15)&#34; json:&#34;reg_ip&#34;`                                                           //
 	Bundle_id    string    `gorm:&#34;column:bundle_id;type:varchar(255)&#34; json:&#34;bundle_id&#34;`                                                    //
 	Describ      string    `gorm:&#34;column:describ;type:varchar(255)&#34; json:&#34;describ&#34;`                                                        //
-}
-</code></pre></td></tr></table>
+}</pre></td></tr></table>
 </div>
-</div><ul>
+</div>
+<ul>
 <li>参数:singular_table = false simple = true isJsonTag = true</li>
 </ul>
-<h6 id="---导出结果-2">&mdash;&gt;导出结果</h6>
+
+<h6 id="导出结果-2">&mdash;&gt;导出结果</h6>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -625,9 +651,9 @@ type UserAccountTbl struct {
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">//	用户信息
+<pre class="chroma">//	用户信息
 type UserAccountTbl struct {
 	ID          int       `json:&#34;-&#34; gorm:&#34;primary_key&#34;`                                         //
 	Account     string    `gorm:&#34;unique&#34; json:&#34;account&#34;`                                        //
@@ -639,16 +665,17 @@ type UserAccountTbl struct {
 	RegIP       string    `json:&#34;reg_ip&#34;`                                                       //
 	BundleID    string    `json:&#34;bundle_id&#34;`                                                    //
 	Describ     string    `json:&#34;describ&#34;`                                                      //
-}
-</code></pre></td></tr></table>
+}</pre></td></tr></table>
 </div>
-</div><ul>
+</div>
+<ul>
 <li>参数:singular_table = false simple = true isJsonTag = false</li>
 </ul>
-<h6 id="---导出结果-3">&mdash;&gt;导出结果</h6>
+
+<h6 id="导出结果-3">&mdash;&gt;导出结果</h6>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -661,9 +688,9 @@ type UserAccountTbl struct {
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">//	用户信息
+<pre class="chroma">//	用户信息
 type UserAccountTbl struct {
 	ID          int       `gorm:&#34;primary_key&#34;` //
 	Account     string    `gorm:&#34;unique&#34;`      //
@@ -675,15 +702,14 @@ type UserAccountTbl struct {
 	RegIP       string    //
 	BundleID    string    //
 	Describ     string    //
-}
-</code></pre></td></tr></table>
+}</pre></td></tr></table>
 </div>
-</div><ul>
-<li>sql:</li>
-</ul>
+</div>
+<ul>
+<li><p>sql:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -692,57 +718,62 @@ type UserAccountTbl struct {
 </span><span class="lnt">7
 </span><span class="lnt">8
 </span><span class="lnt">9
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">CREATE TABLE `user_info_tbl` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nickname` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `headurl` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `deleted_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC COMMENT=&#39;用户信息&#39;
-</code></pre></td></tr></table>
+<pre class="chroma">CREATE TABLE `user_info_tbl` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`nickname` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+`headurl` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+`created_at` datetime DEFAULT NULL,
+`updated_at` datetime DEFAULT NULL,
+`deleted_at` datetime DEFAULT NULL,
+PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC COMMENT=&#39;用户信息&#39;</pre></td></tr></table>
 </div>
-</div><ul>
-<li>参数:singular_table = false simple = true isJsonTag = false</li>
+</div></li>
+
+<li><p>参数:singular_table = false simple = true isJsonTag = false</p></li>
 </ul>
-<h6 id="---导出结果-4">&mdash;&gt;导出结果</h6>
+
+<h6 id="导出结果-4">&mdash;&gt;导出结果</h6>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">//	用户信息
+<pre class="chroma">//	用户信息
 type UserInfoTbl struct {
 	gorm.Model        //
 	Nickname   string //
 	Headurl    string //
-}
-</code></pre></td></tr></table>
+}</pre></td></tr></table>
 </div>
-</div><h2 id="6-提供一个windows-可视化工具">6. 提供一个windows 可视化工具</h2>
-<p><img src="/image/gormt/1.png" alt="图片描述"></p>
-<p><img src="/image/gormt/2.jpg" alt="图片描述"></p>
-<p><img src="/image/gormt/3.jpg" alt="图片描述"></p>
-<p><img src="/image/gormt/4.jpg" alt="图片描述"></p>
+</div>
+<h2 id="6-提供一个windows-可视化工具">6. 提供一个windows 可视化工具</h2>
+
+<p><img src="/image/gormt/1.png" alt="图片描述" /></p>
+
+<p><img src="/image/gormt/2.jpg" alt="图片描述" /></p>
+
+<p><img src="/image/gormt/3.jpg" alt="图片描述" /></p>
+
+<p><img src="/image/gormt/4.jpg" alt="图片描述" /></p>
+
 <p><a href="https://github.com/xxjwxc/gormt/releases/download/v1.0.0.1/v1.0.zip">下载地址</a></p>
-<ol start="7">
+
+<ol>
 <li>下一步计划</li>
 </ol>
+
 <ul>
-<li>
-<p>加入外键支持(ForeignKey)</p>
-</li>
-<li>
-<h6 id="传送门httpsgithubcomxxjwxcgorm-tools"><a href="https://github.com/xxjwxc/gorm-tools">传送门</a></h6>
-</li>
+<li><p>加入外键支持(ForeignKey)</p></li>
+
+<li><h6 id="传送门-https-github-com-xxjwxc-gorm-tools"><a href="https://github.com/xxjwxc/gorm-tools">传送门</a></h6></li>
 </ul>
 
     </div>
@@ -756,10 +787,7 @@ type UserInfoTbl struct {
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2019-06-01
-      
-    </span>
+    <span class="item-content">2019-06-01</span>
   </p>
   
   <p class="copyright-item">
@@ -838,8 +866,6 @@ type UserInfoTbl struct {
   
 
   
-
-  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -857,10 +883,10 @@ type UserInfoTbl struct {
   
 
   
-
+  
     
 
-  
+
 
         </div>
       </div>
@@ -902,17 +928,7 @@ type UserInfoTbl struct {
 
     </a>
 
-
-<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
-    class="iconfont" title="rss" target="_blank">
-    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="30" height="30">
-  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
-</svg>
-
-  </a>
-   
+ 
 </div>
 
 <div class="copyright">
@@ -920,7 +936,7 @@ type UserInfoTbl struct {
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">
@@ -968,9 +984,7 @@ type UserInfoTbl struct {
 
 
 
-<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
-
-
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
     window.MathJax = {
@@ -979,10 +993,6 @@ type UserInfoTbl struct {
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-
-
-
 
 
 
@@ -998,8 +1008,6 @@ type UserInfoTbl struct {
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
 
 
 

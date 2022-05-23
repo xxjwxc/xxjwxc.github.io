@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,12 +32,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/gmsec/" />
-
-
 
 
 
@@ -62,15 +60,21 @@
 <meta property="og:title" content="gmsec golang 微服务集成框架" />
 <meta property="og:description" content="gmsec golang 微服务集成框架 grpc gorm 自动构建(gormt) grpc 参数自动绑定工具(ginrpc) dns 注册发现(mdns) markdown/mindoc 文档自动导出 安装 install proto环境安装 1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/gmsec/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-05-12T23:01:23&#43;08:00" />
-<meta property="article:modified_time" content="2020-05-12T23:01:23&#43;08:00" />
-
+<meta property="og:url" content="https://xxjwxc.github.io/post/gmsec/" />
+<meta property="article:published_time" content="2020-05-12T23:01:23+08:00" />
+<meta property="article:modified_time" content="2020-05-12T23:01:23+08:00" />
 <meta itemprop="name" content="gmsec golang 微服务集成框架">
-<meta itemprop="description" content="gmsec golang 微服务集成框架 grpc gorm 自动构建(gormt) grpc 参数自动绑定工具(ginrpc) dns 注册发现(mdns) markdown/mindoc 文档自动导出 安装 install proto环境安装 1"><meta itemprop="datePublished" content="2020-05-12T23:01:23&#43;08:00" />
+<meta itemprop="description" content="gmsec golang 微服务集成框架 grpc gorm 自动构建(gormt) grpc 参数自动绑定工具(ginrpc) dns 注册发现(mdns) markdown/mindoc 文档自动导出 安装 install proto环境安装 1">
+
+
+<meta itemprop="datePublished" content="2020-05-12T23:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-12T23:01:23&#43;08:00" />
 <meta itemprop="wordCount" content="522">
-<meta itemprop="keywords" content="golang,grpc,gin," /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="golang,grpc,gin," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="gmsec golang 微服务集成框架"/>
 <meta name="twitter:description" content="gmsec golang 微服务集成框架 grpc gorm 自动构建(gormt) grpc 参数自动绑定工具(ginrpc) dns 注册发现(mdns) markdown/mindoc 文档自动导出 安装 install proto环境安装 1"/>
 
@@ -156,8 +160,6 @@
         
       </li>
     
-
-    
   </ul>
 </nav>
 
@@ -219,8 +221,6 @@
     </div>
     </div>
 </div>
-
-  
 
   
 
@@ -317,10 +317,6 @@
 
       </li>
     
-
-    
-    
-
     
   </ul>
 </nav>
@@ -365,30 +361,37 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#golang-微服务集成框架">golang 微服务集成框架</a></li>
-      </ul>
-    </li>
-    <li><a href="#安装">安装</a></li>
-    <li><a href="#proto定义">proto定义</a></li>
-    <li><a href="#服务端代码示例">服务端代码示例</a></li>
-    <li><a href="#客户端代码">客户端代码:</a></li>
-    <li><a href="#更多示例--传送门httpsgithubcomgmsecgmsectreemasterexample">更多示例 =&gt; <a href="https://github.com/gmsec/gmsec/tree/master/example">传送门</a></a></li>
-    <li><a href="#正在做">正在做</a></li>
-    <li><a href="#欢迎一起共建共享">欢迎一起共建共享</a></li>
-    <li><a href="#传送门httpsgithubcomgmsec"><a href="https://github.com/gmsec">传送门</a></a></li>
-  </ul>
+<ul>
+<li><a href="#gmsec-https-github-com-gmsec-gmsec"><a href="https://github.com/gmsec/gmsec">gmsec</a></a>
+<ul>
+<li>
+<ul>
+<li><a href="#golang-微服务集成框架">golang 微服务集成框架</a></li>
+</ul></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#proto定义">proto定义</a></li>
+<li><a href="#服务端代码示例">服务端代码示例</a></li>
+<li><a href="#客户端代码">客户端代码:</a></li>
+<li><a href="#更多示例-传送门-https-github-com-gmsec-gmsec-tree-master-gmsec">更多示例 =&gt; <a href="https://github.com/gmsec/gmsec/tree/master/gmsec">传送门</a></a></li>
+<li><a href="#正在做">正在做</a></li>
+<li><a href="#欢迎一起共建共享">欢迎一起共建共享</a></li>
+<li><a href="#传送门-https-github-com-gmsec"><a href="https://github.com/gmsec">传送门</a></a></li>
+</ul></li>
+</ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <hr>
-<h1 id="gmsechttpsgithubcomgmsecgmsec"><a href="https://github.com/gmsec/gmsec">gmsec</a></h1>
+      
+
+<hr />
+
+<h1 id="gmsec-https-github-com-gmsec-gmsec"><a href="https://github.com/gmsec/gmsec">gmsec</a></h1>
+
 <h3 id="golang-微服务集成框架">golang 微服务集成框架</h3>
+
 <ul>
 <li><a href="https://github.com/grpc/grpc-go">grpc</a></li>
 <li><a href="https://github.com/xxjwxc/gormt">gorm 自动构建(gormt)</a></li>
@@ -396,38 +399,37 @@
 <li><a href="https://github.com/asim/mdns">dns 注册发现(mdns)</a></li>
 <li><a href="https://github.com/grpc">markdown/mindoc 文档自动导出</a></li>
 </ul>
+
 <h2 id="安装">安装</h2>
+
 <ul>
-<li>
-<p>install</p>
-</li>
-<li>
-<p>proto环境安装</p>
-</li>
-</ul>
+<li><p>install</p></li>
+
+<li><p>proto环境安装</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"> make install 
-</code></pre></td></tr></table>
+<pre class="chroma">make install </pre></td></tr></table>
 </div>
-</div><ul>
-<li>本地环境搭建(gmsec为例)</li>
-</ul>
+</div></li>
+
+<li><p>本地环境搭建(gmsec为例)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">make gen
-</code></pre></td></tr></table>
+<pre class="chroma">make gen</pre></td></tr></table>
 </div>
-</div><h2 id="proto定义">proto定义</h2>
+</div></li>
+</ul>
+
+<h2 id="proto定义">proto定义</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -444,9 +446,9 @@
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span> <span class="c1">// 指定proto版本
+<pre class="chroma"><span class="nx">syntax</span> <span class="p">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span> <span class="c1">// 指定proto版本
 </span><span class="c1"></span><span class="kn">package</span> <span class="nx">proto</span><span class="p">;</span>     <span class="c1">// 指定包名
 </span><span class="c1"></span><span class="nx">option</span> <span class="nx">go_package</span> <span class="p">=</span> <span class="s">&#34;.;proto&#34;</span><span class="p">;</span> <span class="c1">// 指定路径
 </span><span class="c1"></span>
@@ -462,13 +464,13 @@
 <span class="c1">// HelloReply 响应结构
 </span><span class="c1"></span><span class="nx">message</span> <span class="nx">HelloReply</span> <span class="p">{</span>
     <span class="kt">string</span> <span class="nx">message</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 消息
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></td></tr></table>
+</span><span class="c1"></span><span class="p">}</span></pre></td></tr></table>
 </div>
-</div><h2 id="服务端代码示例">服务端代码示例</h2>
+</div>
+<h2 id="服务端代码示例">服务端代码示例</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -551,13 +553,13 @@
 <span class="c1">// Ctx gin.Context 到 context.Context 的转换
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">Ctx</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="kd">interface</span><span class="p">{}</span> <span class="p">{</span>
 	<span class="k">return</span> <span class="nx">context</span><span class="p">.</span><span class="nf">Background</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><h2 id="客户端代码">客户端代码:</h2>
+</div>
+<h2 id="客户端代码">客户端代码:</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -602,7 +604,7 @@
         <span class="nx">micro</span><span class="p">.</span><span class="nf">WithName</span><span class="p">(</span><span class="s">&#34;lp.srv.eg1&#34;</span><span class="p">),</span>
         <span class="c1">// micro.WithRegisterTTL(time.Second*30),      //指定服务注册时间
 </span><span class="c1"></span>        <span class="c1">// micro.WithRegisterInterval(time.Second*15), //让服务在指定时间内重新注册
-</span><span class="c1"></span>        <span class="c1">// micro.WithRegistryNaming(reg),
+</span><span class="c1"></span>        <span class="c1">// micro.WithRegistryNameing(reg),
 </span><span class="c1"></span>	<span class="p">)</span>
 	<span class="c1">// ----------- end
 </span><span class="c1"></span>
@@ -610,16 +612,20 @@
 	<span class="nx">ctx</span> <span class="o">:=</span> <span class="nx">context</span><span class="p">.</span><span class="nf">Background</span><span class="p">()</span>
 	<span class="nx">resp</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">say</span><span class="p">.</span><span class="nf">SayHello</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">proto</span><span class="p">.</span><span class="nx">HelloRequest</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="s">&#34;xxjwxc&#34;</span><span class="p">})</span>
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;result:&#34;</span><span class="p">,</span> <span class="nx">resp</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><h2 id="更多示例--传送门httpsgithubcomgmsecgmsectreemasterexample">更多示例 =&gt; <a href="https://github.com/gmsec/gmsec/tree/master/example">传送门</a></h2>
+</div>
+<h2 id="更多示例-传送门-https-github-com-gmsec-gmsec-tree-master-gmsec">更多示例 =&gt; <a href="https://github.com/gmsec/gmsec/tree/master/gmsec">传送门</a></h2>
+
 <h2 id="正在做">正在做</h2>
+
 <ul>
 <li>etcdv3</li>
 </ul>
+
 <h2 id="欢迎一起共建共享">欢迎一起共建共享</h2>
-<h2 id="传送门httpsgithubcomgmsec"><a href="https://github.com/gmsec">传送门</a></h2>
+
+<h2 id="传送门-https-github-com-gmsec"><a href="https://github.com/gmsec">传送门</a></h2>
 
     </div>
 
@@ -632,10 +638,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2020-05-12
-      
-    </span>
+    <span class="item-content">2020-05-12</span>
   </p>
   
   <p class="copyright-item">
@@ -690,8 +693,8 @@
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/gormt/">
-            <span class="next-text nav-default">gormt mysql数据库转换工具</span>
+          <a class="next" href="/post/ginrpc/">
+            <span class="next-text nav-default">go gin grpc 参数自动绑定工具</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -714,8 +717,6 @@
   
 
   
-
-  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -733,10 +734,10 @@
   
 
   
-
+  
     
 
-  
+
 
         </div>
       </div>
@@ -778,17 +779,7 @@
 
     </a>
 
-
-<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
-    class="iconfont" title="rss" target="_blank">
-    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="30" height="30">
-  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
-</svg>
-
-  </a>
-   
+ 
 </div>
 
 <div class="copyright">
@@ -796,7 +787,7 @@
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">
@@ -844,9 +835,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
-
-
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
     window.MathJax = {
@@ -855,10 +844,6 @@
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-
-
-
 
 
 
@@ -874,8 +859,6 @@
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
 
 
 

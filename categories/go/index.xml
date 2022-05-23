@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>go on Technology blog by xiexiaojun</title>
@@ -6,7 +6,20 @@
     <description>Recent content in go on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 May 2019 16:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 May 2019 16:01:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://xxjwxc.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A股量化系统</title>
+      <link>https://xxjwxc.github.io/post/shares/</link>
+      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/shares/</guid>
+      <description>shares 功能 A股量化交易系统 后台开发语言 Go/Python gmsec gormt 嵌入，自动数据库代码生成 gorm 自动构建(gormt) 分时任务,盯盘助手,研报股评,每日监控,微信提醒，玩</description>
+    </item>
+    
     <item>
       <title>大驼峰转换工具</title>
       <link>https://xxjwxc.github.io/post/bigcamel/</link>

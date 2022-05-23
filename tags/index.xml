@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Technology blog by xiexiaojun</title>
@@ -6,139 +6,17 @@
     <description>Recent content in Tags on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 11 Aug 2021 14:01:23 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 May 2020 04:01:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>golang</title>
       <link>https://xxjwxc.github.io/tags/golang/</link>
-      <pubDate>Wed, 11 Aug 2021 14:01:23 +0800</pubDate>
+      <pubDate>Sat, 30 May 2020 04:01:23 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>log</title>
-      <link>https://xxjwxc.github.io/tags/log/</link>
-      <pubDate>Wed, 11 Aug 2021 14:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/log/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>日志</title>
-      <link>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</link>
-      <pubDate>Wed, 11 Aug 2021 14:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>debug</title>
-      <link>https://xxjwxc.github.io/tags/debug/</link>
-      <pubDate>Tue, 18 May 2021 11:48:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/debug/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vue</title>
-      <link>https://xxjwxc.github.io/tags/vue/</link>
-      <pubDate>Tue, 18 May 2021 11:48:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/vue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>工具</title>
-      <link>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Tue, 18 May 2021 11:48:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>consul</title>
-      <link>https://xxjwxc.github.io/tags/consul/</link>
-      <pubDate>Mon, 26 Apr 2021 10:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/consul/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tools</title>
-      <link>https://xxjwxc.github.io/tags/tools/</link>
-      <pubDate>Mon, 26 Apr 2021 10:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>api</title>
-      <link>https://xxjwxc.github.io/tags/api/</link>
-      <pubDate>Sat, 27 Mar 2021 10:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hanlp</title>
-      <link>https://xxjwxc.github.io/tags/hanlp/</link>
-      <pubDate>Sat, 27 Mar 2021 10:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/hanlp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cmux</title>
-      <link>https://xxjwxc.github.io/tags/cmux/</link>
-      <pubDate>Wed, 24 Feb 2021 10:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/cmux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>端口复用</title>
-      <link>https://xxjwxc.github.io/tags/%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8/</link>
-      <pubDate>Wed, 24 Feb 2021 10:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>chunck</title>
-      <link>https://xxjwxc.github.io/tags/chunck/</link>
-      <pubDate>Fri, 25 Dec 2020 10:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/chunck/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gin</title>
-      <link>https://xxjwxc.github.io/tags/gin/</link>
-      <pubDate>Mon, 01 Jun 2020 18:01:00 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/gin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>grpc</title>
-      <link>https://xxjwxc.github.io/tags/grpc/</link>
-      <pubDate>Mon, 01 Jun 2020 18:01:00 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/grpc/</guid>
       <description></description>
     </item>
     
@@ -157,6 +35,33 @@
       <pubDate>Wed, 20 May 2020 03:01:23 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/pprof/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具</title>
+      <link>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Wed, 20 May 2020 03:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gin</title>
+      <link>https://xxjwxc.github.io/tags/gin/</link>
+      <pubDate>Tue, 12 May 2020 23:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/gin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grpc</title>
+      <link>https://xxjwxc.github.io/tags/grpc/</link>
+      <pubDate>Tue, 12 May 2020 23:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/grpc/</guid>
       <description></description>
     </item>
     
@@ -184,6 +89,105 @@
       <pubDate>Sun, 13 Oct 2019 21:10:31 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/%E7%BF%BB%E8%AF%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mod</title>
+      <link>https://xxjwxc.github.io/tags/mod/</link>
+      <pubDate>Sun, 22 Sep 2019 16:16:40 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/mod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>配置</title>
+      <link>https://xxjwxc.github.io/tags/%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 22 Sep 2019 16:16:40 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/%E9%85%8D%E7%BD%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debug</title>
+      <link>https://xxjwxc.github.io/tags/debug/</link>
+      <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vue</title>
+      <link>https://xxjwxc.github.io/tags/vue/</link>
+      <pubDate>Sun, 15 Sep 2019 11:48:31 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log</title>
+      <link>https://xxjwxc.github.io/tags/log/</link>
+      <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/log/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>日志</title>
+      <link>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Sat, 25 May 2019 14:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/%E6%97%A5%E5%BF%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A股</title>
+      <link>https://xxjwxc.github.io/tags/a%E8%82%A1/</link>
+      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/a%E8%82%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>转换</title>
+      <link>https://xxjwxc.github.io/tags/%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/%E8%BD%AC%E6%8D%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>量化</title>
+      <link>https://xxjwxc.github.io/tags/%E9%87%8F%E5%8C%96/</link>
+      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/%E9%87%8F%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>驼峰</title>
+      <link>https://xxjwxc.github.io/tags/%E9%A9%BC%E5%B3%B0/</link>
+      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/%E9%A9%BC%E5%B3%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://xxjwxc.github.io/tags/git/</link>
+      <pubDate>Wed, 01 May 2019 16:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/git/</guid>
       <description></description>
     </item>
     

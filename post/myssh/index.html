@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,12 +32,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/myssh/" />
-
-
 
 
 
@@ -62,15 +60,21 @@
 <meta property="og:title" content="golang ssh 远程终端控制" />
 <meta property="og:description" content="golang ssh 远程命令终端支持 一个封装，支持自动补全 代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 package main import ( &#34;fmt&#34; &#34;time&#34; _ &#34;gmsec/internal/routers&#34; // debug模式需要添" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/myssh/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-05-16T23:01:23&#43;08:00" />
-<meta property="article:modified_time" content="2020-05-16T23:01:23&#43;08:00" />
-
+<meta property="og:url" content="https://xxjwxc.github.io/post/myssh/" />
+<meta property="article:published_time" content="2020-05-16T23:01:23+08:00" />
+<meta property="article:modified_time" content="2020-05-16T23:01:23+08:00" />
 <meta itemprop="name" content="golang ssh 远程终端控制">
-<meta itemprop="description" content="golang ssh 远程命令终端支持 一个封装，支持自动补全 代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 package main import ( &#34;fmt&#34; &#34;time&#34; _ &#34;gmsec/internal/routers&#34; // debug模式需要添"><meta itemprop="datePublished" content="2020-05-16T23:01:23&#43;08:00" />
+<meta itemprop="description" content="golang ssh 远程命令终端支持 一个封装，支持自动补全 代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 package main import ( &#34;fmt&#34; &#34;time&#34; _ &#34;gmsec/internal/routers&#34; // debug模式需要添">
+
+
+<meta itemprop="datePublished" content="2020-05-16T23:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-16T23:01:23&#43;08:00" />
 <meta itemprop="wordCount" content="155">
-<meta itemprop="keywords" content="golang,ssh," /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="golang,ssh," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="golang ssh 远程终端控制"/>
 <meta name="twitter:description" content="golang ssh 远程命令终端支持 一个封装，支持自动补全 代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 package main import ( &#34;fmt&#34; &#34;time&#34; _ &#34;gmsec/internal/routers&#34; // debug模式需要添"/>
 
@@ -156,8 +160,6 @@
         
       </li>
     
-
-    
   </ul>
 </nav>
 
@@ -219,8 +221,6 @@
     </div>
     </div>
 </div>
-
-  
 
   
 
@@ -317,10 +317,6 @@
 
       </li>
     
-
-    
-    
-
     
   </ul>
 </nav>
@@ -365,23 +361,33 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一个封装支持自动补全">一个封装，支持自动补全</a></li>
-    <li><a href="#代码">代码：</a></li>
-  </ul>
+<ul>
+<li><a href="#golang-ssh-远程命令终端支持">golang ssh 远程命令终端支持</a>
+<ul>
+<li><a href="#一个封装-支持自动补全">一个封装，支持自动补全</a></li>
+<li><a href="#代码">代码：</a></li>
+</ul></li>
+<li><a href="#详细代码-myssh-https-github-com-xxjwxc-public-blob-master-myssh-myssh-go">详细代码 ==&gt; <a href="https://github.com/xxjwxc/public/blob/master/myssh/myssh.go">myssh</a></a></li>
+<li><a href="#感谢您的点星支持-https-github-com-xxjwxc-public"><a href="https://github.com/xxjwxc/public/">感谢您的点星支持</a></a></li>
+</ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <hr>
+      
+
+<hr />
+
 <h1 id="golang-ssh-远程命令终端支持">golang ssh 远程命令终端支持</h1>
-<h2 id="一个封装支持自动补全">一个封装，支持自动补全</h2>
+
+<h2 id="一个封装-支持自动补全">一个封装，支持自动补全</h2>
+
 <h2 id="代码">代码：</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -421,7 +427,7 @@
 <span class="p">)</span>
 
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">c</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">myssh</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;175.24.103.30&#34;</span><span class="p">,</span> <span class="s">&#34;ubuntu&#34;</span><span class="p">,</span> <span class="s">&#34;qwer@1234&#34;</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+	<span class="nx">c</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">myssh</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;127.0.0.1&#34;</span><span class="p">,</span> <span class="s">&#34;ubuntu&#34;</span><span class="p">,</span> <span class="s">&#34;123456&#34;</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
 	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
 		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;err&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 	<span class="p">}</span>
@@ -436,11 +442,12 @@
 	<span class="c1">// time.Sleep(1 * time.Second)
 </span><span class="c1"></span>
 	<span class="nx">c</span><span class="p">.</span><span class="nf">Terminal</span><span class="p">()</span> <span class="c1">// 进入
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></td></tr></table>
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><h1 id="详细代码--mysshhttpsgithubcomxxjwxcpublicblobmastermysshmysshgo">详细代码 ==&gt; <a href="https://github.com/xxjwxc/public/blob/master/myssh/myssh.go">myssh</a></h1>
-<h1 id="感谢您的点星支持httpsgithubcomxxjwxcpublic"><a href="https://github.com/xxjwxc/public/">感谢您的点星支持</a></h1>
+</div>
+<h1 id="详细代码-myssh-https-github-com-xxjwxc-public-blob-master-myssh-myssh-go">详细代码 ==&gt; <a href="https://github.com/xxjwxc/public/blob/master/myssh/myssh.go">myssh</a></h1>
+
+<h1 id="感谢您的点星支持-https-github-com-xxjwxc-public"><a href="https://github.com/xxjwxc/public/">感谢您的点星支持</a></h1>
 
     </div>
 
@@ -453,10 +460,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2020-05-16
-      
-    </span>
+    <span class="item-content">2020-05-16</span>
   </p>
   
   <p class="copyright-item">
@@ -534,8 +538,6 @@
   
 
   
-
-  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -553,10 +555,10 @@
   
 
   
-
+  
     
 
-  
+
 
         </div>
       </div>
@@ -598,17 +600,7 @@
 
     </a>
 
-
-<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
-    class="iconfont" title="rss" target="_blank">
-    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="30" height="30">
-  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
-</svg>
-
-  </a>
-   
+ 
 </div>
 
 <div class="copyright">
@@ -616,7 +608,7 @@
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">
@@ -664,9 +656,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
-
-
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
     window.MathJax = {
@@ -675,10 +665,6 @@
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-
-
-
 
 
 
@@ -694,8 +680,6 @@
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
 
 
 

@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,12 +32,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/loglistdef/" />
-
-
 
 
 
@@ -62,15 +60,21 @@
 <meta property="og:title" content="日志系统设计" />
 <meta property="og:description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/loglistdef/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-05-25T14:01:23&#43;08:00" />
-<meta property="article:modified_time" content="2019-05-25T14:01:23&#43;08:00" />
-
+<meta property="og:url" content="https://xxjwxc.github.io/post/loglistdef/" />
+<meta property="article:published_time" content="2019-05-25T14:01:23+08:00" />
+<meta property="article:modified_time" content="2019-05-25T14:01:23+08:00" />
 <meta itemprop="name" content="日志系统设计">
-<meta itemprop="description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主"><meta itemprop="datePublished" content="2019-05-25T14:01:23&#43;08:00" />
+<meta itemprop="description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主">
+
+
+<meta itemprop="datePublished" content="2019-05-25T14:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-25T14:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="781">
-<meta itemprop="keywords" content="golang,日志,log," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="780">
+
+
+
+<meta itemprop="keywords" content="golang,日志,log," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="日志系统设计"/>
 <meta name="twitter:description" content="#日志系统说明 先来传送门: 代码传送门 1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。 2、日志系统主"/>
 
@@ -156,8 +160,6 @@
         
       </li>
     
-
-    
   </ul>
 </nav>
 
@@ -219,8 +221,6 @@
     </div>
     </div>
 </div>
-
-  
 
   
 
@@ -317,10 +317,6 @@
 
       </li>
     
-
-    
-    
-
     
   </ul>
 </nav>
@@ -344,7 +340,7 @@
             <a href="https://xxjwxc.github.io/categories/%E8%AE%BE%E8%AE%A1/"> 设计 </a>
             
           </div>
-        <span class="more-meta"> 约 781 字 </span>
+        <span class="more-meta"> 约 780 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -364,7 +360,7 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    <nav id="TableOfContents"></nav>
+    
   </div>
 </div>
 
@@ -372,30 +368,39 @@
     <div class="post-content">
       <p>#日志系统说明
 先来传送门:</p>
+
 <p><a href="https://github.com/xxjwxc/esLog">代码传送门</a></p>
+
 <ul>
-<li>
-<p>1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。</p>
-</li>
-<li>
-<p>2、日志系统主要建设在oplogger基础上。将现有的mysql存储方式改成elasticsearch的存储方式。并且更新了现有字段，使其更优化</p>
-</li>
-<li>
-<p>3、以下为主要设计原理图：</p>
-</li>
+<li><p>1、日志主要说明：谁在什么时间,在什么地方,做了什么事情，产生了什么影响，影响的变化因子。</p></li>
+
+<li><p>2、日志系统主要建设在oplogger基础上。将现有的mysql存储方式改成elasticsearch的存储方式。并且更新了现有字段，使其更优化</p></li>
+
+<li><p>3、以下为主要设计原理图：</p></li>
 </ul>
-<p><img src="/image/tapd_20332201_base64_1555911551_22.png" alt="图片描述"></p>
+
+<p><img src="/image/tapd_20332201_base64_1555911551_22.png" alt="图片描述" /></p>
+
 <p>以下为时序图：</p>
-<p><img src="/image/tapd_20332201_base64_1555911442_70.png" alt="图片描述"></p>
+
+<p><img src="/image/tapd_20332201_base64_1555911442_70.png" alt="图片描述" /></p>
+
 <ul>
 <li>5、新日志系统的数据格式说明：</li>
 </ul>
+
 <p>根据日志基本形态结合实际需求，列出一下思维导图</p>
-<p><img src="/image/tapd_personalword_1120122431001000641_base64_1555902612_27.png" alt=""></p>
+
+<p><img src="/image/tapd_personalword_1120122431001000641_base64_1555902612_27.png" alt="" /></p>
+
 <p>以下归类列出数据列。</p>
-<p><img src="/image/tapd_20332201_base64_1558766987_99.png" alt="图片描述"></p>
+
+<p><img src="/image/tapd_20332201_base64_1558766987_99.png" alt="图片描述" /></p>
+
 <p>说明：</p>
+
 <p>说明：</p>
+
 <ol>
 <li>trace_id ：  用来追踪一个请求的全服务调用流向</li>
 <li>应用/服务的唯一标识：   用来确定日志产生的应用服务器的唯一标识(可以细分)</li>
@@ -408,18 +413,23 @@
 <li>caller：  日志产生的当前文件名及行号等信息</li>
 <li>user_id,user_name ：添加操作人记录</li>
 </ol>
+
 <ul>
 <li>6、业务逻辑接口说明
 采用接口，或者插件的形式引入具体业务逻辑中。
 以下为接口实现及逻辑：</li>
 </ul>
-<p><img src="/image/tapd_20332201_base64_1555911779_3.png" alt="图片描述"></p>
-<p><img src="/image/tapd_20332201_base64_1558790436_67.png" alt="图片描述"></p>
+
+<p><img src="/image/tapd_20332201_base64_1555911779_3.png" alt="图片描述" /></p>
+
+<p><img src="/image/tapd_20332201_base64_1558790436_67.png" alt="图片描述" /></p>
+
 <p>6、逻辑及代码调用说明：</p>
+
 <p>业务逻辑调用：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -434,14 +444,15 @@
 </span><span class="c1"></span>	<span class="nx">oploger</span><span class="p">.</span><span class="nf">AddOne</span><span class="p">(</span><span class="nx">oplogger</span><span class="p">.</span><span class="nx">EOpType_EOpSTokin</span><span class="p">,</span><span class="s">&#34;service&#34;</span><span class="p">,</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">sku</span><span class="p">,</span><span class="s">&#34;操作补拍&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nx">oplogger</span><span class="p">.</span><span class="nx">ELogLevel_EOperate</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">//发送日志
-</span><span class="c1"></span><span class="nx">logerlogic</span><span class="p">.</span><span class="nf">OnAddLogOplogger</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">oploger</span><span class="p">)</span>
-</code></pre></td></tr></table>
+</span><span class="c1"></span><span class="nx">logerlogic</span><span class="p">.</span><span class="nf">OnAddLogOplogger</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">oploger</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
-</div><p>6、逻辑及代码调用说明：</p>
+</div>
+<p>6、逻辑及代码调用说明：</p>
+
 <p>日志写入调用：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -458,13 +469,13 @@
 
 <span class="c1">//批量添加
 </span><span class="c1"></span><span class="nx">b</span> <span class="o">:=</span> <span class="nx">es</span><span class="p">.</span><span class="nf">GetClient</span><span class="p">().</span><span class="nf">BulkAdd</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">.</span><span class="nx">Index</span><span class="p">,</span>
-	<span class="nx">config</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">.</span><span class="nx">Index</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nx">tmp</span><span class="p">)</span>
-</code></pre></td></tr></table>
+	<span class="nx">config</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">.</span><span class="nx">Index</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nx">tmp</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
-</div><p>日志写入调用：</p>
+</div>
+<p>日志写入调用：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -481,13 +492,13 @@
 
 <span class="c1">//批量添加
 </span><span class="c1"></span><span class="nx">b</span> <span class="o">:=</span> <span class="nx">es</span><span class="p">.</span><span class="nf">GetClient</span><span class="p">().</span><span class="nf">BulkAdd</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">.</span><span class="nx">Index</span><span class="p">,</span>
-		<span class="nx">config</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">.</span><span class="nx">Index</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nx">tmp</span><span class="p">)</span>
-</code></pre></td></tr></table>
+		<span class="nx">config</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">.</span><span class="nx">Index</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="nx">tmp</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
-</div><p>日志搜索：</p>
+</div>
+<p>日志搜索：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -498,11 +509,9 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">
-<span class="c1">//精确搜索
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//精确搜索
 </span><span class="c1"></span><span class="nx">term</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
 <span class="o">...</span>
 <span class="c1">//模糊匹配
@@ -512,10 +521,11 @@
 </span><span class="c1"></span><span class="nx">timeCase</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">es</span><span class="p">.</span><span class="nx">CaseSection</span><span class="p">)</span>
 <span class="o">...</span>
 
-<span class="nx">eslist</span> <span class="o">:=</span> <span class="nx">tools</span><span class="p">.</span><span class="nf">Search</span><span class="p">(</span><span class="nx">term</span><span class="p">,</span> <span class="nx">match</span><span class="p">,</span> <span class="nx">timeCase</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">Page</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">Limit</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<span class="nx">eslist</span> <span class="o">:=</span> <span class="nx">tools</span><span class="p">.</span><span class="nf">Search</span><span class="p">(</span><span class="nx">term</span><span class="p">,</span> <span class="nx">match</span><span class="p">,</span> <span class="nx">timeCase</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">Page</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">Limit</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
-</div><p>说明：以接口解耦，具体业务根据不同需求实现接口实现。主要用来对数据分流。</p>
+</div>
+<p>说明：以接口解耦，具体业务根据不同需求实现接口实现。主要用来对数据分流。</p>
+
 <p><a href="https://github.com/xxjwxc/esLog">传送门</a></p>
 
     </div>
@@ -529,10 +539,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2019-05-25
-      
-    </span>
+    <span class="item-content">2019-05-25</span>
   </p>
   
   <p class="copyright-item">
@@ -587,8 +594,8 @@
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/bigcamel/">
-            <span class="next-text nav-default">大驼峰转换工具</span>
+          <a class="next" href="/post/shares/">
+            <span class="next-text nav-default">A股量化系统</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -611,8 +618,6 @@
   
 
   
-
-  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -630,10 +635,10 @@
   
 
   
-
+  
     
 
-  
+
 
         </div>
       </div>
@@ -675,17 +680,7 @@
 
     </a>
 
-
-<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
-    class="iconfont" title="rss" target="_blank">
-    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="30" height="30">
-  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
-</svg>
-
-  </a>
-   
+ 
 </div>
 
 <div class="copyright">
@@ -693,7 +688,7 @@
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">
@@ -741,9 +736,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
-
-
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
     window.MathJax = {
@@ -752,10 +745,6 @@
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-
-
-
 
 
 
@@ -771,8 +760,6 @@
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
 
 
 

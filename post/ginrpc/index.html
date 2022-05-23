@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,12 +32,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/ginrpc/" />
-
-
 
 
 
@@ -62,15 +60,21 @@
 <meta property="og:title" content="go gin grpc 参数自动绑定工具" />
 <meta property="og:description" content="ginprc 注解路由，自动参数绑定工具 ![doc][image/ginrpc_doc.gif] golang gin 参数自动绑定工具 支持对象自动注册及注解路由 支持参数自动绑定 自带请求参数过滤及绑定实现 binding:&ldquo;required&rdquo; validator 支持 grpc-go 绑定模式 支持" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/ginrpc/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-06-01T18:01:00&#43;08:00" />
-<meta property="article:modified_time" content="2020-06-01T18:01:00&#43;08:00" />
-
+<meta property="og:url" content="https://xxjwxc.github.io/post/ginrpc/" />
+<meta property="article:published_time" content="2020-01-25T18:01:00+08:00" />
+<meta property="article:modified_time" content="2020-03-14T18:01:00+08:00" />
 <meta itemprop="name" content="go gin grpc 参数自动绑定工具">
-<meta itemprop="description" content="ginprc 注解路由，自动参数绑定工具 ![doc][image/ginrpc_doc.gif] golang gin 参数自动绑定工具 支持对象自动注册及注解路由 支持参数自动绑定 自带请求参数过滤及绑定实现 binding:&ldquo;required&rdquo; validator 支持 grpc-go 绑定模式 支持"><meta itemprop="datePublished" content="2020-06-01T18:01:00&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-01T18:01:00&#43;08:00" />
-<meta itemprop="wordCount" content="1361">
-<meta itemprop="keywords" content="golang,grpc,工具,gin," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="ginprc 注解路由，自动参数绑定工具 ![doc][image/ginrpc_doc.gif] golang gin 参数自动绑定工具 支持对象自动注册及注解路由 支持参数自动绑定 自带请求参数过滤及绑定实现 binding:&ldquo;required&rdquo; validator 支持 grpc-go 绑定模式 支持">
+
+
+<meta itemprop="datePublished" content="2020-01-25T18:01:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-14T18:01:00&#43;08:00" />
+<meta itemprop="wordCount" content="1190">
+
+
+
+<meta itemprop="keywords" content="golang,grpc,工具,gin," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="go gin grpc 参数自动绑定工具"/>
 <meta name="twitter:description" content="ginprc 注解路由，自动参数绑定工具 ![doc][image/ginrpc_doc.gif] golang gin 参数自动绑定工具 支持对象自动注册及注解路由 支持参数自动绑定 自带请求参数过滤及绑定实现 binding:&ldquo;required&rdquo; validator 支持 grpc-go 绑定模式 支持"/>
 
@@ -156,8 +160,6 @@
         
       </li>
     
-
-    
   </ul>
 </nav>
 
@@ -219,8 +221,6 @@
     </div>
     </div>
 </div>
-
-  
 
   
 
@@ -317,10 +317,6 @@
 
       </li>
     
-
-    
-    
-
     
   </ul>
 </nav>
@@ -337,14 +333,14 @@
       <h1 class="post-title">go gin grpc 参数自动绑定工具</h1>
       
       <div class="post-meta">
-        <time datetime="2020-06-01" class="post-time">
-          2020-06-01
+        <time datetime="2020-01-25" class="post-time">
+          2020-01-25
         </time>
         <div class="post-category">
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 1361 字 </span>
+        <span class="more-meta"> 约 1190 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -365,113 +361,97 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-  <ul>
-    <li><a href="#ginprchttpsgithubcomxxjwxcginrpc-注解路由自动参数绑定工具"><a href="https://github.com/xxjwxc/ginrpc">ginprc</a> 注解路由，自动参数绑定工具</a></li>
-    <li><a href="#golang-gin-参数自动绑定工具">golang gin 参数自动绑定工具</a></li>
-    <li><a href="#安装使用">安装使用</a>
-      <ul>
-        <li><a href="#支持多种接口模式">支持多种接口模式</a></li>
-      </ul>
-    </li>
-    <li><a href="#一-参数自动绑定对象注册注解路由">一. 参数自动绑定/对象注册(注解路由)</a>
-      <ul>
-        <li><a href="#初始化项目本项目以gmsec-为名字">初始化项目(本项目以gmsec 为名字)</a></li>
-        <li><a href="#代码">代码</a></li>
-        <li><a href="#执行curl可以自动参数绑定直接看结果">执行curl，可以自动参数绑定。直接看结果</a></li>
-        <li><a href="#-注解路由相关说明">-注解路由相关说明</a></li>
-        <li><a href="#1-注解路由会自动创建rootroutersgen_routergo-文件-需要在调用时加">1. 注解路由会自动创建[root]/routers/gen_router.go 文件 需要在调用时加：</a></li>
-        <li><a href="#2-注册函数说明">2. 注册函数说明</a></li>
-        <li><a href="#2-注解路由调用demogmsechttpsgithubcomgmsecgmsec">2. 注解路由调用demo：<a href="https://github.com/gmsec/gmsec">gmsec</a></a></li>
-        <li><a href="#3-支持绑定grpc函数-gmsechttpsgithubcomgmsecgmsec">3. 支持绑定grpc函数: <a href="https://github.com/gmsec/gmsec">gmsec</a></a></li>
-      </ul>
-    </li>
-    <li><a href="#二-swaggermarkdownmindoc-文档生成说明">二. swagger/markdown/mindoc 文档生成说明</a>
-      <ul>
-        <li><a href="#1对于对象注册ginrpcregister模式支持文档导出">1.对于对象注册<code>ginrpc.Register</code>模式,支持文档导出</a></li>
-        <li><a href="#2导出支持注解路由支持参数注释支持默认值tagdefault">2.导出支持注解路由,支持参数注释,支持默认值(<code>tag</code>.<code>default</code>)</a></li>
-        <li><a href="#3默认导出路径docsswaggerswaggerjsondocsmarkdown">3.默认导出路径:(<code>/docs/swagger/swagger.json</code>,<code>/docs/markdown</code>)</a></li>
-        <li><a href="#4-struct-demo">4 struct demo</a></li>
-      </ul>
-    </li>
-    <li><a href="#三-支持调用中间件">三. 支持调用中间件</a></li>
-    <li><a href="#stargazers-over-time">Stargazers over time</a>
-      <ul>
-        <li><a href="#代码地址-ginprchttpsgithubcomxxjwxcginrpc-如果喜欢请给星支持">代码地址： <a href="https://github.com/xxjwxc/ginrpc">ginprc</a> 如果喜欢请给星支持</a></li>
-      </ul>
-    </li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#ginprc-https-github-com-xxjwxc-ginrpc-注解路由-自动参数绑定工具"><a href="https://github.com/xxjwxc/ginrpc">ginprc</a> 注解路由，自动参数绑定工具</a></li>
+<li><a href="#golang-gin-参数自动绑定工具">golang gin 参数自动绑定工具</a>
+<ul>
+<li><a href="#支持多种接口模式">支持多种接口模式</a></li>
+</ul></li>
+<li><a href="#一-参数自动绑定-对象注册-注解路由">一. 参数自动绑定/对象注册(注解路由)</a>
+<ul>
+<li><a href="#初始化项目-本项目以ginweb-为名字">初始化项目(本项目以ginweb 为名字)</a></li>
+<li><a href="#代码">代码</a></li>
+<li><a href="#执行curl-可以自动参数绑定-直接看结果">执行curl，可以自动参数绑定。直接看结果</a></li>
+<li><a href="#注解路由相关说明">-注解路由相关说明</a>
+<ul>
+<li><a href="#说明-如果对象函数中不加注解路由-系统会默认添加注解路由-post方式-带req-2个参数-ctx-req-get方式为一个参数-ctx">说明:如果对象函数中不加注解路由，系统会默认添加注解路由。post方式：带req(2个参数(ctx,req))，get方式为一个参数(ctx)</a></li>
+</ul></li>
+<li><a href="#1-注解路由会自动创建-root-routers-gen-router-go-文件-需要在调用时加">1. 注解路由会自动创建[root]/routers/gen_router.go 文件 需要在调用时加：</a></li>
+<li><a href="#2-注册函数说明">2. 注册函数说明</a></li>
+<li><a href="#2-注解路由调用demo-ginweb-sample-ginweb">2. 注解路由调用demo：<a href="/sample/ginweb">ginweb</a></a></li>
+<li><a href="#3-支持绑定grpc函数-ginweb-sample-ginweb">3. 支持绑定grpc函数: <a href="/sample/ginweb">ginweb</a></a></li>
+</ul></li>
+<li><a href="#二-swagger-markdown-mindoc-文档生成说明">二. swagger/markdown/mindoc 文档生成说明</a>
+<ul>
+<li><a href="#1-对于对象注册-ginrpc-register-模式-支持文档导出">1.对于对象注册<code>ginrpc.Register</code>模式,支持文档导出</a></li>
+<li><a href="#2-导出支持注解路由-支持参数注释-支持默认值-tag-default">2.导出支持注解路由,支持参数注释,支持默认值(<code>tag</code>.<code>default</code>)</a></li>
+<li><a href="#3-默认导出路径-docs-swagger-swagger-json-docs-markdown">3.默认导出路径:(<code>/docs/swagger/swagger.json</code>,<code>/docs/markdown</code>)</a></li>
+<li><a href="#4-struct-demo">4 struct demo</a></li>
+</ul></li>
+<li><a href="#stargazers-over-time">Stargazers over time</a></li>
+<li><a href="#下一步">下一步</a>
+<ul>
+<li><a href="#代码地址-ginprc-https-github-com-xxjwxc-ginrpc-如果喜欢请给星支持">代码地址： <a href="https://github.com/xxjwxc/ginrpc">ginprc</a> 如果喜欢请给星支持</a></li>
+</ul></li>
+</ul></li>
+</ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <h2 id="ginprchttpsgithubcomxxjwxcginrpc-注解路由自动参数绑定工具"><a href="https://github.com/xxjwxc/ginrpc">ginprc</a> 注解路由，自动参数绑定工具</h2>
-<p><img src="/image/ginrpc.gif" alt="img">
+      
+
+<h2 id="ginprc-https-github-com-xxjwxc-ginrpc-注解路由-自动参数绑定工具"><a href="https://github.com/xxjwxc/ginrpc">ginprc</a> 注解路由，自动参数绑定工具</h2>
+
+<p><img src="/image/ginrpc.gif" alt="img" />
 ![doc][image/ginrpc_doc.gif]</p>
+
 <h2 id="golang-gin-参数自动绑定工具">golang gin 参数自动绑定工具</h2>
+
 <ul>
-<li>
-<p>支持对象自动注册及注解路由</p>
-</li>
-<li>
-<p>支持参数自动绑定</p>
-</li>
-<li>
-<p>自带请求参数过滤及绑定实现 binding:&ldquo;required&rdquo;  <a href="go-playground/validator.v8">validator</a></p>
-</li>
-<li>
-<p>支持 <a href="https://github.com/grpc/grpc-go">grpc-go</a> 绑定模式</p>
-</li>
-<li>
-<p>支持<a href="http://editor.swagger.io/">swagger 文档</a>导出 <a href="https://github.com/gmsec/gmsec">MORE</a></p>
-</li>
-<li>
-<p>支持<a href="https://www.iminho.me/">markdown/mindoc 文档</a>导出 <a href="https://github.com/gmsec/gmsec">MORE</a></p>
-</li>
-<li>
-<p>支持调用前后中间件(<code>ginrpc.WithBeforeAfter</code>)</p>
-</li>
-<li>
-<p><a href="https://github.com/gmsec/gmsec">更多请看</a></p>
-</li>
+<li>支持对象自动注册及注解路由</li>
+<li>支持参数自动绑定</li>
+<li>自带请求参数过滤及绑定实现 binding:&ldquo;required&rdquo;  <a href="go-playground/validator.v8">validator</a></li>
+<li>支持 <a href="https://github.com/grpc/grpc-go">grpc-go</a> 绑定模式</li>
+<li>支持<a href="http://editor.swagger.io/">swagger 文档</a>导出 <a href="https://github.com/xxjwxc/gmsec">MORE</a></li>
+
+<li><p>支持<a href="https://www.iminho.me/">markdown/mindoc 文档</a>导出 <a href="https://github.com/xxjwxc/gmsec">MORE</a></p></li>
+
+<li><p><a href="https://github.com/xxjwxc/gmsec">更多请看</a></p></li>
 </ul>
-<h2 id="安装使用">安装使用</h2>
+
+<h3 id="支持多种接口模式">支持多种接口模式</h3>
+
 <ul>
-<li>go mod:</li>
+<li>func(*gin.Context) //go-gin 原始接口</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">go get -u github.com/xxjwxc/ginrpc@master
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="支持多种接口模式">支持多种接口模式</h3>
-<ul>
-<li>
-<p>func(*gin.Context) //go-gin 原始接口</p>
+
 <p>func(*api.Context) //自定义的context类型</p>
-</li>
-<li>
-<p>func(*api.Context,req) //自定义的context类型,带request 请求参数</p>
-</li>
-<li>
-<p>func(*gin.Context,*req) //go-gin context类型,带request 请求参数</p>
-</li>
-<li>
-<p>func(*gin.Context,*req)(*resp,error) //go-gin context类型,带request 请求参数,带错误返回参数 ==&gt; <a href="https://github.com/grpc/grpc-go">grpc-go</a></p>
-<p>func(*gin.Context,req)(resp,error)</p>
-</li>
+
+<ul>
+<li><p>func(*api.Context,req) //自定义的context类型,带request 请求参数</p></li>
+
+<li><p>func(*gin.Context,*req) //go-gin context类型,带request 请求参数</p></li>
+
+<li><p>func(*gin.Context,*req)(*resp,error) //go-gin context类型,带request 请求参数,带错误返回参数 ==&gt; <a href="https://github.com/grpc/grpc-go">grpc-go</a></p></li>
 </ul>
-<h2 id="一-参数自动绑定对象注册注解路由">一. 参数自动绑定/对象注册(注解路由)</h2>
-<h3 id="初始化项目本项目以gmsec-为名字">初始化项目(本项目以gmsec 为名字)</h3>
-<p><code>go mod init gmsec</code></p>
+
+<p>func(*gin.Context,req)(resp,error)</p>
+
+<h2 id="一-参数自动绑定-对象注册-注解路由">一. 参数自动绑定/对象注册(注解路由)</h2>
+
+<h3 id="初始化项目-本项目以ginweb-为名字">初始化项目(本项目以ginweb 为名字)</h3>
+
+<p><code>go mod init ginweb</code></p>
+
 <h3 id="代码">代码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -541,9 +521,10 @@
 	<span class="s">&#34;fmt&#34;</span>
 	<span class="s">&#34;net/http&#34;</span>
 
-	<span class="nx">_</span> <span class="s">&#34;gmsec/routers&#34;</span> <span class="c1">// debug模式需要添加[mod]/routers 注册注解路由
-</span><span class="c1"></span>	<span class="s">&#34;github.com/xxjwxc/public/mydoc/myswagger&#34;</span> <span class="c1">// swagger 支持
-</span><span class="c1"></span>	<span class="s">&#34;github.com/gin-gonic/gin&#34;</span>
+	<span class="s">&#34;github.com/xxjwxc/public/mydoc/myswagger&#34;</span>	
+	<span class="nx">_</span> <span class="s">&#34;ginweb/routers&#34;</span> <span class="c1">// debug模式需要添加[mod]/routers 注册注解路由
+</span><span class="c1"></span>
+	<span class="s">&#34;github.com/gin-gonic/gin&#34;</span>
 	<span class="s">&#34;github.com/xxjwxc/ginrpc&#34;</span>
 	<span class="s">&#34;github.com/xxjwxc/ginrpc/api&#34;</span>
 <span class="p">)</span>
@@ -589,123 +570,127 @@
 	<span class="nx">myswagger</span><span class="p">.</span><span class="nf">SetBasePath</span><span class="p">(</span><span class="s">&#34;gmsec&#34;</span><span class="p">)</span>
 	<span class="nx">myswagger</span><span class="p">.</span><span class="nf">SetSchemes</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
 	<span class="c1">// -----end --
-</span><span class="c1"></span>	<span class="nx">base</span> <span class="o">:=</span> <span class="nx">ginrpc</span><span class="p">.</span><span class="nf">New</span><span class="p">())</span>
+</span><span class="c1"></span>	<span class="nx">base</span> <span class="o">:=</span> <span class="nx">ginrpc</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="nx">ginrpc</span><span class="p">.</span><span class="nf">WithGroup</span><span class="p">(</span><span class="s">&#34;xxjwxc&#34;</span><span class="p">))</span>
 	<span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
-	<span class="nx">group</span> <span class="o">:=</span> <span class="nx">router</span><span class="p">.</span><span class="nf">Group</span><span class="p">(</span><span class="s">&#34;/xxjwxc&#34;</span><span class="p">)</span>
 	<span class="nx">base</span><span class="p">.</span><span class="nf">Register</span><span class="p">(</span><span class="nx">router</span><span class="p">,</span> <span class="nb">new</span><span class="p">(</span><span class="nx">Hello</span><span class="p">))</span> <span class="c1">// 对象注册 like(go-micro)
 </span><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">POST</span><span class="p">(</span><span class="s">&#34;/test6&#34;</span><span class="p">,</span> <span class="nx">base</span><span class="p">.</span><span class="nf">HandlerFunc</span><span class="p">(</span><span class="nx">TestFun6</span><span class="p">))</span>                            <span class="c1">// 函数注册
 </span><span class="c1"></span>	<span class="nx">base</span><span class="p">.</span><span class="nf">RegisterHandlerFunc</span><span class="p">(</span><span class="nx">router</span><span class="p">,</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;post&#34;</span><span class="p">,</span> <span class="s">&#34;get&#34;</span><span class="p">},</span> <span class="s">&#34;/test&#34;</span><span class="p">,</span> <span class="nx">TestFun6</span><span class="p">)</span> <span class="c1">// 多种请求方式注册
 </span><span class="c1"></span>	<span class="nx">router</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><p><a href="https://github.com/gmsec/gmsec">更多&raquo;</a></p>
-<h3 id="执行curl可以自动参数绑定直接看结果">执行curl，可以自动参数绑定。直接看结果</h3>
+</div>
+<p><a href="https://github.com/xxjwxc/ginrpc/tree/master/sample/ginweb">更多&gt;&gt;</a></p>
+
+<h3 id="执行curl-可以自动参数绑定-直接看结果">执行curl，可以自动参数绑定。直接看结果</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">curl &#39;http://127.0.0.1:8080/xxjwxc/block&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{&#34;access_token&#34;:&#34;111&#34;, &#34;user_name&#34;:&#34;222&#34;, &#34;password&#34;:&#34;333&#34;}&#39;
-</code></pre></td></tr></table>
+<pre class="chroma">  curl &#39;http://127.0.0.1:8080/xxjwxc/block&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{&#34;access_token&#34;:&#34;111&#34;, &#34;user_name&#34;:&#34;222&#34;, &#34;password&#34;:&#34;333&#34;}&#39;</pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">curl &#39;http://127.0.0.1:8080/xxjwxc/hello.hello2&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{&#34;access_token&#34;:&#34;111&#34;, &#34;user_name&#34;:&#34;222&#34;, &#34;password&#34;:&#34;333&#34;}&#39;
-</code></pre></td></tr></table>
+<pre class="chroma">  curl &#39;http://127.0.0.1:8080/xxjwxc/hello.hello2&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{&#34;access_token&#34;:&#34;111&#34;, &#34;user_name&#34;:&#34;222&#34;, &#34;password&#34;:&#34;333&#34;}&#39;</pre></td></tr></table>
 </div>
-</div><hr>
-<h3 id="-注解路由相关说明">-注解路由相关说明</h3>
+</div>
+<hr />
+
+<h3 id="注解路由相关说明">-注解路由相关说明</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"> // @Router /block [post,get]
+@Router 标记  /block 路由 [post,get] method 调用方式</pre></td></tr></table>
+</div>
+</div>
+<h4 id="说明-如果对象函数中不加注解路由-系统会默认添加注解路由-post方式-带req-2个参数-ctx-req-get方式为一个参数-ctx">说明:如果对象函数中不加注解路由，系统会默认添加注解路由。post方式：带req(2个参数(ctx,req))，get方式为一个参数(ctx)</h4>
+
+<h3 id="1-注解路由会自动创建-root-routers-gen-router-go-文件-需要在调用时加">1. 注解路由会自动创建[root]/routers/gen_router.go 文件 需要在调用时加：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">_ &#34;[mod]/routers&#34; // debug模式需要添加[mod]/routers 注册注解路由</pre></td></tr></table>
+</div>
+</div>
+<p>默认也会在项目根目录生成 <code>gen_router.data</code> 文件(保留此文件，可以不用添加上面代码嵌入)</p>
+
+<h3 id="2-注册函数说明">2. 注册函数说明</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span></code></pre></td>
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">// @Router /block [post,get]
-@Router 标记 
-/block 路由 
-[post,get] method 调用方式
-
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="说明如果对象函数中不加注解路由系统会默认添加注解路由post方式带req2个参数ctxreqget方式为一个参数ctx">说明:如果对象函数中不加注解路由，系统会默认添加注解路由。post方式：带req(2个参数(ctx,req))，get方式为一个参数(ctx)</h4>
-<h3 id="1-注解路由会自动创建rootroutersgen_routergo-文件-需要在调用时加">1. 注解路由会自动创建[root]/routers/gen_router.go 文件 需要在调用时加：</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">_ &#34;[mod]/routers&#34; // debug模式需要添加[mod]/routers 注册注解路由
-</code></pre></td></tr></table>
-</div>
-</div><p>默认也会在项目根目录生成 <code>gen_router.data</code> 文件(保留此文件，可以不用添加上面代码嵌入)</p>
-<h3 id="2-注册函数说明">2. 注册函数说明</h3>
-<pre><code>ginrpc.WithCtx ： 设置自定义context
+<pre class="chroma">ginrpc.WithCtx ： 设置自定义context
 
 ginrpc.WithDebug(true) : 设置debug模式
 
-ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)
+ginrpc.WithGroup(&#34;xxjwxc&#34;) : 添加路由前缀 (也可以使用gin.Group 分组)
 
-ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后执行中间件
-</code></pre>
-<p><a href="https://godoc.org/github.com/xxjwxc/ginrpc">更多&raquo;</a></p>
-<h3 id="2-注解路由调用demogmsechttpsgithubcomgmsecgmsec">2. 注解路由调用demo：<a href="https://github.com/gmsec/gmsec">gmsec</a></h3>
-<h3 id="3-支持绑定grpc函数-gmsechttpsgithubcomgmsecgmsec">3. 支持绑定grpc函数: <a href="https://github.com/gmsec/gmsec">gmsec</a></h3>
-<h2 id="二-swaggermarkdownmindoc-文档生成说明">二. swagger/markdown/mindoc 文档生成说明</h2>
-<h3 id="1对于对象注册ginrpcregister模式支持文档导出">1.对于对象注册<code>ginrpc.Register</code>模式,支持文档导出</h3>
-<h3 id="2导出支持注解路由支持参数注释支持默认值tagdefault">2.导出支持注解路由,支持参数注释,支持默认值(<code>tag</code>.<code>default</code>)</h3>
-<h3 id="3默认导出路径docsswaggerswaggerjsondocsmarkdown">3.默认导出路径:(<code>/docs/swagger/swagger.json</code>,<code>/docs/markdown</code>)</h3>
+ginrpc.WithBigCamel(true) : 设置大驼峰标准(false 为web模式，_,小写)</pre></td></tr></table>
+</div>
+</div>
+<p><a href="https://godoc.org/github.com/xxjwxc/ginrpc">更多&gt;&gt;</a></p>
+
+<h3 id="2-注解路由调用demo-ginweb-sample-ginweb">2. 注解路由调用demo：<a href="/sample/ginweb">ginweb</a></h3>
+
+<h3 id="3-支持绑定grpc函数-ginweb-sample-ginweb">3. 支持绑定grpc函数: <a href="/sample/ginweb">ginweb</a></h3>
+
+<h2 id="二-swagger-markdown-mindoc-文档生成说明">二. swagger/markdown/mindoc 文档生成说明</h2>
+
+<h3 id="1-对于对象注册-ginrpc-register-模式-支持文档导出">1.对于对象注册<code>ginrpc.Register</code>模式,支持文档导出</h3>
+
+<h3 id="2-导出支持注解路由-支持参数注释-支持默认值-tag-default">2.导出支持注解路由,支持参数注释,支持默认值(<code>tag</code>.<code>default</code>)</h3>
+
+<h3 id="3-默认导出路径-docs-swagger-swagger-json-docs-markdown">3.默认导出路径:(<code>/docs/swagger/swagger.json</code>,<code>/docs/markdown</code>)</h3>
+
 <h3 id="4-struct-demo">4 struct demo</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">ReqTest</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">AccessToken</span> <span class="kt">string</span> <span class="s">`json:&#34;access_token&#34;`</span>
-	<span class="nx">UserName</span>    <span class="kt">string</span> <span class="s">`json:&#34;user_name&#34; binding:&#34;required&#34;`</span> <span class="c1">// 带校验方式
-</span><span class="c1"></span>	<span class="nx">Password</span>    <span class="kt">string</span> <span class="s">`json:&#34;password&#34;`</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre class="chroma">type ReqTest struct {
+	AccessToken string `json:&#34;access_token&#34;`
+	UserName    string `json:&#34;user_name&#34; binding:&#34;required&#34;` // 带校验方式
+	Password    string `json:&#34;password&#34;`
+}</pre></td></tr></table>
 </div>
-</div><ul>
-<li><a href="https://github.com/xxjwxc/gmsec">更多 &raquo;&gt;</a></li>
-</ul>
-<h2 id="三-支持调用中间件">三. 支持调用中间件</h2>
+</div>
 <ul>
-<li>(全局模式) 可通过 <code>ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{})</code>设置(全局)</li>
-<li>(单个对象模式) 也可以在对象上实现函数(单个类型)</li>
+<li><a href="https://github.com/xxjwxc/gmsec">更多 &gt;&gt;&gt;</a>
+<br /></li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">	<span class="c1">// GinBeforeAfter 对象调用前后执行中间件(支持总的跟对象单独添加)
-</span><span class="c1"></span>	<span class="kd">type</span> <span class="nx">GinBeforeAfter</span> <span class="kd">interface</span> <span class="p">{</span>
-		<span class="nf">GinBefore</span><span class="p">(</span><span class="nx">req</span> <span class="o">*</span><span class="nx">GinBeforeAfterInfo</span><span class="p">)</span> <span class="kt">bool</span>
-		<span class="nf">GinAfter</span><span class="p">(</span><span class="nx">req</span> <span class="o">*</span><span class="nx">GinBeforeAfterInfo</span><span class="p">)</span> <span class="kt">bool</span>
-	<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="stargazers-over-time">Stargazers over time</h2>
-<p><a href="https://starchart.cc/xxjwxc/ginrpc"><img src="https://starchart.cc/xxjwxc/ginrpc.svg" alt="Stargazers over time"></a></p>
-<h3 id="代码地址-ginprchttpsgithubcomxxjwxcginrpc-如果喜欢请给星支持">代码地址： <a href="https://github.com/xxjwxc/ginrpc">ginprc</a> 如果喜欢请给星支持</h3>
+
+<h2 id="stargazers-over-time">Stargazers over time</h2>
+
+<p><a href="https://starchart.cc/xxjwxc/ginrpc"><img src="https://starchart.cc/xxjwxc/ginrpc.svg" alt="Stargazers over time" /></a></p>
+
+<h2 id="下一步">下一步</h2>
+
+<ul>
+<li>添加服务发现</li>
+</ul>
+
+<h3 id="代码地址-ginprc-https-github-com-xxjwxc-ginrpc-如果喜欢请给星支持">代码地址： <a href="https://github.com/xxjwxc/ginrpc">ginprc</a> 如果喜欢请给星支持</h3>
 
     </div>
 
@@ -718,10 +703,7 @@ ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2020-06-01
-      
-    </span>
+    <span class="item-content">2020-03-14</span>
   </p>
   
   <p class="copyright-item">
@@ -763,7 +745,7 @@ ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/chunck/">
+          <a class="prev" href="/post/gmsec/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -773,12 +755,12 @@ ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后
 </svg>
 
             </i>
-            <span class="prev-text nav-default">golang chunck 服务器长连接</span>
+            <span class="prev-text nav-default">gmsec golang 微服务集成框架</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/jump/">
-            <span class="next-text nav-default">ssh 远程监控工具</span>
+          <a class="next" href="/post/gormt/">
+            <span class="next-text nav-default">gormt mysql数据库转换工具</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -801,8 +783,6 @@ ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后
   
 
   
-
-  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -820,10 +800,10 @@ ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后
   
 
   
-
+  
     
 
-  
+
 
         </div>
       </div>
@@ -865,17 +845,7 @@ ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后
 
     </a>
 
-
-<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
-    class="iconfont" title="rss" target="_blank">
-    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="30" height="30">
-  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
-</svg>
-
-  </a>
-   
+ 
 </div>
 
 <div class="copyright">
@@ -883,7 +853,7 @@ ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">
@@ -931,9 +901,7 @@ ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后
 
 
 
-<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
-
-
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
     window.MathJax = {
@@ -942,10 +910,6 @@ ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-
-
-
 
 
 
@@ -961,8 +925,6 @@ ginrpc.WithBeforeAfter(&amp;ginrpc.DefaultGinBeforeAfter{}) : 设置调用前后
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
 
 
 

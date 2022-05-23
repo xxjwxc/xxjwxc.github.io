@@ -135,7 +135,7 @@ func main() {
         micro.WithName("lp.srv.eg1"),
         // micro.WithRegisterTTL(time.Second*30),      //指定服务注册时间
         // micro.WithRegisterInterval(time.Second*15), //让服务在指定时间内重新注册
-        // micro.WithRegistryNaming(reg),
+        // micro.WithRegistryNameing(reg),
 	)
 	// ----------- end
 
@@ -146,7 +146,7 @@ func main() {
 }
 ```
 
-## 更多示例 => [传送门](https://github.com/gmsec/gmsec/tree/master/example)
+## 更多示例 => [传送门](https://github.com/gmsec/gmsec/tree/master/gmsec)
 
 ## 正在做
 - etcdv3

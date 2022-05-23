@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,12 +32,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/bigcamel/" />
-
-
 
 
 
@@ -62,15 +60,21 @@
 <meta property="og:title" content="大驼峰转换工具" />
 <meta property="og:description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 1 &#34;ACL&#34;, &#34;API&#34;, &#34;ASCII&#34;," />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/bigcamel/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-05-18T16:01:23&#43;08:00" />
-<meta property="article:modified_time" content="2019-05-18T16:01:23&#43;08:00" />
-
+<meta property="og:url" content="https://xxjwxc.github.io/post/bigcamel/" />
+<meta property="article:published_time" content="2019-05-18T16:01:23+08:00" />
+<meta property="article:modified_time" content="2019-05-18T16:01:23+08:00" />
 <meta itemprop="name" content="大驼峰转换工具">
-<meta itemprop="description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 1 &#34;ACL&#34;, &#34;API&#34;, &#34;ASCII&#34;,"><meta itemprop="datePublished" content="2019-05-18T16:01:23&#43;08:00" />
+<meta itemprop="description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 1 &#34;ACL&#34;, &#34;API&#34;, &#34;ASCII&#34;,">
+
+
+<meta itemprop="datePublished" content="2019-05-18T16:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-18T16:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="613">
-<meta itemprop="keywords" content="golang,驼峰,转换," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="611">
+
+
+
+<meta itemprop="keywords" content="golang,驼峰,转换," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="大驼峰转换工具"/>
 <meta name="twitter:description" content="git 命令 大驼峰转换工具 法则 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写 大驼峰到网络标准json串自动转换 带有特殊字符特殊处理：如下 1 &#34;ACL&#34;, &#34;API&#34;, &#34;ASCII&#34;,"/>
 
@@ -156,8 +160,6 @@
         
       </li>
     
-
-    
   </ul>
 </nav>
 
@@ -219,8 +221,6 @@
     </div>
     </div>
 </div>
-
-  
 
   
 
@@ -317,10 +317,6 @@
 
       </li>
     
-
-    
-    
-
     
   </ul>
 </nav>
@@ -345,7 +341,7 @@
             <a href="https://xxjwxc.github.io/categories/go/"> go </a>
             
           </div>
-        <span class="more-meta"> 约 613 字 </span>
+        <span class="more-meta"> 约 611 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -366,36 +362,46 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-  <ul>
-    <li><a href="#git-命令">git 命令</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#git-命令">git 命令</a></li>
+</ul></li>
+<li><a href="#大驼峰转换工具">大驼峰转换工具</a></li>
+</ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <h2 id="git-命令">git 命令</h2>
+      
+
+<h2 id="git-命令">git 命令</h2>
+
 <h1 id="大驼峰转换工具">大驼峰转换工具</h1>
+
 <p>法则
 基本满足大驼峰命名法则 首字母大写 “_” 忽略后大写</p>
+
 <p>大驼峰到网络标准json串自动转换</p>
+
 <p>带有特殊字符特殊处理：如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&#34;ACL&#34;, &#34;API&#34;, &#34;ASCII&#34;, &#34;CPU&#34;, &#34;CSS&#34;, &#34;DNS&#34;, &#34;EOF&#34;, &#34;GUID&#34;, &#34;HTML&#34;, &#34;HTTP&#34;, &#34;HTTPS&#34;, &#34;ID&#34;, &#34;IP&#34;, &#34;JSON&#34;, &#34;LHS&#34;, &#34;QPS&#34;, &#34;RAM&#34;, &#34;RHS&#34;, &#34;RPC&#34;, &#34;SLA&#34;, &#34;SMTP&#34;, &#34;SQL&#34;, &#34;SSH&#34;, &#34;TCP&#34;, &#34;TLS&#34;, &#34;TTL&#34;, &#34;UDP&#34;, &#34;UI&#34;, &#34;UID&#34;, &#34;UUID&#34;, &#34;URI&#34;, &#34;URL&#34;, &#34;UTF8&#34;, &#34;VM&#34;, &#34;XML&#34;, &#34;XMPP&#34;, &#34;XSRF&#34;, &#34;XSS&#34;
-</code></pre></td></tr></table>
+<pre class="chroma">&#34;ACL&#34;, &#34;API&#34;, &#34;ASCII&#34;, &#34;CPU&#34;, &#34;CSS&#34;, &#34;DNS&#34;, &#34;EOF&#34;, &#34;GUID&#34;, &#34;HTML&#34;, &#34;HTTP&#34;, &#34;HTTPS&#34;, &#34;ID&#34;, &#34;IP&#34;, &#34;JSON&#34;, &#34;LHS&#34;, &#34;QPS&#34;, &#34;RAM&#34;, &#34;RHS&#34;, &#34;RPC&#34;, &#34;SLA&#34;, &#34;SMTP&#34;, &#34;SQL&#34;, &#34;SSH&#34;, &#34;TCP&#34;, &#34;TLS&#34;, &#34;TTL&#34;, &#34;UDP&#34;, &#34;UI&#34;, &#34;UID&#34;, &#34;UUID&#34;, &#34;URI&#34;, &#34;URL&#34;, &#34;UTF8&#34;, &#34;VM&#34;, &#34;XML&#34;, &#34;XMPP&#34;, &#34;XSRF&#34;, &#34;XSS&#34;</pre></td></tr></table>
 </div>
-</div><p>以下采用golang实现</p>
+</div>
+<p>以下采用golang实现</p>
+
 <ol>
-<li>数据初始化：</li>
-</ol>
+<li><p>数据初始化：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -426,15 +432,14 @@
 	<span class="p">}</span>
 	<span class="nx">commonInitialismsReplacer</span> <span class="p">=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">NewReplacer</span><span class="p">(</span><span class="nx">commonInitialismsForReplacer</span><span class="o">...</span><span class="p">)</span>
 	<span class="nx">uncommonInitialismsReplacer</span> <span class="p">=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">NewReplacer</span><span class="p">(</span><span class="nx">uncommonInitialismsForReplacer</span><span class="o">...</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>转换大驼峰函数：</li>
-</ol>
+</div></li>
+
+<li><p>转换大驼峰函数：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -459,11 +464,9 @@
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
-</span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">
-<span class="cm">/*
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="cm">/*
 </span><span class="cm">	转换为大驼峰命名法则
 </span><span class="cm">	首字母大写，“_” 忽略后大写
 </span><span class="cm">*/</span>
@@ -487,15 +490,14 @@
 	<span class="nx">s</span> <span class="p">=</span> <span class="nx">uncommonInitialismsReplacer</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
 	<span class="c1">//smap.Set(name, s)
 </span><span class="c1"></span>	<span class="k">return</span> <span class="nx">s</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><ol start="3">
-<li>回退函数</li>
-</ol>
+</div></li>
+
+<li><p>回退函数</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -547,11 +549,10 @@
 </span><span class="lnt">50
 </span><span class="lnt">51
 </span><span class="lnt">52
-</span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="cm">/*
-</span><span class="cm">  回退网络模式
+</span><span class="cm">回退网络模式
 </span><span class="cm">*/</span>
 <span class="kd">func</span> <span class="nf">UnMarshal</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
 	<span class="kd">const</span> <span class="p">(</span>
@@ -601,16 +602,14 @@
 
 	<span class="nx">s</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">ToLower</span><span class="p">(</span><span class="nx">buf</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
 	<span class="k">return</span> <span class="nx">s</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><ol start="4">
-<li>测试：</li>
-</ol>
+</div></li>
+
+<li><p>测试：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -635,15 +634,19 @@
 	<span class="k">if</span> <span class="nx">SS</span> <span class="o">!=</span> <span class="nx">tmp1</span> <span class="p">{</span>
 		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;false.&#34;</span><span class="p">)</span>
 	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><p>输入:
+</div></li>
+</ol>
+
+<p>输入:
 OauthIDAPI
 输出：
 oauth_id_api
 OauthIDAPI</p>
+
 <p>5:传送门：</p>
+
 <p><a href="https://github.com/xxjwxc/public/tree/master/mybigcamel">github</a></p>
 
     </div>
@@ -657,10 +660,7 @@ OauthIDAPI</p>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2019-05-18
-      
-    </span>
+    <span class="item-content">2019-05-18</span>
   </p>
   
   <p class="copyright-item">
@@ -701,7 +701,7 @@ OauthIDAPI</p>
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/loglistdef/">
+          <a class="prev" href="/post/shares/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -711,7 +711,7 @@ OauthIDAPI</p>
 </svg>
 
             </i>
-            <span class="prev-text nav-default">日志系统设计</span>
+            <span class="prev-text nav-default">A股量化系统</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
@@ -739,8 +739,6 @@ OauthIDAPI</p>
   
 
   
-
-  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -758,10 +756,10 @@ OauthIDAPI</p>
   
 
   
-
+  
     
 
-  
+
 
         </div>
       </div>
@@ -803,17 +801,7 @@ OauthIDAPI</p>
 
     </a>
 
-
-<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
-    class="iconfont" title="rss" target="_blank">
-    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="30" height="30">
-  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
-</svg>
-
-  </a>
-   
+ 
 </div>
 
 <div class="copyright">
@@ -821,7 +809,7 @@ OauthIDAPI</p>
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">
@@ -869,9 +857,7 @@ OauthIDAPI</p>
 
 
 
-<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
-
-
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
     window.MathJax = {
@@ -880,10 +866,6 @@ OauthIDAPI</p>
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-
-
-
 
 
 
@@ -899,8 +881,6 @@ OauthIDAPI</p>
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
 
 
 

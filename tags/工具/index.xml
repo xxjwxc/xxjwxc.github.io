@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>工具 on Technology blog by xiexiaojun</title>
@@ -6,33 +6,10 @@
     <description>Recent content in 工具 on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 18 May 2021 11:48:31 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>golang工作池库 限流器</title>
-      <link>https://xxjwxc.github.io/post/gowplimit/</link>
-      <pubDate>Tue, 18 May 2021 11:48:31 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/gowplimit/</guid>
-      <description>gowp golang worker pool ,线程池 , 工作池 并发限制goroutine池。 限制任务执行的并发性，而不是排队的任务数。 无论排队多少任务，都不会阻止提交任务。 通过队</description>
-    </item>
+    <lastBuildDate>Wed, 20 May 2020 03:01:23 +0800</lastBuildDate>
     
-    <item>
-      <title>golang chunck 服务器长连接</title>
-      <link>https://xxjwxc.github.io/post/chunck/</link>
-      <pubDate>Fri, 25 Dec 2020 10:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/chunck/</guid>
-      <description>http 协议的chunck概念 有时候，Web服务器生成HTTP Response是无法在Header就确定消息大小的，这时一般来说服务器将不会提供C</description>
-    </item>
+	<atom:link href="https://xxjwxc.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>go gin grpc 参数自动绑定工具</title>
-      <link>https://xxjwxc.github.io/post/ginrpc/</link>
-      <pubDate>Mon, 01 Jun 2020 18:01:00 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/ginrpc/</guid>
-      <description>ginprc 注解路由，自动参数绑定工具 ![doc][image/ginrpc_doc.gif] golang gin 参数自动绑定工具 支持对象自动注册及注解路由 支持参数自动绑定 自带请求参数过滤及绑定实现 binding:&amp;ldquo;required&amp;rdquo; validator 支持 grpc-go 绑定模式 支持</description>
-    </item>
     
     <item>
       <title>golang内存泄露分析(pprof)</title>
@@ -41,6 +18,15 @@
       
       <guid>https://xxjwxc.github.io/post/pprof/</guid>
       <description>pprof 安装及使用 golang pprof 用于对线上运行程序 性能监控与分析 工具安装 1 go get -u github.com/google/pprof 代码注入 1 import _ &amp;#34;net/http/pprof&amp;#34; 启动服务(6060端口为例) 1 go run ... 获取监控文件(heap</description>
+    </item>
+    
+    <item>
+      <title>go gin grpc 参数自动绑定工具</title>
+      <link>https://xxjwxc.github.io/post/ginrpc/</link>
+      <pubDate>Sat, 25 Jan 2020 18:01:00 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/ginrpc/</guid>
+      <description>ginprc 注解路由，自动参数绑定工具 ![doc][image/ginrpc_doc.gif] golang gin 参数自动绑定工具 支持对象自动注册及注解路由 支持参数自动绑定 自带请求参数过滤及绑定实现 binding:&amp;ldquo;required&amp;rdquo; validator 支持 grpc-go 绑定模式 支持</description>
     </item>
     
     <item>

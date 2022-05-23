@@ -196,16 +196,6 @@ or
 go generate
 ```
 
-### 说明：windows 不支持中文默认方式。ASCALL 模式
-切换编码方式
-```
-CHCP 65001 
-```
-
-### 表注释 default
-
-- 给列添加注释以`[@gormt default:'test']`开头即可
-
 ## 8. 下一步计划
 
 - 更新，删除功能函数添加

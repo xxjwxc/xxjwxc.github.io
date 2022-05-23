@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,12 +32,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.56.3" />
 
 
 <link rel="canonical" href="https://xxjwxc.github.io/post/pprof/" />
-
-
 
 
 
@@ -62,15 +60,21 @@
 <meta property="og:title" content="golang内存泄露分析(pprof)" />
 <meta property="og:description" content="pprof 安装及使用 golang pprof 用于对线上运行程序 性能监控与分析 工具安装 1 go get -u github.com/google/pprof 代码注入 1 import _ &#34;net/http/pprof&#34; 启动服务(6060端口为例) 1 go run ... 获取监控文件(heap" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xxjwxc.github.io/post/pprof/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-05-20T03:01:23&#43;08:00" />
-<meta property="article:modified_time" content="2019-05-20T03:01:23&#43;08:00" />
-
+<meta property="og:url" content="https://xxjwxc.github.io/post/pprof/" />
+<meta property="article:published_time" content="2020-05-20T03:01:23+08:00" />
+<meta property="article:modified_time" content="2019-05-20T03:01:23+08:00" />
 <meta itemprop="name" content="golang内存泄露分析(pprof)">
-<meta itemprop="description" content="pprof 安装及使用 golang pprof 用于对线上运行程序 性能监控与分析 工具安装 1 go get -u github.com/google/pprof 代码注入 1 import _ &#34;net/http/pprof&#34; 启动服务(6060端口为例) 1 go run ... 获取监控文件(heap"><meta itemprop="datePublished" content="2020-05-20T03:01:23&#43;08:00" />
+<meta itemprop="description" content="pprof 安装及使用 golang pprof 用于对线上运行程序 性能监控与分析 工具安装 1 go get -u github.com/google/pprof 代码注入 1 import _ &#34;net/http/pprof&#34; 启动服务(6060端口为例) 1 go run ... 获取监控文件(heap">
+
+
+<meta itemprop="datePublished" content="2020-05-20T03:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-20T03:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="884">
-<meta itemprop="keywords" content="golang,工具,pprof," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="861">
+
+
+
+<meta itemprop="keywords" content="golang,工具,pprof," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="golang内存泄露分析(pprof)"/>
 <meta name="twitter:description" content="pprof 安装及使用 golang pprof 用于对线上运行程序 性能监控与分析 工具安装 1 go get -u github.com/google/pprof 代码注入 1 import _ &#34;net/http/pprof&#34; 启动服务(6060端口为例) 1 go run ... 获取监控文件(heap"/>
 
@@ -156,8 +160,6 @@
         
       </li>
     
-
-    
   </ul>
 </nav>
 
@@ -219,8 +221,6 @@
     </div>
     </div>
 </div>
-
-  
 
   
 
@@ -317,10 +317,6 @@
 
       </li>
     
-
-    
-    
-
     
   </ul>
 </nav>
@@ -344,7 +340,7 @@
             <a href="https://xxjwxc.github.io/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
             
           </div>
-        <span class="more-meta"> 约 884 字 </span>
+        <span class="more-meta"> 约 861 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -365,112 +361,119 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-  <ul>
-    <li><a href="#pprof-安装及使用">pprof 安装及使用</a>
-      <ul>
-        <li><a href="#golang-pprof-用于对线上运行程序-性能监控与分析">golang pprof 用于对线上运行程序 性能监控与分析</a></li>
-        <li><a href="#工具安装">工具安装</a></li>
-        <li><a href="#代码注入">代码注入</a></li>
-        <li><a href="#启动服务6060端口为例">启动服务(6060端口为例)</a></li>
-        <li><a href="#获取监控文件heap为例">获取监控文件(heap为例)</a></li>
-        <li><a href="#pprof-web监控示例">pprof web监控示例</a></li>
-      </ul>
-    </li>
-    <li><a href="#more">more</a>
-      <ul>
-        <li><a href="#pprof-toolshttpsgolangorgpkgnethttppprof"><a href="https://golang.org/pkg/net/http/pprof/">pprof tools</a></a></li>
-        <li><a href="#pprof-dochttpsgithubcomgooglepprof"><a href="https://github.com/google/pprof">pprof doc</a></a></li>
-        <li><a href="#xxjwxc-dochttpsxxjwxcgithubiopostpprof"><a href="https://xxjwxc.github.io/post/pprof/">xxjwxc doc</a></a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#golang内存泄露工具检查">golang内存泄露工具检查</a></li>
-    <li><a href="#具体详细分析数据">具体详细分析数据</a>
-      <ul>
-        <li><a href="#命令工具">命令工具</a></li>
-      </ul>
-    </li>
-    <li><a href="#查看各个函数方法的内存消耗排名">查看各个函数/方法的内存消耗排名</a></li>
-    <li><a href="#2imagepprof2png"><img src="/image/pprof2.png" alt="2"></a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#pprof-安装及使用">pprof 安装及使用</a>
+<ul>
+<li><a href="#golang-pprof-用于对线上运行程序-性能监控与分析">golang pprof 用于对线上运行程序 性能监控与分析</a></li>
+<li><a href="#工具安装">工具安装</a></li>
+<li><a href="#代码注入">代码注入</a></li>
+<li><a href="#启动服务-6060端口为例">启动服务(6060端口为例)</a></li>
+<li><a href="#获取监控文件-heap为例">获取监控文件(heap为例)</a></li>
+<li><a href="#pprof-web监控示例">pprof web监控示例</a></li>
+</ul></li>
+<li><a href="#more">more</a>
+<ul>
+<li><a href="#pprof-tools-https-golang-org-pkg-net-http-pprof"><a href="https://golang.org/pkg/net/http/pprof/">pprof tools</a></a></li>
+<li><a href="#pprof-doc-https-github-com-google-pprof"><a href="https://github.com/google/pprof">pprof doc</a></a></li>
+<li><a href="#xxjwxc-doc-https-xxjwxc-github-io-post-pprof"><a href="https://xxjwxc.github.io/post/pprof/">xxjwxc doc</a></a></li>
+</ul></li>
+</ul></li>
+<li><a href="#手动安装">手动安装</a>
+<ul>
+<li><a href="#golang内存泄露工具检查">golang内存泄露工具检查</a></li>
+<li><a href="#具体详细分析数据">具体详细分析数据</a>
+<ul>
+<li><a href="#命令工具">命令工具</a></li>
+</ul></li>
+<li><a href="#2-image-pprof2-png"><img src="/image/pprof2.png" alt="2" /></a></li>
+</ul></li>
+</ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <h2 id="pprof-安装及使用">pprof 安装及使用</h2>
+      
+
+<h2 id="pprof-安装及使用">pprof 安装及使用</h2>
+
 <h3 id="golang-pprof-用于对线上运行程序-性能监控与分析">golang pprof 用于对线上运行程序 性能监控与分析</h3>
+
 <h3 id="工具安装">工具安装</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">go get -u github.com/google/pprof
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">go get -u github.com/google/pprof</code></pre></td></tr></table>
 </div>
-</div><h3 id="代码注入">代码注入</h3>
+</div>
+<h3 id="代码注入">代码注入</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="nx">_</span> <span class="s">&#34;net/http/pprof&#34;</span>
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="nx">_</span> <span class="s">&#34;net/http/pprof&#34;</span></code></pre></td></tr></table>
 </div>
-</div><h3 id="启动服务6060端口为例">启动服务(6060端口为例)</h3>
+</div>
+<h3 id="启动服务-6060端口为例">启动服务(6060端口为例)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">go run ...
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">go run ...</code></pre></td></tr></table>
 </div>
-</div><h3 id="获取监控文件heap为例">获取监控文件(heap为例)</h3>
+</div>
+<h3 id="获取监控文件-heap为例">获取监控文件(heap为例)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">curl http://localhost:6060/debug/pprof/heap &gt; heap.profile
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">curl http://localhost:6060/debug/pprof/heap &gt; heap.profile</code></pre></td></tr></table>
 </div>
-</div><h3 id="pprof-web监控示例">pprof web监控示例</h3>
+</div>
+<h3 id="pprof-web监控示例">pprof web监控示例</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">pprof -http<span class="o">=</span>: ./heap.profile
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">pprof -http<span class="o">=</span>: ./heap.profile</code></pre></td></tr></table>
 </div>
-</div><h2 id="more">more</h2>
-<h3 id="pprof-toolshttpsgolangorgpkgnethttppprof"><a href="https://golang.org/pkg/net/http/pprof/">pprof tools</a></h3>
-<h3 id="pprof-dochttpsgithubcomgooglepprof"><a href="https://github.com/google/pprof">pprof doc</a></h3>
-<h3 id="xxjwxc-dochttpsxxjwxcgithubiopostpprof"><a href="https://xxjwxc.github.io/post/pprof/">xxjwxc doc</a></h3>
+</div>
+<h2 id="more">more</h2>
+
+<h3 id="pprof-tools-https-golang-org-pkg-net-http-pprof"><a href="https://golang.org/pkg/net/http/pprof/">pprof tools</a></h3>
+
+<h3 id="pprof-doc-https-github-com-google-pprof"><a href="https://github.com/google/pprof">pprof doc</a></h3>
+
+<h3 id="xxjwxc-doc-https-xxjwxc-github-io-post-pprof"><a href="https://xxjwxc.github.io/post/pprof/">xxjwxc doc</a></h3>
+
 <h1 id="手动安装">手动安装</h1>
+
 <h2 id="golang内存泄露工具检查">golang内存泄露工具检查</h2>
+
 <ul>
-<li>
-<p>安装工具</p>
-</li>
-<li>
-<p>brew install graphviz （生成图片时候要用到dot）</p>
-</li>
+<li><p>安装工具</p></li>
+
+<li><p>brew install graphviz （生成图片时候要用到dot）</p></li>
 </ul>
+
 <ol>
 <li>使用pprof工具实现</li>
 </ol>
+
 <ul>
-<li>简单使用场景</li>
-</ul>
+<li><p>简单使用场景</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -555,20 +558,22 @@
 
 	<span class="nx">http</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">,</span> <span class="nx">handler</span><span class="p">)</span>
 	<span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:11181&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>直接访问 http://localhost:11181/ 即可查看信息</li>
+</div></li>
+
+<li><p>直接访问 <a href="http://localhost:11181/">http://localhost:11181/</a> 即可查看信息</p></li>
 </ul>
-<p><img src="/image/pprof1.jpg" alt="1"></p>
+
+<p><img src="/image/pprof1.jpg" alt="1" /></p>
+
 <h2 id="具体详细分析数据">具体详细分析数据</h2>
+
 <ul>
-<li>demo 依然是上边的程序 改造一下</li>
-</ul>
+<li><p>demo 依然是上边的程序 改造一下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -717,86 +722,60 @@
 
 	<span class="nx">http</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">,</span> <span class="nx">handler</span><span class="p">)</span>
 	<span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:11181&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><p>记得：</p>
+</div></li>
+</ul>
+
+<p>记得：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">go build 
-go run
-
-</code></pre></td></tr></table>
+<pre class="chroma">go build 
+go run</pre></td></tr></table>
 </div>
-</div><ul>
+</div>
+<ul>
 <li>3秒后当前目录生成一个文件：
 heap_main_13712_2019_06_07_02_50_56.prof</li>
 </ul>
+
 <h3 id="命令工具">命令工具</h3>
+
 <ol>
-<li><code>go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof</code></li>
+<li><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```" data-lang="go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```" data-lang="go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof```">进入pprof 内部 可以使用 top 10等命令来查看过滤信息，exit退出</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
-<p>进入pprof 内部 可以使用 top 10等命令来查看过滤信息，exit退出</p>
+
+<p>$ go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof
+File: main
+Type: inuse_space
+Entering interactive mode (type &ldquo;help&rdquo; for commands, &ldquo;o&rdquo; for options)
+(pprof)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
+</span></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ go tool pprof ./main ./heap_main_13712_2019_06_07_02_50_56.prof
-File: main
-Type: inuse_space
-Entering interactive mode (type &#34;help&#34; for commands, &#34;o&#34; for options)
-(pprof)
-</code></pre></td></tr></table>
+<pre class="chroma">2. ```go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof```
+
+查看各个函数/方法的内存消耗排名
+------</pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li><code>go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof</code></li>
-</ol>
-<h2 id="查看各个函数方法的内存消耗排名">查看各个函数/方法的内存消耗排名</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ go tool pprof --text ./main ./heap_main_13712_2019_06_07_02_50_56.prof
+</div>
+<p>$ go tool pprof &ndash;text ./main ./heap_main_13712_2019_06_07_02_50_56.prof
 File: main
 Type: inuse_space
 Showing nodes accounting for 54.55kB, 98.55% of 55.35kB total
@@ -825,22 +804,36 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
          0     0% 98.55%    41.12kB 74.30%  runtime.newproc1
          0     0% 98.55%    43.75kB 79.04%  runtime.startTheWorldWithSema
          0     0% 98.55%        2kB  3.61%  runtime.startm
-         0     0% 98.55%     0.80kB  1.45%  sync.(*Once).Do
-</code></pre></td></tr></table>
+         0     0% 98.55%     0.80kB  1.45%  sync.(*Once).Do</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">3. ```go tool pprof --dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof &gt; heap.gv```
+
+
+生成可以在graphviz里面看的gv文件
+
+------
+
+4. 通过3的gv文件直接生成图片</pre></td></tr></table>
 </div>
-</div><ol start="3">
-<li><code>go tool pprof --dot ./main ./heap_main_13712_2019_06_07_02_50_56.prof &gt; heap.gv</code></li>
-</ol>
-<p>生成可以在graphviz里面看的gv文件</p>
-<hr>
-<ol start="4">
-<li>通过3的gv文件直接生成图片</li>
-</ol>
-<p><code>dot -T png heap.gv&gt;heap.png</code></p>
+</div>
+<p>dot -T png heap.gv&gt;heap.png```</p>
+
 <ul>
 <li>打开图片查看信息</li>
 </ul>
-<h2 id="2imagepprof2png"><img src="/image/pprof2.png" alt="2"></h2>
+
+<h2 id="2-image-pprof2-png"><img src="/image/pprof2.png" alt="2" /></h2>
 
     </div>
 
@@ -853,10 +846,7 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2019-05-20
-      
-    </span>
+    <span class="item-content">2019-05-20</span>
   </p>
   
   <p class="copyright-item">
@@ -935,8 +925,6 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
   
 
   
-
-  
   
     <div class="post bg-white">
       <script src="https://utteranc.es/client.js"
@@ -954,10 +942,10 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
   
 
   
-
+  
     
 
-  
+
 
         </div>
       </div>
@@ -999,17 +987,7 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
 
     </a>
 
-
-<a href="https://xxjwxc.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
-    class="iconfont" title="rss" target="_blank">
-    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="30" height="30">
-  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
-</svg>
-
-  </a>
-   
+ 
 </div>
 
 <div class="copyright">
@@ -1017,7 +995,7 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">
@@ -1065,9 +1043,7 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
 
 
 
-<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
-
-
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
     window.MathJax = {
@@ -1076,10 +1052,6 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
     };
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-
-
-
 
 
 
@@ -1095,8 +1067,6 @@ Dropped 18 nodes (cum &lt;= 0.28kB)
 
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
 
 
 

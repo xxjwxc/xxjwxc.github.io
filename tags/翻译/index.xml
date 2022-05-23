@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>翻译 on Technology blog by xiexiaojun</title>
@@ -6,14 +6,18 @@
     <description>Recent content in 翻译 on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Oct 2019 21:10:31 +0800</lastBuildDate><atom:link href="https://xxjwxc.github.io/tags/%E7%BF%BB%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Oct 2019 21:10:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://xxjwxc.github.io/tags/%E7%BF%BB%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Uber Go 风格指南中文版</title>
       <link>https://xxjwxc.github.io/post/uber_go_guide_cn/</link>
       <pubDate>Sun, 13 Oct 2019 21:10:31 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/post/uber_go_guide_cn/</guid>
-      <description>uber_go_guide_cn Uber Go语言编码规范 Uber是世界领先的生活出行服务提供商，也是Go语言的早期adopter，根据Uber工程博客的内容，大致可以判断出Go</description>
+      <description>uber_go_guide_cn BadGood ```go BAD CODE GOES HERE ``` ```go GOOD CODE GOES HERE ``` ~~~ (You need the empty lines between the and code samples for it to be treated as Markdown.) If you need to add labels or descriptions below the code samples, add another row before the line. ~~~ DESCRIBE BAD CODE DESCRIBE GOOD CODE ~~~ -- Uber Go语言编码规范 Ub</description>
     </item>
     
   </channel>
