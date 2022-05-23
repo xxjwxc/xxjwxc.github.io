@@ -6,17 +6,35 @@
     <description>Recent content in Tags on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 30 May 2020 04:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 May 2022 16:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://xxjwxc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>A股</title>
+      <link>https://xxjwxc.github.io/tags/a%E8%82%A1/</link>
+      <pubDate>Sun, 22 May 2022 16:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/a%E8%82%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>golang</title>
       <link>https://xxjwxc.github.io/tags/golang/</link>
-      <pubDate>Sat, 30 May 2020 04:01:23 +0800</pubDate>
+      <pubDate>Sun, 22 May 2022 16:01:23 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>量化</title>
+      <link>https://xxjwxc.github.io/tags/%E9%87%8F%E5%8C%96/</link>
+      <pubDate>Sun, 22 May 2022 16:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/tags/%E9%87%8F%E5%8C%96/</guid>
       <description></description>
     </item>
     
@@ -147,29 +165,11 @@
     </item>
     
     <item>
-      <title>A股</title>
-      <link>https://xxjwxc.github.io/tags/a%E8%82%A1/</link>
-      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/a%E8%82%A1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>转换</title>
       <link>https://xxjwxc.github.io/tags/%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
       
       <guid>https://xxjwxc.github.io/tags/%E8%BD%AC%E6%8D%A2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>量化</title>
-      <link>https://xxjwxc.github.io/tags/%E9%87%8F%E5%8C%96/</link>
-      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/tags/%E9%87%8F%E5%8C%96/</guid>
       <description></description>
     </item>
     

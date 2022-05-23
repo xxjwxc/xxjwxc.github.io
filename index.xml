@@ -6,10 +6,62 @@
     <description>Recent content on Technology blog by xiexiaojun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 30 May 2020 04:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 May 2022 16:01:23 +0800</lastBuildDate>
     
         <atom:link href="https://xxjwxc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A股量化系统</title>
+      <link>https://xxjwxc.github.io/post/shares/</link>
+      <pubDate>Sun, 22 May 2022 16:01:23 +0800</pubDate>
+      
+      <guid>https://xxjwxc.github.io/post/shares/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;shares-https-github-com-xxjwxc-shares&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/shares&#34;&gt;shares&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h3 id=&#34;功能&#34;&gt;功能&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A股量化交易系统&lt;/li&gt;
+&lt;li&gt;后台开发语言 Go/Python  &lt;a href=&#34;https://github.com/gmsec/gmsec&#34;&gt;gmsec&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;gormt 嵌入，自动数据库代码生成 &lt;a href=&#34;https://github.com/xxjwxc/gormt&#34;&gt;gorm 自动构建(gormt)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;分时任务,盯盘助手,研报股评,每日监控,微信提醒，玩转组织，AI智能&lt;/li&gt;
+&lt;li&gt;uniapp 小程序端&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;欢迎微信扫码体验&#34;&gt;欢迎微信扫码体验&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fclsxvwkj31bi0hcag8.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;传送门-https-github-com-xxjwxc-shares&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/shares&#34;&gt;传送门&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;实际效果图&#34;&gt;实际效果图&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcme0cb2j30u01t0gto.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcmn1ed4j30u01t0jxm.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcmvtcocj30u01t0aj3.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcn4a5xgj30u01t046h.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcnc03krj30u01t0gtz.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcnis08tj30u01t0jyr.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcnps2omj30u01t0n5d.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcnwnl67j30u01t0461.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;5:传送门：&lt;/p&gt;
+
+&lt;h2 id=&#34;传送门-https-github-com-xxjwxc-shares-1&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/shares&#34;&gt;传送门&lt;/a&gt;&lt;/h2&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>ssh 远程监控工具</title>
@@ -4968,58 +5020,6 @@ type UserInfoTbl struct {
 &lt;p&gt;说明：以接口解耦，具体业务根据不同需求实现接口实现。主要用来对数据分流。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/xxjwxc/esLog&#34;&gt;传送门&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>A股量化系统</title>
-      <link>https://xxjwxc.github.io/post/shares/</link>
-      <pubDate>Sat, 18 May 2019 16:01:23 +0800</pubDate>
-      
-      <guid>https://xxjwxc.github.io/post/shares/</guid>
-      
-        <description>
-
-&lt;h1 id=&#34;shares-https-github-com-xxjwxc-shares&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/shares&#34;&gt;shares&lt;/a&gt;&lt;/h1&gt;
-
-&lt;h3 id=&#34;功能&#34;&gt;功能&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A股量化交易系统&lt;/li&gt;
-&lt;li&gt;后台开发语言 Go/Python  &lt;a href=&#34;https://github.com/gmsec/gmsec&#34;&gt;gmsec&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;gormt 嵌入，自动数据库代码生成 &lt;a href=&#34;https://github.com/xxjwxc/gormt&#34;&gt;gorm 自动构建(gormt)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;分时任务,盯盘助手,研报股评,每日监控,微信提醒，玩转组织，AI智能&lt;/li&gt;
-&lt;li&gt;uniapp 小程序端&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;欢迎微信扫码体验&#34;&gt;欢迎微信扫码体验&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fclsxvwkj31bi0hcag8.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;传送门-https-github-com-xxjwxc-shares&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/shares&#34;&gt;传送门&lt;/a&gt;&lt;/h2&gt;
-
-&lt;h3 id=&#34;实际效果图&#34;&gt;实际效果图&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcme0cb2j30u01t0gto.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcmn1ed4j30u01t0jxm.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcmvtcocj30u01t0aj3.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcn4a5xgj30u01t046h.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcnc03krj30u01t0gtz.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcnis08tj30u01t0jyr.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcnps2omj30u01t0n5d.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://tva1.sinaimg.cn/large/006MvKbTly1h2fcnwnl67j30u01t0461.jpg&#34; alt=&#34;show&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;5:传送门：&lt;/p&gt;
-
-&lt;h2 id=&#34;传送门-https-github-com-xxjwxc-shares-1&#34;&gt;&lt;a href=&#34;https://github.com/xxjwxc/shares&#34;&gt;传送门&lt;/a&gt;&lt;/h2&gt;
 </description>
       
     </item>
